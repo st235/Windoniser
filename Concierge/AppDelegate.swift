@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Concierge
-//
-//  Created by Alexander Dadukin on 03.01.2021.
-//
-
 import Cocoa
 
 @main
@@ -37,7 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             menu.addItem(NSMenuItem(title: "Bottom-right", action: #selector(bottomRight(_:)), keyEquivalent: ""))
             menu.addItem(NSMenuItem.separator())
             menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
-            statusBarItem.menu = menu
+//            statusBarItem.menu = menu
             
 //            statusBarItem.menu = menu
         }
