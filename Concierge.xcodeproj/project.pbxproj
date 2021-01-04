@@ -13,6 +13,10 @@
 		CF1B395D25A2747900F7F9C7 /* LeftSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B395C25A2747900F7F9C7 /* LeftSideMenuViewController.swift */; };
 		CF4826CE25A395D300068927 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF4826D025A395D300068927 /* Localizable.strings */; };
 		CF4826D525A3967700068927 /* RightSideMenuItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4826D425A3967700068927 /* RightSideMenuItemsFactory.swift */; };
+		CF4826DC25A39DD400068927 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4826DB25A39DD400068927 /* Key.swift */; };
+		CF4826DF25A39F8B00068927 /* HotKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4826DE25A39F8B00068927 /* HotKeyController.swift */; };
+		CF4826E225A39FB000068927 /* KeyScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4826E125A39FB000068927 /* KeyScheme.swift */; };
+		CF4826E825A3B30D00068927 /* KeySchemeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4826E725A3B30D00068927 /* KeySchemeFactory.swift */; };
 		CF821E7A25A21EAF002B5F1D /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF821E7925A21EAF002B5F1D /* WindowController.m */; };
 		CF821E8125A22402002B5F1D /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = CF821E8025A22402002B5F1D /* Window.m */; };
 		CF821E8625A23430002B5F1D /* ScreensController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF821E8525A23430002B5F1D /* ScreensController.swift */; };
@@ -31,6 +35,10 @@
 		CF4826CF25A395D300068927 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CF4826D225A3960000068927 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CF4826D425A3967700068927 /* RightSideMenuItemsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSideMenuItemsFactory.swift; sourceTree = "<group>"; };
+		CF4826DB25A39DD400068927 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		CF4826DE25A39F8B00068927 /* HotKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyController.swift; sourceTree = "<group>"; };
+		CF4826E125A39FB000068927 /* KeyScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyScheme.swift; sourceTree = "<group>"; };
+		CF4826E725A3B30D00068927 /* KeySchemeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySchemeFactory.swift; sourceTree = "<group>"; };
 		CF821E7725A21EAE002B5F1D /* Concierge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Concierge-Bridging-Header.h"; sourceTree = "<group>"; };
 		CF821E7825A21EAF002B5F1D /* WindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		CF821E7925A21EAF002B5F1D /* WindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
@@ -88,7 +96,7 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		CF1B394225A26D5900F7F9C7 /* Source */ = {
+		CF1B394225A26D5900F7F9C7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				CF821E7725A21EAE002B5F1D /* Concierge-Bridging-Header.h */,
@@ -96,7 +104,7 @@
 				CF1B393925A26A5D00F7F9C7 /* Presentation */,
 				CF1B394125A26D1C00F7F9C7 /* Domain */,
 			);
-			path = Source;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		CF1B394725A26E9F00F7F9C7 /* StatusBarMenu */ = {
@@ -131,6 +139,10 @@
 		CF4826D725A3984500068927 /* Keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				CF4826DB25A39DD400068927 /* Key.swift */,
+				CF4826DE25A39F8B00068927 /* HotKeyController.swift */,
+				CF4826E125A39FB000068927 /* KeyScheme.swift */,
+				CF4826E725A3B30D00068927 /* KeySchemeFactory.swift */,
 			);
 			path = Keyboard;
 			sourceTree = "<group>";
@@ -174,7 +186,7 @@
 		CFACE47225A1CFCF00EE31F5 /* Concierge */ = {
 			isa = PBXGroup;
 			children = (
-				CF1B394225A26D5900F7F9C7 /* Source */,
+				CF1B394225A26D5900F7F9C7 /* Sources */,
 				CF1B393A25A26A6C00F7F9C7 /* Resources */,
 			);
 			path = Concierge;
@@ -256,7 +268,11 @@
 				CF1B395D25A2747900F7F9C7 /* LeftSideMenuViewController.swift in Sources */,
 				CFDEBD8825A276CE001AD0FE /* SideBarMenuDelegate.swift in Sources */,
 				CF1B395525A2716C00F7F9C7 /* LeftSideMenuDelegate.swift in Sources */,
+				CF4826E225A39FB000068927 /* KeyScheme.swift in Sources */,
+				CF4826E825A3B30D00068927 /* KeySchemeFactory.swift in Sources */,
 				CFACE48825A1D4C400EE31F5 /* LayoutPreviewView.swift in Sources */,
+				CF4826DF25A39F8B00068927 /* HotKeyController.swift in Sources */,
+				CF4826DC25A39DD400068927 /* Key.swift in Sources */,
 				CF1B395125A2715200F7F9C7 /* RightSideMenuDelegate.swift in Sources */,
 				CF1B394925A26EEE00F7F9C7 /* StatusBarMenuController.swift in Sources */,
 				CF821E8625A23430002B5F1D /* ScreensController.swift in Sources */,
@@ -424,7 +440,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = st235.com.github.Concierge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Concierge/Src/Concierge-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Concierge/Sources/Concierge-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -448,7 +464,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = st235.com.github.Concierge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Concierge/Src/Concierge-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Concierge/Sources/Concierge-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
