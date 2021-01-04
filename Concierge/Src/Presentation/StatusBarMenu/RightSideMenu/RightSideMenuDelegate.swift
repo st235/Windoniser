@@ -4,15 +4,21 @@ class RightSideMenuDelegate: NSObject, SideBarMenuDelegate, NSMenuDelegate {
     
     private let statusBarMenuItem: NSStatusItem
     private let menu: NSMenu
+    private let rightSideMenuItemsFactory: RightSideMenuItemsFactory
     
     init(statusBarMenuItem: NSStatusItem) {
         self.statusBarMenuItem = statusBarMenuItem
         self.menu = NSMenu()
+        self.rightSideMenuItemsFactory = RightSideMenuItemsFactory()
         
         super.init()
         
         self.menu.delegate = self
-        menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApp.terminate(_:)), keyEquivalent: "q"))
+
+        let items = rightSideMenuItemsFactory.create()
+        for item in items {
+            self.menu.addItem(item)
+        }
     }
     
     func canHandle(event: NSEvent.EventType) -> Bool {
