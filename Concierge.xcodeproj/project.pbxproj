@@ -88,7 +88,7 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		CF1B394225A26D5900F7F9C7 /* Src */ = {
+		CF1B394225A26D5900F7F9C7 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				CF821E7725A21EAE002B5F1D /* Concierge-Bridging-Header.h */,
@@ -96,7 +96,7 @@
 				CF1B393925A26A5D00F7F9C7 /* Presentation */,
 				CF1B394125A26D1C00F7F9C7 /* Domain */,
 			);
-			path = Src;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		CF1B394725A26E9F00F7F9C7 /* StatusBarMenu */ = {
@@ -174,7 +174,7 @@
 		CFACE47225A1CFCF00EE31F5 /* Concierge */ = {
 			isa = PBXGroup;
 			children = (
-				CF1B394225A26D5900F7F9C7 /* Src */,
+				CF1B394225A26D5900F7F9C7 /* Source */,
 				CF1B393A25A26A6C00F7F9C7 /* Resources */,
 			);
 			path = Concierge;
