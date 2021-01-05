@@ -35,8 +35,6 @@
 		CF1B395025A2715200F7F9C7 /* RightSideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSideMenuDelegate.swift; sourceTree = "<group>"; };
 		CF1B395425A2716C00F7F9C7 /* LeftSideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuDelegate.swift; sourceTree = "<group>"; };
 		CF1B395C25A2747900F7F9C7 /* LeftSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuViewController.swift; sourceTree = "<group>"; };
-		CF1DCA1025A3C6A40038ACA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainFlow.strings; sourceTree = "<group>"; };
-		CF1DCA1225A3C6A50038ACA4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainFlow.strings; sourceTree = "<group>"; };
 		CF3C6AB525A4F4C9007A52F8 /* WindowRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowRepository.swift; sourceTree = "<group>"; };
 		CF3C6AB925A4FDFD007A52F8 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		CF3C6ABD25A4FFF8007A52F8 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
@@ -336,8 +334,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				CFACE47A25A1CFD000EE31F5 /* Base */,
-				CF1DCA1025A3C6A40038ACA4 /* en */,
-				CF1DCA1225A3C6A50038ACA4 /* ru */,
 			);
 			name = MainFlow.storyboard;
 			sourceTree = "<group>";
