@@ -1,5 +1,13 @@
 #import "WindowController.h"
 
+@interface WindowController()
+
+- (NSRunningApplication*) activeApplication;
+
+- (Window*) windowForPid: (pid_t) pid;
+
+@end
+
 @implementation WindowController
 
 - (NSRunningApplication*) activeApplication {

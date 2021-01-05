@@ -7,11 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WindowController : NSObject
 
-- (NSRunningApplication*) activeApplication;
-
 - (Window*) active;
-
-- (Window*) windowForPid: (pid_t) pid;
 
 - (NSArray*) requestAllWindows;
 

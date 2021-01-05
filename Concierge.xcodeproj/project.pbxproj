@@ -11,6 +11,9 @@
 		CF1B395125A2715200F7F9C7 /* RightSideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B395025A2715200F7F9C7 /* RightSideMenuDelegate.swift */; };
 		CF1B395525A2716C00F7F9C7 /* LeftSideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B395425A2716C00F7F9C7 /* LeftSideMenuDelegate.swift */; };
 		CF1B395D25A2747900F7F9C7 /* LeftSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B395C25A2747900F7F9C7 /* LeftSideMenuViewController.swift */; };
+		CF3C6AB625A4F4C9007A52F8 /* WindowRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C6AB525A4F4C9007A52F8 /* WindowRepository.swift */; };
+		CF3C6ABA25A4FDFD007A52F8 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C6AB925A4FDFD007A52F8 /* String+Localization.swift */; };
+		CF3C6ABE25A4FFF8007A52F8 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C6ABD25A4FFF8007A52F8 /* EventMonitor.swift */; };
 		CF4826CE25A395D300068927 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF4826D025A395D300068927 /* Localizable.strings */; };
 		CF4826D525A3967700068927 /* RightSideMenuItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4826D425A3967700068927 /* RightSideMenuItemsFactory.swift */; };
 		CF4826DC25A39DD400068927 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4826DB25A39DD400068927 /* Key.swift */; };
@@ -32,6 +35,11 @@
 		CF1B395025A2715200F7F9C7 /* RightSideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSideMenuDelegate.swift; sourceTree = "<group>"; };
 		CF1B395425A2716C00F7F9C7 /* LeftSideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuDelegate.swift; sourceTree = "<group>"; };
 		CF1B395C25A2747900F7F9C7 /* LeftSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuViewController.swift; sourceTree = "<group>"; };
+		CF1DCA1025A3C6A40038ACA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainFlow.strings; sourceTree = "<group>"; };
+		CF1DCA1225A3C6A50038ACA4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainFlow.strings; sourceTree = "<group>"; };
+		CF3C6AB525A4F4C9007A52F8 /* WindowRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowRepository.swift; sourceTree = "<group>"; };
+		CF3C6AB925A4FDFD007A52F8 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		CF3C6ABD25A4FFF8007A52F8 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		CF4826CF25A395D300068927 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CF4826D225A3960000068927 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CF4826D425A3967700068927 /* RightSideMenuItemsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSideMenuItemsFactory.swift; sourceTree = "<group>"; };
@@ -90,6 +98,7 @@
 		CF1B394125A26D1C00F7F9C7 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				CF3C6ABC25A4FFE7007A52F8 /* EventMonitor */,
 				CF4826D725A3984500068927 /* Keyboard */,
 				CF821E7525A2191F002B5F1D /* Windows */,
 			);
@@ -99,6 +108,8 @@
 		CF1B394225A26D5900F7F9C7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CF3C6AB825A4FDE5007A52F8 /* Utils */,
+				CF3C6AB425A4F4A5007A52F8 /* Data */,
 				CF821E7725A21EAE002B5F1D /* Concierge-Bridging-Header.h */,
 				CF821E7325A21881002B5F1D /* Views */,
 				CF1B393925A26A5D00F7F9C7 /* Presentation */,
@@ -134,6 +145,30 @@
 				CF1B395C25A2747900F7F9C7 /* LeftSideMenuViewController.swift */,
 			);
 			path = LeftSideMenu;
+			sourceTree = "<group>";
+		};
+		CF3C6AB425A4F4A5007A52F8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CF3C6AB525A4F4C9007A52F8 /* WindowRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CF3C6AB825A4FDE5007A52F8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CF3C6AB925A4FDFD007A52F8 /* String+Localization.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CF3C6ABC25A4FFE7007A52F8 /* EventMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				CF3C6ABD25A4FFF8007A52F8 /* EventMonitor.swift */,
+			);
+			path = EventMonitor;
 			sourceTree = "<group>";
 		};
 		CF4826D725A3984500068927 /* Keyboard */ = {
@@ -273,10 +308,13 @@
 				CFACE48825A1D4C400EE31F5 /* LayoutPreviewView.swift in Sources */,
 				CF4826DF25A39F8B00068927 /* HotKeyController.swift in Sources */,
 				CF4826DC25A39DD400068927 /* Key.swift in Sources */,
+				CF3C6AB625A4F4C9007A52F8 /* WindowRepository.swift in Sources */,
+				CF3C6ABA25A4FDFD007A52F8 /* String+Localization.swift in Sources */,
 				CF1B395125A2715200F7F9C7 /* RightSideMenuDelegate.swift in Sources */,
 				CF1B394925A26EEE00F7F9C7 /* StatusBarMenuController.swift in Sources */,
 				CF821E8625A23430002B5F1D /* ScreensController.swift in Sources */,
 				CFACE47425A1CFCF00EE31F5 /* AppDelegate.swift in Sources */,
+				CF3C6ABE25A4FFF8007A52F8 /* EventMonitor.swift in Sources */,
 				CF4826D525A3967700068927 /* RightSideMenuItemsFactory.swift in Sources */,
 				CF821E8125A22402002B5F1D /* Window.m in Sources */,
 			);
@@ -298,6 +336,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				CFACE47A25A1CFD000EE31F5 /* Base */,
+				CF1DCA1025A3C6A40038ACA4 /* en */,
+				CF1DCA1225A3C6A50038ACA4 /* ru */,
 			);
 			name = MainFlow.storyboard;
 			sourceTree = "<group>";

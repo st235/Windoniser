@@ -3,11 +3,22 @@ import Foundation
 class LeftSideMenuDelegate: NSObject, SideBarMenuDelegate {
     
     private let popover = NSPopover()
+    private let eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown])
     private let statusBarMenuItem: NSStatusItem
     
-    init(statusBarMenuItem: NSStatusItem) {        
+    init(statusBarMenuItem: NSStatusItem) {
         self.statusBarMenuItem = statusBarMenuItem
-        self.popover.contentViewController = LeftSideMenuViewController.create()
+        super.init()
+        
+        self.eventMonitor.handler = { [weak self] in
+            guard let statusBarItem = self?.statusBarMenuItem else {
+                return
+            }
+            
+            if self?.popover.isShown != false {
+                self?.close(statusBarMenuItem: statusBarItem)
+            }
+        }
     }
     
     func canHandle(event: NSEvent.EventType) -> Bool {
@@ -15,25 +26,28 @@ class LeftSideMenuDelegate: NSObject, SideBarMenuDelegate {
     }
         
     func attach() {
-        togglePopover(statusBarMenuItem: statusBarMenuItem)
+        toggle(statusBarMenuItem: statusBarMenuItem)
     }
     
-    @objc func togglePopover(statusBarMenuItem: NSStatusItem) {
+    private func toggle(statusBarMenuItem: NSStatusItem) {
       if popover.isShown {
-        closePopover(statusBarMenuItem: statusBarMenuItem)
+        close(statusBarMenuItem: statusBarMenuItem)
       } else {
-        showPopover(statusBarMenuItem: statusBarMenuItem)
+        show(statusBarMenuItem: statusBarMenuItem)
       }
     }
 
-    func showPopover(statusBarMenuItem: NSStatusItem) {
+    private func show(statusBarMenuItem: NSStatusItem) {
       if let button = statusBarMenuItem.button {
-        popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+        self.eventMonitor.start()
+        self.popover.contentViewController = LeftSideMenuViewController.create()
+        self.popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
       }
     }
 
-    func closePopover(statusBarMenuItem: NSStatusItem) {
-      popover.performClose(statusBarMenuItem)
+    private func close(statusBarMenuItem: NSStatusItem) {
+        self.eventMonitor.stop()
+        self.popover.performClose(statusBarMenuItem)
     }
     
 }
