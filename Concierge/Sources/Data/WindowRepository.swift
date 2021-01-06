@@ -33,7 +33,11 @@ final class WindowRepository {
         self.windowController = windowController
     }
     
-    public func allWindows() -> Set<WindowInfo> {
+    public func findWindow(byPid pid: pid_t) -> Window {
+        return windowController.findWindow(byPid: pid)
+    }
+    
+    public func activeWindows() -> [WindowInfo] {
         var appsDict = [pid_t:NSRunningApplication]()
         
         let runningApps = NSWorkspace.shared.runningApplications
@@ -57,7 +61,7 @@ final class WindowRepository {
             windowInfos.insert(WindowInfo(pid: window.pid, title: window.title(), owner: runningApp.localizedName, icon: runningApp.icon))
         }
         
-        return windowInfos
+        return Array(windowInfos)
     }
     
     private func shouldFilter(window: Window, runningApp: NSRunningApplication) -> Bool {
