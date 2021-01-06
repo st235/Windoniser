@@ -11,9 +11,10 @@ class ScreensController {
         self.windowController = windowController
     }
     
+    // (0,0) is left top corner
     func resize(window: Window, projection: NSRect) {        
         guard let screen = self.findScreenFor(window: window) else {
-            fatalError("Cannot find screen for window")
+            fatalError("Cannot find screen for window (position: \(window.position()), size: \(window.size())")
         }
         
         let realSize = project(identity: projection, on: screen)
@@ -24,15 +25,26 @@ class ScreensController {
     func findScreenFor(window: Window) -> NSScreen? {
         let windowRect = NSRect(origin: window.position(), size: window.size())
         
+        var maxSquare = CGFloat(0.0)
+        var maxScreen: NSScreen? = nil
+        
         for screen in NSScreen.screens {
             let frame = invertAroundY(frame: screen.frame)
             
-            if (frame.contains(windowRect)) {
-                return screen
+            var square = CGFloat(0.0)
+            
+            if frame.intersects(windowRect) {
+                let intersction = frame.intersection(windowRect)
+                square = intersction.width * intersction.height
+            }
+            
+            if square > maxSquare {
+                maxSquare = square
+                maxScreen = screen
             }
         }
         
-        return nil
+        return maxScreen
     }
     
     private func invertAroundY(frame: NSRect) -> NSRect {
@@ -46,8 +58,8 @@ class ScreensController {
         let projectedXScale = identity.width / identityProjection.width
         let projectedYScale = identity.height / identityProjection.height
         
-        let projectedWidth = projectedXScale * frame.width
-        let projectedHeight = projectedYScale * frame.height
+        let projectedWidth = floor(projectedXScale * frame.width)
+        let projectedHeight = floor(projectedYScale * frame.height)
 
         let projectedX = frame.minX + identity.minX * (frame.width / identityProjection.width)
         let projectedY = frame.minY + identity.minY * (frame.height / identityProjection.height)

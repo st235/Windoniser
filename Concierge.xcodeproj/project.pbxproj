@@ -14,6 +14,8 @@
 		CF3C6AB625A4F4C9007A52F8 /* WindowRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C6AB525A4F4C9007A52F8 /* WindowRepository.swift */; };
 		CF3C6ABA25A4FDFD007A52F8 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C6AB925A4FDFD007A52F8 /* String+Localization.swift */; };
 		CF3C6ABE25A4FFF8007A52F8 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C6ABD25A4FFF8007A52F8 /* EventMonitor.swift */; };
+		CF3C6AC325A50D34007A52F8 /* NSPasteboard+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C6AC225A50D34007A52F8 /* NSPasteboard+Types.swift */; };
+		CF3C6AC625A50DA4007A52F8 /* WindowPidPasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C6AC525A50DA4007A52F8 /* WindowPidPasteboard.swift */; };
 		CF4826CE25A395D300068927 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF4826D025A395D300068927 /* Localizable.strings */; };
 		CF4826D525A3967700068927 /* RightSideMenuItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4826D425A3967700068927 /* RightSideMenuItemsFactory.swift */; };
 		CF4826DC25A39DD400068927 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4826DB25A39DD400068927 /* Key.swift */; };
@@ -38,6 +40,8 @@
 		CF3C6AB525A4F4C9007A52F8 /* WindowRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowRepository.swift; sourceTree = "<group>"; };
 		CF3C6AB925A4FDFD007A52F8 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		CF3C6ABD25A4FFF8007A52F8 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		CF3C6AC225A50D34007A52F8 /* NSPasteboard+Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPasteboard+Types.swift"; sourceTree = "<group>"; };
+		CF3C6AC525A50DA4007A52F8 /* WindowPidPasteboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowPidPasteboard.swift; sourceTree = "<group>"; };
 		CF4826CF25A395D300068927 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CF4826D225A3960000068927 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CF4826D425A3967700068927 /* RightSideMenuItemsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSideMenuItemsFactory.swift; sourceTree = "<group>"; };
@@ -106,7 +110,7 @@
 		CF1B394225A26D5900F7F9C7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				CF3C6AB825A4FDE5007A52F8 /* Utils */,
+				CF3C6AB825A4FDE5007A52F8 /* Models */,
 				CF3C6AB425A4F4A5007A52F8 /* Data */,
 				CF821E7725A21EAE002B5F1D /* Concierge-Bridging-Header.h */,
 				CF821E7325A21881002B5F1D /* Views */,
@@ -153,12 +157,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		CF3C6AB825A4FDE5007A52F8 /* Utils */ = {
+		CF3C6AB825A4FDE5007A52F8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				CF3C6AB925A4FDFD007A52F8 /* String+Localization.swift */,
+				CF3C6AC225A50D34007A52F8 /* NSPasteboard+Types.swift */,
+				CF3C6AC525A50DA4007A52F8 /* WindowPidPasteboard.swift */,
 			);
-			path = Utils;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CF3C6ABC25A4FFE7007A52F8 /* EventMonitor */ = {
@@ -299,8 +305,10 @@
 			files = (
 				CF821E7A25A21EAF002B5F1D /* WindowController.m in Sources */,
 				CF1B395D25A2747900F7F9C7 /* LeftSideMenuViewController.swift in Sources */,
+				CF3C6AC325A50D34007A52F8 /* NSPasteboard+Types.swift in Sources */,
 				CFDEBD8825A276CE001AD0FE /* SideBarMenuDelegate.swift in Sources */,
 				CF1B395525A2716C00F7F9C7 /* LeftSideMenuDelegate.swift in Sources */,
+				CF3C6AC625A50DA4007A52F8 /* WindowPidPasteboard.swift in Sources */,
 				CF4826E225A39FB000068927 /* KeyScheme.swift in Sources */,
 				CF4826E825A3B30D00068927 /* KeySchemeFactory.swift in Sources */,
 				CFACE48825A1D4C400EE31F5 /* LayoutPreviewView.swift in Sources */,

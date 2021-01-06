@@ -9,7 +9,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (Window*) active;
 
-- (NSArray*) requestAllWindows;
+- (Window*) findWindowByPid: (pid_t) pid;
+
+- (NSArray*) findAllAvailableWindows;
 
 - (void) resize: (Window*) window position: (CGRect) position;
 

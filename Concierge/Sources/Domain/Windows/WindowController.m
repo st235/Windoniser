@@ -4,8 +4,6 @@
 
 - (NSRunningApplication*) activeApplication;
 
-- (Window*) windowForPid: (pid_t) pid;
-
 @end
 
 @implementation WindowController
@@ -35,7 +33,7 @@
     return [[Window alloc] initWithPid:runningApp.processIdentifier andRef:window];
 }
 
-- (Window*) windowForPid:(pid_t)pid {
+- (Window*) findWindowByPid:(pid_t)pid {
     AXUIElementRef appRef = AXUIElementCreateApplication(pid);
     
     CFArrayRef windowList;
@@ -48,7 +46,7 @@
     return [[Window alloc] initWithPid:pid andRef:windowRef];
 }
 
-- (NSArray*) requestAllWindows {
+- (NSArray*) findAllAvailableWindows {
     NSMutableArray* result = [[NSMutableArray alloc] init];
     
     @autoreleasepool {
@@ -57,7 +55,7 @@
         
         for (NSMutableDictionary* entry in arr) {
             pid_t pid = [[entry objectForKey:(id)kCGWindowOwnerPID] intValue];
-            Window* window = [self windowForPid:pid];
+            Window* window = [self findWindowByPid:pid];
             
             if (!window) {
                 continue;
