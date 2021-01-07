@@ -37,6 +37,10 @@ final class WindowRepository {
         return windowController.findWindow(byPid: pid)
     }
     
+    public func focusedWindow() -> Window {
+        return windowController.active()
+    }
+    
     public func activeWindows() -> [WindowInfo] {
         var appsDict = [pid_t:NSRunningApplication]()
         

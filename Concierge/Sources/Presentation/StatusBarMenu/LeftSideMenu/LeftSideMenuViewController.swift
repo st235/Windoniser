@@ -12,6 +12,7 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
     var activeWindows: [WindowRepository.WindowInfo] = []
     private var windowRepository: WindowRepository? = nil
     private var screenController: ScreensController? = nil
+    private var prefferedLayoutScheme: LayoutScheme? = nil
     
     override func viewDidLoad() {
         iconTableColumn.title = "left_side_menu_process_icon".localized
@@ -27,15 +28,18 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         windowsTableView.delegate = self
         windowsTableView.isEnabled = true
         windowsTableView.setDraggingSourceOperationMask(.copy, forLocal: false)
+
+        initializePrefferedLayoutScheme()
+    }
+    
+    private func initializePrefferedLayoutScheme() {
+        guard let scheme = prefferedLayoutScheme else {
+            return
+        }
         
-        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 0, y: 0, width: 0.5, height: 0.5))
-        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 0.5, y: 0, width: 0.5, height: 0.5))
-        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 0, y: 0.5, width: 0.5, height: 0.5))
-        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 0.5, y: 0.5, width: 0.5, height: 0.5))
-        
-//        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 0, y: 0, width: 1.0 / 3.0, height: 1.0))
-//        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 1.0 / 3.0, y: 0, width: 1.0 / 3.0, height: 1.0))
-//        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 2.0 / 3.0, y: 0, width: 1.0 / 3.0, height: 1.0))
+        for area in scheme.areas {
+            layoutPreviewView.addLayoutPreview(layoutPreview: area.rect)
+        }
     }
     
     func onPreviewSelected(preview: LayoutPreviewView.LayoutPreview, payload: Any?) {
@@ -54,6 +58,7 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
     }
     
     static func create(windowRepository: WindowRepository = AppDependenciesResolver.shared.resolve(type: WindowRepository.self),
+                       layoutSchemesRepository: LayoutSchemesRepository = AppDependenciesResolver.shared.resolve(type: LayoutSchemesRepository.self),
                        screenController: ScreensController = AppDependenciesResolver.shared.resolve(type: ScreensController.self)) -> LeftSideMenuViewController {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("MainFlow"), bundle: nil)
         let identifier = NSStoryboard.SceneIdentifier("LeftSideMenuViewController")
@@ -64,6 +69,7 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         viewController.activeWindows = windowRepository.activeWindows()
         viewController.windowRepository = windowRepository
         viewController.screenController = screenController
+        viewController.prefferedLayoutScheme = layoutSchemesRepository.providePreferredScheme()
         
         return viewController
     }

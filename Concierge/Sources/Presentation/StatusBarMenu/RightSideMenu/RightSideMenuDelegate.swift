@@ -6,6 +6,8 @@ class RightSideMenuDelegate: NSObject, SideBarMenuDelegate, NSMenuDelegate {
     private let menu: NSMenu
     private let rightSideMenuItemsFactory: RightSideMenuItemsFactory
     
+    private var menuItems: [MenuItem] = []
+    
     init(statusBarMenuItem: NSStatusItem) {
         self.statusBarMenuItem = statusBarMenuItem
         self.menu = NSMenu()
@@ -14,10 +16,10 @@ class RightSideMenuDelegate: NSObject, SideBarMenuDelegate, NSMenuDelegate {
         super.init()
         
         self.menu.delegate = self
-
-        let items = rightSideMenuItemsFactory.create()
-        for item in items {
-            self.menu.addItem(item)
+        
+        menuItems = rightSideMenuItemsFactory.create()
+        for item in menuItems {
+            self.menu.addItem(item.nsMenuItem)
         }
     }
     
