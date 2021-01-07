@@ -2,10 +2,9 @@ import Cocoa
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-    private let statusBarMenuController = StatusBarMenuController()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        let statusBarMenuController: StatusBarMenuController = AppDependenciesResolver.shared.resolve(type: StatusBarMenuController.self)
         statusBarMenuController.attach()
     }
 

@@ -6,16 +6,8 @@ class LeftSideMenuDelegate: NSObject, SideBarMenuDelegate {
     private let eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown])
     private let statusBarMenuItem: NSStatusItem
     
-    private let windowController: WindowController
-    private let screenController: ScreensController
-    private let windowRepository: WindowRepository
-    
     init(statusBarMenuItem: NSStatusItem) {
         self.statusBarMenuItem = statusBarMenuItem
-        
-        self.windowController = WindowController()
-        self.screenController = ScreensController(windowController: windowController)
-        self.windowRepository = WindowRepository(windowController: windowController)
         
         super.init()
         
@@ -49,7 +41,7 @@ class LeftSideMenuDelegate: NSObject, SideBarMenuDelegate {
     private func show(statusBarMenuItem: NSStatusItem) {
       if let button = statusBarMenuItem.button {
         self.eventMonitor.start()
-        self.popover.contentViewController = LeftSideMenuViewController.create(windowRepository: windowRepository, screenController: screenController)
+        self.popover.contentViewController = LeftSideMenuViewController.create()
         self.popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
       }
     }

@@ -28,14 +28,14 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         windowsTableView.isEnabled = true
         windowsTableView.setDraggingSourceOperationMask(.copy, forLocal: false)
         
-//        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 0, y: 0, width: 0.5, height: 0.5))
-//        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 0.5, y: 0, width: 0.5, height: 0.5))
-//        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 0, y: 0.5, width: 0.5, height: 0.5))
-//        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 0.5, y: 0.5, width: 0.5, height: 0.5))
+        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 0, y: 0, width: 0.5, height: 0.5))
+        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 0.5, y: 0, width: 0.5, height: 0.5))
+        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 0, y: 0.5, width: 0.5, height: 0.5))
+        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 0.5, y: 0.5, width: 0.5, height: 0.5))
         
-        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 0, y: 0, width: 1.0 / 3.0, height: 1.0))
-        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 1.0 / 3.0, y: 0, width: 1.0 / 3.0, height: 1.0))
-        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 2.0 / 3.0, y: 0, width: 1.0 / 3.0, height: 1.0))
+//        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 0, y: 0, width: 1.0 / 3.0, height: 1.0))
+//        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 1.0 / 3.0, y: 0, width: 1.0 / 3.0, height: 1.0))
+//        self.layoutPreviewView.addLayoutPreview(layoutPreview: LayoutPreviewView.LayoutPreview(x: 2.0 / 3.0, y: 0, width: 1.0 / 3.0, height: 1.0))
     }
     
     func onPreviewSelected(preview: LayoutPreviewView.LayoutPreview, payload: Any?) {
@@ -53,11 +53,12 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         }
     }
     
-    static func create(windowRepository: WindowRepository, screenController: ScreensController) -> LeftSideMenuViewController {
+    static func create(windowRepository: WindowRepository = AppDependenciesResolver.shared.resolve(type: WindowRepository.self),
+                       screenController: ScreensController = AppDependenciesResolver.shared.resolve(type: ScreensController.self)) -> LeftSideMenuViewController {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("MainFlow"), bundle: nil)
         let identifier = NSStoryboard.SceneIdentifier("LeftSideMenuViewController")
         guard let viewController = storyboard.instantiateController(withIdentifier: identifier) as? LeftSideMenuViewController else {
-        fatalError("Check storyboard. Probably, id of view controller does not match with id below")
+            fatalError("Check storyboard. Probably, id of view controller does not match with id below")
         }
         
         viewController.activeWindows = windowRepository.activeWindows()
