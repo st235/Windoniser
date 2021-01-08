@@ -19,11 +19,17 @@ class AppDependenciesResolver: DependenciesResolver {
         registerUI()
         registerControllers()
         registerRepositories()
+        registerInteractors()
     }
     
     private func registerUI() {
         diContainer.register(forType: StatusBarMenuController.self) { _ in
             return StatusBarMenuController()
+        }
+        
+        diContainer.register(forType: RightSideMenuItemsFactory.self) { resolver in
+            return RightSideMenuItemsFactory(layoutSchemesRepository: resolver.resolve(type: LayoutSchemesRepository.self),
+                                             windowInteractor: resolver.resolve(type: WindowInteractor.self))
         }
     }
     
@@ -49,12 +55,18 @@ class AppDependenciesResolver: DependenciesResolver {
         diContainer.register(forType: LayoutSchemesRepository.self) { _ in
             return LayoutSchemesRepository()
         }
-        
-        diContainer.register(forType: HotKeysManager.self) { resolver in
-            return HotKeysManager(layoutSchemesRepository: resolver.resolve(type: LayoutSchemesRepository.self),
-                                  windowRepository: resolver.resolve(type: WindowRepository.self),
-                                  screenController: resolver.resolve(type: ScreensController.self),
+    }
+    
+    private func registerInteractors() {
+        diContainer.register(forType: HotKeysInteractor.self) { resolver in
+            return HotKeysInteractor(layoutSchemesRepository: resolver.resolve(type: LayoutSchemesRepository.self),
+                                  windowInteractor: resolver.resolve(type: WindowInteractor.self),
                                   hotKeysController: resolver.resolve(type: HotKeyController.self))
+        }
+        
+        diContainer.register(forType: WindowInteractor.self) { resolver in
+            return WindowInteractor(windowRepository: resolver.resolve(type: WindowRepository.self),
+                                    screenController: resolver.resolve(type: ScreensController.self))
         }
     }
     

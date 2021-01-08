@@ -37,9 +37,10 @@
 		CFACE47825A1CFD000EE31F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFACE47725A1CFD000EE31F5 /* Assets.xcassets */; };
 		CFACE47B25A1CFD000EE31F5 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFACE47925A1CFD000EE31F5 /* MainFlow.storyboard */; };
 		CFACE48825A1D4C400EE31F5 /* LayoutPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFACE48725A1D4C400EE31F5 /* LayoutPreviewView.swift */; };
-		CFB3689225A7B8B000CB8A89 /* HotKeysManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB3689125A7B8B000CB8A89 /* HotKeysManager.swift */; };
+		CFB3689225A7B8B000CB8A89 /* HotKeysInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB3689125A7B8B000CB8A89 /* HotKeysInteractor.swift */; };
 		CFB4B91725A9017500539AB6 /* DependencyQualifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4B91625A9017500539AB6 /* DependencyQualifier.swift */; };
 		CFB4B91B25A9051400539AB6 /* SynchronizedDependenciesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4B91A25A9051400539AB6 /* SynchronizedDependenciesContainer.swift */; };
+		CFB4B92425A90F5B00539AB6 /* WindowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4B92325A90F5B00539AB6 /* WindowInteractor.swift */; };
 		CFDEBD8825A276CE001AD0FE /* SideBarMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDEBD8725A276CE001AD0FE /* SideBarMenuDelegate.swift */; };
 		CFF5F75F25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5F75E25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift */; };
 		CFF5F76225A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5F76125A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift */; };
@@ -83,9 +84,10 @@
 		CFACE47C25A1CFD000EE31F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFACE47D25A1CFD000EE31F5 /* Concierge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Concierge.entitlements; sourceTree = "<group>"; };
 		CFACE48725A1D4C400EE31F5 /* LayoutPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPreviewView.swift; sourceTree = "<group>"; };
-		CFB3689125A7B8B000CB8A89 /* HotKeysManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeysManager.swift; sourceTree = "<group>"; };
+		CFB3689125A7B8B000CB8A89 /* HotKeysInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeysInteractor.swift; sourceTree = "<group>"; };
 		CFB4B91625A9017500539AB6 /* DependencyQualifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyQualifier.swift; sourceTree = "<group>"; };
 		CFB4B91A25A9051400539AB6 /* SynchronizedDependenciesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedDependenciesContainer.swift; sourceTree = "<group>"; };
+		CFB4B92325A90F5B00539AB6 /* WindowInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowInteractor.swift; sourceTree = "<group>"; };
 		CFDEBD8725A276CE001AD0FE /* SideBarMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarMenuDelegate.swift; sourceTree = "<group>"; };
 		CFF5F75E25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+NSTableViewDataSource.swift"; sourceTree = "<group>"; };
 		CFF5F76125A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+NSTableViewDelegate.swift"; sourceTree = "<group>"; };
@@ -126,7 +128,6 @@
 		CF1B393925A26A5D00F7F9C7 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				CFB3689025A7B8A000CB8A89 /* HotKeys */,
 				CFACE47925A1CFD000EE31F5 /* MainFlow.storyboard */,
 				CF1B394725A26E9F00F7F9C7 /* StatusBarMenu */,
 				CFACE47325A1CFCF00EE31F5 /* AppDelegate.swift */,
@@ -160,6 +161,7 @@
 		CF1B394225A26D5900F7F9C7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CFB4B91E25A90E9900539AB6 /* Interactors */,
 				CF3C6AB825A4FDE5007A52F8 /* Models */,
 				CF3C6AB425A4F4A5007A52F8 /* Data */,
 				CF821E7725A21EAE002B5F1D /* Concierge-Bridging-Header.h */,
@@ -286,12 +288,13 @@
 			path = Concierge;
 			sourceTree = "<group>";
 		};
-		CFB3689025A7B8A000CB8A89 /* HotKeys */ = {
+		CFB4B91E25A90E9900539AB6 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
-				CFB3689125A7B8B000CB8A89 /* HotKeysManager.swift */,
+				CFB3689125A7B8B000CB8A89 /* HotKeysInteractor.swift */,
+				CFB4B92325A90F5B00539AB6 /* WindowInteractor.swift */,
 			);
-			path = HotKeys;
+			path = Interactors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +371,7 @@
 			files = (
 				CF821E7A25A21EAF002B5F1D /* WindowController.m in Sources */,
 				CF1B395D25A2747900F7F9C7 /* LeftSideMenuViewController.swift in Sources */,
+				CFB4B92425A90F5B00539AB6 /* WindowInteractor.swift in Sources */,
 				CF3C6AC325A50D34007A52F8 /* NSPasteboard+Types.swift in Sources */,
 				CFDEBD8825A276CE001AD0FE /* SideBarMenuDelegate.swift in Sources */,
 				CF00C65525A7AD5C003454E6 /* LayoutScheme.swift in Sources */,
@@ -385,7 +389,7 @@
 				CFB4B91B25A9051400539AB6 /* SynchronizedDependenciesContainer.swift in Sources */,
 				CFB4B91725A9017500539AB6 /* DependencyQualifier.swift in Sources */,
 				CF00C64125A7977C003454E6 /* DependenciesContainer.swift in Sources */,
-				CFB3689225A7B8B000CB8A89 /* HotKeysManager.swift in Sources */,
+				CFB3689225A7B8B000CB8A89 /* HotKeysInteractor.swift in Sources */,
 				CF00C63D25A791EF003454E6 /* AppDependenciesResolver.swift in Sources */,
 				CF00C65825A7AD93003454E6 /* LayoutArea.swift in Sources */,
 				CF3C6ABA25A4FDFD007A52F8 /* String+Localization.swift in Sources */,

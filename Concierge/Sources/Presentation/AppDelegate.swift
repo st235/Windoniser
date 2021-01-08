@@ -4,7 +4,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     private let statusBarMenuController: StatusBarMenuController = AppDependenciesResolver.shared.resolve(type: StatusBarMenuController.self)
-    private let hotKeysManager: HotKeysManager = AppDependenciesResolver.shared.resolve(type: HotKeysManager.self)
+    private let hotKeysManager: HotKeysInteractor = AppDependenciesResolver.shared.resolve(type: HotKeysInteractor.self)
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusBarMenuController.attach()

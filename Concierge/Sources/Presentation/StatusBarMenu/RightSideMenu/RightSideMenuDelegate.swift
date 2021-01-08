@@ -8,10 +8,11 @@ class RightSideMenuDelegate: NSObject, SideBarMenuDelegate, NSMenuDelegate {
     
     private var menuItems: [MenuItem] = []
     
-    init(statusBarMenuItem: NSStatusItem) {
+    init(statusBarMenuItem: NSStatusItem,
+         rightSideMenuItemsFactory: RightSideMenuItemsFactory = AppDependenciesResolver.shared.resolve(type: RightSideMenuItemsFactory.self)) {
         self.statusBarMenuItem = statusBarMenuItem
         self.menu = NSMenu()
-        self.rightSideMenuItemsFactory = RightSideMenuItemsFactory()
+        self.rightSideMenuItemsFactory = rightSideMenuItemsFactory
         
         super.init()
         

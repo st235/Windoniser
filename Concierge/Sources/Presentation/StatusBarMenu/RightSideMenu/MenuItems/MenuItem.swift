@@ -8,8 +8,7 @@ class SchemeAreaMenuItem: MenuItem {
     
     private let _item: NSMenuItem
     private let area: LayoutArea
-    private let windowRepository: WindowRepository
-    private let screenController: ScreensController
+    private let windowInteractor: WindowInteractor
     
     var nsMenuItem: NSMenuItem {
         get {
@@ -18,11 +17,9 @@ class SchemeAreaMenuItem: MenuItem {
     }
     
     init(area: LayoutArea,
-         windowRepository: WindowRepository,
-         screenController: ScreensController) {
+         windowInteractor: WindowInteractor) {
         self.area = area
-        self.windowRepository = windowRepository
-        self.screenController = screenController
+        self.windowInteractor = windowInteractor
         
         self._item = NSMenuItem(title: area.title, action: #selector(onMenuItemClick(_:)), keyEquivalent: area.activeKey.description)
         self._item.keyEquivalentModifierMask = area.modifiers
@@ -31,10 +28,7 @@ class SchemeAreaMenuItem: MenuItem {
     }
     
     @objc private func onMenuItemClick(_ sender: Any?) {
-        let reverse = NSRect(x: area.rect.minX, y: 1.0 - area.rect.height - area.rect.minY, width: area.rect.width, height: area.rect.height)
-        if let activeWindow = windowRepository.focusedWindow() {
-            screenController.resize(window: activeWindow, projection: reverse)
-        }
+        windowInteractor.resizeFocusedWindow(intoRect: area.rect)
     }
     
 }

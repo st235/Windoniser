@@ -4,15 +4,12 @@ class RightSideMenuItemsFactory {
     
     private let layoutSchemesRepository: LayoutSchemesRepository
     
-    private let windowRepository: WindowRepository
-    private let screenController: ScreensController
+    private let windowInteractor: WindowInteractor
     
-    init(layoutSchemesRepository: LayoutSchemesRepository = AppDependenciesResolver.shared.resolve(type: LayoutSchemesRepository.self),
-         windowRepository: WindowRepository = AppDependenciesResolver.shared.resolve(type: WindowRepository.self),
-         screenController: ScreensController = AppDependenciesResolver.shared.resolve(type: ScreensController.self)) {
+    init(layoutSchemesRepository: LayoutSchemesRepository,
+         windowInteractor: WindowInteractor) {
         self.layoutSchemesRepository = layoutSchemesRepository
-        self.windowRepository = windowRepository
-        self.screenController = screenController
+        self.windowInteractor = windowInteractor
     }
     
     func create() -> [MenuItem] {
@@ -33,7 +30,7 @@ class RightSideMenuItemsFactory {
         let prefferedScheme = layoutSchemesRepository.providePreferredScheme()
         
         for area in prefferedScheme.areas {
-            items.append(SchemeAreaMenuItem(area: area, windowRepository: windowRepository, screenController: screenController))
+            items.append(SchemeAreaMenuItem(area: area, windowInteractor: windowInteractor))
         }
         
         return items

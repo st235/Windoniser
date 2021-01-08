@@ -1,21 +1,18 @@
 import Foundation
 
-class HotKeysManager {
+class HotKeysInteractor {
     
     private let layoutSchemesRepository: LayoutSchemesRepository
-    private let screenController: ScreensController
-    private let windowRepository: WindowRepository
+    private let windowInteractor: WindowInteractor
     private let hotKeysController: HotKeyController
     
     private var hotKeys: [KeyScheme] = []
     
     init(layoutSchemesRepository: LayoutSchemesRepository,
-         windowRepository: WindowRepository,
-         screenController: ScreensController,
+         windowInteractor: WindowInteractor,
          hotKeysController: HotKeyController) {
         self.layoutSchemesRepository = layoutSchemesRepository
-        self.screenController = screenController
-        self.windowRepository = windowRepository
+        self.windowInteractor = windowInteractor
         self.hotKeysController = hotKeysController
     }
     
@@ -31,10 +28,7 @@ class HotKeysManager {
                     return
                 }
                 
-                let reverse = NSRect(x: area.rect.minX, y: 1.0 - area.rect.height - area.rect.minY, width: area.rect.width, height: area.rect.height)
-                if let activeWindow = self.windowRepository.focusedWindow() {
-                    self.screenController.resize(window: activeWindow, projection: reverse)
-                }
+                self.windowInteractor.resizeFocusedWindow(intoRect: area.rect)
             }
             
             hotKeys.append(keyScheme)

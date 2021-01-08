@@ -10,9 +10,8 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
     @IBOutlet weak var processNameTableColumn: NSTableColumn!
     
     var activeWindows: [WindowRepository.WindowInfo] = []
-    private var windowRepository: WindowRepository? = nil
-    private var screenController: ScreensController? = nil
     private var prefferedLayoutScheme: LayoutScheme? = nil
+    private var windowInteractor: WindowInteractor? = nil
     
     override func viewDidLoad() {
         iconTableColumn.title = "left_side_menu_process_icon".localized
@@ -46,33 +45,27 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
     }
     
     func onPreviewSelected(preview: LayoutPreviewView.LayoutPreview, payload: Any?) {
-        guard let windowRepository = windowRepository, let screenController = screenController else {
-            return
+        guard let windowPids = payload as? [WindowPidPasteboard] else {
+            fatalError("Copied payload is not a pid pasteboard")
         }
         
-        let reverse = NSRect(x: preview.minX, y: 1.0 - preview.height - preview.minY, width: preview.width, height: preview.height)
-
-        if let pids = payload as? [WindowPidPasteboard] {
-            for pid in pids {
-                if let window = windowRepository.findWindow(byPid: pid.pid) {
-                    screenController.resize(window: window, projection: reverse)
-                }
-            }
+        assert(windowPids.count == 1, "Pids have more (or less) than 1 object. Count is \(windowPids.count)")
+        
+        if let windowPid = windowPids.first {
+            windowInteractor?.resizeWindow(withPid: windowPid.pid, into: preview)
         }
     }
     
-    static func create(windowRepository: WindowRepository = AppDependenciesResolver.shared.resolve(type: WindowRepository.self),
-                       layoutSchemesRepository: LayoutSchemesRepository = AppDependenciesResolver.shared.resolve(type: LayoutSchemesRepository.self),
-                       screenController: ScreensController = AppDependenciesResolver.shared.resolve(type: ScreensController.self)) -> LeftSideMenuViewController {
+    static func create(windowInteractor: WindowInteractor = AppDependenciesResolver.shared.resolve(type: WindowInteractor.self),
+                       layoutSchemesRepository: LayoutSchemesRepository = AppDependenciesResolver.shared.resolve(type: LayoutSchemesRepository.self)) -> LeftSideMenuViewController {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("MainFlow"), bundle: nil)
         let identifier = NSStoryboard.SceneIdentifier("LeftSideMenuViewController")
         guard let viewController = storyboard.instantiateController(withIdentifier: identifier) as? LeftSideMenuViewController else {
             fatalError("Check storyboard. Probably, id of view controller does not match with id below")
         }
         
-        viewController.activeWindows = windowRepository.activeWindows()
-        viewController.windowRepository = windowRepository
-        viewController.screenController = screenController
+        viewController.activeWindows = windowInteractor.activeWindows()
+        viewController.windowInteractor = windowInteractor
         viewController.prefferedLayoutScheme = layoutSchemesRepository.providePreferredScheme()
         
         return viewController
