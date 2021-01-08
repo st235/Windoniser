@@ -32,8 +32,9 @@ class HotKeysManager {
                 }
                 
                 let reverse = NSRect(x: area.rect.minX, y: 1.0 - area.rect.height - area.rect.minY, width: area.rect.width, height: area.rect.height)
-                let activeWindow = self.windowRepository.focusedWindow()
-                self.screenController.resize(window: activeWindow, projection: reverse)
+                if let activeWindow = self.windowRepository.focusedWindow() {
+                    self.screenController.resize(window: activeWindow, projection: reverse)
+                }
             }
             
             hotKeys.append(keyScheme)

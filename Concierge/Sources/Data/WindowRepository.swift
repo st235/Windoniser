@@ -33,11 +33,11 @@ final class WindowRepository {
         self.windowController = windowController
     }
     
-    public func findWindow(byPid pid: pid_t) -> Window {
+    public func findWindow(byPid pid: pid_t) -> Window? {
         return windowController.findWindow(byPid: pid)
     }
     
-    public func focusedWindow() -> Window {
+    public func focusedWindow() -> Window? {
         return windowController.active()
     }
     

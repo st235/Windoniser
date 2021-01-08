@@ -32,8 +32,9 @@ class SchemeAreaMenuItem: MenuItem {
     
     @objc private func onMenuItemClick(_ sender: Any?) {
         let reverse = NSRect(x: area.rect.minX, y: 1.0 - area.rect.height - area.rect.minY, width: area.rect.width, height: area.rect.height)
-        let activeWindow = windowRepository.focusedWindow()
-        screenController.resize(window: activeWindow, projection: reverse)
+        if let activeWindow = windowRepository.focusedWindow() {
+            screenController.resize(window: activeWindow, projection: reverse)
+        }
     }
     
 }

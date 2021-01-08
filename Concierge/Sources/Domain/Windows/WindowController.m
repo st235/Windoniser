@@ -21,22 +21,25 @@
     return nil;
 }
 
-- (Window*) active {
+- (nullable Window*) active {
     NSRunningApplication* runningApp = [self activeApplication];
     
     AXUIElementRef app = AXUIElementCreateApplication(runningApp.processIdentifier);
     
     AXUIElementRef window = nil;
     AXUIElementCopyAttributeValue(app, kAXFocusedWindowAttribute, (CFTypeRef*)&window);
+    CFRelease(app);
 
     return [[Window alloc] initWithPid:runningApp.processIdentifier andRef:window];
 }
 
-- (Window*) findWindowByPid:(pid_t)pid {
+- (nullable Window*) findWindowByPid:(pid_t)pid {
     AXUIElementRef appRef = AXUIElementCreateApplication(pid);
     
     CFArrayRef windowList;
     AXUIElementCopyAttributeValue(appRef, kAXWindowsAttribute, (CFTypeRef*) &windowList);
+    CFRelease(appRef);
+    
     if ((!windowList) || CFArrayGetCount(windowList) < 1) {
         return nil;
     }

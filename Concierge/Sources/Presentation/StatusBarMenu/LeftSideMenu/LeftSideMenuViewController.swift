@@ -54,8 +54,9 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
 
         if let pids = payload as? [WindowPidPasteboard] {
             for pid in pids {
-                let window = windowRepository.findWindow(byPid: pid.pid)
-                screenController.resize(window: window, projection: reverse)
+                if let window = windowRepository.findWindow(byPid: pid.pid) {
+                    screenController.resize(window: window, projection: reverse)
+                }
             }
         }
     }
