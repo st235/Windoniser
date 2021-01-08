@@ -7,7 +7,7 @@ class AppDependenciesResolver: DependenciesResolver {
     private let diContainer: DependenciesContainer
     
     private init() {
-        self.diContainer = GraphDependenciesContainer()
+        self.diContainer = SynchronizedDependenciesContainer.proxy(diContainer: GraphDependenciesContainer())
         register()
     }
     
@@ -22,36 +22,40 @@ class AppDependenciesResolver: DependenciesResolver {
     }
     
     private func registerUI() {
-        diContainer.register(type: StatusBarMenuController.self, andLazy: Provider<StatusBarMenuController>.create(resolveList: [], handler: { _ in
+        diContainer.register(forType: StatusBarMenuController.self) { _ in
             return StatusBarMenuController()
-        }))
+        }
     }
     
     private func registerControllers() {
-        diContainer.register(type: WindowController.self, andValue: WindowController())
-        diContainer.register(type: HotKeyController.self, andValue: HotKeyController())
+        diContainer.register(forType: WindowController.self, andQualifier: .singleton) { _ in
+            return WindowController()
+        }
         
+        diContainer.register(forType: HotKeyController.self, andQualifier: .singleton) { _ in
+            return HotKeyController()
+        }
         
-        diContainer.register(type: ScreensController.self, andLazy: Provider<WindowController>.create(resolveList: [WindowController.self], handler: { resolver in
+        diContainer.register(forType: ScreensController.self, andQualifier: .singleton) { resolver in
             return ScreensController(windowController: resolver.resolve(type: WindowController.self))
-        }))
+        }
     }
     
     private func registerRepositories() {
-        diContainer.register(type: WindowRepository.self, andLazy: Provider<WindowRepository>.create(resolveList: [WindowController.self], handler: { resolver in
+        diContainer.register(forType: WindowRepository.self) { resolver in
             return WindowRepository(windowController: resolver.resolve(type: WindowController.self))
-        }))
+        }
         
-        diContainer.register(type: LayoutSchemesRepository.self, andLazy: Provider<LayoutSchemesRepository>.create(resolveList: [], handler: { _ in
+        diContainer.register(forType: LayoutSchemesRepository.self) { _ in
             return LayoutSchemesRepository()
-        }))
+        }
         
-        diContainer.register(type: HotKeysManager.self, andLazy: Provider<HotKeysManager>.create(resolveList: [LayoutSchemesRepository.self, WindowRepository.self, ScreensController.self, HotKeyController.self], handler: { resolver in
+        diContainer.register(forType: HotKeysManager.self) { resolver in
             return HotKeysManager(layoutSchemesRepository: resolver.resolve(type: LayoutSchemesRepository.self),
                                   windowRepository: resolver.resolve(type: WindowRepository.self),
                                   screenController: resolver.resolve(type: ScreensController.self),
                                   hotKeysController: resolver.resolve(type: HotKeyController.self))
-        }))
+        }
     }
     
 }

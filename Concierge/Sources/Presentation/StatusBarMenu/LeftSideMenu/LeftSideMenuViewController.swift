@@ -23,6 +23,9 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         layoutPreviewView.registerForDraggedTypes([.windowPid])
         layoutPreviewView.setShadow(withOpacity: 1.0, andRadius: 20)
         layoutPreviewView.delegate = self
+        
+        layoutPreviewView.inactiveColor = .gray
+        layoutPreviewView.highlightColor = .darkGray
                 
         windowsTableView.dataSource = self
         windowsTableView.delegate = self

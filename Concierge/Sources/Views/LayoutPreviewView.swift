@@ -28,7 +28,7 @@ class LayoutPreviewView: NSView {
         }
     }
     
-    private var highlightColor: NSColor = .red {
+    var highlightColor: NSColor = .red {
         didSet {
             needsDisplay = true
         }
@@ -147,33 +147,33 @@ class LayoutPreviewView: NSView {
     }
     
     override func draw(_ dirtyRect: NSRect) {
-        if isReceivingDrag {
-            NSColor.selectedControlColor.set()
-            
-            let path = NSBezierPath.init(roundedRect: bounds, xRadius: roundRadius, yRadius: roundRadius)
-            path.lineWidth = 4.0
-            let dashes: [CGFloat] = [4.0, 4.0]
-            path.setLineDash(dashes, count: dashes.count, phase: 0.0)
-            path.stroke()
-        }
-        
         for projection in projectedPreviews {
             if projection == highlightedPreivew {
                 continue
             }
             
-            drawScreen(projection: projection, color: inactiveColor)
+            drawInactiveScreen(projection: projection, color: inactiveColor)
         }
         
         if let highlightedPreivew = highlightedPreivew {
-            drawScreen(projection: highlightedPreivew, color: highlightColor)
+            drawActiveScreen(projection: highlightedPreivew, color: highlightColor)
         }
     }
     
-    private func drawScreen(projection: LayoutPreview, color: NSColor) {
+    private func drawInactiveScreen(projection: LayoutPreview, color: NSColor) {
+        color.set()
         let path = NSBezierPath.init(roundedRect: projection, xRadius: roundRadius, yRadius: roundRadius)
         
-        color.setFill()
+        path.lineWidth = 2.0
+        let dashes: [CGFloat] = [16.0, 8.0]
+        path.setLineDash(dashes, count: dashes.count, phase: 0.0)
+        path.stroke()
+    }
+    
+    private func drawActiveScreen(projection: LayoutPreview, color: NSColor) {
+        color.set()
+        let path = NSBezierPath.init(roundedRect: projection, xRadius: roundRadius, yRadius: roundRadius)
+        
         path.fill()
     }
     

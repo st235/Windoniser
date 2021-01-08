@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CF00C63D25A791EF003454E6 /* AppDependenciesResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C63C25A791EF003454E6 /* AppDependenciesResolver.swift */; };
 		CF00C64125A7977C003454E6 /* DependenciesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C64025A7977C003454E6 /* DependenciesContainer.swift */; };
-		CF00C64525A797E1003454E6 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C64425A797E1003454E6 /* Provider.swift */; };
 		CF00C64825A79983003454E6 /* GraphDependenciesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C64725A79983003454E6 /* GraphDependenciesContainer.swift */; };
 		CF00C64C25A799F0003454E6 /* DependenciesResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C64B25A799F0003454E6 /* DependenciesResolver.swift */; };
 		CF00C65225A7AC98003454E6 /* LayoutSchemesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C65125A7AC98003454E6 /* LayoutSchemesRepository.swift */; };
@@ -39,6 +38,8 @@
 		CFACE47B25A1CFD000EE31F5 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFACE47925A1CFD000EE31F5 /* MainFlow.storyboard */; };
 		CFACE48825A1D4C400EE31F5 /* LayoutPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFACE48725A1D4C400EE31F5 /* LayoutPreviewView.swift */; };
 		CFB3689225A7B8B000CB8A89 /* HotKeysManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB3689125A7B8B000CB8A89 /* HotKeysManager.swift */; };
+		CFB4B91725A9017500539AB6 /* DependencyQualifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4B91625A9017500539AB6 /* DependencyQualifier.swift */; };
+		CFB4B91B25A9051400539AB6 /* SynchronizedDependenciesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4B91A25A9051400539AB6 /* SynchronizedDependenciesContainer.swift */; };
 		CFDEBD8825A276CE001AD0FE /* SideBarMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDEBD8725A276CE001AD0FE /* SideBarMenuDelegate.swift */; };
 		CFF5F75F25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5F75E25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift */; };
 		CFF5F76225A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5F76125A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift */; };
@@ -47,7 +48,6 @@
 /* Begin PBXFileReference section */
 		CF00C63C25A791EF003454E6 /* AppDependenciesResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependenciesResolver.swift; sourceTree = "<group>"; };
 		CF00C64025A7977C003454E6 /* DependenciesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesContainer.swift; sourceTree = "<group>"; };
-		CF00C64425A797E1003454E6 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		CF00C64725A79983003454E6 /* GraphDependenciesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphDependenciesContainer.swift; sourceTree = "<group>"; };
 		CF00C64B25A799F0003454E6 /* DependenciesResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesResolver.swift; sourceTree = "<group>"; };
 		CF00C65125A7AC98003454E6 /* LayoutSchemesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemesRepository.swift; sourceTree = "<group>"; };
@@ -84,6 +84,8 @@
 		CFACE47D25A1CFD000EE31F5 /* Concierge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Concierge.entitlements; sourceTree = "<group>"; };
 		CFACE48725A1D4C400EE31F5 /* LayoutPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPreviewView.swift; sourceTree = "<group>"; };
 		CFB3689125A7B8B000CB8A89 /* HotKeysManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeysManager.swift; sourceTree = "<group>"; };
+		CFB4B91625A9017500539AB6 /* DependencyQualifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyQualifier.swift; sourceTree = "<group>"; };
+		CFB4B91A25A9051400539AB6 /* SynchronizedDependenciesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedDependenciesContainer.swift; sourceTree = "<group>"; };
 		CFDEBD8725A276CE001AD0FE /* SideBarMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarMenuDelegate.swift; sourceTree = "<group>"; };
 		CFF5F75E25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+NSTableViewDataSource.swift"; sourceTree = "<group>"; };
 		CFF5F76125A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+NSTableViewDelegate.swift"; sourceTree = "<group>"; };
@@ -104,9 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				CF00C64025A7977C003454E6 /* DependenciesContainer.swift */,
-				CF00C64425A797E1003454E6 /* Provider.swift */,
 				CF00C64725A79983003454E6 /* GraphDependenciesContainer.swift */,
 				CF00C64B25A799F0003454E6 /* DependenciesResolver.swift */,
+				CFB4B91625A9017500539AB6 /* DependencyQualifier.swift */,
+				CFB4B91A25A9051400539AB6 /* SynchronizedDependenciesContainer.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -379,6 +382,8 @@
 				CF4826DC25A39DD400068927 /* Key.swift in Sources */,
 				CF3C6AB625A4F4C9007A52F8 /* WindowRepository.swift in Sources */,
 				CFF5F75F25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift in Sources */,
+				CFB4B91B25A9051400539AB6 /* SynchronizedDependenciesContainer.swift in Sources */,
+				CFB4B91725A9017500539AB6 /* DependencyQualifier.swift in Sources */,
 				CF00C64125A7977C003454E6 /* DependenciesContainer.swift in Sources */,
 				CFB3689225A7B8B000CB8A89 /* HotKeysManager.swift in Sources */,
 				CF00C63D25A791EF003454E6 /* AppDependenciesResolver.swift in Sources */,
@@ -389,7 +394,6 @@
 				CF821E8625A23430002B5F1D /* ScreensController.swift in Sources */,
 				CFACE47425A1CFCF00EE31F5 /* AppDelegate.swift in Sources */,
 				CF3C6ABE25A4FFF8007A52F8 /* EventMonitor.swift in Sources */,
-				CF00C64525A797E1003454E6 /* Provider.swift in Sources */,
 				CF4826D525A3967700068927 /* RightSideMenuItemsFactory.swift in Sources */,
 				CF00C65D25A7B499003454E6 /* MenuItem.swift in Sources */,
 				CF821E8125A22402002B5F1D /* Window.m in Sources */,

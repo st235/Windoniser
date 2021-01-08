@@ -29,7 +29,6 @@
     AXUIElementRef window = nil;
     AXUIElementCopyAttributeValue(app, kAXFocusedWindowAttribute, (CFTypeRef*)&window);
 
-
     return [[Window alloc] initWithPid:runningApp.processIdentifier andRef:window];
 }
 
