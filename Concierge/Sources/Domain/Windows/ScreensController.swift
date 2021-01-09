@@ -12,7 +12,7 @@ class ScreensController {
     }
     
     // (0,0) is left top corner
-    func resize(window: Window, projection: NSRect) {        
+    func resize(window: Window, projection: NSRect, andBringToFront: Bool = false) {
         guard let screen = self.findScreenFor(window: window) else {
             fatalError("Cannot find screen for window (position: \(window.position()), size: \(window.size())")
         }
@@ -20,6 +20,10 @@ class ScreensController {
         let realSize = project(identity: projection, on: screen)
         
         windowController.resize(window, position: realSize)
+        
+        if andBringToFront {
+            windowController.bring(toFrontWindow: window)
+        }
     }
     
     func findScreenFor(window: Window) -> NSScreen? {

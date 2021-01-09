@@ -22,15 +22,15 @@ class WindowInteractor {
     
     func resizeWindow(withPid pid: pid_t, into projection: NSRect) {
         let windowForPid = windowRepository.findWindow(byPid: pid)
-        resizeWindow(window: windowForPid, into: projection)
+        resizeWindow(window: windowForPid, into: projection, andBringToFront: true)
     }
     
-    private func resizeWindow(window: Window?, into projection: NSRect) {
+    private func resizeWindow(window: Window?, into projection: NSRect, andBringToFront bringToFront: Bool = false) {
         assert(window != nil, "Focused window is null. How come?")
         
         if let window = window {
             let reversedProjection = reverseRectToScreenCoordinates(rect: projection)
-            screenController.resize(window: window, projection: reversedProjection)
+            screenController.resize(window: window, projection: reversedProjection, andBringToFront: bringToFront)
         }
     }
     

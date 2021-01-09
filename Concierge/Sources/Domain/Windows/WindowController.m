@@ -2,7 +2,9 @@
 
 @interface WindowController()
 
-- (NSRunningApplication*) activeApplication;
+- (nullable NSRunningApplication*) activeApplication;
+
+- (nullable NSRunningApplication*) applicationWithPid: (pid_t) pid;
 
 @end
 
@@ -14,6 +16,19 @@
 
     for (NSRunningApplication* app in apps) {
         if (app.activationPolicy == NSApplicationActivationPolicyRegular && app.isActive) {
+            return app;
+        }
+    }
+
+    return nil;
+}
+
+- (nullable NSRunningApplication*) applicationWithPid:(pid_t)pid  {
+    NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
+    NSArray *apps = [workspace runningApplications];
+
+    for (NSRunningApplication* app in apps) {
+        if (app.activationPolicy == NSApplicationActivationPolicyRegular && app.processIdentifier == pid) {
             return app;
         }
     }
@@ -83,6 +98,16 @@
     temp = AXValueCreate(kAXValueCGSizeType, &position.size);
     AXUIElementSetAttributeValue(window.ref, kAXSizeAttribute, temp);
     CFRelease(temp);
+}
+
+- (void) bringToFrontWindow:(Window *)window {
+    NSRunningApplication* app = [self applicationWithPid:window.pid];
+    
+    if (!app) {
+        return;
+    }
+    
+    [app activateWithOptions:NSApplicationActivateIgnoringOtherApps];
 }
 
 @end

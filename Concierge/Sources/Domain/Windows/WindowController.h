@@ -13,7 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSArray*) findAllAvailableWindows;
 
-- (void) resize: (Window*) window position: (CGRect) position;
+- (void) resize: (nonnull Window*) window position: (CGRect) position;
+
+- (void) bringToFrontWindow: (nonnull Window*) window;
 
 @end
 
