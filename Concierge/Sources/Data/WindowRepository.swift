@@ -70,7 +70,7 @@ final class WindowRepository {
     
     private func shouldFilter(window: Window, runningApp: NSRunningApplication) -> Bool {
         let title = window.title()
-        return title.isEmpty || runningApp.isHidden || runningApp.isTerminated
+        return title.isEmpty || runningApp.isHidden || runningApp.isTerminated || runningApp.activationPolicy != .regular
     }
     
 }
