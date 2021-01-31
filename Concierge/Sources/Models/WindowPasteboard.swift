@@ -1,20 +1,23 @@
 import Foundation
 
-class WindowPidPasteboard: NSObject, Codable, NSPasteboardWriting, NSPasteboardReading {
+class WindowPasteboard: NSObject, Codable, NSPasteboardWriting, NSPasteboardReading {
     
     let pid: pid_t
+    let id: Int
     
-    init(pid: pid_t) {
+    init(pid: pid_t, id: Int) {
         self.pid = pid
+        self.id = id
     }
     
     required init?(pasteboardPropertyList propertyList: Any, ofType type: NSPasteboard.PasteboardType) {
         guard let data = propertyList as? Data,
-              let obj = try? PropertyListDecoder().decode(WindowPidPasteboard.self, from: data) else {
+              let obj = try? PropertyListDecoder().decode(WindowPasteboard.self, from: data) else {
             return nil
         }
         
         self.pid = obj.pid
+        self.id = obj.id
     }
     
     func writableTypes(for pasteboard: NSPasteboard) -> [NSPasteboard.PasteboardType] {

@@ -2,13 +2,13 @@ import Foundation
 
 class RightSideMenuItemsFactory {
     
-    private let layoutSchemesRepository: LayoutSchemesRepository
+    private let layoutSchemesInteractor: LayoutSchemesInteractor
     
     private let windowInteractor: WindowInteractor
     
-    init(layoutSchemesRepository: LayoutSchemesRepository,
+    init(layoutSchemesInteractor: LayoutSchemesInteractor,
          windowInteractor: WindowInteractor) {
-        self.layoutSchemesRepository = layoutSchemesRepository
+        self.layoutSchemesInteractor = layoutSchemesInteractor
         self.windowInteractor = windowInteractor
     }
     
@@ -20,6 +20,7 @@ class RightSideMenuItemsFactory {
         }
         
         items.append(Separator())
+        items.append(SettingMenuItem())
         items.append(createQuitItem())
         
         return items
@@ -27,7 +28,7 @@ class RightSideMenuItemsFactory {
     
     private func createPrefferedScheme() -> [MenuItem] {
         var items: [MenuItem] = []
-        let prefferedScheme = layoutSchemesRepository.providePreferredScheme()
+        let prefferedScheme = layoutSchemesInteractor.activeScheme
         
         for area in prefferedScheme.areas {
             items.append(SchemeAreaMenuItem(area: area, windowInteractor: windowInteractor))

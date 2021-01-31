@@ -100,7 +100,7 @@ class LayoutPreviewView: NSView {
     
     private func shouldAllowDrag(_ draggingInfo: NSDraggingInfo) -> Bool {
       let pasteBoard = draggingInfo.draggingPasteboard
-      if pasteBoard.canReadObject(forClasses: [WindowPidPasteboard.self], options: LayoutPreviewView.filteringOptions) {
+      if pasteBoard.canReadObject(forClasses: [WindowPasteboard.self], options: LayoutPreviewView.filteringOptions) {
         return true
       }
       return false
@@ -114,7 +114,7 @@ class LayoutPreviewView: NSView {
         let point = convert(sender.draggingLocation, from: nil)
         let projection = findHighlightedProjection(position: point)
                 
-        if let pids = pasteBoard.readObjects(forClasses: [WindowPidPasteboard.self], options: LayoutPreviewView.filteringOptions) as? [WindowPidPasteboard],
+        if let pids = pasteBoard.readObjects(forClasses: [WindowPasteboard.self], options: LayoutPreviewView.filteringOptions) as? [WindowPasteboard],
            let projection = projection,
            pids.count > 0 {
             delegate?.onPreviewSelected(preview: layoutPreviews[projectedPreviews.firstIndex(of: projection)!], payload: pids)

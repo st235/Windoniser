@@ -28,7 +28,7 @@ class AppDependenciesResolver: DependenciesResolver {
         }
         
         diContainer.register(forType: RightSideMenuItemsFactory.self) { resolver in
-            return RightSideMenuItemsFactory(layoutSchemesRepository: resolver.resolve(type: LayoutSchemesRepository.self),
+            return RightSideMenuItemsFactory(layoutSchemesInteractor: resolver.resolve(type: LayoutSchemesInteractor.self),
                                              windowInteractor: resolver.resolve(type: WindowInteractor.self))
         }
     }
@@ -59,7 +59,7 @@ class AppDependenciesResolver: DependenciesResolver {
     
     private func registerInteractors() {
         diContainer.register(forType: HotKeysInteractor.self) { resolver in
-            return HotKeysInteractor(layoutSchemesRepository: resolver.resolve(type: LayoutSchemesRepository.self),
+            return HotKeysInteractor(layoutSchemesInteractor: resolver.resolve(type: LayoutSchemesInteractor.self),
                                   windowInteractor: resolver.resolve(type: WindowInteractor.self),
                                   hotKeysController: resolver.resolve(type: HotKeyController.self))
         }
@@ -67,6 +67,10 @@ class AppDependenciesResolver: DependenciesResolver {
         diContainer.register(forType: WindowInteractor.self) { resolver in
             return WindowInteractor(windowRepository: resolver.resolve(type: WindowRepository.self),
                                     screenController: resolver.resolve(type: ScreensController.self))
+        }
+        
+        diContainer.register(forType: LayoutSchemesInteractor.self, andQualifier: .singleton) { resolver in
+            return LayoutSchemesInteractor(layoutSchemesRepository: resolver.resolve(type: LayoutSchemesRepository.self))
         }
     }
     

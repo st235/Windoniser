@@ -29,7 +29,8 @@ extension LeftSideMenuViewController: NSTableViewDelegate {
     }
     
     func tableView(_ tableView: NSTableView, pasteboardWriterForRow row: Int) -> NSPasteboardWriting? {
-        return WindowPidPasteboard(pid: activeWindows[row].pid)
+        let window = activeWindows[row]
+        return WindowPasteboard(pid: window.pid, id: window.id)
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {

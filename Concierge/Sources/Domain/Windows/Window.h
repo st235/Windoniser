@@ -6,9 +6,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic) pid_t pid;
 
+@property(nonatomic) long number;
+
 @property(nonatomic) AXUIElementRef ref;
 
-- (id) initWithPid: (pid_t) pid andRef: (AXUIElementRef) ref;
+- (id) initFocusedWithPid: (pid_t) pid andRef: (AXUIElementRef) ref;
+
+- (id) initWithPid:(pid_t)pid andNumber: (long) number andRef:(AXUIElementRef)ref;
 
 - (NSString*) title;
 

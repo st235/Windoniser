@@ -20,8 +20,8 @@ class WindowInteractor {
         resizeWindow(window: focusedWindow, into: rect)
     }
     
-    func resizeWindow(withPid pid: pid_t, into projection: NSRect) {
-        let windowForPid = windowRepository.findWindow(byPid: pid)
+    func resizeWindow(withPid pid: pid_t, andId id: Int, into projection: NSRect) {
+        let windowForPid = windowRepository.findWindow(byPid: pid, andId: id)
         resizeWindow(window: windowForPid, into: projection, andBringToFront: true)
     }
     

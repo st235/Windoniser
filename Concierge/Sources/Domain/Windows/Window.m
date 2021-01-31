@@ -6,11 +6,26 @@
 
 @synthesize ref;
 
-- (id) initWithPid:(pid_t)pid andRef:(AXUIElementRef)ref {
+@synthesize number;
+
+- (id) initFocusedWithPid:(pid_t)pid andRef:(AXUIElementRef)ref {
     self = [super init];
     
     self.pid = pid;
     self.ref = ref;
+    
+    // NO NUMBER
+    self.number = -1;
+    
+    return self;
+}
+
+- (id) initWithPid:(pid_t)pid andNumber: (long) number andRef:(AXUIElementRef)ref {
+    self = [super init];
+    
+    self.pid = pid;
+    self.ref = ref;
+    self.number = number;
     
     return self;
 }

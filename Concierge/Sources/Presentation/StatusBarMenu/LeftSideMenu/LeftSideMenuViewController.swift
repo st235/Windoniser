@@ -45,19 +45,19 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
     }
     
     func onPreviewSelected(preview: LayoutPreviewView.LayoutPreview, payload: Any?) {
-        guard let windowPids = payload as? [WindowPidPasteboard] else {
+        guard let windowPids = payload as? [WindowPasteboard] else {
             fatalError("Copied payload is not a pid pasteboard")
         }
         
         assert(windowPids.count == 1, "Pids have more (or less) than 1 object. Count is \(windowPids.count)")
         
         if let windowPid = windowPids.first {
-            windowInteractor?.resizeWindow(withPid: windowPid.pid, into: preview)
+            windowInteractor?.resizeWindow(withPid: windowPid.pid, andId: windowPid.id, into: preview)
         }
     }
     
     static func create(windowInteractor: WindowInteractor = AppDependenciesResolver.shared.resolve(type: WindowInteractor.self),
-                       layoutSchemesRepository: LayoutSchemesRepository = AppDependenciesResolver.shared.resolve(type: LayoutSchemesRepository.self)) -> LeftSideMenuViewController {
+                       layoutSchemesInteractor: LayoutSchemesInteractor = AppDependenciesResolver.shared.resolve(type: LayoutSchemesInteractor.self)) -> LeftSideMenuViewController {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("MainFlow"), bundle: nil)
         let identifier = NSStoryboard.SceneIdentifier("LeftSideMenuViewController")
         guard let viewController = storyboard.instantiateController(withIdentifier: identifier) as? LeftSideMenuViewController else {
@@ -66,7 +66,7 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         
         viewController.activeWindows = windowInteractor.activeWindows()
         viewController.windowInteractor = windowInteractor
-        viewController.prefferedLayoutScheme = layoutSchemesRepository.providePreferredScheme()
+        viewController.prefferedLayoutScheme = layoutSchemesInteractor.activeScheme
         
         return viewController
     }

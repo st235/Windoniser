@@ -1,23 +1,30 @@
 import Foundation
 
-class HotKeysInteractor {
+class HotKeysInteractor: LayoutSchemesInteractor.Delegate {
     
-    private let layoutSchemesRepository: LayoutSchemesRepository
+    private let layoutSchemesInteractor: LayoutSchemesInteractor
     private let windowInteractor: WindowInteractor
     private let hotKeysController: HotKeyController
     
     private var hotKeys: [KeyScheme] = []
     
-    init(layoutSchemesRepository: LayoutSchemesRepository,
+    init(layoutSchemesInteractor: LayoutSchemesInteractor,
          windowInteractor: WindowInteractor,
          hotKeysController: HotKeyController) {
-        self.layoutSchemesRepository = layoutSchemesRepository
+        self.layoutSchemesInteractor = layoutSchemesInteractor
         self.windowInteractor = windowInteractor
         self.hotKeysController = hotKeysController
+        
+        self.layoutSchemesInteractor.addDelegate(weak: self)
+    }
+    
+    func onActiveSchemeChanged(schemes: LayoutScheme) {
+        unregister()
+        register()
     }
     
     func register() {
-        let scheme = layoutSchemesRepository.providePreferredScheme()
+        let scheme = layoutSchemesInteractor.activeScheme
         
         for area in scheme.areas {
             let keyScheme = KeyScheme(key: area.activeKey, modifiers: area.modifiers)

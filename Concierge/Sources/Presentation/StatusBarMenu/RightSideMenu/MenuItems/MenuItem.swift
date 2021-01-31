@@ -43,6 +43,29 @@ class Separator: MenuItem {
     
 }
 
+class SettingMenuItem: MenuItem {
+    
+    private let _item: NSMenuItem
+    
+    var nsMenuItem: NSMenuItem {
+        get {
+            return self._item
+        }
+    }
+    
+    init() {
+        self._item = NSMenuItem(title: "menu_actions_settings".localized, action: #selector(onMenuItemClick(_:)), keyEquivalent: "s")
+        self._item.target = self
+    }
+    
+    
+    @objc private func onMenuItemClick(_ sender: Any?) {
+        let settingsWindowController = SettingsWindowController.create()
+        settingsWindowController.showWindow(self)
+    }
+    
+}
+
 class QuitMenuItem: MenuItem {
     
     var nsMenuItem: NSMenuItem {
