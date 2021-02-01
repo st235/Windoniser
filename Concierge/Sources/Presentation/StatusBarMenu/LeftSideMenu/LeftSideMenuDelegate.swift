@@ -2,7 +2,7 @@ import Foundation
 
 class LeftSideMenuDelegate: NSObject, SideBarMenuDelegate {
     
-    private let popover = NSPopover()
+    private let popover = Popover()
     private let eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown])
     private let statusBarMenuItem: NSStatusItem
     
@@ -42,13 +42,13 @@ class LeftSideMenuDelegate: NSObject, SideBarMenuDelegate {
       if let button = statusBarMenuItem.button {
         self.eventMonitor.start()
         self.popover.contentViewController = LeftSideMenuViewController.create()
-        self.popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+        self.popover.show(relativeTo: button)
       }
     }
 
     private func close(statusBarMenuItem: NSStatusItem) {
         self.eventMonitor.stop()
-        self.popover.performClose(statusBarMenuItem)
+        self.popover.dismiss()
     }
     
 }

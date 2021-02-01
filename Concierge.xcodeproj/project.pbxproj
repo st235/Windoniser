@@ -15,6 +15,10 @@
 		CF00C65525A7AD5C003454E6 /* LayoutScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C65425A7AD5C003454E6 /* LayoutScheme.swift */; };
 		CF00C65825A7AD93003454E6 /* LayoutArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C65725A7AD93003454E6 /* LayoutArea.swift */; };
 		CF00C65D25A7B499003454E6 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C65C25A7B499003454E6 /* MenuItem.swift */; };
+		CF081A3425C89C630099DA5B /* PopoverBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF081A3325C89C630099DA5B /* PopoverBackgroundView.swift */; };
+		CF081A3725C89E770099DA5B /* PopoverWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF081A3625C89E770099DA5B /* PopoverWindow.swift */; };
+		CF081A3B25C8A05B0099DA5B /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF081A3A25C8A05B0099DA5B /* Popover.swift */; };
+		CF081A3E25C8A0940099DA5B /* PopoverWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF081A3D25C8A0940099DA5B /* PopoverWindowController.swift */; };
 		CF1B394925A26EEE00F7F9C7 /* StatusBarMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B394825A26EEE00F7F9C7 /* StatusBarMenuController.swift */; };
 		CF1B395125A2715200F7F9C7 /* RightSideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B395025A2715200F7F9C7 /* RightSideMenuDelegate.swift */; };
 		CF1B395525A2716C00F7F9C7 /* LeftSideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B395425A2716C00F7F9C7 /* LeftSideMenuDelegate.swift */; };
@@ -46,6 +50,9 @@
 		CFB4B91725A9017500539AB6 /* DependencyQualifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4B91625A9017500539AB6 /* DependencyQualifier.swift */; };
 		CFB4B91B25A9051400539AB6 /* SynchronizedDependenciesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4B91A25A9051400539AB6 /* SynchronizedDependenciesContainer.swift */; };
 		CFB4B92425A90F5B00539AB6 /* WindowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4B92325A90F5B00539AB6 /* WindowInteractor.swift */; };
+		CFBD324C25C84539006DDAE5 /* WindowTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD324B25C84539006DDAE5 /* WindowTableCell.swift */; };
+		CFBD325025C8563D006DDAE5 /* CGColor+HexColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD324F25C8563D006DDAE5 /* CGColor+HexColors.swift */; };
+		CFBD325325C857A1006DDAE5 /* WindowTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD325225C857A1006DDAE5 /* WindowTableRow.swift */; };
 		CFDEBD8825A276CE001AD0FE /* SideBarMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDEBD8725A276CE001AD0FE /* SideBarMenuDelegate.swift */; };
 		CFF5F75F25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5F75E25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift */; };
 		CFF5F76225A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5F76125A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift */; };
@@ -60,6 +67,10 @@
 		CF00C65425A7AD5C003454E6 /* LayoutScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutScheme.swift; sourceTree = "<group>"; };
 		CF00C65725A7AD93003454E6 /* LayoutArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutArea.swift; sourceTree = "<group>"; };
 		CF00C65C25A7B499003454E6 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		CF081A3325C89C630099DA5B /* PopoverBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverBackgroundView.swift; sourceTree = "<group>"; };
+		CF081A3625C89E770099DA5B /* PopoverWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverWindow.swift; sourceTree = "<group>"; };
+		CF081A3A25C8A05B0099DA5B /* Popover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popover.swift; sourceTree = "<group>"; };
+		CF081A3D25C8A0940099DA5B /* PopoverWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverWindowController.swift; sourceTree = "<group>"; };
 		CF1B394825A26EEE00F7F9C7 /* StatusBarMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarMenuController.swift; sourceTree = "<group>"; };
 		CF1B395025A2715200F7F9C7 /* RightSideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSideMenuDelegate.swift; sourceTree = "<group>"; };
 		CF1B395425A2716C00F7F9C7 /* LeftSideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +109,9 @@
 		CFB4B91625A9017500539AB6 /* DependencyQualifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyQualifier.swift; sourceTree = "<group>"; };
 		CFB4B91A25A9051400539AB6 /* SynchronizedDependenciesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedDependenciesContainer.swift; sourceTree = "<group>"; };
 		CFB4B92325A90F5B00539AB6 /* WindowInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowInteractor.swift; sourceTree = "<group>"; };
+		CFBD324B25C84539006DDAE5 /* WindowTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowTableCell.swift; sourceTree = "<group>"; };
+		CFBD324F25C8563D006DDAE5 /* CGColor+HexColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+HexColors.swift"; sourceTree = "<group>"; };
+		CFBD325225C857A1006DDAE5 /* WindowTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowTableRow.swift; sourceTree = "<group>"; };
 		CFDEBD8725A276CE001AD0FE /* SideBarMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarMenuDelegate.swift; sourceTree = "<group>"; };
 		CFF5F75E25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+NSTableViewDataSource.swift"; sourceTree = "<group>"; };
 		CFF5F76125A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+NSTableViewDelegate.swift"; sourceTree = "<group>"; };
@@ -133,6 +147,17 @@
 				CF00C65C25A7B499003454E6 /* MenuItem.swift */,
 			);
 			path = MenuItems;
+			sourceTree = "<group>";
+		};
+		CF081A3225C89B8F0099DA5B /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				CF081A3325C89C630099DA5B /* PopoverBackgroundView.swift */,
+				CF081A3625C89E770099DA5B /* PopoverWindow.swift */,
+				CF081A3A25C8A05B0099DA5B /* Popover.swift */,
+				CF081A3D25C8A0940099DA5B /* PopoverWindowController.swift */,
+			);
+			path = Popover;
 			sourceTree = "<group>";
 		};
 		CF1B393925A26A5D00F7F9C7 /* Presentation */ = {
@@ -206,6 +231,7 @@
 		CF1B394C25A270AF00F7F9C7 /* LeftSideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				CFBD324A25C8450C006DDAE5 /* Cell */,
 				CF1B395425A2716C00F7F9C7 /* LeftSideMenuDelegate.swift */,
 				CF1B395C25A2747900F7F9C7 /* LeftSideMenuViewController.swift */,
 				CFF5F75E25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift */,
@@ -276,7 +302,9 @@
 		CF821E7325A21881002B5F1D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CF081A3225C89B8F0099DA5B /* Popover */,
 				CFACE48725A1D4C400EE31F5 /* LayoutPreviewView.swift */,
+				CFBD324F25C8563D006DDAE5 /* CGColor+HexColors.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -326,6 +354,15 @@
 				CF5E418525AA4476001DEC28 /* LayoutSchemesInteractor.swift */,
 			);
 			path = Interactors;
+			sourceTree = "<group>";
+		};
+		CFBD324A25C8450C006DDAE5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CFBD324B25C84539006DDAE5 /* WindowTableCell.swift */,
+				CFBD325225C857A1006DDAE5 /* WindowTableRow.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,14 +442,17 @@
 				CFB4B92425A90F5B00539AB6 /* WindowInteractor.swift in Sources */,
 				CF5E418325AA40D2001DEC28 /* SettingsTableAdapter.swift in Sources */,
 				CF3C6AC325A50D34007A52F8 /* NSPasteboard+Types.swift in Sources */,
+				CFBD325325C857A1006DDAE5 /* WindowTableRow.swift in Sources */,
 				CFDEBD8825A276CE001AD0FE /* SideBarMenuDelegate.swift in Sources */,
 				CF00C65525A7AD5C003454E6 /* LayoutScheme.swift in Sources */,
 				CF1B395525A2716C00F7F9C7 /* LeftSideMenuDelegate.swift in Sources */,
+				CFBD324C25C84539006DDAE5 /* WindowTableCell.swift in Sources */,
 				CF3C6AC625A50DA4007A52F8 /* WindowPasteboard.swift in Sources */,
 				CF5E417625AA38EE001DEC28 /* SettingsTableViewCell.swift in Sources */,
 				CF4826E225A39FB000068927 /* KeyScheme.swift in Sources */,
 				CF4826E825A3B30D00068927 /* KeySchemeFactory.swift in Sources */,
 				CF5E417225AA33B7001DEC28 /* SettingsWindowController.swift in Sources */,
+				CF081A3725C89E770099DA5B /* PopoverWindow.swift in Sources */,
 				CF00C65225A7AC98003454E6 /* LayoutSchemesRepository.swift in Sources */,
 				CFACE48825A1D4C400EE31F5 /* LayoutPreviewView.swift in Sources */,
 				CF4826DF25A39F8B00068927 /* HotKeyController.swift in Sources */,
@@ -426,12 +466,16 @@
 				CFB3689225A7B8B000CB8A89 /* HotKeysInteractor.swift in Sources */,
 				CF00C63D25A791EF003454E6 /* AppDependenciesResolver.swift in Sources */,
 				CF00C65825A7AD93003454E6 /* LayoutArea.swift in Sources */,
+				CF081A3E25C8A0940099DA5B /* PopoverWindowController.swift in Sources */,
 				CF5E416E25AA3296001DEC28 /* SettingsViewController.swift in Sources */,
+				CFBD325025C8563D006DDAE5 /* CGColor+HexColors.swift in Sources */,
+				CF081A3425C89C630099DA5B /* PopoverBackgroundView.swift in Sources */,
 				CF3C6ABA25A4FDFD007A52F8 /* String+Localization.swift in Sources */,
 				CF1B395125A2715200F7F9C7 /* RightSideMenuDelegate.swift in Sources */,
 				CF1B394925A26EEE00F7F9C7 /* StatusBarMenuController.swift in Sources */,
 				CF821E8625A23430002B5F1D /* ScreensController.swift in Sources */,
 				CF5E418625AA4476001DEC28 /* LayoutSchemesInteractor.swift in Sources */,
+				CF081A3B25C8A05B0099DA5B /* Popover.swift in Sources */,
 				CFACE47425A1CFCF00EE31F5 /* AppDelegate.swift in Sources */,
 				CF3C6ABE25A4FFF8007A52F8 /* EventMonitor.swift in Sources */,
 				CF4826D525A3967700068927 /* RightSideMenuItemsFactory.swift in Sources */,

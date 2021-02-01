@@ -5,19 +5,12 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         
     @IBOutlet weak var layoutPreviewView: LayoutPreviewView!
     @IBOutlet weak var windowsTableView: NSTableView!
-    @IBOutlet weak var windowNameTableColumn: NSTableColumn!
-    @IBOutlet weak var iconTableColumn: NSTableColumn!
-    @IBOutlet weak var processNameTableColumn: NSTableColumn!
     
     var activeWindows: [WindowRepository.WindowInfo] = []
     private var prefferedLayoutScheme: LayoutScheme? = nil
     private var windowInteractor: WindowInteractor? = nil
     
-    override func viewDidLoad() {
-        iconTableColumn.title = "left_side_menu_process_icon".localized
-        processNameTableColumn.title = "left_side_menu_process_process".localized
-        windowNameTableColumn.title = "left_side_menu_process_window".localized
-        
+    override func viewDidLoad() {        
         layoutPreviewView.backgroundColor = .white
         layoutPreviewView.registerForDraggedTypes([.windowPid])
         layoutPreviewView.setShadow(withOpacity: 1.0, andRadius: 20)
@@ -26,11 +19,15 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         layoutPreviewView.inactiveColor = .gray
         layoutPreviewView.highlightColor = .darkGray
                 
+        windowsTableView.headerView = nil
         windowsTableView.dataSource = self
         windowsTableView.delegate = self
         windowsTableView.isEnabled = true
         windowsTableView.setDraggingSourceOperationMask(.copy, forLocal: false)
-
+        windowsTableView.backgroundColor = .clear
+        windowsTableView.gridColor = .clear
+        windowsTableView.selectionHighlightStyle = .none
+        
         initializePrefferedLayoutScheme()
     }
     

@@ -2,10 +2,8 @@ import Foundation
 
 extension LeftSideMenuViewController: NSTableViewDelegate {
     
-    private enum CellIdentifiers: String {
-        case NameCell = "NameCellID"
-        case AppCell = "AppCellID"
-        case IconCell = "IconCellID"
+    func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+        return WindowTableRow()
     }
     
     func tableView(_ tableView: NSTableView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forRowIndexes rowIndexes: IndexSet) {
@@ -25,7 +23,7 @@ extension LeftSideMenuViewController: NSTableViewDelegate {
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 32
+        return 52
     }
     
     func tableView(_ tableView: NSTableView, pasteboardWriterForRow row: Int) -> NSPasteboardWriting? {
@@ -37,41 +35,22 @@ extension LeftSideMenuViewController: NSTableViewDelegate {
         guard let tableColumn = tableColumn, let index = tableView.tableColumns.firstIndex(of: tableColumn) else {
             return nil
         }
-        
-        let id = getTableId(byPosition: index)
         let item = activeWindows[row]
         
-        guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: id.rawValue), owner: nil) as? NSTableCellView else {
+        guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "WindowTableCell"), owner: nil) as? WindowTableCell else {
             return nil
         }
         
-        switch id {
-        case .IconCell:
-            cell.imageView?.image = item.icon
-        case .AppCell:
-            guard let owner = item.owner else {
-                return nil
-            }
-            
-            cell.textField?.stringValue = owner
-        case .NameCell:
-            cell.textField?.stringValue = item.title
+        cell.iconView.image = item.icon
+        cell.titleView.stringValue = item.title
+        
+        if let owner = item.owner {
+            cell.subtitleView.stringValue = owner
+        } else {
+            cell.subtitleView.isHidden = true
         }
         
         return cell
       }
-    
-    private func getTableId(byPosition position: Int) -> CellIdentifiers {
-        switch position {
-        case 0:
-            return .IconCell
-        case 1:
-            return .AppCell
-        case 2:
-            return .NameCell
-        default:
-            fatalError("Cannot find id for position \(position)")
-        }
-    }
     
 }
