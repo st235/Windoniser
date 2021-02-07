@@ -70,7 +70,7 @@ final class WindowRepository {
         let windows = windowController.findAllAvailableWindows()
         var windowInfos = Set<WindowInfo>()
         
-        for window in windows {
+        for window in windows {            
             guard let window = window as? Window,
                   let runningApp = appsDict[window.pid] else {
                 continue

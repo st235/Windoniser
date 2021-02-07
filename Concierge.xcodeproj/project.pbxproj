@@ -34,11 +34,13 @@
 		CF4826DF25A39F8B00068927 /* HotKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4826DE25A39F8B00068927 /* HotKeyController.swift */; };
 		CF4826E225A39FB000068927 /* KeyScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4826E125A39FB000068927 /* KeyScheme.swift */; };
 		CF4826E825A3B30D00068927 /* KeySchemeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4826E725A3B30D00068927 /* KeySchemeFactory.swift */; };
+		CF5399EF25D097BB00FA6292 /* NSImage+TintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5399EE25D097BB00FA6292 /* NSImage+TintColor.swift */; };
 		CF5E416E25AA3296001DEC28 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E416D25AA3296001DEC28 /* SettingsViewController.swift */; };
 		CF5E417225AA33B7001DEC28 /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E417125AA33B7001DEC28 /* SettingsWindowController.swift */; };
 		CF5E417625AA38EE001DEC28 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E417525AA38EE001DEC28 /* SettingsTableViewCell.swift */; };
 		CF5E418325AA40D2001DEC28 /* SettingsTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E418225AA40D2001DEC28 /* SettingsTableAdapter.swift */; };
 		CF5E418625AA4476001DEC28 /* LayoutSchemesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E418525AA4476001DEC28 /* LayoutSchemesInteractor.swift */; };
+		CF6BD19525D0393A00C4FA40 /* DesktopLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BD19425D0393A00C4FA40 /* DesktopLayoutView.swift */; };
 		CF821E7A25A21EAF002B5F1D /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF821E7925A21EAF002B5F1D /* WindowController.m */; };
 		CF821E8125A22402002B5F1D /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = CF821E8025A22402002B5F1D /* Window.m */; };
 		CF821E8625A23430002B5F1D /* ScreensController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF821E8525A23430002B5F1D /* ScreensController.swift */; };
@@ -46,13 +48,17 @@
 		CFACE47825A1CFD000EE31F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFACE47725A1CFD000EE31F5 /* Assets.xcassets */; };
 		CFACE47B25A1CFD000EE31F5 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFACE47925A1CFD000EE31F5 /* MainFlow.storyboard */; };
 		CFACE48825A1D4C400EE31F5 /* LayoutPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFACE48725A1D4C400EE31F5 /* LayoutPreviewView.swift */; };
+		CFAD230A25D05C09008CEB1B /* LeftSideMenuViewCotroller+CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD230925D05C09008CEB1B /* LeftSideMenuViewCotroller+CollectionViewDataSource.swift */; };
 		CFB3689225A7B8B000CB8A89 /* HotKeysInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB3689125A7B8B000CB8A89 /* HotKeysInteractor.swift */; };
 		CFB4B91725A9017500539AB6 /* DependencyQualifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4B91625A9017500539AB6 /* DependencyQualifier.swift */; };
 		CFB4B91B25A9051400539AB6 /* SynchronizedDependenciesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4B91A25A9051400539AB6 /* SynchronizedDependenciesContainer.swift */; };
 		CFB4B92425A90F5B00539AB6 /* WindowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4B92325A90F5B00539AB6 /* WindowInteractor.swift */; };
 		CFBD324C25C84539006DDAE5 /* WindowTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD324B25C84539006DDAE5 /* WindowTableCell.swift */; };
-		CFBD325025C8563D006DDAE5 /* CGColor+HexColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD324F25C8563D006DDAE5 /* CGColor+HexColors.swift */; };
+		CFBD325025C8563D006DDAE5 /* NSColor+HexColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD324F25C8563D006DDAE5 /* NSColor+HexColors.swift */; };
 		CFBD325325C857A1006DDAE5 /* WindowTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD325225C857A1006DDAE5 /* WindowTableRow.swift */; };
+		CFD0769F25D04F9600FF2730 /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD0769E25D04F9600FF2730 /* Vector2.swift */; };
+		CFD076A425D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD076A325D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift */; };
+		CFD076A825D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFD076A725D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib */; };
 		CFDEBD8825A276CE001AD0FE /* SideBarMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDEBD8725A276CE001AD0FE /* SideBarMenuDelegate.swift */; };
 		CFF5F75F25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5F75E25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift */; };
 		CFF5F76225A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5F76125A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift */; };
@@ -87,11 +93,13 @@
 		CF4826DE25A39F8B00068927 /* HotKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyController.swift; sourceTree = "<group>"; };
 		CF4826E125A39FB000068927 /* KeyScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyScheme.swift; sourceTree = "<group>"; };
 		CF4826E725A3B30D00068927 /* KeySchemeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySchemeFactory.swift; sourceTree = "<group>"; };
+		CF5399EE25D097BB00FA6292 /* NSImage+TintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+TintColor.swift"; sourceTree = "<group>"; };
 		CF5E416D25AA3296001DEC28 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CF5E417125AA33B7001DEC28 /* SettingsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindowController.swift; sourceTree = "<group>"; };
 		CF5E417525AA38EE001DEC28 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		CF5E418225AA40D2001DEC28 /* SettingsTableAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableAdapter.swift; sourceTree = "<group>"; };
 		CF5E418525AA4476001DEC28 /* LayoutSchemesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemesInteractor.swift; sourceTree = "<group>"; };
+		CF6BD19425D0393A00C4FA40 /* DesktopLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopLayoutView.swift; sourceTree = "<group>"; };
 		CF821E7725A21EAE002B5F1D /* Concierge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Concierge-Bridging-Header.h"; sourceTree = "<group>"; };
 		CF821E7825A21EAF002B5F1D /* WindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		CF821E7925A21EAF002B5F1D /* WindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
@@ -105,13 +113,17 @@
 		CFACE47C25A1CFD000EE31F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFACE47D25A1CFD000EE31F5 /* Concierge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Concierge.entitlements; sourceTree = "<group>"; };
 		CFACE48725A1D4C400EE31F5 /* LayoutPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPreviewView.swift; sourceTree = "<group>"; };
+		CFAD230925D05C09008CEB1B /* LeftSideMenuViewCotroller+CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewCotroller+CollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		CFB3689125A7B8B000CB8A89 /* HotKeysInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeysInteractor.swift; sourceTree = "<group>"; };
 		CFB4B91625A9017500539AB6 /* DependencyQualifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyQualifier.swift; sourceTree = "<group>"; };
 		CFB4B91A25A9051400539AB6 /* SynchronizedDependenciesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedDependenciesContainer.swift; sourceTree = "<group>"; };
 		CFB4B92325A90F5B00539AB6 /* WindowInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowInteractor.swift; sourceTree = "<group>"; };
 		CFBD324B25C84539006DDAE5 /* WindowTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowTableCell.swift; sourceTree = "<group>"; };
-		CFBD324F25C8563D006DDAE5 /* CGColor+HexColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+HexColors.swift"; sourceTree = "<group>"; };
+		CFBD324F25C8563D006DDAE5 /* NSColor+HexColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+HexColors.swift"; sourceTree = "<group>"; };
 		CFBD325225C857A1006DDAE5 /* WindowTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowTableRow.swift; sourceTree = "<group>"; };
+		CFD0769E25D04F9600FF2730 /* Vector2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector2.swift; sourceTree = "<group>"; };
+		CFD076A325D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemesCollectionViewItem.swift; sourceTree = "<group>"; };
+		CFD076A725D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LayoutSchemesCollectionViewItem.xib; sourceTree = "<group>"; };
 		CFDEBD8725A276CE001AD0FE /* SideBarMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarMenuDelegate.swift; sourceTree = "<group>"; };
 		CFF5F75E25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+NSTableViewDataSource.swift"; sourceTree = "<group>"; };
 		CFF5F76125A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+NSTableViewDelegate.swift"; sourceTree = "<group>"; };
@@ -231,11 +243,10 @@
 		CF1B394C25A270AF00F7F9C7 /* LeftSideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				CFBD324A25C8450C006DDAE5 /* Cell */,
+				CFD076A225D0593000FF2730 /* LayoutSchemes */,
+				CFBD324A25C8450C006DDAE5 /* AppList */,
 				CF1B395425A2716C00F7F9C7 /* LeftSideMenuDelegate.swift */,
 				CF1B395C25A2747900F7F9C7 /* LeftSideMenuViewController.swift */,
-				CFF5F75E25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift */,
-				CFF5F76125A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift */,
 			);
 			path = LeftSideMenu;
 			sourceTree = "<group>";
@@ -257,6 +268,7 @@
 				CF3C6AC525A50DA4007A52F8 /* WindowPasteboard.swift */,
 				CF00C65425A7AD5C003454E6 /* LayoutScheme.swift */,
 				CF00C65725A7AD93003454E6 /* LayoutArea.swift */,
+				CFD0769E25D04F9600FF2730 /* Vector2.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,7 +316,9 @@
 			children = (
 				CF081A3225C89B8F0099DA5B /* Popover */,
 				CFACE48725A1D4C400EE31F5 /* LayoutPreviewView.swift */,
-				CFBD324F25C8563D006DDAE5 /* CGColor+HexColors.swift */,
+				CFBD324F25C8563D006DDAE5 /* NSColor+HexColors.swift */,
+				CF6BD19425D0393A00C4FA40 /* DesktopLayoutView.swift */,
+				CF5399EE25D097BB00FA6292 /* NSImage+TintColor.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -356,13 +370,25 @@
 			path = Interactors;
 			sourceTree = "<group>";
 		};
-		CFBD324A25C8450C006DDAE5 /* Cell */ = {
+		CFBD324A25C8450C006DDAE5 /* AppList */ = {
 			isa = PBXGroup;
 			children = (
+				CFF5F75E25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift */,
+				CFF5F76125A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift */,
 				CFBD324B25C84539006DDAE5 /* WindowTableCell.swift */,
 				CFBD325225C857A1006DDAE5 /* WindowTableRow.swift */,
 			);
-			path = Cell;
+			path = AppList;
+			sourceTree = "<group>";
+		};
+		CFD076A225D0593000FF2730 /* LayoutSchemes */ = {
+			isa = PBXGroup;
+			children = (
+				CFD076A325D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift */,
+				CFD076A725D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib */,
+				CFAD230925D05C09008CEB1B /* LeftSideMenuViewCotroller+CollectionViewDataSource.swift */,
+			);
+			path = LayoutSchemes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,6 +452,7 @@
 			files = (
 				CFACE47825A1CFD000EE31F5 /* Assets.xcassets in Resources */,
 				CFACE47B25A1CFD000EE31F5 /* MainFlow.storyboard in Resources */,
+				CFD076A825D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib in Resources */,
 				CF4826CE25A395D300068927 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,7 +464,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF6BD19525D0393A00C4FA40 /* DesktopLayoutView.swift in Sources */,
 				CF821E7A25A21EAF002B5F1D /* WindowController.m in Sources */,
+				CFAD230A25D05C09008CEB1B /* LeftSideMenuViewCotroller+CollectionViewDataSource.swift in Sources */,
 				CF1B395D25A2747900F7F9C7 /* LeftSideMenuViewController.swift in Sources */,
 				CFB4B92425A90F5B00539AB6 /* WindowInteractor.swift in Sources */,
 				CF5E418325AA40D2001DEC28 /* SettingsTableAdapter.swift in Sources */,
@@ -454,6 +483,7 @@
 				CF5E417225AA33B7001DEC28 /* SettingsWindowController.swift in Sources */,
 				CF081A3725C89E770099DA5B /* PopoverWindow.swift in Sources */,
 				CF00C65225A7AC98003454E6 /* LayoutSchemesRepository.swift in Sources */,
+				CF5399EF25D097BB00FA6292 /* NSImage+TintColor.swift in Sources */,
 				CFACE48825A1D4C400EE31F5 /* LayoutPreviewView.swift in Sources */,
 				CF4826DF25A39F8B00068927 /* HotKeyController.swift in Sources */,
 				CF00C64C25A799F0003454E6 /* DependenciesResolver.swift in Sources */,
@@ -464,11 +494,13 @@
 				CFB4B91725A9017500539AB6 /* DependencyQualifier.swift in Sources */,
 				CF00C64125A7977C003454E6 /* DependenciesContainer.swift in Sources */,
 				CFB3689225A7B8B000CB8A89 /* HotKeysInteractor.swift in Sources */,
+				CFD076A425D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift in Sources */,
 				CF00C63D25A791EF003454E6 /* AppDependenciesResolver.swift in Sources */,
 				CF00C65825A7AD93003454E6 /* LayoutArea.swift in Sources */,
 				CF081A3E25C8A0940099DA5B /* PopoverWindowController.swift in Sources */,
+				CFD0769F25D04F9600FF2730 /* Vector2.swift in Sources */,
 				CF5E416E25AA3296001DEC28 /* SettingsViewController.swift in Sources */,
-				CFBD325025C8563D006DDAE5 /* CGColor+HexColors.swift in Sources */,
+				CFBD325025C8563D006DDAE5 /* NSColor+HexColors.swift in Sources */,
 				CF081A3425C89C630099DA5B /* PopoverBackgroundView.swift in Sources */,
 				CF3C6ABA25A4FDFD007A52F8 /* String+Localization.swift in Sources */,
 				CF1B395125A2715200F7F9C7 /* RightSideMenuDelegate.swift in Sources */,

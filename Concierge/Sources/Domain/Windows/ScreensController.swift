@@ -11,6 +11,14 @@ class ScreensController {
         self.windowController = windowController
     }
     
+    func getScreenWithMouse() -> NSScreen? {
+      let mouseLocation = NSEvent.mouseLocation
+      let screens = NSScreen.screens
+      let screenWithMouse = (screens.first { NSMouseInRect(mouseLocation, $0.frame, false) })
+
+      return screenWithMouse
+    }
+    
     // (0,0) is left top corner
     func resize(window: Window, projection: NSRect, andBringToFront: Bool = false) {
         guard let screen = self.findScreenFor(window: window) else {

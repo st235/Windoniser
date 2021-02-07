@@ -14,9 +14,9 @@ class SettingsTableViewCell: NSTableCellView {
             
             schemeTitle.stringValue = value.title
             
-            for area in value.areas {
-                layoutScheme.addLayoutPreview(layoutPreview: area.rect)
-            }
+//            for area in value.areas {
+//                layoutScheme.addLayoutPreview(layoutPreview: area.rect)
+//            }
         }
     }
     

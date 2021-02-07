@@ -1,6 +1,28 @@
 import Foundation
 
+extension NSColor.Name {
+    static let backgroundPrimary = "BackgroundPrimary"
+    static let backgroundTransparent = "BackgroundTransparent"
+    static let backgroundAccent = "BackgroundAccent"
+    
+    static let strokePrimary = "StrokePrimary"
+    
+    static let textPrimary = "TextPrimary"
+    static let textSecondary = "TextSecondary"
+    
+    static let iconPrimary = "IconPrimary"
+}
+
 extension NSColor {
+    
+    public static func from(name: String) -> NSColor {
+        guard let color = NSColor(named: NSColor.Name(name)) else {
+            fatalError()
+        }
+        
+        return color
+    }
+    
     public static func from(hex: String) -> NSColor {
         let r, g, b, a: CGFloat
 

@@ -10,6 +10,7 @@ protocol _LayoutPreviewViewDelegate: AnyObject {
 class LayoutPreviewView: NSView {
 
     typealias LayoutPreview = NSRect
+    typealias LayoutSeparator = Vector2
     typealias Delegate = _LayoutPreviewViewDelegate
     
     private static let filteringOptions = [NSPasteboard.ReadingOptionKey.urlReadingContentsConformToTypes:[NSPasteboard.PasteboardType.windowPid]]
@@ -17,40 +18,29 @@ class LayoutPreviewView: NSView {
     private let projectionBounds = NSRect(x: 0, y: 0, width: 1, height: 1)
     
     private var layoutPreviews: [LayoutPreview] = []
+    private var separators: [LayoutSeparator] = []
+    
     private var projectedPreviews: [LayoutPreview] = []
+    private var projectedSeparators: [LayoutSeparator] = []
     private var highlightedPreivew: LayoutPreview? = nil
+    
+    private var roundRadius = CGFloat(12)
     
     weak var delegate: Delegate? = nil
     
-    var inactiveColor: NSColor = .blue {
+    var highlightColor: NSColor = NSColor.white.withAlphaComponent(0.6) {
         didSet {
             needsDisplay = true
         }
     }
     
-    var highlightColor: NSColor = .red {
+    var backgroundColor: NSColor = NSColor.white.withAlphaComponent(0.3) {
         didSet {
             needsDisplay = true
         }
     }
     
-    var backgroundColor: NSColor? {
-        get {
-            guard let color = layer?.backgroundColor else {
-                return nil
-            }
-            
-            return NSColor(cgColor: color)
-        }
-        set {
-            wantsLayer = true
-            layer?.backgroundColor = newValue?.cgColor
-            layer?.masksToBounds = true
-            layer?.cornerRadius = roundRadius
-        }
-    }
-    
-    private var roundRadius: CGFloat = 4 {
+    var borderColor: NSColor = .white {
         didSet {
             needsDisplay = true
         }
@@ -69,11 +59,38 @@ class LayoutPreviewView: NSView {
       }
     }
     
+    init() {
+        super.init(frame: .zero)
+        setup()
+    }
+    
+    override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+    
+    private func setup() {
+        wantsLayer = true
+        layer?.cornerRadius = roundRadius
+        layer?.masksToBounds = true
+    }
+    
     private func updateLayoutProjections() {
         projectedPreviews.removeAll()
         
-        for preview in projectedPreviews {
-            projectedPreviews.append(getLayoutProjection(layoutPreview: preview, padding: paddingBetweenPreviews))
+        for preview in layoutPreviews {
+            projectedPreviews.append(getLayoutProjection(layoutPreview: preview, padding: 0))
+        }
+        
+        projectedSeparators.removeAll()
+        
+        for separator in separators {
+            projectedSeparators.append(getSeparatorProjection(separator: separator))
         }
     }
     
@@ -124,19 +141,12 @@ class LayoutPreviewView: NSView {
         return false
     }
     
-    func setShadow(withOpacity opacity: Float, andRadius radius: CGFloat) {
-        let shadow = NSShadow()
-        shadow.shadowColor = NSColor.darkGray
-        shadow.shadowOffset = NSMakeSize(0, 0)
-        shadow.shadowBlurRadius = radius
+    func addLayoutPreviews(layoutPreviews: [LayoutPreview], layoutSeparators: [LayoutSeparator]) {
+        self.layoutPreviews = layoutPreviews
+        self.separators = layoutSeparators
         
-        wantsLayer = true
-        self.shadow = shadow
-    }
-    
-    func addLayoutPreview(layoutPreview: LayoutPreview) {
-        layoutPreviews.append(layoutPreview)
-        projectedPreviews.append(getLayoutProjection(layoutPreview: layoutPreview, padding: paddingBetweenPreviews))
+        updateLayoutProjections()
+        
         needsDisplay = true
     }
     
@@ -147,33 +157,44 @@ class LayoutPreviewView: NSView {
     }
     
     override func draw(_ dirtyRect: NSRect) {
-        for projection in projectedPreviews {
-            if projection == highlightedPreivew {
-                continue
-            }
-            
-            drawInactiveScreen(projection: projection, color: inactiveColor)
-        }
+        updateLayoutProjections()
+        
+        let path = NSBezierPath.init(roundedRect: bounds, xRadius: roundRadius, yRadius: roundRadius)
+        
+        backgroundColor.setFill()
+        path.fill()
         
         if let highlightedPreivew = highlightedPreivew {
-            drawActiveScreen(projection: highlightedPreivew, color: highlightColor)
+            drawActiveScreen(projection: highlightedPreivew)
         }
+        
+        borderColor.setStroke()
+        path.lineWidth = 4.0
+        let dashes: [CGFloat] = [10.0, 6.0]
+        path.setLineDash(dashes, count: dashes.count, phase: 0.0)
+        path.stroke()
+        
+        for separator in projectedSeparators {
+            drawSeparator(separator: separator)
+        }
+        
     }
     
-    private func drawInactiveScreen(projection: LayoutPreview, color: NSColor) {
-        color.set()
-        let path = NSBezierPath.init(roundedRect: projection, xRadius: roundRadius, yRadius: roundRadius)
-        
+    private func drawSeparator(separator: Vector2) {
+        let path = NSBezierPath.init()
+        path.move(to: separator.x)
+        path.line(to: separator.y)
         path.lineWidth = 2.0
-        let dashes: [CGFloat] = [16.0, 8.0]
+        let dashes: [CGFloat] = [10.0, 6.0]
         path.setLineDash(dashes, count: dashes.count, phase: 0.0)
+        
+        borderColor.setStroke()
         path.stroke()
     }
     
-    private func drawActiveScreen(projection: LayoutPreview, color: NSColor) {
-        color.set()
-        let path = NSBezierPath.init(roundedRect: projection, xRadius: roundRadius, yRadius: roundRadius)
-        
+    private func drawActiveScreen(projection: LayoutPreview) {
+        highlightColor.set()
+        let path = NSBezierPath.init(rect: projection)
         path.fill()
     }
     
@@ -187,7 +208,11 @@ class LayoutPreviewView: NSView {
         return nil
     }
     
-    private func getLayoutProjection(layoutPreview: LayoutPreview, padding: CGFloat) -> NSRect {
+    private func getSeparatorProjection(separator: LayoutSeparator) -> LayoutSeparator {
+        return LayoutSeparator(x: NSPoint(x: separator.x.x * bounds.width, y: separator.x.y * bounds.height), y: NSPoint(x: separator.y.x * bounds.width, y: separator.y.y * bounds.height))
+    }
+    
+    private func getLayoutProjection(layoutPreview: LayoutPreview, padding: CGFloat) -> LayoutPreview {
         let projectedXScale = layoutPreview.width / projectionBounds.width
         let projectedYScale = layoutPreview.height / projectionBounds.height
         

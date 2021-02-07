@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -684,13 +685,16 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController storyboardIdentifier="LeftSideMenuViewController" id="XfG-lQ-9wD" customClass="LeftSideMenuViewController" customModule="Concierge" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="455"/>
+                    <view key="view" misplaced="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="572"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView id="2Ci-gG-4nd" customClass="LayoutPreviewView" customModule="Concierge" customModuleProvider="target">
-                                <rect key="frame" x="16" y="272" width="368" height="163"/>
+                            <customView id="2Ci-gG-4nd" customClass="DesktopLayoutView" customModule="Concierge" customModuleProvider="target">
+                                <rect key="frame" x="16" y="322" width="368" height="230"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2Ci-gG-4nd" secondAttribute="height" multiplier="16:10" id="4Eo-Rd-sjG"/>
+                                </constraints>
                             </customView>
                             <scrollView borderType="none" horizontalLineScroll="52" horizontalPageScroll="10" verticalLineScroll="52" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdi-xB-5eZ">
                                 <rect key="frame" x="16" y="0.0" width="368" height="256"/>
@@ -733,7 +737,7 @@
                                                                     <rect key="frame" x="54" y="24" width="271" height="20"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" title="Title" usesSingleLineMode="YES" id="8ly-XS-aG9">
                                                                         <font key="font" metaFont="system" size="17"/>
-                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="textColor" name="TextPrimary"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
@@ -741,7 +745,7 @@
                                                                     <rect key="frame" x="54" y="8" width="271" height="16"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" title="Subtitle" usesSingleLineMode="YES" id="5cl-98-duA">
                                                                         <font key="font" metaFont="system"/>
-                                                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="textColor" name="TextSecondary"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
@@ -790,19 +794,51 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="oQL-Ro-vaR">
+                                <rect key="frame" x="16" y="266" width="368" height="36"/>
+                                <clipView key="contentView" id="Pdw-1a-0nF">
+                                    <rect key="frame" x="0.0" y="0.0" width="368" height="36"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="23a-08-9wW">
+                                            <rect key="frame" x="0.0" y="0.0" width="368" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" scrollDirection="horizontal" id="Vd9-OK-qzC">
+                                                <size key="itemSize" width="36" height="36"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </collectionView>
+                                    </subviews>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="i8k-8A-W2C"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="V6N-ag-Hq4">
+                                    <rect key="frame" x="-100" y="-100" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="w1O-wl-cjo">
+                                    <rect key="frame" x="-100" y="-100" width="16" height="36"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="2Ci-gG-4nd" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="2n7-Hb-ktl"/>
-                            <constraint firstItem="Fdi-xB-5eZ" firstAttribute="top" secondItem="2Ci-gG-4nd" secondAttribute="bottom" constant="16" id="5bS-r0-fvf"/>
+                            <constraint firstAttribute="trailing" secondItem="oQL-Ro-vaR" secondAttribute="trailing" constant="16" id="31D-PW-u4y"/>
+                            <constraint firstItem="oQL-Ro-vaR" firstAttribute="top" secondItem="2Ci-gG-4nd" secondAttribute="bottom" constant="16" id="7qQ-3U-ZLX"/>
                             <constraint firstItem="Fdi-xB-5eZ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="16" id="Lu8-pC-gcQ"/>
+                            <constraint firstItem="Fdi-xB-5eZ" firstAttribute="top" secondItem="oQL-Ro-vaR" secondAttribute="bottom" constant="10" id="Mbb-ig-ogT"/>
                             <constraint firstItem="2Ci-gG-4nd" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="16" id="WWO-Hj-8S4"/>
+                            <constraint firstItem="oQL-Ro-vaR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="16" id="ZAL-Ob-Zee"/>
                             <constraint firstAttribute="bottom" secondItem="Fdi-xB-5eZ" secondAttribute="bottom" id="kbK-vo-xgE"/>
                             <constraint firstAttribute="trailing" secondItem="Fdi-xB-5eZ" secondAttribute="trailing" constant="16" id="nZF-hw-7Kv"/>
                             <constraint firstAttribute="trailing" secondItem="2Ci-gG-4nd" secondAttribute="trailing" constant="16" id="tT6-DE-MGF"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="layoutPreviewView" destination="2Ci-gG-4nd" id="2uo-Uy-2mW"/>
+                        <outlet property="desktopLayoutView" destination="2Ci-gG-4nd" id="Sbl-VI-t41"/>
+                        <outlet property="layoutSchemesCollectionView" destination="23a-08-9wW" id="Jlz-vy-TZF"/>
                         <outlet property="windowsTableView" destination="6fS-dh-SIC" id="Iie-HP-qFm"/>
                     </connections>
                 </viewController>
@@ -935,4 +971,12 @@
             <point key="canvasLocation" x="81" y="1714"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="TextPrimary">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextSecondary">
+            <color red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

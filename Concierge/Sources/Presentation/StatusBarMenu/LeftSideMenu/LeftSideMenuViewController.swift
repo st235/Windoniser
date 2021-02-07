@@ -3,21 +3,21 @@ import AppKit
 
 class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         
-    @IBOutlet weak var layoutPreviewView: LayoutPreviewView!
+    @IBOutlet weak var desktopLayoutView: DesktopLayoutView!
     @IBOutlet weak var windowsTableView: NSTableView!
+    @IBOutlet weak var layoutSchemesCollectionView: NSCollectionView!
     
+    var layoutSchemes: [LayoutScheme] = []
     var activeWindows: [WindowRepository.WindowInfo] = []
+    
     private var prefferedLayoutScheme: LayoutScheme? = nil
     private var windowInteractor: WindowInteractor? = nil
     
-    override func viewDidLoad() {        
-        layoutPreviewView.backgroundColor = .white
-        layoutPreviewView.registerForDraggedTypes([.windowPid])
-        layoutPreviewView.setShadow(withOpacity: 1.0, andRadius: 20)
-        layoutPreviewView.delegate = self
-        
-        layoutPreviewView.inactiveColor = .gray
-        layoutPreviewView.highlightColor = .darkGray
+    override func viewDidLoad() {
+        if let wallpaper = self.windowInteractor?.getFocusedDesktopImage() {
+            desktopLayoutView.image = wallpaper
+        }
+        desktopLayoutView.layoutDelegate = self
                 
         windowsTableView.headerView = nil
         windowsTableView.dataSource = self
@@ -28,6 +28,10 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         windowsTableView.gridColor = .clear
         windowsTableView.selectionHighlightStyle = .none
         
+        layoutSchemesCollectionView.dataSource = self
+        layoutSchemesCollectionView.enclosingScrollView?.horizontalScroller?.alphaValue = 0.0
+        layoutSchemesCollectionView.backgroundColors = [.clear]
+        
         initializePrefferedLayoutScheme()
     }
     
@@ -36,9 +40,7 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
             return
         }
         
-        for area in scheme.areas {
-            layoutPreviewView.addLayoutPreview(layoutPreview: area.rect)
-        }
+        desktopLayoutView.addLayoutPreviews(layoutPreviews: scheme.areas.map({ $0.rect }), layoutSeparators: scheme.separators)
     }
     
     func onPreviewSelected(preview: LayoutPreviewView.LayoutPreview, payload: Any?) {
@@ -62,6 +64,7 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         }
         
         viewController.activeWindows = windowInteractor.activeWindows()
+        viewController.layoutSchemes = layoutSchemesInteractor.defaultSchemes()
         viewController.windowInteractor = windowInteractor
         viewController.prefferedLayoutScheme = layoutSchemesInteractor.activeScheme
         

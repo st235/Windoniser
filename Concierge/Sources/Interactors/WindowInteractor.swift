@@ -11,6 +11,18 @@ class WindowInteractor {
         self.screenController = screenController
     }
     
+    func getFocusedDesktopImage() -> NSImage? {
+        guard let screen = screenController.getScreenWithMouse() else {
+            return nil
+        }
+        
+        guard let url = NSWorkspace.shared.desktopImageURL(for: screen) else {
+            return nil
+        }
+        
+        return NSImage(byReferencing: url)
+    }
+    
     func activeWindows() -> [WindowRepository.WindowInfo] {
         return windowRepository.activeWindows()
     }
