@@ -2,7 +2,7 @@ import Foundation
 
 class StatusBarMenuController {
     
-    private let statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    private let statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     private let delegates: [SideBarMenuDelegate]
     
     init() {
@@ -14,7 +14,7 @@ class StatusBarMenuController {
     
     func attach() {        
         if let button = statusBarItem.button {
-            button.title = "Windows"
+            button.image = NSImage(named: "StatusBarIcon")
             button.sendAction(on: [.leftMouseUp, .rightMouseUp])
             button.target = self
             button.action = #selector(onStatusBarItemClick(_:))
