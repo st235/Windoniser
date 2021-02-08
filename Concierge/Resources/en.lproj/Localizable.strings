@@ -3,3 +3,16 @@
 "left_side_menu_process_window" = "Title";
 "menu_actions_settings" = "Settings";
 "menu_actions_quit" = "Quit";
+
+"title_area_main" = "Main";
+"title_area_left" = "Left";
+"title_area_right" = "Right";
+"title_area_top" = "Top";
+"title_area_bottom" = "Bottom";
+"title_area_one" = "One";
+"title_area_two" = "Two";
+"title_area_three" = "Three";
+"title_area_top_left" = "Top-Left";
+"title_area_top_right" = "Top-Right";
+"title_area_bottom_left" = "Bottom-Left";
+"title_area_bottom_right" = "Bottom-Right";

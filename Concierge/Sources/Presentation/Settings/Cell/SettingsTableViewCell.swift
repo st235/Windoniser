@@ -12,7 +12,7 @@ class SettingsTableViewCell: NSTableCellView {
                 fatalError()
             }
             
-            schemeTitle.stringValue = value.title
+//            schemeTitle.stringValue = value.title
             
 //            for area in value.areas {
 //                layoutScheme.addLayoutPreview(layoutPreview: area.rect)

@@ -23,6 +23,10 @@
 		CF1B395125A2715200F7F9C7 /* RightSideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B395025A2715200F7F9C7 /* RightSideMenuDelegate.swift */; };
 		CF1B395525A2716C00F7F9C7 /* LeftSideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B395425A2716C00F7F9C7 /* LeftSideMenuDelegate.swift */; };
 		CF1B395D25A2747900F7F9C7 /* LeftSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B395C25A2747900F7F9C7 /* LeftSideMenuViewController.swift */; };
+		CF2E7F7925D1CEC300568009 /* LayoutArea+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7F7825D1CEC300568009 /* LayoutArea+Defaults.swift */; };
+		CF2E7F7D25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7F7C25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift */; };
+		CF2E7F8025D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7F7F25D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift */; };
+		CF2E7F8325D1DFD500568009 /* LeftSideMenuViewController+LayoutSchemesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7F8225D1DFD500568009 /* LeftSideMenuViewController+LayoutSchemesDelegate.swift */; };
 		CF3C6AB625A4F4C9007A52F8 /* WindowRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C6AB525A4F4C9007A52F8 /* WindowRepository.swift */; };
 		CF3C6ABA25A4FDFD007A52F8 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C6AB925A4FDFD007A52F8 /* String+Localization.swift */; };
 		CF3C6ABE25A4FFF8007A52F8 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C6ABD25A4FFF8007A52F8 /* EventMonitor.swift */; };
@@ -81,6 +85,10 @@
 		CF1B395025A2715200F7F9C7 /* RightSideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSideMenuDelegate.swift; sourceTree = "<group>"; };
 		CF1B395425A2716C00F7F9C7 /* LeftSideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuDelegate.swift; sourceTree = "<group>"; };
 		CF1B395C25A2747900F7F9C7 /* LeftSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuViewController.swift; sourceTree = "<group>"; };
+		CF2E7F7825D1CEC300568009 /* LayoutArea+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LayoutArea+Defaults.swift"; sourceTree = "<group>"; };
+		CF2E7F7C25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemeIconsFactory.swift; sourceTree = "<group>"; };
+		CF2E7F7F25D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		CF2E7F8225D1DFD500568009 /* LeftSideMenuViewController+LayoutSchemesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+LayoutSchemesDelegate.swift"; sourceTree = "<group>"; };
 		CF3C6AB525A4F4C9007A52F8 /* WindowRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowRepository.swift; sourceTree = "<group>"; };
 		CF3C6AB925A4FDFD007A52F8 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		CF3C6ABD25A4FFF8007A52F8 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
@@ -247,6 +255,7 @@
 				CFBD324A25C8450C006DDAE5 /* AppList */,
 				CF1B395425A2716C00F7F9C7 /* LeftSideMenuDelegate.swift */,
 				CF1B395C25A2747900F7F9C7 /* LeftSideMenuViewController.swift */,
+				CF2E7F8225D1DFD500568009 /* LeftSideMenuViewController+LayoutSchemesDelegate.swift */,
 			);
 			path = LeftSideMenu;
 			sourceTree = "<group>";
@@ -256,6 +265,7 @@
 			children = (
 				CF3C6AB525A4F4C9007A52F8 /* WindowRepository.swift */,
 				CF00C65125A7AC98003454E6 /* LayoutSchemesRepository.swift */,
+				CF2E7F7C25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -269,6 +279,7 @@
 				CF00C65425A7AD5C003454E6 /* LayoutScheme.swift */,
 				CF00C65725A7AD93003454E6 /* LayoutArea.swift */,
 				CFD0769E25D04F9600FF2730 /* Vector2.swift */,
+				CF2E7F7825D1CEC300568009 /* LayoutArea+Defaults.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -387,6 +398,7 @@
 				CFD076A325D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift */,
 				CFD076A725D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib */,
 				CFAD230925D05C09008CEB1B /* LeftSideMenuViewCotroller+CollectionViewDataSource.swift */,
+				CF2E7F7F25D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift */,
 			);
 			path = LayoutSchemes;
 			sourceTree = "<group>";
@@ -466,6 +478,7 @@
 			files = (
 				CF6BD19525D0393A00C4FA40 /* DesktopLayoutView.swift in Sources */,
 				CF821E7A25A21EAF002B5F1D /* WindowController.m in Sources */,
+				CF2E7F8325D1DFD500568009 /* LeftSideMenuViewController+LayoutSchemesDelegate.swift in Sources */,
 				CFAD230A25D05C09008CEB1B /* LeftSideMenuViewCotroller+CollectionViewDataSource.swift in Sources */,
 				CF1B395D25A2747900F7F9C7 /* LeftSideMenuViewController.swift in Sources */,
 				CFB4B92425A90F5B00539AB6 /* WindowInteractor.swift in Sources */,
@@ -477,12 +490,15 @@
 				CF1B395525A2716C00F7F9C7 /* LeftSideMenuDelegate.swift in Sources */,
 				CFBD324C25C84539006DDAE5 /* WindowTableCell.swift in Sources */,
 				CF3C6AC625A50DA4007A52F8 /* WindowPasteboard.swift in Sources */,
+				CF2E7F7925D1CEC300568009 /* LayoutArea+Defaults.swift in Sources */,
 				CF5E417625AA38EE001DEC28 /* SettingsTableViewCell.swift in Sources */,
+				CF2E7F7D25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift in Sources */,
 				CF4826E225A39FB000068927 /* KeyScheme.swift in Sources */,
 				CF4826E825A3B30D00068927 /* KeySchemeFactory.swift in Sources */,
 				CF5E417225AA33B7001DEC28 /* SettingsWindowController.swift in Sources */,
 				CF081A3725C89E770099DA5B /* PopoverWindow.swift in Sources */,
 				CF00C65225A7AC98003454E6 /* LayoutSchemesRepository.swift in Sources */,
+				CF2E7F8025D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift in Sources */,
 				CF5399EF25D097BB00FA6292 /* NSImage+TintColor.swift in Sources */,
 				CFACE48825A1D4C400EE31F5 /* LayoutPreviewView.swift in Sources */,
 				CF4826DF25A39F8B00068927 /* HotKeyController.swift in Sources */,

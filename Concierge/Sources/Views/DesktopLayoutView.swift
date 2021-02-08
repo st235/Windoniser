@@ -72,4 +72,8 @@ class DesktopLayoutView: NSImageView {
         layoutPreviewView.addLayoutPreviews(layoutPreviews: layoutPreviews, layoutSeparators: layoutSeparators)
     }
     
+    func clearPreviews() {
+        layoutPreviewView.clear()
+    }
+    
 }

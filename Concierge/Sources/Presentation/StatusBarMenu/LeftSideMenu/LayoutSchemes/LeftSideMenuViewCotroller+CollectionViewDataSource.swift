@@ -15,7 +15,15 @@ extension LeftSideMenuViewController: NSCollectionViewDataSource {
             fatalError("Cannot load")
         }
         
-        item.load(iconName: layoutSchemes[indexPath.item].iconName)
+        
+        let layoutScheme = layoutSchemes[indexPath.item]
+        
+        item.load(scheme: layoutScheme)
+        
+        if layoutScheme.type == layoutSchemesInteractor?.activeScheme.type {
+            lastKnownIndexPath = indexPath
+            item.select()
+        }
 
         return item
     }

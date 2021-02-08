@@ -10,33 +10,35 @@ class LayoutSchemesInteractor {
     
     public var activeScheme: LayoutScheme {
         get {
-            return _activeScheme
+            return layoutSchemesRepository.prefferedScheme
         }
         
         set {
-            _activeScheme = newValue
+            layoutSchemesRepository.prefferedScheme = newValue
             for delegate in delegates {
-                delegate.onActiveSchemeChanged(schemes: _activeScheme)
+                delegate.onActiveSchemeChanged(schemes: newValue)
             }
         }
     }
     
-    private var _activeScheme: LayoutScheme
     private let layoutSchemesRepository: LayoutSchemesRepository
     
     var delegates: [Delegate] = []
     
     init(layoutSchemesRepository: LayoutSchemesRepository) {
         self.layoutSchemesRepository = layoutSchemesRepository
-        self._activeScheme = layoutSchemesRepository.providePreferredScheme()
     }
     
     func addDelegate(weak delegate: Delegate) {
         self.delegates.append(delegate)
     }
     
+    func removeDelegate(weak delegate: Delegate) {
+        self.delegates.removeAll(where: { $0 === delegate })
+    }
+    
     func defaultSchemes() -> [LayoutScheme] {
-        return layoutSchemesRepository.provideDefaultSchemes()
+        return layoutSchemesRepository.defaultSchemes
     }
     
 }

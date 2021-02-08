@@ -153,6 +153,9 @@ class LayoutPreviewView: NSView {
     func clear() {
         layoutPreviews.removeAll()
         projectedPreviews.removeAll()
+        separators.removeAll()
+        projectedSeparators.removeAll()
+        highlightedPreivew = nil
         needsDisplay = true
     }
     

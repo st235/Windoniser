@@ -9,15 +9,18 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
     
     var layoutSchemes: [LayoutScheme] = []
     var activeWindows: [WindowRepository.WindowInfo] = []
+    var lastKnownIndexPath: IndexPath? = nil
     
-    private var prefferedLayoutScheme: LayoutScheme? = nil
+    var layoutSchemesInteractor: LayoutSchemesInteractor? = nil
     private var windowInteractor: WindowInteractor? = nil
     
     override func viewDidLoad() {
         if let wallpaper = self.windowInteractor?.getFocusedDesktopImage() {
             desktopLayoutView.image = wallpaper
         }
+        
         desktopLayoutView.layoutDelegate = self
+        layoutSchemesInteractor?.addDelegate(weak: self)
                 
         windowsTableView.headerView = nil
         windowsTableView.dataSource = self
@@ -29,14 +32,22 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         windowsTableView.selectionHighlightStyle = .none
         
         layoutSchemesCollectionView.dataSource = self
+        layoutSchemesCollectionView.delegate = self
         layoutSchemesCollectionView.enclosingScrollView?.horizontalScroller?.alphaValue = 0.0
         layoutSchemesCollectionView.backgroundColors = [.clear]
+        layoutSchemesCollectionView.isSelectable = true
         
-        initializePrefferedLayoutScheme()
+        reloadActiveScheme()
     }
     
-    private func initializePrefferedLayoutScheme() {
-        guard let scheme = prefferedLayoutScheme else {
+    override func viewWillDisappear() {
+        layoutSchemesInteractor?.removeDelegate(weak: self)
+    }
+    
+    func reloadActiveScheme() {
+        desktopLayoutView.clearPreviews()
+        
+        guard let scheme = layoutSchemesInteractor?.activeScheme else {
             return
         }
         
@@ -65,8 +76,9 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         
         viewController.activeWindows = windowInteractor.activeWindows()
         viewController.layoutSchemes = layoutSchemesInteractor.defaultSchemes()
+        
+        viewController.layoutSchemesInteractor = layoutSchemesInteractor
         viewController.windowInteractor = windowInteractor
-        viewController.prefferedLayoutScheme = layoutSchemesInteractor.activeScheme
         
         return viewController
     }

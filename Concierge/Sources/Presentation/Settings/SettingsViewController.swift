@@ -20,7 +20,7 @@ class SettingsViewController: NSViewController {
         tableViewAdapter = SettingsTableAdapter(schemes: schemes)
         
         tableViewAdapter?.handler = { [weak self] scheme in
-            self?.layoutShemesInteractor.activeScheme = scheme
+//            self?.layoutShemesInteractor.defaultSchemes = scheme
         }
         
         tableView.delegate = tableViewAdapter

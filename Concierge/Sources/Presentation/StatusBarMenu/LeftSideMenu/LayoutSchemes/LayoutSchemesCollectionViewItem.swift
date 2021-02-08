@@ -3,6 +3,9 @@ import Foundation
 class LayoutSchemesCollectionViewItem: NSCollectionViewItem {
     
     private let inActiveColor: NSColor = NSColor.from(name: .backgroundPrimary)
+    private let activeColor: NSColor = NSColor.from(name: .backgroundAccent)
+    
+    private let layoutSchemesIconFactory = LayoutSchemeIconsFactory()
     
     override func viewDidLoad() {
         view.wantsLayer = true
@@ -10,10 +13,18 @@ class LayoutSchemesCollectionViewItem: NSCollectionViewItem {
         view.layer?.cornerRadius = 12
     }
     
-    func load(iconName: String) {
-        let image = NSImage(named: iconName)
-        image?.isTemplate = true
-        imageView?.image = image?.image(with: NSColor.from(name: .iconPrimary))
+    func load(scheme: LayoutScheme) {
+        let image = layoutSchemesIconFactory.findIconForScheme(scheme: scheme)
+        image.isTemplate = true
+        imageView?.image = image.image(with: NSColor.from(name: .iconPrimary))
+    }
+    
+    func select() {
+        view.layer?.backgroundColor = activeColor.cgColor
+    }
+    
+    func deselect() {
+        view.layer?.backgroundColor = inActiveColor.cgColor
     }
     
 }

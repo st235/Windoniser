@@ -21,7 +21,7 @@ class SchemeAreaMenuItem: MenuItem {
         self.area = area
         self.windowInteractor = windowInteractor
         
-        self._item = NSMenuItem(title: area.title, action: #selector(onMenuItemClick(_:)), keyEquivalent: area.activeKey.description)
+        self._item = NSMenuItem(title: area.titleKey.localized, action: #selector(onMenuItemClick(_:)), keyEquivalent: area.activeKey.description)
         self._item.keyEquivalentModifierMask = area.modifiers
         
         self._item.target = self
