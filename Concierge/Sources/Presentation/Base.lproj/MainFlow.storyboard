@@ -970,6 +970,40 @@
             </objects>
             <point key="canvasLocation" x="81" y="1714"/>
         </scene>
+        <!--Permissions View Controller-->
+        <scene sceneID="S6x-zZ-V4z">
+            <objects>
+                <viewController storyboardIdentifier="PermissionsViewController" id="7ln-2F-eGO" customClass="PermissionsViewController" customModule="Concierge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="i6q-0X-QvT">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="572"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZZN-pG-YVZ">
+                                <rect key="frame" x="128" y="269" width="145" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="GgG-71-Ml2"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Grant permissions" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ep9-KG-VCi">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ZZN-pG-YVZ" firstAttribute="top" secondItem="i6q-0X-QvT" secondAttribute="top" constant="276" id="1ZT-2H-7m0"/>
+                            <constraint firstAttribute="bottom" secondItem="ZZN-pG-YVZ" secondAttribute="bottom" constant="276" id="Wu7-bf-nQV"/>
+                            <constraint firstAttribute="trailing" secondItem="ZZN-pG-YVZ" secondAttribute="trailing" constant="134" id="aso-SF-qZU"/>
+                            <constraint firstItem="ZZN-pG-YVZ" firstAttribute="leading" secondItem="i6q-0X-QvT" secondAttribute="leading" constant="135" id="wqI-ik-P8b"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="grantPermissionButton" destination="ZZN-pG-YVZ" id="S2R-gQ-kbx"/>
+                    </connections>
+                </viewController>
+                <customObject id="1is-Lg-FLe" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="67" y="2352"/>
+        </scene>
     </scenes>
     <resources>
         <namedColor name="TextPrimary">

@@ -23,8 +23,9 @@ class AppDependenciesResolver: DependenciesResolver {
     }
     
     private func registerUI() {
-        diContainer.register(forType: StatusBarMenuController.self) { _ in
-            return StatusBarMenuController()
+        diContainer.register(forType: StatusBarMenuController.self) { resolver in
+            return StatusBarMenuController(layoutSchemesInteractor: resolver.resolve(type: LayoutSchemesInteractor.self),
+                                           accessibilityPermissionsManager: resolver.resolve(type: AccessibilityPermissionsManager.self))
         }
         
         diContainer.register(forType: RightSideMenuItemsFactory.self) { resolver in
@@ -71,6 +72,10 @@ class AppDependenciesResolver: DependenciesResolver {
         
         diContainer.register(forType: LayoutSchemesInteractor.self, andQualifier: .singleton) { resolver in
             return LayoutSchemesInteractor(layoutSchemesRepository: resolver.resolve(type: LayoutSchemesRepository.self))
+        }
+        
+        diContainer.register(forType: AccessibilityPermissionsManager.self, andQualifier: .factory) { _ in
+            return AccessibilityPermissionsManager()
         }
     }
     

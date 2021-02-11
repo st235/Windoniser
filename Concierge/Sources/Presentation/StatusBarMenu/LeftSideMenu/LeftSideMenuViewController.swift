@@ -15,8 +15,8 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
     private var windowInteractor: WindowInteractor? = nil
     
     override func viewDidLoad() {
-        if let wallpaper = self.windowInteractor?.getFocusedDesktopImage() {
-            desktopLayoutView.image = wallpaper
+        if let wallpaperURL = self.windowInteractor?.getFocusedDesktopImageURL() {
+            desktopLayoutView.setImageAsync(fromUrl: wallpaperURL)
         }
         
         desktopLayoutView.layoutDelegate = self

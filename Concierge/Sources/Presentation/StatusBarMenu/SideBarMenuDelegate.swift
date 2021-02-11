@@ -2,7 +2,7 @@ import Foundation
 
 protocol SideBarMenuDelegate {
     
-    func canHandle(event: NSEvent.EventType) -> Bool
+    func canHandle(sideBarEvent: SideBarEvent) -> Bool
     
     func attach()
     

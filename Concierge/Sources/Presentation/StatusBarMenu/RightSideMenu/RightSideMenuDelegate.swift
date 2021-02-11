@@ -39,8 +39,12 @@ class RightSideMenuDelegate: NSObject, SideBarMenuDelegate, NSMenuDelegate, Layo
         }
     }
     
-    func canHandle(event: NSEvent.EventType) -> Bool {
-        return event == .rightMouseUp
+    func canHandle(sideBarEvent: SideBarEvent) -> Bool {
+        if case let SideBarEvent.mouse(event) = sideBarEvent {
+            return event == .rightMouseUp
+        }
+        
+        return false
     }
     
     func attach() {

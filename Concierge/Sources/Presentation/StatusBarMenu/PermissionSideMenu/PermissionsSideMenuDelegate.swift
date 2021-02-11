@@ -1,6 +1,6 @@
 import Foundation
 
-class LeftSideMenuDelegate: NSObject, SideBarMenuDelegate {
+class PermissionsSideMenuDelegate: SideBarMenuDelegate {
     
     private let popover = Popover()
     private let eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown])
@@ -8,8 +8,6 @@ class LeftSideMenuDelegate: NSObject, SideBarMenuDelegate {
     
     init(statusBarMenuItem: NSStatusItem) {
         self.statusBarMenuItem = statusBarMenuItem
-        
-        super.init()
         
         self.eventMonitor.handler = { [weak self] in
             guard let statusBarItem = self?.statusBarMenuItem else {
@@ -23,13 +21,14 @@ class LeftSideMenuDelegate: NSObject, SideBarMenuDelegate {
     }
     
     func canHandle(sideBarEvent: SideBarEvent) -> Bool {
-        if case let SideBarEvent.mouse(event) = sideBarEvent {
-            return event == .leftMouseUp
+        switch sideBarEvent {
+        case .permissionError:
+            return true
+        default:
+            return false
         }
-        
-        return false
     }
-        
+    
     func attach() {
         toggle(statusBarMenuItem: statusBarMenuItem)
     }
@@ -45,7 +44,7 @@ class LeftSideMenuDelegate: NSObject, SideBarMenuDelegate {
     private func show(statusBarMenuItem: NSStatusItem) {
       if let button = statusBarMenuItem.button {
         self.eventMonitor.start()
-        self.popover.contentViewController = LeftSideMenuViewController.create()
+        self.popover.contentViewController = PermissionsViewController.create()
         self.popover.show(relativeTo: button)
       }
     }
@@ -54,5 +53,6 @@ class LeftSideMenuDelegate: NSObject, SideBarMenuDelegate {
         self.eventMonitor.stop()
         self.popover.dismiss()
     }
+    
     
 }
