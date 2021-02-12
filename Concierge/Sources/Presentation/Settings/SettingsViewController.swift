@@ -3,28 +3,27 @@ import Foundation
 
 class SettingsViewController: NSViewController {
     
-    @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var autoLoginCheckBox: NSButton!
     
-    private var layoutShemesInteractor: LayoutSchemesInteractor {
+    private var settingsManager: SettingsManager {
         get {
-            return AppDependenciesResolver.shared.resolve(type: LayoutSchemesInteractor.self)
+            return AppDependenciesResolver.shared.resolve(type: SettingsManager.self)
         }
     }
-    
-    private var tableViewAdapter: SettingsTableAdapter? = nil
     
     override func viewDidLoad() {
-        tableView.isEnabled = true
-        
-        let schemes = layoutShemesInteractor.defaultSchemes()
-        tableViewAdapter = SettingsTableAdapter(schemes: schemes)
-        
-        tableViewAdapter?.handler = { [weak self] scheme in
-//            self?.layoutShemesInteractor.defaultSchemes = scheme
-        }
-        
-        tableView.delegate = tableViewAdapter
-        tableView.dataSource = tableViewAdapter
+        let autoLoginEnabled: Bool = settingsManager.get(type: .autoLogin)
+        autoLoginCheckBox.state = autoLoginEnabled ? .on : .off
     }
     
+    @IBAction func onToggleClicked(_ sender: Any) {
+        switch autoLoginCheckBox.state {
+        case .on:
+            settingsManager.set(type: .autoLogin, value: true)
+        case .off:
+            settingsManager.set(type: .autoLogin, value: false)
+        default:
+            fatalError()
+        }
+    }
 }

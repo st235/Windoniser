@@ -77,6 +77,10 @@ class AppDependenciesResolver: DependenciesResolver {
         diContainer.register(forType: AccessibilityPermissionsManager.self, andQualifier: .factory) { _ in
             return AccessibilityPermissionsManager()
         }
+        
+        diContainer.register(forType: SettingsManager.self, andQualifier: .singleton) { _ in
+            return SettingsManager()
+        }
     }
     
 }

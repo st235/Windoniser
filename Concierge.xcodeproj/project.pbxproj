@@ -41,9 +41,16 @@
 		CF5399EF25D097BB00FA6292 /* NSImage+TintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5399EE25D097BB00FA6292 /* NSImage+TintColor.swift */; };
 		CF5E416E25AA3296001DEC28 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E416D25AA3296001DEC28 /* SettingsViewController.swift */; };
 		CF5E417225AA33B7001DEC28 /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E417125AA33B7001DEC28 /* SettingsWindowController.swift */; };
-		CF5E417625AA38EE001DEC28 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E417525AA38EE001DEC28 /* SettingsTableViewCell.swift */; };
-		CF5E418325AA40D2001DEC28 /* SettingsTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E418225AA40D2001DEC28 /* SettingsTableAdapter.swift */; };
 		CF5E418625AA4476001DEC28 /* LayoutSchemesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E418525AA4476001DEC28 /* LayoutSchemesInteractor.swift */; };
+		CF69958E25D6E6EF00A52715 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF69958D25D6E6EF00A52715 /* AppDelegate.m */; };
+		CF69959025D6E6F000A52715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF69958F25D6E6F000A52715 /* Assets.xcassets */; };
+		CF69959325D6E6F000A52715 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF69959125D6E6F000A52715 /* MainMenu.xib */; };
+		CF69959625D6E6F000A52715 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF69959525D6E6F000A52715 /* main.m */; };
+		CF6995A025D6E80900A52715 /* ConciergeLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF69958A25D6E6EF00A52715 /* ConciergeLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CF6995A725D6EA3A00A52715 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6995A625D6EA3A00A52715 /* SettingsManager.swift */; };
+		CF6995AB25D6EB5A00A52715 /* SettingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6995AA25D6EB5A00A52715 /* SettingType.swift */; };
+		CF6995AF25D6EC2F00A52715 /* SettingProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6995AE25D6EC2F00A52715 /* SettingProperty.swift */; };
+		CF6995B425D6ECED00A52715 /* AutoLoginSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6995B325D6ECED00A52715 /* AutoLoginSetting.swift */; };
 		CF6BD19525D0393A00C4FA40 /* DesktopLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BD19425D0393A00C4FA40 /* DesktopLayoutView.swift */; };
 		CF821E7A25A21EAF002B5F1D /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF821E7925A21EAF002B5F1D /* WindowController.m */; };
 		CF821E8125A22402002B5F1D /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = CF821E8025A22402002B5F1D /* Window.m */; };
@@ -75,6 +82,19 @@
 		CFF5F75F25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5F75E25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift */; };
 		CFF5F76225A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5F76125A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CF69959D25D6E7C600A52715 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				CF6995A025D6E80900A52715 /* ConciergeLauncher.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CF00C63C25A791EF003454E6 /* AppDependenciesResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependenciesResolver.swift; sourceTree = "<group>"; };
@@ -112,9 +132,19 @@
 		CF5399EE25D097BB00FA6292 /* NSImage+TintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+TintColor.swift"; sourceTree = "<group>"; };
 		CF5E416D25AA3296001DEC28 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CF5E417125AA33B7001DEC28 /* SettingsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindowController.swift; sourceTree = "<group>"; };
-		CF5E417525AA38EE001DEC28 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
-		CF5E418225AA40D2001DEC28 /* SettingsTableAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableAdapter.swift; sourceTree = "<group>"; };
 		CF5E418525AA4476001DEC28 /* LayoutSchemesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemesInteractor.swift; sourceTree = "<group>"; };
+		CF69958A25D6E6EF00A52715 /* ConciergeLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConciergeLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF69958C25D6E6EF00A52715 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CF69958D25D6E6EF00A52715 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CF69958F25D6E6F000A52715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF69959225D6E6F000A52715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		CF69959425D6E6F000A52715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF69959525D6E6F000A52715 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CF69959725D6E6F000A52715 /* ConciergeLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConciergeLauncher.entitlements; sourceTree = "<group>"; };
+		CF6995A625D6EA3A00A52715 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		CF6995AA25D6EB5A00A52715 /* SettingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingType.swift; sourceTree = "<group>"; };
+		CF6995AE25D6EC2F00A52715 /* SettingProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProperty.swift; sourceTree = "<group>"; };
+		CF6995B325D6ECED00A52715 /* AutoLoginSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginSetting.swift; sourceTree = "<group>"; };
 		CF6BD19425D0393A00C4FA40 /* DesktopLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopLayoutView.swift; sourceTree = "<group>"; };
 		CF821E7725A21EAE002B5F1D /* Concierge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Concierge-Bridging-Header.h"; sourceTree = "<group>"; };
 		CF821E7825A21EAF002B5F1D /* WindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
@@ -154,6 +184,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CF69958725D6E6EF00A52715 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFACE46D25A1CFCF00EE31F5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -222,6 +259,7 @@
 		CF1B394125A26D1C00F7F9C7 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				CF6995A525D6E8EA00A52715 /* Settings */,
 				CFC2107725D3131300726D8C /* Permissions */,
 				CF00C63F25A79764003454E6 /* Dependencies */,
 				CF3C6ABC25A4FFE7007A52F8 /* EventMonitor */,
@@ -325,20 +363,43 @@
 		CF5E416C25AA327F001DEC28 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				CF5E417425AA3802001DEC28 /* Cell */,
 				CF5E416D25AA3296001DEC28 /* SettingsViewController.swift */,
 				CF5E417125AA33B7001DEC28 /* SettingsWindowController.swift */,
-				CF5E418225AA40D2001DEC28 /* SettingsTableAdapter.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		CF5E417425AA3802001DEC28 /* Cell */ = {
+		CF69958B25D6E6EF00A52715 /* ConciergeLauncher */ = {
 			isa = PBXGroup;
 			children = (
-				CF5E417525AA38EE001DEC28 /* SettingsTableViewCell.swift */,
+				CF69958C25D6E6EF00A52715 /* AppDelegate.h */,
+				CF69958D25D6E6EF00A52715 /* AppDelegate.m */,
+				CF69958F25D6E6F000A52715 /* Assets.xcassets */,
+				CF69959125D6E6F000A52715 /* MainMenu.xib */,
+				CF69959425D6E6F000A52715 /* Info.plist */,
+				CF69959525D6E6F000A52715 /* main.m */,
+				CF69959725D6E6F000A52715 /* ConciergeLauncher.entitlements */,
 			);
-			path = Cell;
+			path = ConciergeLauncher;
+			sourceTree = "<group>";
+		};
+		CF6995A525D6E8EA00A52715 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CF6995B225D6ECC700A52715 /* Types */,
+				CF6995A625D6EA3A00A52715 /* SettingsManager.swift */,
+				CF6995AA25D6EB5A00A52715 /* SettingType.swift */,
+				CF6995AE25D6EC2F00A52715 /* SettingProperty.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CF6995B225D6ECC700A52715 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				CF6995B325D6ECED00A52715 /* AutoLoginSetting.swift */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 		CF821E7325A21881002B5F1D /* Views */ = {
@@ -389,6 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				CFACE47225A1CFCF00EE31F5 /* Concierge */,
+				CF69958B25D6E6EF00A52715 /* ConciergeLauncher */,
 				CFACE47125A1CFCF00EE31F5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -397,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				CFACE47025A1CFCF00EE31F5 /* Concierge.app */,
+				CF69958A25D6E6EF00A52715 /* ConciergeLauncher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -462,6 +525,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CF69958925D6E6EF00A52715 /* ConciergeLauncher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF69959825D6E6F000A52715 /* Build configuration list for PBXNativeTarget "ConciergeLauncher" */;
+			buildPhases = (
+				CF69958625D6E6EF00A52715 /* Sources */,
+				CF69958725D6E6EF00A52715 /* Frameworks */,
+				CF69958825D6E6EF00A52715 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ConciergeLauncher;
+			productName = ConciergeLauncher;
+			productReference = CF69958A25D6E6EF00A52715 /* ConciergeLauncher.app */;
+			productType = "com.apple.product-type.application";
+		};
 		CFACE46F25A1CFCF00EE31F5 /* Concierge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFACE48025A1CFD000EE31F5 /* Build configuration list for PBXNativeTarget "Concierge" */;
@@ -469,6 +549,7 @@
 				CFACE46C25A1CFCF00EE31F5 /* Sources */,
 				CFACE46D25A1CFCF00EE31F5 /* Frameworks */,
 				CFACE46E25A1CFCF00EE31F5 /* Resources */,
+				CF69959D25D6E7C600A52715 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -486,8 +567,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1230;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					CF69958925D6E6EF00A52715 = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					CFACE46F25A1CFCF00EE31F5 = {
 						CreatedOnToolsVersion = 12.3;
 						LastSwiftMigration = 1230;
@@ -509,11 +593,21 @@
 			projectRoot = "";
 			targets = (
 				CFACE46F25A1CFCF00EE31F5 /* Concierge */,
+				CF69958925D6E6EF00A52715 /* ConciergeLauncher */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CF69958825D6E6EF00A52715 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF69959025D6E6F000A52715 /* Assets.xcassets in Resources */,
+				CF69959325D6E6F000A52715 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFACE46E25A1CFCF00EE31F5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -528,6 +622,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CF69958625D6E6EF00A52715 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF69959625D6E6F000A52715 /* main.m in Sources */,
+				CF69958E25D6E6EF00A52715 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFACE46C25A1CFCF00EE31F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -540,7 +643,6 @@
 				CFAD230A25D05C09008CEB1B /* LeftSideMenuViewCotroller+CollectionViewDataSource.swift in Sources */,
 				CF1B395D25A2747900F7F9C7 /* LeftSideMenuViewController.swift in Sources */,
 				CFB4B92425A90F5B00539AB6 /* WindowInteractor.swift in Sources */,
-				CF5E418325AA40D2001DEC28 /* SettingsTableAdapter.swift in Sources */,
 				CF3C6AC325A50D34007A52F8 /* NSPasteboard+Types.swift in Sources */,
 				CFBD325325C857A1006DDAE5 /* WindowTableRow.swift in Sources */,
 				CFC2107E25D333D100726D8C /* SideBarEvent.swift in Sources */,
@@ -550,14 +652,15 @@
 				CFBD324C25C84539006DDAE5 /* WindowTableCell.swift in Sources */,
 				CF3C6AC625A50DA4007A52F8 /* WindowPasteboard.swift in Sources */,
 				CF2E7F7925D1CEC300568009 /* LayoutArea+Defaults.swift in Sources */,
-				CF5E417625AA38EE001DEC28 /* SettingsTableViewCell.swift in Sources */,
 				CF2E7F7D25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift in Sources */,
+				CF6995B425D6ECED00A52715 /* AutoLoginSetting.swift in Sources */,
 				CF4826E225A39FB000068927 /* KeyScheme.swift in Sources */,
 				CF4826E825A3B30D00068927 /* KeySchemeFactory.swift in Sources */,
 				CF9B2E3525D5CFB60087D32B /* NSImageView+ImageViewLoader.swift in Sources */,
 				CF5E417225AA33B7001DEC28 /* SettingsWindowController.swift in Sources */,
 				CF081A3725C89E770099DA5B /* PopoverWindow.swift in Sources */,
 				CF00C65225A7AC98003454E6 /* LayoutSchemesRepository.swift in Sources */,
+				CF6995AB25D6EB5A00A52715 /* SettingType.swift in Sources */,
 				CFC2108125D3358700726D8C /* PermissionsSideMenuDelegate.swift in Sources */,
 				CF2E7F8025D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift in Sources */,
 				CF5399EF25D097BB00FA6292 /* NSImage+TintColor.swift in Sources */,
@@ -581,6 +684,7 @@
 				CF5E416E25AA3296001DEC28 /* SettingsViewController.swift in Sources */,
 				CFBD325025C8563D006DDAE5 /* NSColor+Helpers.swift in Sources */,
 				CF081A3425C89C630099DA5B /* PopoverBackgroundView.swift in Sources */,
+				CF6995AF25D6EC2F00A52715 /* SettingProperty.swift in Sources */,
 				CF3C6ABA25A4FDFD007A52F8 /* String+Localization.swift in Sources */,
 				CF1B395125A2715200F7F9C7 /* RightSideMenuDelegate.swift in Sources */,
 				CF1B394925A26EEE00F7F9C7 /* StatusBarMenuController.swift in Sources */,
@@ -592,6 +696,7 @@
 				CFC2107925D330B200726D8C /* AccessibilityPermissionsManager.swift in Sources */,
 				CF4826D525A3967700068927 /* RightSideMenuItemsFactory.swift in Sources */,
 				CF00C65D25A7B499003454E6 /* MenuItem.swift in Sources */,
+				CF6995A725D6EA3A00A52715 /* SettingsManager.swift in Sources */,
 				CF821E8125A22402002B5F1D /* Window.m in Sources */,
 				CF00C64825A79983003454E6 /* GraphDependenciesContainer.swift in Sources */,
 				CFF5F76225A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift in Sources */,
@@ -610,6 +715,14 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		CF69959125D6E6F000A52715 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF69959225D6E6F000A52715 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 		CFACE47925A1CFD000EE31F5 /* MainFlow.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -621,6 +734,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CF69959925D6E6F000A52715 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ConciergeLauncher/ConciergeLauncher.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 275D4J3Y5L;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = ConciergeLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = st235.com.github.ConciergeLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CF69959A25D6E6F000A52715 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ConciergeLauncher/ConciergeLauncher.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 275D4J3Y5L;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = ConciergeLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = st235.com.github.ConciergeLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		CFACE47E25A1CFD000EE31F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -745,6 +902,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Concierge/Resources/Concierge.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 275D4J3Y5L;
@@ -769,6 +927,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Concierge/Resources/Concierge.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 275D4J3Y5L;
@@ -788,6 +947,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CF69959825D6E6F000A52715 /* Build configuration list for PBXNativeTarget "ConciergeLauncher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF69959925D6E6F000A52715 /* Debug */,
+				CF69959A25D6E6F000A52715 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CFACE46B25A1CFCF00EE31F5 /* Build configuration list for PBXProject "Concierge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

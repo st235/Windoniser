@@ -3,7 +3,6 @@ import Foundation
 class SettingsWindowController: NSWindowController {
     
     override func windowDidLoad() {
-        print("Window did load")
     }
     
     static func create() -> SettingsWindowController {
