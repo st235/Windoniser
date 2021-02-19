@@ -5,11 +5,11 @@ class PopoverWindow: NSPanel {
     private var childContentView: NSView?
     private var backgroundView: PopoverBackgroundView?
     
-    static func instantiate() -> PopoverWindow {
-        return PopoverWindow(contentRect: .zero, styleMask: [.nonactivatingPanel], backing: .buffered, defer: true)
+    static func instantiate(appearance: NSAppearance) -> PopoverWindow {
+        return PopoverWindow(contentRect: .zero, styleMask: [.nonactivatingPanel], backing: .buffered, defer: true, appearance: appearance)
     }
     
-    override init(contentRect: NSRect, styleMask style: NSWindow.StyleMask, backing backingStoreType: NSWindow.BackingStoreType, defer flag: Bool) {
+    init(contentRect: NSRect, styleMask style: NSWindow.StyleMask, backing backingStoreType: NSWindow.BackingStoreType, defer flag: Bool, appearance: NSAppearance) {
         super.init(contentRect: contentRect, styleMask: style, backing: backingStoreType, defer: flag)
         
         isOpaque = false
@@ -18,7 +18,7 @@ class PopoverWindow: NSPanel {
         animationBehavior = .utilityWindow
         backgroundColor = .clear
         collectionBehavior = [.canJoinAllSpaces, .ignoresCycle]
-        appearance = NSAppearance.current
+        self.appearance = appearance
     }
     
     override var canBecomeKey: Bool {
@@ -53,7 +53,7 @@ class PopoverWindow: NSPanel {
         }
 
         get {
-            childContentView
+            backgroundView
         }
     }
     

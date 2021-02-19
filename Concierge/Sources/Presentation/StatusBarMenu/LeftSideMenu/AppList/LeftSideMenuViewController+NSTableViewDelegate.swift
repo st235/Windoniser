@@ -32,9 +32,6 @@ extension LeftSideMenuViewController: NSTableViewDelegate {
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        guard let tableColumn = tableColumn, let index = tableView.tableColumns.firstIndex(of: tableColumn) else {
-            return nil
-        }
         let item = activeWindows[row]
         
         guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "WindowTableCell"), owner: nil) as? WindowTableCell else {

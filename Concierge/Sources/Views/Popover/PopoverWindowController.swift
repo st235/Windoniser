@@ -8,11 +8,17 @@ class PopoverWindowController: NSWindowController, NSWindowDelegate {
     
     public private(set) var isAnimating: Bool = false
     
+    public var appearance: NSAppearance = NSAppearance.current {
+        didSet {
+            self.window?.appearance = appearance
+        }
+    }
+    
     private let popover: Popover
     
     init(with popover: Popover, contentViewController: NSViewController) {
         self.popover = popover
-        let window = PopoverWindow.instantiate()
+        let window = PopoverWindow.instantiate(appearance: appearance)
         super.init(window: window)
         window.delegate = self
         self.contentViewController = contentViewController
@@ -50,7 +56,7 @@ class PopoverWindowController: NSWindowController, NSWindowDelegate {
         }
         
         window.setFrame(calculateFrame(relateTo: view), display: true)
-        window.appearance = NSAppearance.current
+        window.appearance = appearance
     }
     
     private func calculateFrame(relateTo view: NSView) -> NSRect {

@@ -51,6 +51,7 @@
 		CF6995AB25D6EB5A00A52715 /* SettingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6995AA25D6EB5A00A52715 /* SettingType.swift */; };
 		CF6995AF25D6EC2F00A52715 /* SettingProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6995AE25D6EC2F00A52715 /* SettingProperty.swift */; };
 		CF6995B425D6ECED00A52715 /* AutoLoginSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6995B325D6ECED00A52715 /* AutoLoginSetting.swift */; };
+		CF6A348325D85E6B00D1619A /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6A348225D85E6B00D1619A /* AppearanceController.swift */; };
 		CF6BD19525D0393A00C4FA40 /* DesktopLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BD19425D0393A00C4FA40 /* DesktopLayoutView.swift */; };
 		CF821E7A25A21EAF002B5F1D /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF821E7925A21EAF002B5F1D /* WindowController.m */; };
 		CF821E8125A22402002B5F1D /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = CF821E8025A22402002B5F1D /* Window.m */; };
@@ -64,6 +65,11 @@
 		CFACE47B25A1CFD000EE31F5 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFACE47925A1CFD000EE31F5 /* MainFlow.storyboard */; };
 		CFACE48825A1D4C400EE31F5 /* LayoutPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFACE48725A1D4C400EE31F5 /* LayoutPreviewView.swift */; };
 		CFAD230A25D05C09008CEB1B /* LeftSideMenuViewCotroller+CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD230925D05C09008CEB1B /* LeftSideMenuViewCotroller+CollectionViewDataSource.swift */; };
+		CFAEAA6425D987DA00675171 /* AppearanceMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEAA6325D987DA00675171 /* AppearanceMode.swift */; };
+		CFAEAA6925D989D600675171 /* AppearanceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEAA6825D989D600675171 /* AppearanceProvider.swift */; };
+		CFAEAA7125D98B2D00675171 /* SystemAppearanceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEAA7025D98B2D00675171 /* SystemAppearanceProvider.swift */; };
+		CFAEAA7525D98D1A00675171 /* SettingsAppearanceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEAA7425D98D1A00675171 /* SettingsAppearanceProvider.swift */; };
+		CFAEAA7925D98D7800675171 /* AppearanceSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEAA7825D98D7800675171 /* AppearanceSetting.swift */; };
 		CFB3689225A7B8B000CB8A89 /* HotKeysInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB3689125A7B8B000CB8A89 /* HotKeysInteractor.swift */; };
 		CFB4B91725A9017500539AB6 /* DependencyQualifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4B91625A9017500539AB6 /* DependencyQualifier.swift */; };
 		CFB4B91B25A9051400539AB6 /* SynchronizedDependenciesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4B91A25A9051400539AB6 /* SynchronizedDependenciesContainer.swift */; };
@@ -145,6 +151,7 @@
 		CF6995AA25D6EB5A00A52715 /* SettingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingType.swift; sourceTree = "<group>"; };
 		CF6995AE25D6EC2F00A52715 /* SettingProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProperty.swift; sourceTree = "<group>"; };
 		CF6995B325D6ECED00A52715 /* AutoLoginSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginSetting.swift; sourceTree = "<group>"; };
+		CF6A348225D85E6B00D1619A /* AppearanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
 		CF6BD19425D0393A00C4FA40 /* DesktopLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopLayoutView.swift; sourceTree = "<group>"; };
 		CF821E7725A21EAE002B5F1D /* Concierge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Concierge-Bridging-Header.h"; sourceTree = "<group>"; };
 		CF821E7825A21EAF002B5F1D /* WindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
@@ -164,6 +171,11 @@
 		CFACE47D25A1CFD000EE31F5 /* Concierge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Concierge.entitlements; sourceTree = "<group>"; };
 		CFACE48725A1D4C400EE31F5 /* LayoutPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPreviewView.swift; sourceTree = "<group>"; };
 		CFAD230925D05C09008CEB1B /* LeftSideMenuViewCotroller+CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewCotroller+CollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		CFAEAA6325D987DA00675171 /* AppearanceMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceMode.swift; sourceTree = "<group>"; };
+		CFAEAA6825D989D600675171 /* AppearanceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceProvider.swift; sourceTree = "<group>"; };
+		CFAEAA7025D98B2D00675171 /* SystemAppearanceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAppearanceProvider.swift; sourceTree = "<group>"; };
+		CFAEAA7425D98D1A00675171 /* SettingsAppearanceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppearanceProvider.swift; sourceTree = "<group>"; };
+		CFAEAA7825D98D7800675171 /* AppearanceSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSetting.swift; sourceTree = "<group>"; };
 		CFB3689125A7B8B000CB8A89 /* HotKeysInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeysInteractor.swift; sourceTree = "<group>"; };
 		CFB4B91625A9017500539AB6 /* DependencyQualifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyQualifier.swift; sourceTree = "<group>"; };
 		CFB4B91A25A9051400539AB6 /* SynchronizedDependenciesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedDependenciesContainer.swift; sourceTree = "<group>"; };
@@ -225,6 +237,7 @@
 		CF081A3225C89B8F0099DA5B /* Popover */ = {
 			isa = PBXGroup;
 			children = (
+				CF3C6ABD25A4FFF8007A52F8 /* EventMonitor.swift */,
 				CF081A3325C89C630099DA5B /* PopoverBackgroundView.swift */,
 				CF081A3625C89E770099DA5B /* PopoverWindow.swift */,
 				CF081A3A25C8A05B0099DA5B /* Popover.swift */,
@@ -262,7 +275,6 @@
 				CF6995A525D6E8EA00A52715 /* Settings */,
 				CFC2107725D3131300726D8C /* Permissions */,
 				CF00C63F25A79764003454E6 /* Dependencies */,
-				CF3C6ABC25A4FFE7007A52F8 /* EventMonitor */,
 				CF4826D725A3984500068927 /* Keyboard */,
 				CF821E7525A2191F002B5F1D /* Windows */,
 			);
@@ -341,14 +353,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		CF3C6ABC25A4FFE7007A52F8 /* EventMonitor */ = {
-			isa = PBXGroup;
-			children = (
-				CF3C6ABD25A4FFF8007A52F8 /* EventMonitor.swift */,
-			);
-			path = EventMonitor;
-			sourceTree = "<group>";
-		};
 		CF4826D725A3984500068927 /* Keyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,13 +402,25 @@
 			isa = PBXGroup;
 			children = (
 				CF6995B325D6ECED00A52715 /* AutoLoginSetting.swift */,
+				CFAEAA7825D98D7800675171 /* AppearanceSetting.swift */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		CF6A348125D85DBB00D1619A /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				CFAEAA6725D989C300675171 /* Observers */,
+				CF6A348225D85E6B00D1619A /* AppearanceController.swift */,
+				CFAEAA6325D987DA00675171 /* AppearanceMode.swift */,
+			);
+			path = Appearance;
 			sourceTree = "<group>";
 		};
 		CF821E7325A21881002B5F1D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CF6A348125D85DBB00D1619A /* Appearance */,
 				CF9B2E2A25D5BC2A0087D32B /* Images */,
 				CF9B2E2825D5BC010087D32B /* LayoutView */,
 				CF081A3225C89B8F0099DA5B /* Popover */,
@@ -471,6 +487,16 @@
 				CF1B393A25A26A6C00F7F9C7 /* Resources */,
 			);
 			path = Concierge;
+			sourceTree = "<group>";
+		};
+		CFAEAA6725D989C300675171 /* Observers */ = {
+			isa = PBXGroup;
+			children = (
+				CFAEAA6825D989D600675171 /* AppearanceProvider.swift */,
+				CFAEAA7025D98B2D00675171 /* SystemAppearanceProvider.swift */,
+				CFAEAA7425D98D1A00675171 /* SettingsAppearanceProvider.swift */,
+			);
+			path = Observers;
 			sourceTree = "<group>";
 		};
 		CFB4B91E25A90E9900539AB6 /* Interactors */ = {
@@ -640,6 +666,7 @@
 				CF9B2E2C25D5BCC70087D32B /* ImageLoader.swift in Sources */,
 				CF9B2E3225D5CB250087D32B /* ImageViewLoader.swift in Sources */,
 				CF2E7F8325D1DFD500568009 /* LeftSideMenuViewController+LayoutSchemesDelegate.swift in Sources */,
+				CFAEAA7125D98B2D00675171 /* SystemAppearanceProvider.swift in Sources */,
 				CFAD230A25D05C09008CEB1B /* LeftSideMenuViewCotroller+CollectionViewDataSource.swift in Sources */,
 				CF1B395D25A2747900F7F9C7 /* LeftSideMenuViewController.swift in Sources */,
 				CFB4B92425A90F5B00539AB6 /* WindowInteractor.swift in Sources */,
@@ -654,12 +681,16 @@
 				CF2E7F7925D1CEC300568009 /* LayoutArea+Defaults.swift in Sources */,
 				CF2E7F7D25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift in Sources */,
 				CF6995B425D6ECED00A52715 /* AutoLoginSetting.swift in Sources */,
+				CF6A348325D85E6B00D1619A /* AppearanceController.swift in Sources */,
 				CF4826E225A39FB000068927 /* KeyScheme.swift in Sources */,
+				CFAEAA7925D98D7800675171 /* AppearanceSetting.swift in Sources */,
 				CF4826E825A3B30D00068927 /* KeySchemeFactory.swift in Sources */,
 				CF9B2E3525D5CFB60087D32B /* NSImageView+ImageViewLoader.swift in Sources */,
+				CFAEAA6425D987DA00675171 /* AppearanceMode.swift in Sources */,
 				CF5E417225AA33B7001DEC28 /* SettingsWindowController.swift in Sources */,
 				CF081A3725C89E770099DA5B /* PopoverWindow.swift in Sources */,
 				CF00C65225A7AC98003454E6 /* LayoutSchemesRepository.swift in Sources */,
+				CFAEAA6925D989D600675171 /* AppearanceProvider.swift in Sources */,
 				CF6995AB25D6EB5A00A52715 /* SettingType.swift in Sources */,
 				CFC2108125D3358700726D8C /* PermissionsSideMenuDelegate.swift in Sources */,
 				CF2E7F8025D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift in Sources */,
@@ -675,6 +706,7 @@
 				CFB4B91725A9017500539AB6 /* DependencyQualifier.swift in Sources */,
 				CF00C64125A7977C003454E6 /* DependenciesContainer.swift in Sources */,
 				CFB3689225A7B8B000CB8A89 /* HotKeysInteractor.swift in Sources */,
+				CFAEAA7525D98D1A00675171 /* SettingsAppearanceProvider.swift in Sources */,
 				CFD076A425D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift in Sources */,
 				CF00C63D25A791EF003454E6 /* AppDependenciesResolver.swift in Sources */,
 				CF00C65825A7AD93003454E6 /* LayoutArea.swift in Sources */,

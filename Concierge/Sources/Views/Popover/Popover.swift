@@ -2,8 +2,6 @@ import Foundation
 
 class Popover: NSObject {
     
-    private var popoverWindowController: PopoverWindowController?
-    
     public var window: NSWindow? {
         return popoverWindowController?.window
     }
@@ -12,10 +10,29 @@ class Popover: NSObject {
         return popoverWindowController?.isOpen ?? false
     }
     
-    override init() {
+    public var isAutoCancellable: Bool = false
+    
+    public var appearance: NSAppearance {
+        didSet {
+            popoverWindowController?.appearance = appearance
+        }
+    }
+    
+    private var popoverWindowController: PopoverWindowController?
+    private let eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown])
+    
+    init(isAutoCancellable: Bool = false) {
         self.popoverWindowController = nil
         self.contentViewController = nil
+        self.appearance = NSAppearance.current
+        self.isAutoCancellable = isAutoCancellable
         super.init()
+        
+        self.eventMonitor.handler = { [weak self] in
+            if isAutoCancellable {
+                self?.dismiss()
+            }
+        }
     }
     
     var contentViewController: NSViewController? {
@@ -25,17 +42,21 @@ class Popover: NSObject {
             }
             
             popoverWindowController = PopoverWindowController(with: self, contentViewController: contentViewController)
+            popoverWindowController?.appearance = appearance
         }
     }
     
     public func show(relativeTo view: NSView) {
         guard !isShown else { return }
         
+        eventMonitor.start()
         popoverWindowController?.show(relaiveTo: view)
     }
 
     public func dismiss() {
         guard isShown else { return }
+        
+        eventMonitor.stop()
         popoverWindowController?.dismiss()
     }
     

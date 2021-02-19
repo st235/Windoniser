@@ -34,13 +34,6 @@ class PopoverBackgroundView: NSView {
         }
     }
     
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-        
-//        backgroundColor.setFill()
-//        bounds.fill()
-    }
-    
     override var allowsVibrancy: Bool {
         return true
     }

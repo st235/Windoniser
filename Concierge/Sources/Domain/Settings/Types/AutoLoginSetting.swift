@@ -26,4 +26,8 @@ class AutoLoginSetting: SettingProperty {
         }
     }
     
+    func isTrullyNew(value: Any?) -> Bool {
+        return (self.value as! Bool) != (value as! Bool)
+    }
+    
 }

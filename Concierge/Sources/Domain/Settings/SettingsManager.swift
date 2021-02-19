@@ -1,14 +1,19 @@
 import Foundation
 
+typealias SettingsObserver = (Any?) -> Void
+
 class SettingsManager {
     
     private var userDefaults = UserDefaults.standard
     
     private let settings: [SettingProperty]
     
+    private var observers = [SettingType:[SettingsObserver]]()
+    
     init() {
         settings = [
-            AutoLoginSetting(userDefaults: self.userDefaults)
+            AutoLoginSetting(userDefaults: self.userDefaults),
+            AppearanceSetting(userDefaults: self.userDefaults)
         ]
     }
     
@@ -17,7 +22,10 @@ class SettingsManager {
             fatalError("Cannot find requested settings property \(type)")
         }
         
-        settingProperty.value = value
+        if settingProperty.isTrullyNew(value: value) {
+            settingProperty.value = value
+            notify(withValue: value, andType: type)
+        }
     }
     
     func get<T>(type: SettingType) -> T {
@@ -30,6 +38,22 @@ class SettingsManager {
         }
         
         return value
+    }
+    
+    func addObserver(type: SettingType, observer: @escaping SettingsObserver) {
+        if observers[type] == nil {
+            observers[type] = [SettingsObserver]()
+        }
+        
+        observers[type]?.append(observer)
+    }
+    
+    private func notify(withValue value: Any?, andType type: SettingType) {
+        if let observers = observers[type] {
+            for observer in observers {
+                observer(value)
+            }
+        }
     }
     
 }

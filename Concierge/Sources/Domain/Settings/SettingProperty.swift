@@ -4,4 +4,6 @@ protocol SettingProperty {
     
     var value: Any? { get set }
     
+    func isTrullyNew(value: Any?) -> Bool
+    
 }

@@ -10,9 +10,10 @@ class StatusBarMenuController: LayoutSchemesInteractor.Delegate {
     private let layoutSchemeIconsFactory = LayoutSchemeIconsFactory()
     
     init(layoutSchemesInteractor: LayoutSchemesInteractor,
-         accessibilityPermissionsManager: AccessibilityPermissionsManager) {
+         accessibilityPermissionsManager: AccessibilityPermissionsManager,
+         appearanceController: AppearanceController) {
         self.delegates = [
-            LeftSideMenuDelegate(statusBarMenuItem: self.statusBarItem),
+            LeftSideMenuDelegate(statusBarMenuItem: self.statusBarItem, appearanceController: appearanceController),
             RightSideMenuDelegate(statusBarMenuItem: self.statusBarItem),
             PermissionsSideMenuDelegate(statusBarMenuItem: self.statusBarItem)
         ]

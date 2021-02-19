@@ -2,24 +2,22 @@ import Foundation
 
 class LeftSideMenuDelegate: NSObject, SideBarMenuDelegate {
     
-    private let popover = Popover()
-    private let eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown])
+    private let popover = Popover(isAutoCancellable: true)
     private let statusBarMenuItem: NSStatusItem
     
-    init(statusBarMenuItem: NSStatusItem) {
+    private let appearanceController: AppearanceController
+    
+    init(statusBarMenuItem: NSStatusItem, appearanceController: AppearanceController) {
         self.statusBarMenuItem = statusBarMenuItem
+        self.appearanceController = appearanceController
         
         super.init()
         
-        self.eventMonitor.handler = { [weak self] in
-            guard let statusBarItem = self?.statusBarMenuItem else {
-                return
-            }
-            
-            if self?.popover.isShown != false {
-                self?.close(statusBarMenuItem: statusBarItem)
-            }
-        }
+        popover.appearance = NSAppearance(named: appearanceController.systemAppearance)!
+        
+        appearanceController.addObserver(observer: { _ in
+            self.popover.appearance = NSAppearance(named: self.appearanceController.systemAppearance)!
+        })
     }
     
     func canHandle(sideBarEvent: SideBarEvent) -> Bool {
@@ -44,14 +42,12 @@ class LeftSideMenuDelegate: NSObject, SideBarMenuDelegate {
 
     private func show(statusBarMenuItem: NSStatusItem) {
       if let button = statusBarMenuItem.button {
-        self.eventMonitor.start()
         self.popover.contentViewController = LeftSideMenuViewController.create()
         self.popover.show(relativeTo: button)
       }
     }
 
     private func close(statusBarMenuItem: NSStatusItem) {
-        self.eventMonitor.stop()
         self.popover.dismiss()
     }
     
