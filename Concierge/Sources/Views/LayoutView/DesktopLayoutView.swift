@@ -55,6 +55,7 @@ class DesktopLayoutView: NSImageView {
         self.layer?.contentsGravity = .resizeAspectFill
         self.layer?.masksToBounds = true
         self.layer?.cornerRadius = 12
+        self.layer?.backgroundColor = NSColor.from(name: .backgroundAccent).cgColor
         self.wantsLayer = true
     }
     

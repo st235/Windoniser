@@ -41,7 +41,7 @@ class PopoverWindow: NSPanel {
             }
 
             childContentView = newValue
-            childContentView?.translatesAutoresizingMaskIntoConstraints = false
+//            childContentView?.translatesAutoresizingMaskIntoConstraints = false
             childContentView?.wantsLayer = true
             //TODO(st235): pass corner radius
             childContentView?.layer?.cornerRadius = 12

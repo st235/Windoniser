@@ -14,14 +14,11 @@
 		CF00C65225A7AC98003454E6 /* LayoutSchemesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C65125A7AC98003454E6 /* LayoutSchemesRepository.swift */; };
 		CF00C65525A7AD5C003454E6 /* LayoutScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C65425A7AD5C003454E6 /* LayoutScheme.swift */; };
 		CF00C65825A7AD93003454E6 /* LayoutArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C65725A7AD93003454E6 /* LayoutArea.swift */; };
-		CF00C65D25A7B499003454E6 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C65C25A7B499003454E6 /* MenuItem.swift */; };
 		CF081A3425C89C630099DA5B /* PopoverBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF081A3325C89C630099DA5B /* PopoverBackgroundView.swift */; };
 		CF081A3725C89E770099DA5B /* PopoverWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF081A3625C89E770099DA5B /* PopoverWindow.swift */; };
 		CF081A3B25C8A05B0099DA5B /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF081A3A25C8A05B0099DA5B /* Popover.swift */; };
 		CF081A3E25C8A0940099DA5B /* PopoverWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF081A3D25C8A0940099DA5B /* PopoverWindowController.swift */; };
-		CF1B394925A26EEE00F7F9C7 /* StatusBarMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B394825A26EEE00F7F9C7 /* StatusBarMenuController.swift */; };
-		CF1B395125A2715200F7F9C7 /* RightSideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B395025A2715200F7F9C7 /* RightSideMenuDelegate.swift */; };
-		CF1B395525A2716C00F7F9C7 /* LeftSideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B395425A2716C00F7F9C7 /* LeftSideMenuDelegate.swift */; };
+		CF1B394925A26EEE00F7F9C7 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B394825A26EEE00F7F9C7 /* MainWindowController.swift */; };
 		CF1B395D25A2747900F7F9C7 /* LeftSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B395C25A2747900F7F9C7 /* LeftSideMenuViewController.swift */; };
 		CF2E7F7925D1CEC300568009 /* LayoutArea+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7F7825D1CEC300568009 /* LayoutArea+Defaults.swift */; };
 		CF2E7F7D25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7F7C25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift */; };
@@ -33,15 +30,16 @@
 		CF3C6AC325A50D34007A52F8 /* NSPasteboard+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C6AC225A50D34007A52F8 /* NSPasteboard+Types.swift */; };
 		CF3C6AC625A50DA4007A52F8 /* WindowPasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C6AC525A50DA4007A52F8 /* WindowPasteboard.swift */; };
 		CF4826CE25A395D300068927 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF4826D025A395D300068927 /* Localizable.strings */; };
-		CF4826D525A3967700068927 /* RightSideMenuItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4826D425A3967700068927 /* RightSideMenuItemsFactory.swift */; };
 		CF4826DC25A39DD400068927 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4826DB25A39DD400068927 /* Key.swift */; };
 		CF4826DF25A39F8B00068927 /* HotKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4826DE25A39F8B00068927 /* HotKeyController.swift */; };
 		CF4826E225A39FB000068927 /* KeyScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4826E125A39FB000068927 /* KeyScheme.swift */; };
 		CF4826E825A3B30D00068927 /* KeySchemeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4826E725A3B30D00068927 /* KeySchemeFactory.swift */; };
+		CF49A78825FE6F5000339687 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF49A78725FE6F5000339687 /* NavigationController.swift */; };
+		CF49A78C25FE71E900339687 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF49A78B25FE71E900339687 /* ViewControllerFactory.swift */; };
 		CF5399EF25D097BB00FA6292 /* NSImage+TintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5399EE25D097BB00FA6292 /* NSImage+TintColor.swift */; };
 		CF5E416E25AA3296001DEC28 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E416D25AA3296001DEC28 /* SettingsViewController.swift */; };
-		CF5E417225AA33B7001DEC28 /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E417125AA33B7001DEC28 /* SettingsWindowController.swift */; };
 		CF5E418625AA4476001DEC28 /* LayoutSchemesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E418525AA4476001DEC28 /* LayoutSchemesInteractor.swift */; };
+		CF5F4EA625FE486D0090A3A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F4EA525FE486D0090A3A7 /* MainViewController.swift */; };
 		CF69958E25D6E6EF00A52715 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF69958D25D6E6EF00A52715 /* AppDelegate.m */; };
 		CF69959025D6E6F000A52715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF69958F25D6E6F000A52715 /* Assets.xcassets */; };
 		CF69959325D6E6F000A52715 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF69959125D6E6F000A52715 /* MainMenu.xib */; };
@@ -64,7 +62,7 @@
 		CFACE47825A1CFD000EE31F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFACE47725A1CFD000EE31F5 /* Assets.xcassets */; };
 		CFACE47B25A1CFD000EE31F5 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFACE47925A1CFD000EE31F5 /* MainFlow.storyboard */; };
 		CFACE48825A1D4C400EE31F5 /* LayoutPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFACE48725A1D4C400EE31F5 /* LayoutPreviewView.swift */; };
-		CFAD230A25D05C09008CEB1B /* LeftSideMenuViewCotroller+CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD230925D05C09008CEB1B /* LeftSideMenuViewCotroller+CollectionViewDataSource.swift */; };
+		CFAD230A25D05C09008CEB1B /* LeftSideMenuViewController+CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD230925D05C09008CEB1B /* LeftSideMenuViewController+CollectionViewDataSource.swift */; };
 		CFAEAA6425D987DA00675171 /* AppearanceMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEAA6325D987DA00675171 /* AppearanceMode.swift */; };
 		CFAEAA6925D989D600675171 /* AppearanceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEAA6825D989D600675171 /* AppearanceProvider.swift */; };
 		CFAEAA7125D98B2D00675171 /* SystemAppearanceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEAA7025D98B2D00675171 /* SystemAppearanceProvider.swift */; };
@@ -78,13 +76,11 @@
 		CFBD325025C8563D006DDAE5 /* NSColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD324F25C8563D006DDAE5 /* NSColor+Helpers.swift */; };
 		CFBD325325C857A1006DDAE5 /* WindowTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD325225C857A1006DDAE5 /* WindowTableRow.swift */; };
 		CFC2107925D330B200726D8C /* AccessibilityPermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2107825D330B200726D8C /* AccessibilityPermissionsManager.swift */; };
-		CFC2107E25D333D100726D8C /* SideBarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2107D25D333D100726D8C /* SideBarEvent.swift */; };
 		CFC2108125D3358700726D8C /* PermissionsSideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2108025D3358700726D8C /* PermissionsSideMenuDelegate.swift */; };
 		CFC2108425D3373600726D8C /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2108325D3373600726D8C /* PermissionsViewController.swift */; };
 		CFD0769F25D04F9600FF2730 /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD0769E25D04F9600FF2730 /* Vector2.swift */; };
 		CFD076A425D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD076A325D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift */; };
 		CFD076A825D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFD076A725D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib */; };
-		CFDEBD8825A276CE001AD0FE /* SideBarMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDEBD8725A276CE001AD0FE /* SideBarMenuDelegate.swift */; };
 		CFF5F75F25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5F75E25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift */; };
 		CFF5F76225A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF5F76125A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -110,14 +106,11 @@
 		CF00C65125A7AC98003454E6 /* LayoutSchemesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemesRepository.swift; sourceTree = "<group>"; };
 		CF00C65425A7AD5C003454E6 /* LayoutScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutScheme.swift; sourceTree = "<group>"; };
 		CF00C65725A7AD93003454E6 /* LayoutArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutArea.swift; sourceTree = "<group>"; };
-		CF00C65C25A7B499003454E6 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		CF081A3325C89C630099DA5B /* PopoverBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverBackgroundView.swift; sourceTree = "<group>"; };
 		CF081A3625C89E770099DA5B /* PopoverWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverWindow.swift; sourceTree = "<group>"; };
 		CF081A3A25C8A05B0099DA5B /* Popover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popover.swift; sourceTree = "<group>"; };
 		CF081A3D25C8A0940099DA5B /* PopoverWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverWindowController.swift; sourceTree = "<group>"; };
-		CF1B394825A26EEE00F7F9C7 /* StatusBarMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarMenuController.swift; sourceTree = "<group>"; };
-		CF1B395025A2715200F7F9C7 /* RightSideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSideMenuDelegate.swift; sourceTree = "<group>"; };
-		CF1B395425A2716C00F7F9C7 /* LeftSideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuDelegate.swift; sourceTree = "<group>"; };
+		CF1B394825A26EEE00F7F9C7 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		CF1B395C25A2747900F7F9C7 /* LeftSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuViewController.swift; sourceTree = "<group>"; };
 		CF2E7F7825D1CEC300568009 /* LayoutArea+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LayoutArea+Defaults.swift"; sourceTree = "<group>"; };
 		CF2E7F7C25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemeIconsFactory.swift; sourceTree = "<group>"; };
@@ -130,15 +123,16 @@
 		CF3C6AC525A50DA4007A52F8 /* WindowPasteboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowPasteboard.swift; sourceTree = "<group>"; };
 		CF4826CF25A395D300068927 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CF4826D225A3960000068927 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		CF4826D425A3967700068927 /* RightSideMenuItemsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSideMenuItemsFactory.swift; sourceTree = "<group>"; };
 		CF4826DB25A39DD400068927 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		CF4826DE25A39F8B00068927 /* HotKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyController.swift; sourceTree = "<group>"; };
 		CF4826E125A39FB000068927 /* KeyScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyScheme.swift; sourceTree = "<group>"; };
 		CF4826E725A3B30D00068927 /* KeySchemeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySchemeFactory.swift; sourceTree = "<group>"; };
+		CF49A78725FE6F5000339687 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		CF49A78B25FE71E900339687 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		CF5399EE25D097BB00FA6292 /* NSImage+TintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+TintColor.swift"; sourceTree = "<group>"; };
 		CF5E416D25AA3296001DEC28 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		CF5E417125AA33B7001DEC28 /* SettingsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindowController.swift; sourceTree = "<group>"; };
 		CF5E418525AA4476001DEC28 /* LayoutSchemesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemesInteractor.swift; sourceTree = "<group>"; };
+		CF5F4EA525FE486D0090A3A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CF69958A25D6E6EF00A52715 /* ConciergeLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConciergeLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF69958C25D6E6EF00A52715 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CF69958D25D6E6EF00A52715 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -170,7 +164,7 @@
 		CFACE47C25A1CFD000EE31F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFACE47D25A1CFD000EE31F5 /* Concierge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Concierge.entitlements; sourceTree = "<group>"; };
 		CFACE48725A1D4C400EE31F5 /* LayoutPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPreviewView.swift; sourceTree = "<group>"; };
-		CFAD230925D05C09008CEB1B /* LeftSideMenuViewCotroller+CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewCotroller+CollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		CFAD230925D05C09008CEB1B /* LeftSideMenuViewController+CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+CollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		CFAEAA6325D987DA00675171 /* AppearanceMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceMode.swift; sourceTree = "<group>"; };
 		CFAEAA6825D989D600675171 /* AppearanceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceProvider.swift; sourceTree = "<group>"; };
 		CFAEAA7025D98B2D00675171 /* SystemAppearanceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAppearanceProvider.swift; sourceTree = "<group>"; };
@@ -184,13 +178,11 @@
 		CFBD324F25C8563D006DDAE5 /* NSColor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+Helpers.swift"; sourceTree = "<group>"; };
 		CFBD325225C857A1006DDAE5 /* WindowTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowTableRow.swift; sourceTree = "<group>"; };
 		CFC2107825D330B200726D8C /* AccessibilityPermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityPermissionsManager.swift; sourceTree = "<group>"; };
-		CFC2107D25D333D100726D8C /* SideBarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarEvent.swift; sourceTree = "<group>"; };
 		CFC2108025D3358700726D8C /* PermissionsSideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsSideMenuDelegate.swift; sourceTree = "<group>"; };
 		CFC2108325D3373600726D8C /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 		CFD0769E25D04F9600FF2730 /* Vector2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector2.swift; sourceTree = "<group>"; };
 		CFD076A325D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemesCollectionViewItem.swift; sourceTree = "<group>"; };
 		CFD076A725D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LayoutSchemesCollectionViewItem.xib; sourceTree = "<group>"; };
-		CFDEBD8725A276CE001AD0FE /* SideBarMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarMenuDelegate.swift; sourceTree = "<group>"; };
 		CFF5F75E25A668EC00C3378F /* LeftSideMenuViewController+NSTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+NSTableViewDataSource.swift"; sourceTree = "<group>"; };
 		CFF5F76125A669A600C3378F /* LeftSideMenuViewController+NSTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+NSTableViewDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,15 +217,6 @@
 			path = Dependencies;
 			sourceTree = "<group>";
 		};
-		CF00C65B25A7B456003454E6 /* MenuItems */ = {
-			isa = PBXGroup;
-			children = (
-				CF4826D425A3967700068927 /* RightSideMenuItemsFactory.swift */,
-				CF00C65C25A7B499003454E6 /* MenuItem.swift */,
-			);
-			path = MenuItems;
-			sourceTree = "<group>";
-		};
 		CF081A3225C89B8F0099DA5B /* Popover */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,9 +232,12 @@
 		CF1B393925A26A5D00F7F9C7 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CF1B394C25A270AF00F7F9C7 /* Content */,
+				CFC2107C25D3334E00726D8C /* Permissions */,
+				CF5F4EA425FE48520090A3A7 /* Main */,
+				CF49A78F25FE71F200339687 /* Navigation */,
 				CF5E416C25AA327F001DEC28 /* Settings */,
 				CFACE47925A1CFD000EE31F5 /* MainFlow.storyboard */,
-				CF1B394725A26E9F00F7F9C7 /* StatusBarMenu */,
 				CFACE47325A1CFCF00EE31F5 /* AppDelegate.swift */,
 				CF00C63C25A791EF003454E6 /* AppDependenciesResolver.swift */,
 			);
@@ -295,38 +281,15 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		CF1B394725A26E9F00F7F9C7 /* StatusBarMenu */ = {
-			isa = PBXGroup;
-			children = (
-				CFC2107C25D3334E00726D8C /* PermissionSideMenu */,
-				CF1B394C25A270AF00F7F9C7 /* LeftSideMenu */,
-				CF1B394B25A270A000F7F9C7 /* RightSideMenu */,
-				CF1B394825A26EEE00F7F9C7 /* StatusBarMenuController.swift */,
-				CFDEBD8725A276CE001AD0FE /* SideBarMenuDelegate.swift */,
-				CFC2107D25D333D100726D8C /* SideBarEvent.swift */,
-			);
-			path = StatusBarMenu;
-			sourceTree = "<group>";
-		};
-		CF1B394B25A270A000F7F9C7 /* RightSideMenu */ = {
-			isa = PBXGroup;
-			children = (
-				CF00C65B25A7B456003454E6 /* MenuItems */,
-				CF1B395025A2715200F7F9C7 /* RightSideMenuDelegate.swift */,
-			);
-			path = RightSideMenu;
-			sourceTree = "<group>";
-		};
-		CF1B394C25A270AF00F7F9C7 /* LeftSideMenu */ = {
+		CF1B394C25A270AF00F7F9C7 /* Content */ = {
 			isa = PBXGroup;
 			children = (
 				CFD076A225D0593000FF2730 /* LayoutSchemes */,
 				CFBD324A25C8450C006DDAE5 /* AppList */,
-				CF1B395425A2716C00F7F9C7 /* LeftSideMenuDelegate.swift */,
 				CF1B395C25A2747900F7F9C7 /* LeftSideMenuViewController.swift */,
 				CF2E7F8225D1DFD500568009 /* LeftSideMenuViewController+LayoutSchemesDelegate.swift */,
 			);
-			path = LeftSideMenu;
+			path = Content;
 			sourceTree = "<group>";
 		};
 		CF3C6AB425A4F4A5007A52F8 /* Data */ = {
@@ -364,13 +327,30 @@
 			path = Keyboard;
 			sourceTree = "<group>";
 		};
+		CF49A78F25FE71F200339687 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CF49A78B25FE71E900339687 /* ViewControllerFactory.swift */,
+				CF49A78725FE6F5000339687 /* NavigationController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		CF5E416C25AA327F001DEC28 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				CF5E416D25AA3296001DEC28 /* SettingsViewController.swift */,
-				CF5E417125AA33B7001DEC28 /* SettingsWindowController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		CF5F4EA425FE48520090A3A7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CF1B394825A26EEE00F7F9C7 /* MainWindowController.swift */,
+				CF5F4EA525FE486D0090A3A7 /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		CF69958B25D6E6EF00A52715 /* ConciergeLauncher */ = {
@@ -528,13 +508,13 @@
 			path = Permissions;
 			sourceTree = "<group>";
 		};
-		CFC2107C25D3334E00726D8C /* PermissionSideMenu */ = {
+		CFC2107C25D3334E00726D8C /* Permissions */ = {
 			isa = PBXGroup;
 			children = (
 				CFC2108025D3358700726D8C /* PermissionsSideMenuDelegate.swift */,
 				CFC2108325D3373600726D8C /* PermissionsViewController.swift */,
 			);
-			path = PermissionSideMenu;
+			path = Permissions;
 			sourceTree = "<group>";
 		};
 		CFD076A225D0593000FF2730 /* LayoutSchemes */ = {
@@ -542,7 +522,7 @@
 			children = (
 				CFD076A325D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift */,
 				CFD076A725D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib */,
-				CFAD230925D05C09008CEB1B /* LeftSideMenuViewCotroller+CollectionViewDataSource.swift */,
+				CFAD230925D05C09008CEB1B /* LeftSideMenuViewController+CollectionViewDataSource.swift */,
 				CF2E7F7F25D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift */,
 			);
 			path = LayoutSchemes;
@@ -662,20 +642,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF6BD19525D0393A00C4FA40 /* DesktopLayoutView.swift in Sources */,
+				CF49A78C25FE71E900339687 /* ViewControllerFactory.swift in Sources */,
 				CF821E7A25A21EAF002B5F1D /* WindowController.m in Sources */,
 				CF9B2E2C25D5BCC70087D32B /* ImageLoader.swift in Sources */,
 				CF9B2E3225D5CB250087D32B /* ImageViewLoader.swift in Sources */,
 				CF2E7F8325D1DFD500568009 /* LeftSideMenuViewController+LayoutSchemesDelegate.swift in Sources */,
 				CFAEAA7125D98B2D00675171 /* SystemAppearanceProvider.swift in Sources */,
-				CFAD230A25D05C09008CEB1B /* LeftSideMenuViewCotroller+CollectionViewDataSource.swift in Sources */,
+				CFAD230A25D05C09008CEB1B /* LeftSideMenuViewController+CollectionViewDataSource.swift in Sources */,
 				CF1B395D25A2747900F7F9C7 /* LeftSideMenuViewController.swift in Sources */,
 				CFB4B92425A90F5B00539AB6 /* WindowInteractor.swift in Sources */,
 				CF3C6AC325A50D34007A52F8 /* NSPasteboard+Types.swift in Sources */,
 				CFBD325325C857A1006DDAE5 /* WindowTableRow.swift in Sources */,
-				CFC2107E25D333D100726D8C /* SideBarEvent.swift in Sources */,
-				CFDEBD8825A276CE001AD0FE /* SideBarMenuDelegate.swift in Sources */,
 				CF00C65525A7AD5C003454E6 /* LayoutScheme.swift in Sources */,
-				CF1B395525A2716C00F7F9C7 /* LeftSideMenuDelegate.swift in Sources */,
 				CFBD324C25C84539006DDAE5 /* WindowTableCell.swift in Sources */,
 				CF3C6AC625A50DA4007A52F8 /* WindowPasteboard.swift in Sources */,
 				CF2E7F7925D1CEC300568009 /* LayoutArea+Defaults.swift in Sources */,
@@ -685,9 +663,9 @@
 				CF4826E225A39FB000068927 /* KeyScheme.swift in Sources */,
 				CFAEAA7925D98D7800675171 /* AppearanceSetting.swift in Sources */,
 				CF4826E825A3B30D00068927 /* KeySchemeFactory.swift in Sources */,
+				CF5F4EA625FE486D0090A3A7 /* MainViewController.swift in Sources */,
 				CF9B2E3525D5CFB60087D32B /* NSImageView+ImageViewLoader.swift in Sources */,
 				CFAEAA6425D987DA00675171 /* AppearanceMode.swift in Sources */,
-				CF5E417225AA33B7001DEC28 /* SettingsWindowController.swift in Sources */,
 				CF081A3725C89E770099DA5B /* PopoverWindow.swift in Sources */,
 				CF00C65225A7AC98003454E6 /* LayoutSchemesRepository.swift in Sources */,
 				CFAEAA6925D989D600675171 /* AppearanceProvider.swift in Sources */,
@@ -718,16 +696,14 @@
 				CF081A3425C89C630099DA5B /* PopoverBackgroundView.swift in Sources */,
 				CF6995AF25D6EC2F00A52715 /* SettingProperty.swift in Sources */,
 				CF3C6ABA25A4FDFD007A52F8 /* String+Localization.swift in Sources */,
-				CF1B395125A2715200F7F9C7 /* RightSideMenuDelegate.swift in Sources */,
-				CF1B394925A26EEE00F7F9C7 /* StatusBarMenuController.swift in Sources */,
+				CF1B394925A26EEE00F7F9C7 /* MainWindowController.swift in Sources */,
 				CF821E8625A23430002B5F1D /* ScreensController.swift in Sources */,
 				CF5E418625AA4476001DEC28 /* LayoutSchemesInteractor.swift in Sources */,
 				CF081A3B25C8A05B0099DA5B /* Popover.swift in Sources */,
+				CF49A78825FE6F5000339687 /* NavigationController.swift in Sources */,
 				CFACE47425A1CFCF00EE31F5 /* AppDelegate.swift in Sources */,
 				CF3C6ABE25A4FFF8007A52F8 /* EventMonitor.swift in Sources */,
 				CFC2107925D330B200726D8C /* AccessibilityPermissionsManager.swift in Sources */,
-				CF4826D525A3967700068927 /* RightSideMenuItemsFactory.swift in Sources */,
-				CF00C65D25A7B499003454E6 /* MenuItem.swift in Sources */,
 				CF6995A725D6EA3A00A52715 /* SettingsManager.swift in Sources */,
 				CF821E8125A22402002B5F1D /* Window.m in Sources */,
 				CF00C64825A79983003454E6 /* GraphDependenciesContainer.swift in Sources */,

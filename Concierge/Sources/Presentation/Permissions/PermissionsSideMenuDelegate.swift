@@ -1,13 +1,16 @@
 import Foundation
 
-class PermissionsSideMenuDelegate: SideBarMenuDelegate {
+class PermissionsSideMenuDelegate {
     
     private let popover = Popover()
     private let eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown])
     private let statusBarMenuItem: NSStatusItem
+    private let viewControllerFactory: ViewControllerFactory
     
-    init(statusBarMenuItem: NSStatusItem) {
+    init(statusBarMenuItem: NSStatusItem,
+         viewControllerFactory: ViewControllerFactory) {
         self.statusBarMenuItem = statusBarMenuItem
+        self.viewControllerFactory = viewControllerFactory
         
         self.eventMonitor.handler = { [weak self] in
             guard let statusBarItem = self?.statusBarMenuItem else {
@@ -18,19 +21,6 @@ class PermissionsSideMenuDelegate: SideBarMenuDelegate {
                 self?.close(statusBarMenuItem: statusBarItem)
             }
         }
-    }
-    
-    func canHandle(sideBarEvent: SideBarEvent) -> Bool {
-        switch sideBarEvent {
-        case .permissionError:
-            return true
-        default:
-            return false
-        }
-    }
-    
-    func attach() {
-        toggle(statusBarMenuItem: statusBarMenuItem)
     }
     
     private func toggle(statusBarMenuItem: NSStatusItem) {
@@ -44,7 +34,7 @@ class PermissionsSideMenuDelegate: SideBarMenuDelegate {
     private func show(statusBarMenuItem: NSStatusItem) {
       if let button = statusBarMenuItem.button {
         self.eventMonitor.start()
-        self.popover.contentViewController = PermissionsViewController.create()
+        self.popover.contentViewController = viewControllerFactory.create(id: .permissions)
         self.popover.show(relativeTo: button)
       }
     }

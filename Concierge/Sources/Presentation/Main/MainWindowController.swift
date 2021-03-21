@@ -1,26 +1,30 @@
 import Foundation
 
-class StatusBarMenuController: LayoutSchemesInteractor.Delegate {
+class MainWindowController: LayoutSchemesInteractor.Delegate {
     
     private let statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-    private let delegates: [SideBarMenuDelegate]
-    private let layoutSchemesInteractor: LayoutSchemesInteractor
+    private let popover = Popover(isAutoCancellable: true)
     
+    private let layoutSchemesInteractor: LayoutSchemesInteractor
     private let accessibilityPermissionsManager: AccessibilityPermissionsManager
     private let layoutSchemeIconsFactory = LayoutSchemeIconsFactory()
+    private let viewControllerFactory: ViewControllerFactory
     
     init(layoutSchemesInteractor: LayoutSchemesInteractor,
          accessibilityPermissionsManager: AccessibilityPermissionsManager,
+         viewControllerFactory: ViewControllerFactory,
          appearanceController: AppearanceController) {
-        self.delegates = [
-            LeftSideMenuDelegate(statusBarMenuItem: self.statusBarItem, appearanceController: appearanceController),
-            RightSideMenuDelegate(statusBarMenuItem: self.statusBarItem),
-            PermissionsSideMenuDelegate(statusBarMenuItem: self.statusBarItem)
-        ]
         self.layoutSchemesInteractor = layoutSchemesInteractor
         self.accessibilityPermissionsManager = accessibilityPermissionsManager
+        self.viewControllerFactory = viewControllerFactory
         
         self.layoutSchemesInteractor.addDelegate(weak: self)
+        
+        popover.appearance = NSAppearance(named: appearanceController.systemAppearance)!
+        
+        appearanceController.addObserver(observer: { _ in
+            self.popover.appearance = NSAppearance(named: appearanceController.systemAppearance)!
+        })
     }
     
     func onActiveSchemeChanged(schemes: LayoutScheme) {
@@ -39,21 +43,26 @@ class StatusBarMenuController: LayoutSchemesInteractor.Delegate {
     }
     
     @objc private func onStatusBarItemClick(_ sender: Any?) {
-        let event = NSApp.currentEvent!
-        
-        if (!accessibilityPermissionsManager.isPermissionGranted()) {
-            attachActiveDelegates(sideBarEvent: .permissionError)
-        } else {
-            attachActiveDelegates(sideBarEvent: .mouse(event: event.type))
-        }
+        toggle()
     }
     
-    private func attachActiveDelegates(sideBarEvent: SideBarEvent) {
-        for delegate in delegates {
-            if delegate.canHandle(sideBarEvent: sideBarEvent) {
-                delegate.attach()
-            }
-        }
+    private func toggle() {
+      if popover.isShown {
+        close(statusBarMenuItem: statusBarItem)
+      } else {
+        show(statusBarMenuItem: statusBarItem)
+      }
+    }
+
+    private func show(statusBarMenuItem: NSStatusItem) {
+      if let button = statusBarMenuItem.button {
+        self.popover.contentViewController = viewControllerFactory.create(id: .main)
+        self.popover.show(relativeTo: button)
+      }
+    }
+
+    private func close(statusBarMenuItem: NSStatusItem) {
+        self.popover.dismiss()
     }
     
 }

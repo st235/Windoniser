@@ -23,19 +23,19 @@ class AppDependenciesResolver: DependenciesResolver {
     }
     
     private func registerUI() {
-        diContainer.register(forType: StatusBarMenuController.self) { resolver in
-            return StatusBarMenuController(layoutSchemesInteractor: resolver.resolve(type: LayoutSchemesInteractor.self),
+        diContainer.register(forType: MainWindowController.self) { resolver in
+            return MainWindowController(layoutSchemesInteractor: resolver.resolve(type: LayoutSchemesInteractor.self),
                                            accessibilityPermissionsManager: resolver.resolve(type: AccessibilityPermissionsManager.self),
+                                           viewControllerFactory: resolver.resolve(type: ViewControllerFactory.self),
                                            appearanceController: resolver.resolve(type: AppearanceController.self))
-        }
-        
-        diContainer.register(forType: RightSideMenuItemsFactory.self) { resolver in
-            return RightSideMenuItemsFactory(layoutSchemesInteractor: resolver.resolve(type: LayoutSchemesInteractor.self),
-                                             windowInteractor: resolver.resolve(type: WindowInteractor.self))
         }
     }
     
     private func registerControllers() {
+        diContainer.register(forType: ViewControllerFactory.self, andQualifier: .factory) { _ in
+            return ViewControllerFactory()
+        }
+        
         diContainer.register(forType: WindowController.self, andQualifier: .singleton) { _ in
             return WindowController()
         }

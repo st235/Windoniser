@@ -18,7 +18,7 @@ extension LeftSideMenuViewController: NSCollectionViewDelegate {
         lastKnownIndexPath = indexPath
         let scheme = layoutSchemes[indexPath.item]
         
-        layoutSchemesInteractor?.activeScheme = scheme
+        activeScheme = scheme
     }
     
 }

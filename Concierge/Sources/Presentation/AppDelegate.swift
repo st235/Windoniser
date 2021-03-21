@@ -3,7 +3,7 @@ import Cocoa
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    private let statusBarMenuController: StatusBarMenuController = AppDependenciesResolver.shared.resolve(type: StatusBarMenuController.self)
+    private let statusBarMenuController: MainWindowController = AppDependenciesResolver.shared.resolve(type: MainWindowController.self)
     private let hotKeysManager: HotKeysInteractor = AppDependenciesResolver.shared.resolve(type: HotKeysInteractor.self)
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {

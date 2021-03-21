@@ -6,21 +6,41 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
     @IBOutlet weak var desktopLayoutView: DesktopLayoutView!
     @IBOutlet weak var windowsTableView: NSTableView!
     @IBOutlet weak var layoutSchemesCollectionView: NSCollectionView!
+    @IBOutlet weak var settingsButton: NSButton!
     
-    var layoutSchemes: [LayoutScheme] = []
-    var activeWindows: [WindowRepository.WindowInfo] = []
     var lastKnownIndexPath: IndexPath? = nil
     
-    var layoutSchemesInteractor: LayoutSchemesInteractor? = nil
-    private var windowInteractor: WindowInteractor? = nil
+    private let windowInteractor: WindowInteractor = AppDependenciesResolver.shared.resolve(type: WindowInteractor.self)
+    private let layoutSchemesInteractor: LayoutSchemesInteractor = AppDependenciesResolver.shared.resolve(type: LayoutSchemesInteractor.self)
+    
+    var layoutSchemes: [LayoutScheme] {
+        get {
+            return layoutSchemesInteractor.defaultSchemes()
+        }
+    }
+    
+    var activeScheme: LayoutScheme {
+        get {
+            return layoutSchemesInteractor.activeScheme
+        }
+        set(newValue) {
+            layoutSchemesInteractor.activeScheme = newValue
+        }
+    }
+    
+    var activeWindows: [WindowRepository.WindowInfo] {
+        get {
+            return windowInteractor.activeWindows()
+        }
+    }
     
     override func viewDidLoad() {
-        if let wallpaperURL = self.windowInteractor?.getFocusedDesktopImageURL() {
+        if let wallpaperURL = self.windowInteractor.getFocusedDesktopImageURL() {
             desktopLayoutView.setImageAsync(fromUrl: wallpaperURL)
         }
         
         desktopLayoutView.layoutDelegate = self
-        layoutSchemesInteractor?.addDelegate(weak: self)
+        layoutSchemesInteractor.addDelegate(weak: self)
                 
         windowsTableView.headerView = nil
         windowsTableView.dataSource = self
@@ -37,20 +57,19 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         layoutSchemesCollectionView.backgroundColors = [.clear]
         layoutSchemesCollectionView.isSelectable = true
         
+        settingsButton.target = self
+        settingsButton.action = #selector(onSettingsClick(_:))
+        
         reloadActiveScheme()
     }
     
-    override func viewWillDisappear() {
-        layoutSchemesInteractor?.removeDelegate(weak: self)
+    @objc private func onSettingsClick(_ sender: Any?) {
+        (parent as? NavigationController)?.push(controllerId: .settings)
     }
     
     func reloadActiveScheme() {
         desktopLayoutView.clearPreviews()
-        
-        guard let scheme = layoutSchemesInteractor?.activeScheme else {
-            return
-        }
-        
+        let scheme = activeScheme
         desktopLayoutView.addLayoutPreviews(layoutPreviews: scheme.areas.map({ $0.rect }), layoutSeparators: scheme.separators)
     }
     
@@ -62,24 +81,7 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         assert(windowPids.count == 1, "Pids have more (or less) than 1 object. Count is \(windowPids.count)")
         
         if let windowPid = windowPids.first {
-            windowInteractor?.resizeWindow(withPid: windowPid.pid, andId: windowPid.id, into: preview)
+            windowInteractor.resizeWindow(withPid: windowPid.pid, andId: windowPid.id, into: preview)
         }
-    }
-    
-    static func create(windowInteractor: WindowInteractor = AppDependenciesResolver.shared.resolve(type: WindowInteractor.self),
-                       layoutSchemesInteractor: LayoutSchemesInteractor = AppDependenciesResolver.shared.resolve(type: LayoutSchemesInteractor.self)) -> LeftSideMenuViewController {
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("MainFlow"), bundle: nil)
-        let identifier = NSStoryboard.SceneIdentifier("LeftSideMenuViewController")
-        guard let viewController = storyboard.instantiateController(withIdentifier: identifier) as? LeftSideMenuViewController else {
-            fatalError("Check storyboard. Probably, id of view controller does not match with id below")
-        }
-        
-        viewController.activeWindows = windowInteractor.activeWindows()
-        viewController.layoutSchemes = layoutSchemesInteractor.defaultSchemes()
-        
-        viewController.layoutSchemesInteractor = layoutSchemesInteractor
-        viewController.windowInteractor = windowInteractor
-        
-        return viewController
     }
 }
