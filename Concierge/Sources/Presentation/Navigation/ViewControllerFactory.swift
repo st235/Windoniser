@@ -10,6 +10,8 @@ public class ViewControllerFactory {
         case content = "LeftSideMenuViewController"
         case permissions = "PermissionsViewController"
         case settings = "SettingsViewController"
+        case settingsList = "SettingsListViewController"
+        case appearance = "AppearanceController"
     }
     
     public func create<T: NSViewController>(id: ID) -> T {

@@ -21,7 +21,7 @@ class SettingsManager {
         guard var settingProperty = settings.first(where: { $0.type == type }) else {
             fatalError("Cannot find requested settings property \(type)")
         }
-        
+                
         if settingProperty.isTrullyNew(value: value) {
             settingProperty.value = value
             notify(withValue: value, andType: type)

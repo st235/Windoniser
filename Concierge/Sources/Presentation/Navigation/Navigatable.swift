@@ -1,6 +1,6 @@
 import Foundation
 
-protocol NavigationController {
+protocol Navigatable {
     
     func push(controllerId: ViewControllerFactory.ID)
     

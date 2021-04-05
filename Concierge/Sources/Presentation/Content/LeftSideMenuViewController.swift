@@ -12,6 +12,12 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
     
     private let windowInteractor: WindowInteractor = AppDependenciesResolver.shared.resolve(type: WindowInteractor.self)
     private let layoutSchemesInteractor: LayoutSchemesInteractor = AppDependenciesResolver.shared.resolve(type: LayoutSchemesInteractor.self)
+    private let appListTableViewAdapter: AppListTableViewAdapter
+    
+    required init?(coder: NSCoder) {
+        appListTableViewAdapter = AppListTableViewAdapter(activeWindows: windowInteractor.activeWindows())
+        super.init(coder: coder)
+    }
     
     var layoutSchemes: [LayoutScheme] {
         get {
@@ -28,12 +34,6 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         }
     }
     
-    var activeWindows: [WindowRepository.WindowInfo] {
-        get {
-            return windowInteractor.activeWindows()
-        }
-    }
-    
     override func viewDidLoad() {
         if let wallpaperURL = self.windowInteractor.getFocusedDesktopImageURL() {
             desktopLayoutView.setImageAsync(fromUrl: wallpaperURL)
@@ -43,8 +43,8 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         layoutSchemesInteractor.addDelegate(weak: self)
                 
         windowsTableView.headerView = nil
-        windowsTableView.dataSource = self
-        windowsTableView.delegate = self
+        windowsTableView.dataSource = appListTableViewAdapter
+        windowsTableView.delegate = appListTableViewAdapter
         windowsTableView.isEnabled = true
         windowsTableView.setDraggingSourceOperationMask(.copy, forLocal: false)
         windowsTableView.backgroundColor = .clear
@@ -64,7 +64,7 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
     }
     
     @objc private func onSettingsClick(_ sender: Any?) {
-        (parent as? NavigationController)?.push(controllerId: .settings)
+        (parent as? Navigatable)?.push(controllerId: .settings)
     }
     
     func reloadActiveScheme() {

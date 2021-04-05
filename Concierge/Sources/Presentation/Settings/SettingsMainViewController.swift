@@ -1,8 +1,11 @@
 import Foundation
 
-class MainViewController: NSViewController, Navigatable {
+
+class SettingsMainViewController: NSViewController, Navigatable {
     
     @IBOutlet weak var containerView: NSView!
+    @IBOutlet weak var navigationContainer: NSStackView!
+    @IBOutlet weak var backButton: NSButton!
     
     private let viewControllerFactory: ViewControllerFactory = AppDependenciesResolver.shared.resolve(type: ViewControllerFactory.self)
     private let permissionsManager: AccessibilityPermissionsManager = AppDependenciesResolver.shared.resolve(type: AccessibilityPermissionsManager.self)
@@ -10,14 +13,16 @@ class MainViewController: NSViewController, Navigatable {
     private var navigationDelegate: NavigationDelegate!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         navigationDelegate = NavigationDelegate(containerView: containerView, viewController: self, viewControllerFactory: viewControllerFactory)
         
-        if !permissionsManager.isPermissionGranted() {
-            push(controllerId:  .permissions)
-        } else {
-            push(controllerId: .content)
-        }
+        backButton.target = self
+        backButton.action = #selector(onBackClicked(_:))
+                
+        push(controllerId: .settingsList)
+    }
+    
+    @objc private func onBackClicked(_ sender: Any?) {
+        (parent as? Navigatable)?.pop()
     }
     
     func push(controllerId: ViewControllerFactory.ID) {
@@ -27,4 +32,5 @@ class MainViewController: NSViewController, Navigatable {
     func pop() {
         navigationDelegate.pop()
     }
+        
 }

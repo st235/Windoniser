@@ -16,3 +16,8 @@
 "title_area_top_right" = "Top-Right";
 "title_area_bottom_left" = "Bottom-Left";
 "title_area_bottom_right" = "Bottom-Right";
+
+"settings_item_general" = "General";
+"settings_item_appearance" = "Appearance";
+"settings_item_about" = "About";
+"settings_item_quit" = "Quit";

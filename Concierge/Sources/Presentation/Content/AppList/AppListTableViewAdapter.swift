@@ -1,6 +1,16 @@
 import Foundation
 
-extension LeftSideMenuViewController: NSTableViewDelegate {
+class AppListTableViewAdapter: NSObject, NSTableViewDelegate, NSTableViewDataSource {
+    
+    private let activeWindows: [WindowRepository.WindowInfo]
+    
+    init(activeWindows: [WindowRepository.WindowInfo]) {
+        self.activeWindows = activeWindows
+    }
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return activeWindows.count
+    }
     
     func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
         return WindowTableRow()

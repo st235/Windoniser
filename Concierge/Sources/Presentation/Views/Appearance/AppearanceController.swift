@@ -49,6 +49,7 @@ class AppearanceController {
         
         settingsManager.addObserver(type: .appearance, observer: { [weak self] rawValue in
             self?.mode = rawValue as! AppearanceMode
+            self?.notifyObservers()
         })
     }
     
