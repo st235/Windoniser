@@ -22,15 +22,17 @@ class SettingsMainViewController: NSViewController, Navigatable {
     }
     
     @objc private func onBackClicked(_ sender: Any?) {
-        (parent as? Navigatable)?.pop()
+        if !navigationDelegate.pop() {
+            (parent as? Navigatable)?.pop()
+        }
     }
     
     func push(controllerId: ViewControllerFactory.ID) {
         navigationDelegate.push(controllerId: controllerId)
     }
     
-    func pop() {
-        navigationDelegate.pop()
+    func pop() -> Bool {
+        return navigationDelegate.pop()
     }
         
 }

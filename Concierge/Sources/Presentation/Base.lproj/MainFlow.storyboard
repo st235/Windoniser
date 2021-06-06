@@ -1057,6 +1057,35 @@
             </objects>
             <point key="canvasLocation" x="-1222" y="669"/>
         </scene>
+        <!--Settings General Controller-->
+        <scene sceneID="WGR-pz-j4c">
+            <objects>
+                <viewController storyboardIdentifier="SettingsGeneralController" id="Gmx-iE-uZ0" customClass="SettingsGeneralController" customModule="Concierge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="idz-iF-QsE">
+                        <rect key="frame" x="0.0" y="0.0" width="357" height="628"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f8N-d3-BVO">
+                                <rect key="frame" x="18" y="591" width="87" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Auto login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="iPI-nY-zsc">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onAutoLoginCicked:" target="Gmx-iE-uZ0" id="ZiG-UG-hik"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="autoLoginCheckBox" destination="f8N-d3-BVO" id="QRh-go-Axa"/>
+                    </connections>
+                </viewController>
+                <customObject id="hIP-iK-F8c" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2134.5" y="670"/>
+        </scene>
         <!--Settings Appearance Controller-->
         <scene sceneID="6vB-lQ-QSn">
             <objects>

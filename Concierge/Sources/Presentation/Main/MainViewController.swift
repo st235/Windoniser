@@ -24,7 +24,7 @@ class MainViewController: NSViewController, Navigatable {
         navigationDelegate.push(controllerId: controllerId)
     }
     
-    func pop() {
-        navigationDelegate.pop()
+    func pop() -> Bool {
+        return navigationDelegate.pop()
     }
 }

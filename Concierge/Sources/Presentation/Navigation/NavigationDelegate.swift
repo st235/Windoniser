@@ -28,7 +28,7 @@ class NavigationDelegate: Navigatable {
         callStack.append(controller)
     }
     
-    func pop() {
+    func pop() -> Bool {
         let controller = callStack.removeLast()
     
         controller.removeFromParent()
@@ -38,6 +38,8 @@ class NavigationDelegate: Navigatable {
             let newController = callStack.last
             newController?.view.isHidden = false
         }
+        
+        return !callStack.isEmpty
     }
     
 }

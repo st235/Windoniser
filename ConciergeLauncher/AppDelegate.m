@@ -1,10 +1,3 @@
-//
-//  AppDelegate.m
-//  ConciergeLauncher
-//
-//  Created by Alexander Dadukin on 12.02.2021.
-//
-
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
@@ -18,8 +11,19 @@
     NSArray *pathComponents = [[[NSBundle mainBundle] bundlePath] pathComponents];
     pathComponents = [pathComponents subarrayWithRange:NSMakeRange(0, [pathComponents count] - 4)];
     NSString *path = [NSString pathWithComponents:pathComponents];
-    [[NSWorkspace sharedWorkspace] launchApplication:path];
-    [NSApp terminate:nil];
+    
+    NSWorkspaceOpenConfiguration* configuration = [NSWorkspaceOpenConfiguration new];
+    [configuration setPromptsUserIfNeeded:true];
+    
+    [[NSWorkspace sharedWorkspace] openApplicationAtURL: [NSURL fileURLWithPath:path]
+                                   configuration:configuration
+                                   completionHandler:^(NSRunningApplication* app, NSError* error) {
+        if (error) {
+            NSLog(@"Failed to load applocation: %@", error.localizedDescription);
+        }
+        
+        [NSApp terminate:nil];
+    }];
 }
 
 

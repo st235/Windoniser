@@ -91,6 +91,7 @@
 		CFE3692E261B8750007DE6C7 /* AboutSettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE3692D261B8750007DE6C7 /* AboutSettingsItem.swift */; };
 		CFE36932261B8783007DE6C7 /* QuitSettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE36931261B8783007DE6C7 /* QuitSettingsItem.swift */; };
 		CFE36939261B8E29007DE6C7 /* SettingsAppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE36938261B8E29007DE6C7 /* SettingsAppearanceController.swift */; };
+		CFF12039261B99580092103D /* SettingsGeneralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF12038261B99580092103D /* SettingsGeneralController.swift */; };
 		CFFEFF19261A6D4F00F2CE39 /* AppListTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFF18261A6D4F00F2CE39 /* AppListTableViewAdapter.swift */; };
 		CFFEFF25261A724200F2CE39 /* NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFF24261A724200F2CE39 /* NavigationDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -203,6 +204,7 @@
 		CFE3692D261B8750007DE6C7 /* AboutSettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSettingsItem.swift; sourceTree = "<group>"; };
 		CFE36931261B8783007DE6C7 /* QuitSettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitSettingsItem.swift; sourceTree = "<group>"; };
 		CFE36938261B8E29007DE6C7 /* SettingsAppearanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppearanceController.swift; sourceTree = "<group>"; };
+		CFF12038261B99580092103D /* SettingsGeneralController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGeneralController.swift; sourceTree = "<group>"; };
 		CFFEFF18261A6D4F00F2CE39 /* AppListTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListTableViewAdapter.swift; sourceTree = "<group>"; };
 		CFFEFF24261A724200F2CE39 /* NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -252,7 +254,8 @@
 		CF1B393925A26A5D00F7F9C7 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				CFE36935261B8DA8007DE6C7 /* Appearance */,
+				CFF12035261B99310092103D /* SettingsGeneral */,
+				CFE36935261B8DA8007DE6C7 /* SettingsAppearance */,
 				CF821E7325A21881002B5F1D /* Views */,
 				CF1B394C25A270AF00F7F9C7 /* Content */,
 				CFC2107C25D3334E00726D8C /* Permissions */,
@@ -582,12 +585,20 @@
 			path = LayoutSchemes;
 			sourceTree = "<group>";
 		};
-		CFE36935261B8DA8007DE6C7 /* Appearance */ = {
+		CFE36935261B8DA8007DE6C7 /* SettingsAppearance */ = {
 			isa = PBXGroup;
 			children = (
 				CFE36938261B8E29007DE6C7 /* SettingsAppearanceController.swift */,
 			);
-			path = Appearance;
+			path = SettingsAppearance;
+			sourceTree = "<group>";
+		};
+		CFF12035261B99310092103D /* SettingsGeneral */ = {
+			isa = PBXGroup;
+			children = (
+				CFF12038261B99580092103D /* SettingsGeneralController.swift */,
+			);
+			path = SettingsGeneral;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -741,6 +752,7 @@
 				CF2E7F8025D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift in Sources */,
 				CF5399EF25D097BB00FA6292 /* NSImage+TintColor.swift in Sources */,
 				CFACE48825A1D4C400EE31F5 /* LayoutPreviewView.swift in Sources */,
+				CFF12039261B99580092103D /* SettingsGeneralController.swift in Sources */,
 				CF4826DF25A39F8B00068927 /* HotKeyController.swift in Sources */,
 				CF00C64C25A799F0003454E6 /* DependenciesResolver.swift in Sources */,
 				CF9B2E2F25D5C62E0087D32B /* ImageCache.swift in Sources */,

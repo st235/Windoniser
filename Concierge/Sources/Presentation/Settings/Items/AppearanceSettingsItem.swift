@@ -13,7 +13,7 @@ class AppearanceSettingsItem: SettingsItem {
     }
     
     func handleClick(navigatable: Navigatable) {
-        navigatable.push(controllerId: .appearance)
+        navigatable.push(controllerId: .settingsAppearance)
     }
     
 }

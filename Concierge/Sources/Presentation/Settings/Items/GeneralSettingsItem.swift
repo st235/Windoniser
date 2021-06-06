@@ -13,7 +13,7 @@ class GeneralSettingsItem: SettingsItem {
     }
     
     func handleClick(navigatable: Navigatable) {
-        
+        navigatable.push(controllerId: .settingsGeneral)
     }
     
 }

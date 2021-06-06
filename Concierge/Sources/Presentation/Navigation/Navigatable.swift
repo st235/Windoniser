@@ -4,6 +4,6 @@ protocol Navigatable {
     
     func push(controllerId: ViewControllerFactory.ID)
     
-    func pop()
+    func pop() -> Bool
     
 }
