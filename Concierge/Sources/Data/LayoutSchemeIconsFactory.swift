@@ -2,7 +2,7 @@ import Foundation
 
 class LayoutSchemeIconsFactory {
     
-    func findIconForScheme(scheme: LayoutScheme) -> NSImage {
+    func findIconForScheme(scheme: LayoutSchema) -> NSImage {
         let iconReference = findIconRefForScheme(scheme: scheme)
         guard let icon = NSImage(named: NSImage.Name(iconReference)) else {
             fatalError()
@@ -11,7 +11,7 @@ class LayoutSchemeIconsFactory {
         return icon
     }
     
-    private func findIconRefForScheme(scheme: LayoutScheme) -> String {
+    private func findIconRefForScheme(scheme: LayoutSchema) -> String {
        switch scheme.type {
            case .fullscreen: return "Fullscreen"
            case .twoVertical: return "TwoVertical"

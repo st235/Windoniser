@@ -2,7 +2,7 @@ import Foundation
 
 typealias SettingsObserver = (Any?) -> Void
 
-class SettingsManager {
+class SettingsRepository {
     
     private var userDefaults = UserDefaults.standard
     
@@ -13,7 +13,9 @@ class SettingsManager {
     init() {
         settings = [
             AutoLoginSetting(userDefaults: self.userDefaults),
-            AppearanceSetting(userDefaults: self.userDefaults)
+            AppearanceSetting(userDefaults: self.userDefaults),
+            GridColorSetting(userDefaults: self.userDefaults),
+            SelectedLayoutsSetting(userDefaults: self.userDefaults)
         ]
     }
     

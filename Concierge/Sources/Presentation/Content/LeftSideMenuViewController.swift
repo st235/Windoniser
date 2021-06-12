@@ -12,6 +12,8 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
     
     private let windowInteractor: WindowInteractor = AppDependenciesResolver.shared.resolve(type: WindowInteractor.self)
     private let layoutSchemesInteractor: LayoutSchemesInteractor = AppDependenciesResolver.shared.resolve(type: LayoutSchemesInteractor.self)
+    private let gridLayoutInteractor: GridLayoutInteractor = AppDependenciesResolver.shared.resolve(type: GridLayoutInteractor.self)
+    
     private let appListTableViewAdapter: AppListTableViewAdapter
     
     required init?(coder: NSCoder) {
@@ -19,13 +21,13 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         super.init(coder: coder)
     }
     
-    var layoutSchemes: [LayoutScheme] {
+    var layoutSchemes: [LayoutSchema] {
         get {
-            return layoutSchemesInteractor.defaultSchemes()
+            return layoutSchemesInteractor.selectedSchemas()
         }
     }
     
-    var activeScheme: LayoutScheme {
+    var activeScheme: LayoutSchema {
         get {
             return layoutSchemesInteractor.activeScheme
         }
@@ -41,6 +43,7 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         
         desktopLayoutView.layoutDelegate = self
         layoutSchemesInteractor.addDelegate(weak: self)
+        gridLayoutInteractor.addDelegate(weak: self)
                 
         windowsTableView.headerView = nil
         windowsTableView.dataSource = appListTableViewAdapter
@@ -73,6 +76,17 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         desktopLayoutView.addLayoutPreviews(layoutPreviews: scheme.areas.map({ $0.rect }), layoutSeparators: scheme.separators)
     }
     
+    private func reloadGridTheme(theme: GridTheme) {
+        switch theme {
+        case .followSystem:
+            desktopLayoutView.changeGridTheme(backgroundColor: .backgroundTransparent, borderColor: .strokePrimary, highlightColor: .backgroundAccent)
+        case .light:
+            desktopLayoutView.changeGridTheme(backgroundColor: .Static.white75, borderColor: .Static.white, highlightColor: .Static.white)
+        case .dark:
+            desktopLayoutView.changeGridTheme(backgroundColor: .Static.black75, borderColor: .Static.black, highlightColor: .Static.black)
+        }
+    }
+    
     func onPreviewSelected(preview: LayoutPreviewView.LayoutPreview, payload: Any?) {
         guard let windowPids = payload as? [WindowPasteboard] else {
             fatalError("Copied payload is not a pid pasteboard")
@@ -84,4 +98,25 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
             windowInteractor.resizeWindow(withPid: windowPid.pid, andId: windowPid.id, into: preview)
         }
     }
+    
+}
+
+extension LeftSideMenuViewController: LayoutSchemesInteractor.Delegate {
+    
+    func onActiveSchemeChanged(schemes: LayoutSchema) {
+        reloadActiveScheme()
+    }
+    
+    func onSelectedSchemasChanged() {
+        layoutSchemesCollectionView.reloadData()
+    }
+    
+}
+
+extension LeftSideMenuViewController: GridLayoutInteractor.Delegate {
+    
+    func onGridColorChanged(theme: GridTheme) {
+        reloadGridTheme(theme: theme)
+    }
+    
 }

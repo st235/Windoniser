@@ -4,7 +4,7 @@ class SettingsGeneralController: NSViewController {
     
     @IBOutlet weak var autoLoginCheckBox: NSButton!
     
-    private let settingsManager: SettingsManager = AppDependenciesResolver.shared.resolve(type: SettingsManager.self)
+    private let settingsManager: SettingsRepository = AppDependenciesResolver.shared.resolve(type: SettingsRepository.self)
     
     override func viewDidLoad() {
         let autologinEnabled: Bool = settingsManager.get(type: .autoLogin)

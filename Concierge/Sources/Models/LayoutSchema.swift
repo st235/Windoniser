@@ -1,6 +1,6 @@
 import Foundation
 
-struct LayoutScheme {
+struct LayoutSchema {
     
     enum TypeId: Int {
         case fullscreen = 0

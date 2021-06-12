@@ -10,7 +10,7 @@ class SystemAppearanceProvider: AppearanceProvider {
         return mode == .followSystem
     }
     
-    func fetch() -> AppearanceType {
+    func fetch() -> SystemSupportedAppearanceType {
         if #available(OSX 10.15, *) {
             let appearanceDescription = NSApplication.shared.effectiveAppearance.debugDescription.lowercased()
             if appearanceDescription.contains("dark") {

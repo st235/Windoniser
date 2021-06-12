@@ -18,9 +18,13 @@ class HotKeysInteractor: LayoutSchemesInteractor.Delegate {
         self.layoutSchemesInteractor.addDelegate(weak: self)
     }
     
-    func onActiveSchemeChanged(schemes: LayoutScheme) {
+    func onActiveSchemeChanged(schemes: LayoutSchema) {
         unregister()
         register()
+    }
+    
+    func onSelectedSchemasChanged() {
+        // empty on purpose
     }
     
     func register() {

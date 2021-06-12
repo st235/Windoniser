@@ -27,7 +27,7 @@ class AppDependenciesResolver: DependenciesResolver {
             return MainWindowController(layoutSchemesInteractor: resolver.resolve(type: LayoutSchemesInteractor.self),
                                            accessibilityPermissionsManager: resolver.resolve(type: AccessibilityPermissionsManager.self),
                                            viewControllerFactory: resolver.resolve(type: ViewControllerFactory.self),
-                                           appearanceController: resolver.resolve(type: AppearanceController.self))
+                                           appearanceController: resolver.resolve(type: SystemAppearanceController.self))
         }
     }
     
@@ -46,6 +46,10 @@ class AppDependenciesResolver: DependenciesResolver {
         
         diContainer.register(forType: ScreensController.self, andQualifier: .singleton) { resolver in
             return ScreensController(windowController: resolver.resolve(type: WindowController.self))
+        }
+        
+        diContainer.register(forType: SystemAppearanceController.self, andQualifier: .singleton) { resolver in
+            return SystemAppearanceController(appearanceInteractor: resolver.resolve(type: AppearanceInteractor.self))
         }
     }
     
@@ -72,19 +76,23 @@ class AppDependenciesResolver: DependenciesResolver {
         }
         
         diContainer.register(forType: LayoutSchemesInteractor.self, andQualifier: .singleton) { resolver in
-            return LayoutSchemesInteractor(layoutSchemesRepository: resolver.resolve(type: LayoutSchemesRepository.self))
+            return LayoutSchemesInteractor(layoutSchemesRepository: resolver.resolve(type: LayoutSchemesRepository.self), settingsRepository: resolver.resolve(type: SettingsRepository.self))
         }
         
         diContainer.register(forType: AccessibilityPermissionsManager.self, andQualifier: .factory) { _ in
             return AccessibilityPermissionsManager()
         }
         
-        diContainer.register(forType: SettingsManager.self, andQualifier: .singleton) { _ in
-            return SettingsManager()
+        diContainer.register(forType: SettingsRepository.self, andQualifier: .singleton) { _ in
+            return SettingsRepository()
         }
         
-        diContainer.register(forType: AppearanceController.self, andQualifier: .singleton) { resolver in
-            return AppearanceController(settingsManager: resolver.resolve(type: SettingsManager.self))
+        diContainer.register(forType: AppearanceInteractor.self, andQualifier: .singleton) { resolver in
+            return AppearanceInteractor(settingsRepository: resolver.resolve(type: SettingsRepository.self))
+        }
+        
+        diContainer.register(forType: GridLayoutInteractor.self, andQualifier: .singleton) { resolver in
+            return GridLayoutInteractor(settingsRepository: resolver.resolve(type: SettingsRepository.self))
         }
     }
     

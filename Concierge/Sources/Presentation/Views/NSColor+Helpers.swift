@@ -11,6 +11,13 @@ extension NSColor.Name {
     static let textSecondary = "TextSecondary"
     
     static let iconPrimary = "IconPrimary"
+    
+    class Static {
+        static let white = "White"
+        static let white75 = "White75"
+        static let black = "Black"
+        static let black75 = "Black75"
+    }
 }
 
 extension NSColor {
@@ -23,6 +30,7 @@ extension NSColor {
         return color
     }
     
+    // rgba
     public static func from(hex: String) -> NSColor {
         let r, g, b, a: CGFloat
 
@@ -46,5 +54,17 @@ extension NSColor {
         }
 
         fatalError()
+    }
+    
+    // rgba
+    public static func toHex(color: NSColor) -> String {
+        let red = Int(round(color.redComponent * 0xFF))
+        let green = Int(round(color.greenComponent * 0xFF))
+        let blue = Int(round(color.blueComponent * 0xFF))
+        let alpha = Int(round(color.alphaComponent * 0xFF))
+        
+        let hexString = NSString(format: "#%02X%02X%02X%02X", red, green, blue, alpha)
+        
+        return hexString as String
     }
 }

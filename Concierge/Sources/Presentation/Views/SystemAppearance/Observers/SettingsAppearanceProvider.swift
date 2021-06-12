@@ -2,18 +2,18 @@ import Foundation
 
 class SettingsAppearanceProvider: AppearanceProvider {
     
-    private let settingsManager: SettingsManager
+    private let appearanceInteractor: AppearanceInteractor
     
-    init(settingsManager: SettingsManager) {
-        self.settingsManager = settingsManager
+    init(appearanceInteractor: AppearanceInteractor) {
+        self.appearanceInteractor = appearanceInteractor
     }
     
     func canHandle(mode: AppearanceMode) -> Bool {
         return mode == .forceDark || mode == .forceLight
     }
     
-    func fetch() -> AppearanceType {
-        switch settingsManager.get(type: .appearance) as AppearanceMode {
+    func fetch() -> SystemSupportedAppearanceType {
+        switch appearanceInteractor.activeAppearance {
         case .forceDark:
             return .dark
         case .forceLight:

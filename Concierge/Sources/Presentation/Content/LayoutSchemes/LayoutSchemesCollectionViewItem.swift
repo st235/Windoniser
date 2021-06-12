@@ -13,7 +13,7 @@ class LayoutSchemesCollectionViewItem: NSCollectionViewItem {
         view.layer?.cornerRadius = 12
     }
     
-    func load(scheme: LayoutScheme) {
+    func load(scheme: LayoutSchema) {
         let image = layoutSchemesIconFactory.findIconForScheme(scheme: scheme)
         image.isTemplate = true
         imageView?.image = image.image(with: NSColor.from(name: .iconPrimary))

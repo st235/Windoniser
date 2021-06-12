@@ -1,0 +1,5 @@
+protocol SettingsDelegate {
+    
+    func update()
+    
+}

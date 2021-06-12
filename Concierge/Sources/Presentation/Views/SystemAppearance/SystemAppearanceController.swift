@@ -2,18 +2,18 @@ import Foundation
 
 private let kAppleInterfaceThemeChangedNotification = "AppleInterfaceThemeChangedNotification"
 
-typealias AppearanceObserver = (AppearanceType) -> Void
+typealias AppearanceObserver = (SystemSupportedAppearanceType) -> Void
 
-class AppearanceController {
+class SystemAppearanceController {
     
-    private let settingsManager: SettingsManager
+    private let appearanceInteractor: AppearanceInteractor
     private let providers: [AppearanceProvider]
     
     private var mode: AppearanceMode
     
     private var observers: [AppearanceObserver] = []
     
-    var currentAppearance: AppearanceType {
+    var currentAppearance: SystemSupportedAppearanceType {
         get {
             providers.first(where: { $0.canHandle(mode: mode) })?.fetch() ?? .light
         }
@@ -30,15 +30,15 @@ class AppearanceController {
         }
     }
     
-    init(settingsManager: SettingsManager) {
-        self.settingsManager = settingsManager
+    init(appearanceInteractor: AppearanceInteractor) {
+        self.appearanceInteractor = appearanceInteractor
         
         self.providers = [
             SystemAppearanceProvider(),
-            SettingsAppearanceProvider(settingsManager: settingsManager)
+            SettingsAppearanceProvider(appearanceInteractor: appearanceInteractor)
         ]
         
-        self.mode = settingsManager.get(type: .appearance)
+        self.mode = appearanceInteractor.activeAppearance
         
         DistributedNotificationCenter.default().addObserver(
             self,
@@ -47,10 +47,7 @@ class AppearanceController {
             object: nil
         )
         
-        settingsManager.addObserver(type: .appearance, observer: { [weak self] rawValue in
-            self?.mode = rawValue as! AppearanceMode
-            self?.notifyObservers()
-        })
+        self.appearanceInteractor.addDelegate(weak: self)
     }
     
     @objc private func onSystemAppearanceChanged(notification: Notification) {
@@ -79,6 +76,15 @@ class AppearanceController {
             name: NSNotification.Name(rawValue: kAppleInterfaceThemeChangedNotification),
             object: nil
         )
+    }
+    
+}
+
+extension SystemAppearanceController: AppearanceInteractor.Delegate {
+    
+    func onAppearanceChanged(activeAppearance: AppearanceMode) {
+        self.mode = activeAppearance
+        self.notifyObservers()
     }
     
 }

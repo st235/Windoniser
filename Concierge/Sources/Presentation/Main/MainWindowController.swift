@@ -13,7 +13,7 @@ class MainWindowController: LayoutSchemesInteractor.Delegate {
     init(layoutSchemesInteractor: LayoutSchemesInteractor,
          accessibilityPermissionsManager: AccessibilityPermissionsManager,
          viewControllerFactory: ViewControllerFactory,
-         appearanceController: AppearanceController) {
+         appearanceController: SystemAppearanceController) {
         self.layoutSchemesInteractor = layoutSchemesInteractor
         self.accessibilityPermissionsManager = accessibilityPermissionsManager
         self.viewControllerFactory = viewControllerFactory
@@ -27,10 +27,14 @@ class MainWindowController: LayoutSchemesInteractor.Delegate {
         })
     }
     
-    func onActiveSchemeChanged(schemes: LayoutScheme) {
+    func onActiveSchemeChanged(schemes: LayoutSchema) {
         if let button = statusBarItem.button {
             button.image = layoutSchemeIconsFactory.findIconForScheme(scheme: layoutSchemesInteractor.activeScheme)
         }
+    }
+    
+    func onSelectedSchemasChanged() {
+        // empty on purpose
     }
     
     func attach() {        

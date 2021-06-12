@@ -27,7 +27,6 @@ class DesktopLayoutView: NSImageView {
                 return super.image
             }
         }
-     
     
     var layoutDelegate: LayoutPreviewView.Delegate? {
         get {
@@ -48,6 +47,16 @@ class DesktopLayoutView: NSImageView {
         super.init(coder: coder)
         addSubViews()
         setup()
+    }
+    
+    func changeGridTheme(
+        backgroundColor: NSColor.Name,
+        borderColor: NSColor.Name,
+        highlightColor: NSColor.Name
+    ) {
+        layoutPreviewView.backgroundColor = NSColor.from(name: backgroundColor)
+        layoutPreviewView.borderColor = NSColor.from(name: borderColor)
+        layoutPreviewView.highlightColor = NSColor.from(name: highlightColor)
     }
     
     private func setup() {

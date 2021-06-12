@@ -12,7 +12,7 @@
 		CF00C64825A79983003454E6 /* GraphDependenciesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C64725A79983003454E6 /* GraphDependenciesContainer.swift */; };
 		CF00C64C25A799F0003454E6 /* DependenciesResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C64B25A799F0003454E6 /* DependenciesResolver.swift */; };
 		CF00C65225A7AC98003454E6 /* LayoutSchemesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C65125A7AC98003454E6 /* LayoutSchemesRepository.swift */; };
-		CF00C65525A7AD5C003454E6 /* LayoutScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C65425A7AD5C003454E6 /* LayoutScheme.swift */; };
+		CF00C65525A7AD5C003454E6 /* LayoutSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C65425A7AD5C003454E6 /* LayoutSchema.swift */; };
 		CF00C65825A7AD93003454E6 /* LayoutArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF00C65725A7AD93003454E6 /* LayoutArea.swift */; };
 		CF081A3425C89C630099DA5B /* PopoverBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF081A3325C89C630099DA5B /* PopoverBackgroundView.swift */; };
 		CF081A3725C89E770099DA5B /* PopoverWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF081A3625C89E770099DA5B /* PopoverWindow.swift */; };
@@ -23,7 +23,6 @@
 		CF2E7F7925D1CEC300568009 /* LayoutArea+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7F7825D1CEC300568009 /* LayoutArea+Defaults.swift */; };
 		CF2E7F7D25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7F7C25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift */; };
 		CF2E7F8025D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7F7F25D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift */; };
-		CF2E7F8325D1DFD500568009 /* LeftSideMenuViewController+LayoutSchemesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7F8225D1DFD500568009 /* LeftSideMenuViewController+LayoutSchemesDelegate.swift */; };
 		CF3ABACB261B29D3008E3C90 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3ABACA261B29D3008E3C90 /* NibLoadable.swift */; };
 		CF3C6AB625A4F4C9007A52F8 /* WindowRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C6AB525A4F4C9007A52F8 /* WindowRepository.swift */; };
 		CF3C6ABA25A4FDFD007A52F8 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C6AB925A4FDFD007A52F8 /* String+Localization.swift */; };
@@ -46,18 +45,24 @@
 		CF69959325D6E6F000A52715 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF69959125D6E6F000A52715 /* MainMenu.xib */; };
 		CF69959625D6E6F000A52715 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF69959525D6E6F000A52715 /* main.m */; };
 		CF6995A025D6E80900A52715 /* ConciergeLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF69958A25D6E6EF00A52715 /* ConciergeLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CF6995A725D6EA3A00A52715 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6995A625D6EA3A00A52715 /* SettingsManager.swift */; };
+		CF6995A725D6EA3A00A52715 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6995A625D6EA3A00A52715 /* SettingsRepository.swift */; };
 		CF6995AB25D6EB5A00A52715 /* SettingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6995AA25D6EB5A00A52715 /* SettingType.swift */; };
 		CF6995AF25D6EC2F00A52715 /* SettingProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6995AE25D6EC2F00A52715 /* SettingProperty.swift */; };
 		CF6995B425D6ECED00A52715 /* AutoLoginSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6995B325D6ECED00A52715 /* AutoLoginSetting.swift */; };
-		CF6A348325D85E6B00D1619A /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6A348225D85E6B00D1619A /* AppearanceController.swift */; };
+		CF6A348325D85E6B00D1619A /* SystemAppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6A348225D85E6B00D1619A /* SystemAppearanceController.swift */; };
 		CF6BD19525D0393A00C4FA40 /* DesktopLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BD19425D0393A00C4FA40 /* DesktopLayoutView.swift */; };
 		CF821E7A25A21EAF002B5F1D /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF821E7925A21EAF002B5F1D /* WindowController.m */; };
 		CF821E8125A22402002B5F1D /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = CF821E8025A22402002B5F1D /* Window.m */; };
 		CF821E8625A23430002B5F1D /* ScreensController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF821E8525A23430002B5F1D /* ScreensController.swift */; };
+		CF870F6226740C210089512B /* SelectedLayoutsSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF870F6126740C210089512B /* SelectedLayoutsSetting.swift */; };
+		CF870F64267410690089512B /* SettingsAppearanceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF870F63267410690089512B /* SettingsAppearanceDelegate.swift */; };
 		CF8DBC05261A789A0031B972 /* SettingsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DBC04261A789A0031B972 /* SettingsListViewController.swift */; };
 		CF8DBC0C261B13C40031B972 /* SettingsItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF8DBC0B261B13C40031B972 /* SettingsItemView.xib */; };
 		CF8DBC10261B13D20031B972 /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DBC0F261B13D20031B972 /* SettingsItemView.swift */; };
+		CF93698F267556DF001CE96A /* SettingsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF93698E267556DF001CE96A /* SettingsDelegate.swift */; };
+		CF93699126755888001CE96A /* SettingsDesktopLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF93699026755888001CE96A /* SettingsDesktopLayoutDelegate.swift */; };
+		CF93699326755B91001CE96A /* AppearanceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF93699226755B91001CE96A /* AppearanceInteractor.swift */; };
+		CF93699526755BC4001CE96A /* GridLayoutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF93699426755BC4001CE96A /* GridLayoutInteractor.swift */; };
 		CF9B2E2C25D5BCC70087D32B /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9B2E2B25D5BCC70087D32B /* ImageLoader.swift */; };
 		CF9B2E2F25D5C62E0087D32B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9B2E2E25D5C62E0087D32B /* ImageCache.swift */; };
 		CF9B2E3225D5CB250087D32B /* ImageViewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9B2E3125D5CB250087D32B /* ImageViewLoader.swift */; };
@@ -67,6 +72,7 @@
 		CFACE47B25A1CFD000EE31F5 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFACE47925A1CFD000EE31F5 /* MainFlow.storyboard */; };
 		CFACE48825A1D4C400EE31F5 /* LayoutPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFACE48725A1D4C400EE31F5 /* LayoutPreviewView.swift */; };
 		CFAD230A25D05C09008CEB1B /* LeftSideMenuViewController+CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD230925D05C09008CEB1B /* LeftSideMenuViewController+CollectionViewDataSource.swift */; };
+		CFAD790E266ECCA600583A91 /* GridColorSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD790D266ECCA600583A91 /* GridColorSetting.swift */; };
 		CFAEAA6425D987DA00675171 /* AppearanceMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEAA6325D987DA00675171 /* AppearanceMode.swift */; };
 		CFAEAA6925D989D600675171 /* AppearanceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEAA6825D989D600675171 /* AppearanceProvider.swift */; };
 		CFAEAA7125D98B2D00675171 /* SystemAppearanceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAEAA7025D98B2D00675171 /* SystemAppearanceProvider.swift */; };
@@ -86,6 +92,9 @@
 		CFD0769F25D04F9600FF2730 /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD0769E25D04F9600FF2730 /* Vector2.swift */; };
 		CFD076A425D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD076A325D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift */; };
 		CFD076A825D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFD076A725D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib */; };
+		CFD89EE62675626000DF304A /* GridTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD89EE52675626000DF304A /* GridTheme.swift */; };
+		CFD89EE8267568B800DF304A /* SettingsGridLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD89EE7267568B800DF304A /* SettingsGridLayoutDelegate.swift */; };
+		CFD89EEA26756BEB00DF304A /* SettingsLayoutSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD89EE926756BEB00DF304A /* SettingsLayoutSelectionDelegate.swift */; };
 		CFE36924261B85E5007DE6C7 /* GeneralSettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE36923261B85E5007DE6C7 /* GeneralSettingsItem.swift */; };
 		CFE3692A261B86FF007DE6C7 /* AppearanceSettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE36929261B86FF007DE6C7 /* AppearanceSettingsItem.swift */; };
 		CFE3692E261B8750007DE6C7 /* AboutSettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE3692D261B8750007DE6C7 /* AboutSettingsItem.swift */; };
@@ -115,7 +124,7 @@
 		CF00C64725A79983003454E6 /* GraphDependenciesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphDependenciesContainer.swift; sourceTree = "<group>"; };
 		CF00C64B25A799F0003454E6 /* DependenciesResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesResolver.swift; sourceTree = "<group>"; };
 		CF00C65125A7AC98003454E6 /* LayoutSchemesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemesRepository.swift; sourceTree = "<group>"; };
-		CF00C65425A7AD5C003454E6 /* LayoutScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutScheme.swift; sourceTree = "<group>"; };
+		CF00C65425A7AD5C003454E6 /* LayoutSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchema.swift; sourceTree = "<group>"; };
 		CF00C65725A7AD93003454E6 /* LayoutArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutArea.swift; sourceTree = "<group>"; };
 		CF081A3325C89C630099DA5B /* PopoverBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverBackgroundView.swift; sourceTree = "<group>"; };
 		CF081A3625C89E770099DA5B /* PopoverWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverWindow.swift; sourceTree = "<group>"; };
@@ -126,7 +135,6 @@
 		CF2E7F7825D1CEC300568009 /* LayoutArea+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LayoutArea+Defaults.swift"; sourceTree = "<group>"; };
 		CF2E7F7C25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemeIconsFactory.swift; sourceTree = "<group>"; };
 		CF2E7F7F25D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
-		CF2E7F8225D1DFD500568009 /* LeftSideMenuViewController+LayoutSchemesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+LayoutSchemesDelegate.swift"; sourceTree = "<group>"; };
 		CF3ABACA261B29D3008E3C90 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		CF3C6AB525A4F4C9007A52F8 /* WindowRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowRepository.swift; sourceTree = "<group>"; };
 		CF3C6AB925A4FDFD007A52F8 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
@@ -153,11 +161,11 @@
 		CF69959425D6E6F000A52715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF69959525D6E6F000A52715 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CF69959725D6E6F000A52715 /* ConciergeLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConciergeLauncher.entitlements; sourceTree = "<group>"; };
-		CF6995A625D6EA3A00A52715 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		CF6995A625D6EA3A00A52715 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
 		CF6995AA25D6EB5A00A52715 /* SettingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingType.swift; sourceTree = "<group>"; };
 		CF6995AE25D6EC2F00A52715 /* SettingProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProperty.swift; sourceTree = "<group>"; };
 		CF6995B325D6ECED00A52715 /* AutoLoginSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginSetting.swift; sourceTree = "<group>"; };
-		CF6A348225D85E6B00D1619A /* AppearanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
+		CF6A348225D85E6B00D1619A /* SystemAppearanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAppearanceController.swift; sourceTree = "<group>"; };
 		CF6BD19425D0393A00C4FA40 /* DesktopLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopLayoutView.swift; sourceTree = "<group>"; };
 		CF821E7725A21EAE002B5F1D /* Concierge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Concierge-Bridging-Header.h"; sourceTree = "<group>"; };
 		CF821E7825A21EAF002B5F1D /* WindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
@@ -165,9 +173,15 @@
 		CF821E7F25A22402002B5F1D /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
 		CF821E8025A22402002B5F1D /* Window.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Window.m; sourceTree = "<group>"; };
 		CF821E8525A23430002B5F1D /* ScreensController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreensController.swift; sourceTree = "<group>"; };
+		CF870F6126740C210089512B /* SelectedLayoutsSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedLayoutsSetting.swift; sourceTree = "<group>"; };
+		CF870F63267410690089512B /* SettingsAppearanceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppearanceDelegate.swift; sourceTree = "<group>"; };
 		CF8DBC04261A789A0031B972 /* SettingsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListViewController.swift; sourceTree = "<group>"; };
 		CF8DBC0B261B13C40031B972 /* SettingsItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsItemView.xib; sourceTree = "<group>"; };
 		CF8DBC0F261B13D20031B972 /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
+		CF93698E267556DF001CE96A /* SettingsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDelegate.swift; sourceTree = "<group>"; };
+		CF93699026755888001CE96A /* SettingsDesktopLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDesktopLayoutDelegate.swift; sourceTree = "<group>"; };
+		CF93699226755B91001CE96A /* AppearanceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceInteractor.swift; sourceTree = "<group>"; };
+		CF93699426755BC4001CE96A /* GridLayoutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayoutInteractor.swift; sourceTree = "<group>"; };
 		CF9B2E2B25D5BCC70087D32B /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		CF9B2E2E25D5C62E0087D32B /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		CF9B2E3125D5CB250087D32B /* ImageViewLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewLoader.swift; sourceTree = "<group>"; };
@@ -180,6 +194,7 @@
 		CFACE47D25A1CFD000EE31F5 /* Concierge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Concierge.entitlements; sourceTree = "<group>"; };
 		CFACE48725A1D4C400EE31F5 /* LayoutPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPreviewView.swift; sourceTree = "<group>"; };
 		CFAD230925D05C09008CEB1B /* LeftSideMenuViewController+CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+CollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		CFAD790D266ECCA600583A91 /* GridColorSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridColorSetting.swift; sourceTree = "<group>"; };
 		CFAEAA6325D987DA00675171 /* AppearanceMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceMode.swift; sourceTree = "<group>"; };
 		CFAEAA6825D989D600675171 /* AppearanceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceProvider.swift; sourceTree = "<group>"; };
 		CFAEAA7025D98B2D00675171 /* SystemAppearanceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAppearanceProvider.swift; sourceTree = "<group>"; };
@@ -199,6 +214,9 @@
 		CFD0769E25D04F9600FF2730 /* Vector2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector2.swift; sourceTree = "<group>"; };
 		CFD076A325D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemesCollectionViewItem.swift; sourceTree = "<group>"; };
 		CFD076A725D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LayoutSchemesCollectionViewItem.xib; sourceTree = "<group>"; };
+		CFD89EE52675626000DF304A /* GridTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTheme.swift; sourceTree = "<group>"; };
+		CFD89EE7267568B800DF304A /* SettingsGridLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGridLayoutDelegate.swift; sourceTree = "<group>"; };
+		CFD89EE926756BEB00DF304A /* SettingsLayoutSelectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLayoutSelectionDelegate.swift; sourceTree = "<group>"; };
 		CFE36923261B85E5007DE6C7 /* GeneralSettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsItem.swift; sourceTree = "<group>"; };
 		CFE36929261B86FF007DE6C7 /* AppearanceSettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsItem.swift; sourceTree = "<group>"; };
 		CFE3692D261B8750007DE6C7 /* AboutSettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSettingsItem.swift; sourceTree = "<group>"; };
@@ -283,7 +301,6 @@
 		CF1B394125A26D1C00F7F9C7 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				CF6995A525D6E8EA00A52715 /* Settings */,
 				CFC2107725D3131300726D8C /* Permissions */,
 				CF00C63F25A79764003454E6 /* Dependencies */,
 				CF4826D725A3984500068927 /* Keyboard */,
@@ -311,7 +328,6 @@
 				CFD076A225D0593000FF2730 /* LayoutSchemes */,
 				CFBD324A25C8450C006DDAE5 /* AppList */,
 				CF1B395C25A2747900F7F9C7 /* LeftSideMenuViewController.swift */,
-				CF2E7F8225D1DFD500568009 /* LeftSideMenuViewController+LayoutSchemesDelegate.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -327,6 +343,7 @@
 		CF3C6AB425A4F4A5007A52F8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CF6995A525D6E8EA00A52715 /* Settings */,
 				CF3C6AB525A4F4C9007A52F8 /* WindowRepository.swift */,
 				CF00C65125A7AC98003454E6 /* LayoutSchemesRepository.swift */,
 				CF2E7F7C25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift */,
@@ -340,7 +357,7 @@
 				CF3C6AB925A4FDFD007A52F8 /* String+Localization.swift */,
 				CF3C6AC225A50D34007A52F8 /* NSPasteboard+Types.swift */,
 				CF3C6AC525A50DA4007A52F8 /* WindowPasteboard.swift */,
-				CF00C65425A7AD5C003454E6 /* LayoutScheme.swift */,
+				CF00C65425A7AD5C003454E6 /* LayoutSchema.swift */,
 				CF00C65725A7AD93003454E6 /* LayoutArea.swift */,
 				CFD0769E25D04F9600FF2730 /* Vector2.swift */,
 				CF2E7F7825D1CEC300568009 /* LayoutArea+Defaults.swift */,
@@ -406,7 +423,7 @@
 			isa = PBXGroup;
 			children = (
 				CF6995B225D6ECC700A52715 /* Types */,
-				CF6995A625D6EA3A00A52715 /* SettingsManager.swift */,
+				CF6995A625D6EA3A00A52715 /* SettingsRepository.swift */,
 				CF6995AA25D6EB5A00A52715 /* SettingType.swift */,
 				CF6995AE25D6EC2F00A52715 /* SettingProperty.swift */,
 			);
@@ -418,18 +435,19 @@
 			children = (
 				CF6995B325D6ECED00A52715 /* AutoLoginSetting.swift */,
 				CFAEAA7825D98D7800675171 /* AppearanceSetting.swift */,
+				CFAD790D266ECCA600583A91 /* GridColorSetting.swift */,
+				CF870F6126740C210089512B /* SelectedLayoutsSetting.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
 		};
-		CF6A348125D85DBB00D1619A /* Appearance */ = {
+		CF6A348125D85DBB00D1619A /* SystemAppearance */ = {
 			isa = PBXGroup;
 			children = (
 				CFAEAA6725D989C300675171 /* Observers */,
-				CF6A348225D85E6B00D1619A /* AppearanceController.swift */,
-				CFAEAA6325D987DA00675171 /* AppearanceMode.swift */,
+				CF6A348225D85E6B00D1619A /* SystemAppearanceController.swift */,
 			);
-			path = Appearance;
+			path = SystemAppearance;
 			sourceTree = "<group>";
 		};
 		CF821E7325A21881002B5F1D /* Views */ = {
@@ -437,7 +455,7 @@
 			children = (
 				CF8DBC08261B13830031B972 /* SettingsItemView */,
 				CF3ABAC9261B29BF008E3C90 /* NibLoader */,
-				CF6A348125D85DBB00D1619A /* Appearance */,
+				CF6A348125D85DBB00D1619A /* SystemAppearance */,
 				CF9B2E2A25D5BC2A0087D32B /* Images */,
 				CF9B2E2825D5BC010087D32B /* LayoutView */,
 				CF081A3225C89B8F0099DA5B /* Popover */,
@@ -466,6 +484,15 @@
 				CF8DBC0F261B13D20031B972 /* SettingsItemView.swift */,
 			);
 			path = SettingsItemView;
+			sourceTree = "<group>";
+		};
+		CF9369962675610E001CE96A /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				CFAEAA6325D987DA00675171 /* AppearanceMode.swift */,
+				CF93699226755B91001CE96A /* AppearanceInteractor.swift */,
+			);
+			path = Appearance;
 			sourceTree = "<group>";
 		};
 		CF9B2E2825D5BC010087D32B /* LayoutView */ = {
@@ -528,6 +555,8 @@
 		CFB4B91E25A90E9900539AB6 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				CFD89EE42675625100DF304A /* GridLayout */,
+				CF9369962675610E001CE96A /* Appearance */,
 				CFB3689125A7B8B000CB8A89 /* HotKeysInteractor.swift */,
 				CFB4B92325A90F5B00539AB6 /* WindowInteractor.swift */,
 				CF5E418525AA4476001DEC28 /* LayoutSchemesInteractor.swift */,
@@ -585,10 +614,24 @@
 			path = LayoutSchemes;
 			sourceTree = "<group>";
 		};
+		CFD89EE42675625100DF304A /* GridLayout */ = {
+			isa = PBXGroup;
+			children = (
+				CFD89EE52675626000DF304A /* GridTheme.swift */,
+				CF93699426755BC4001CE96A /* GridLayoutInteractor.swift */,
+			);
+			path = GridLayout;
+			sourceTree = "<group>";
+		};
 		CFE36935261B8DA8007DE6C7 /* SettingsAppearance */ = {
 			isa = PBXGroup;
 			children = (
 				CFE36938261B8E29007DE6C7 /* SettingsAppearanceController.swift */,
+				CF870F63267410690089512B /* SettingsAppearanceDelegate.swift */,
+				CF93698E267556DF001CE96A /* SettingsDelegate.swift */,
+				CF93699026755888001CE96A /* SettingsDesktopLayoutDelegate.swift */,
+				CFD89EE7267568B800DF304A /* SettingsGridLayoutDelegate.swift */,
+				CFD89EE926756BEB00DF304A /* SettingsLayoutSelectionDelegate.swift */,
 			);
 			path = SettingsAppearance;
 			sourceTree = "<group>";
@@ -719,24 +762,27 @@
 				CF49A78C25FE71E900339687 /* ViewControllerFactory.swift in Sources */,
 				CF821E7A25A21EAF002B5F1D /* WindowController.m in Sources */,
 				CF9B2E2C25D5BCC70087D32B /* ImageLoader.swift in Sources */,
+				CF93699326755B91001CE96A /* AppearanceInteractor.swift in Sources */,
 				CF9B2E3225D5CB250087D32B /* ImageViewLoader.swift in Sources */,
-				CF2E7F8325D1DFD500568009 /* LeftSideMenuViewController+LayoutSchemesDelegate.swift in Sources */,
 				CFAEAA7125D98B2D00675171 /* SystemAppearanceProvider.swift in Sources */,
 				CFAD230A25D05C09008CEB1B /* LeftSideMenuViewController+CollectionViewDataSource.swift in Sources */,
 				CF1B395D25A2747900F7F9C7 /* LeftSideMenuViewController.swift in Sources */,
+				CF870F6226740C210089512B /* SelectedLayoutsSetting.swift in Sources */,
 				CFB4B92425A90F5B00539AB6 /* WindowInteractor.swift in Sources */,
 				CF3C6AC325A50D34007A52F8 /* NSPasteboard+Types.swift in Sources */,
 				CFBD325325C857A1006DDAE5 /* WindowTableRow.swift in Sources */,
-				CF00C65525A7AD5C003454E6 /* LayoutScheme.swift in Sources */,
+				CF00C65525A7AD5C003454E6 /* LayoutSchema.swift in Sources */,
 				CFBD324C25C84539006DDAE5 /* WindowTableCell.swift in Sources */,
 				CF3C6AC625A50DA4007A52F8 /* WindowPasteboard.swift in Sources */,
 				CFE3692A261B86FF007DE6C7 /* AppearanceSettingsItem.swift in Sources */,
 				CF2E7F7925D1CEC300568009 /* LayoutArea+Defaults.swift in Sources */,
 				CFE3692E261B8750007DE6C7 /* AboutSettingsItem.swift in Sources */,
 				CF2E7F7D25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift in Sources */,
+				CF93699126755888001CE96A /* SettingsDesktopLayoutDelegate.swift in Sources */,
 				CF6995B425D6ECED00A52715 /* AutoLoginSetting.swift in Sources */,
+				CFAD790E266ECCA600583A91 /* GridColorSetting.swift in Sources */,
 				CF8DBC05261A789A0031B972 /* SettingsListViewController.swift in Sources */,
-				CF6A348325D85E6B00D1619A /* AppearanceController.swift in Sources */,
+				CF6A348325D85E6B00D1619A /* SystemAppearanceController.swift in Sources */,
 				CF4826E225A39FB000068927 /* KeyScheme.swift in Sources */,
 				CFAEAA7925D98D7800675171 /* AppearanceSetting.swift in Sources */,
 				CF4826E825A3B30D00068927 /* KeySchemeFactory.swift in Sources */,
@@ -747,18 +793,22 @@
 				CF081A3725C89E770099DA5B /* PopoverWindow.swift in Sources */,
 				CF00C65225A7AC98003454E6 /* LayoutSchemesRepository.swift in Sources */,
 				CFAEAA6925D989D600675171 /* AppearanceProvider.swift in Sources */,
+				CF93699526755BC4001CE96A /* GridLayoutInteractor.swift in Sources */,
 				CF6995AB25D6EB5A00A52715 /* SettingType.swift in Sources */,
 				CFC2108125D3358700726D8C /* PermissionsSideMenuDelegate.swift in Sources */,
 				CF2E7F8025D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift in Sources */,
 				CF5399EF25D097BB00FA6292 /* NSImage+TintColor.swift in Sources */,
 				CFACE48825A1D4C400EE31F5 /* LayoutPreviewView.swift in Sources */,
+				CF870F64267410690089512B /* SettingsAppearanceDelegate.swift in Sources */,
 				CFF12039261B99580092103D /* SettingsGeneralController.swift in Sources */,
 				CF4826DF25A39F8B00068927 /* HotKeyController.swift in Sources */,
 				CF00C64C25A799F0003454E6 /* DependenciesResolver.swift in Sources */,
 				CF9B2E2F25D5C62E0087D32B /* ImageCache.swift in Sources */,
+				CFD89EE62675626000DF304A /* GridTheme.swift in Sources */,
 				CF4826DC25A39DD400068927 /* Key.swift in Sources */,
 				CF8DBC10261B13D20031B972 /* SettingsItemView.swift in Sources */,
 				CF3C6AB625A4F4C9007A52F8 /* WindowRepository.swift in Sources */,
+				CFD89EEA26756BEB00DF304A /* SettingsLayoutSelectionDelegate.swift in Sources */,
 				CFB4B91B25A9051400539AB6 /* SynchronizedDependenciesContainer.swift in Sources */,
 				CFB4B91725A9017500539AB6 /* DependencyQualifier.swift in Sources */,
 				CF00C64125A7977C003454E6 /* DependenciesContainer.swift in Sources */,
@@ -767,6 +817,7 @@
 				CFD076A425D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift in Sources */,
 				CFFEFF19261A6D4F00F2CE39 /* AppListTableViewAdapter.swift in Sources */,
 				CF00C63D25A791EF003454E6 /* AppDependenciesResolver.swift in Sources */,
+				CF93698F267556DF001CE96A /* SettingsDelegate.swift in Sources */,
 				CF00C65825A7AD93003454E6 /* LayoutArea.swift in Sources */,
 				CFC2108425D3373600726D8C /* PermissionsViewController.swift in Sources */,
 				CFBBB89D261B85210026B7C0 /* SettingsItem.swift in Sources */,
@@ -782,13 +833,14 @@
 				CF1B394925A26EEE00F7F9C7 /* MainWindowController.swift in Sources */,
 				CF821E8625A23430002B5F1D /* ScreensController.swift in Sources */,
 				CFE36924261B85E5007DE6C7 /* GeneralSettingsItem.swift in Sources */,
+				CFD89EE8267568B800DF304A /* SettingsGridLayoutDelegate.swift in Sources */,
 				CF5E418625AA4476001DEC28 /* LayoutSchemesInteractor.swift in Sources */,
 				CF081A3B25C8A05B0099DA5B /* Popover.swift in Sources */,
 				CF49A78825FE6F5000339687 /* Navigatable.swift in Sources */,
 				CFACE47425A1CFCF00EE31F5 /* AppDelegate.swift in Sources */,
 				CF3C6ABE25A4FFF8007A52F8 /* EventMonitor.swift in Sources */,
 				CFC2107925D330B200726D8C /* AccessibilityPermissionsManager.swift in Sources */,
-				CF6995A725D6EA3A00A52715 /* SettingsManager.swift in Sources */,
+				CF6995A725D6EA3A00A52715 /* SettingsRepository.swift in Sources */,
 				CF821E8125A22402002B5F1D /* Window.m in Sources */,
 				CF00C64825A79983003454E6 /* GraphDependenciesContainer.swift in Sources */,
 				CFE36932261B8783007DE6C7 /* QuitSettingsItem.swift in Sources */,
