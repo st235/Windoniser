@@ -20,8 +20,8 @@ class MainViewController: NSViewController, Navigatable {
         }
     }
     
-    func push(controllerId: ViewControllerFactory.ID) {
-        navigationDelegate.push(controllerId: controllerId)
+    func push(controllerId: ViewControllerFactory.ID, bundle: Any? = nil) {
+        navigationDelegate.push(controllerId: controllerId, bundle: bundle)
     }
     
     func pop() -> Bool {

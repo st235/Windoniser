@@ -48,7 +48,7 @@ class DesktopViewUiDelegate: UiDelegate {
     private func reloadActiveScheme() {
         content.clearPreviews()
         let scheme = layoutSchemesInteractor.activeScheme
-        content.addLayoutPreviews(layoutPreviews: scheme.areas.map({ $0.rect }), layoutSeparators: scheme.separators)
+        content.addLayoutPreviews(layoutPreviews: scheme.areas.map({ LayoutPreviewView.LayoutPreview(id: $0.activeKey.description, origin: $0.rect) }), layoutSeparators: scheme.separators)
     }
     
     private func reloadGridTheme(activeTheme: GridTheme) {

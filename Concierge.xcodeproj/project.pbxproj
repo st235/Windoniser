@@ -20,6 +20,13 @@
 		CF081A3E25C8A0940099DA5B /* PopoverWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF081A3D25C8A0940099DA5B /* PopoverWindowController.swift */; };
 		CF1B394925A26EEE00F7F9C7 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B394825A26EEE00F7F9C7 /* MainWindowController.swift */; };
 		CF1B395D25A2747900F7F9C7 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B395C25A2747900F7F9C7 /* ContentViewController.swift */; };
+		CF2E75FE2676820700F198A8 /* BundleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E75FD2676820700F198A8 /* BundleViewController.swift */; };
+		CF2E76002676831E00F198A8 /* SettingsPrivacyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E75FF2676831E00F198A8 /* SettingsPrivacyItem.swift */; };
+		CF2E76042676869000F198A8 /* terms.html in Resources */ = {isa = PBXBuildFile; fileRef = CF2E76022676869000F198A8 /* terms.html */; };
+		CF2E76052676869000F198A8 /* privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = CF2E76032676869000F198A8 /* privacy.html */; };
+		CF2E7606267686B200F198A8 /* privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = CF2E76032676869000F198A8 /* privacy.html */; };
+		CF2E7607267686B200F198A8 /* terms.html in Resources */ = {isa = PBXBuildFile; fileRef = CF2E76022676869000F198A8 /* terms.html */; };
+		CF2E7609267688F900F198A8 /* SettingsTermsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7608267688F900F198A8 /* SettingsTermsItem.swift */; };
 		CF2E7F7925D1CEC300568009 /* LayoutArea+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7F7825D1CEC300568009 /* LayoutArea+Defaults.swift */; };
 		CF2E7F7D25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7F7C25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift */; };
 		CF2E7F8025D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7F7F25D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift */; };
@@ -89,6 +96,8 @@
 		CFC2107925D330B200726D8C /* AccessibilityPermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2107825D330B200726D8C /* AccessibilityPermissionsManager.swift */; };
 		CFC2108125D3358700726D8C /* PermissionsSideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2108025D3358700726D8C /* PermissionsSideMenuDelegate.swift */; };
 		CFC2108425D3373600726D8C /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2108325D3373600726D8C /* PermissionsViewController.swift */; };
+		CFC5CB9F267671D5004D868C /* SettingsAboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5CB9E267671D5004D868C /* SettingsAboutController.swift */; };
+		CFC5CBA2267675BD004D868C /* SettingsLicensesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5CBA1267675BD004D868C /* SettingsLicensesController.swift */; };
 		CFD0769F25D04F9600FF2730 /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD0769E25D04F9600FF2730 /* Vector2.swift */; };
 		CFD076A425D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD076A325D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift */; };
 		CFD076A825D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFD076A725D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib */; };
@@ -132,6 +141,11 @@
 		CF081A3D25C8A0940099DA5B /* PopoverWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverWindowController.swift; sourceTree = "<group>"; };
 		CF1B394825A26EEE00F7F9C7 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		CF1B395C25A2747900F7F9C7 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		CF2E75FD2676820700F198A8 /* BundleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleViewController.swift; sourceTree = "<group>"; };
+		CF2E75FF2676831E00F198A8 /* SettingsPrivacyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPrivacyItem.swift; sourceTree = "<group>"; };
+		CF2E76022676869000F198A8 /* terms.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = terms.html; sourceTree = "<group>"; };
+		CF2E76032676869000F198A8 /* privacy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacy.html; sourceTree = "<group>"; };
+		CF2E7608267688F900F198A8 /* SettingsTermsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTermsItem.swift; sourceTree = "<group>"; };
 		CF2E7F7825D1CEC300568009 /* LayoutArea+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LayoutArea+Defaults.swift"; sourceTree = "<group>"; };
 		CF2E7F7C25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemeIconsFactory.swift; sourceTree = "<group>"; };
 		CF2E7F7F25D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
@@ -211,6 +225,8 @@
 		CFC2107825D330B200726D8C /* AccessibilityPermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityPermissionsManager.swift; sourceTree = "<group>"; };
 		CFC2108025D3358700726D8C /* PermissionsSideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsSideMenuDelegate.swift; sourceTree = "<group>"; };
 		CFC2108325D3373600726D8C /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
+		CFC5CB9E267671D5004D868C /* SettingsAboutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAboutController.swift; sourceTree = "<group>"; };
+		CFC5CBA1267675BD004D868C /* SettingsLicensesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLicensesController.swift; sourceTree = "<group>"; };
 		CFD0769E25D04F9600FF2730 /* Vector2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector2.swift; sourceTree = "<group>"; };
 		CFD076A325D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemesCollectionViewItem.swift; sourceTree = "<group>"; };
 		CFD076A725D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LayoutSchemesCollectionViewItem.xib; sourceTree = "<group>"; };
@@ -286,6 +302,7 @@
 		CF1B393A25A26A6C00F7F9C7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CF2E76012676867C00F198A8 /* Web */,
 				CFACE47725A1CFD000EE31F5 /* Assets.xcassets */,
 				CFACE47D25A1CFD000EE31F5 /* Concierge.entitlements */,
 				CFACE47C25A1CFD000EE31F5 /* Info.plist */,
@@ -326,6 +343,15 @@
 				CF1B395C25A2747900F7F9C7 /* ContentViewController.swift */,
 			);
 			path = Content;
+			sourceTree = "<group>";
+		};
+		CF2E76012676867C00F198A8 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				CF2E76032676869000F198A8 /* privacy.html */,
+				CF2E76022676869000F198A8 /* terms.html */,
+			);
+			path = Web;
 			sourceTree = "<group>";
 		};
 		CF3ABAC9261B29BF008E3C90 /* NibLoader */ = {
@@ -378,6 +404,7 @@
 				CF49A78B25FE71E900339687 /* ViewControllerFactory.swift */,
 				CF49A78725FE6F5000339687 /* Navigatable.swift */,
 				CFFEFF24261A724200F2CE39 /* NavigationDelegate.swift */,
+				CF2E75FD2676820700F198A8 /* BundleViewController.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -596,13 +623,11 @@
 		CFC5CB9A26766015004D868C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				CFC5CBA3267676D1004D868C /* MenuItems */,
+				CFC5CBA026767547004D868C /* Licenses */,
+				CFC5CB9D267671B8004D868C /* About */,
 				CFE36935261B8DA8007DE6C7 /* Appearance */,
 				CFC5CB9B26766034004D868C /* General */,
-				CFBBB89C261B85210026B7C0 /* SettingsItem.swift */,
-				CFE36923261B85E5007DE6C7 /* GeneralSettingsItem.swift */,
-				CFE36929261B86FF007DE6C7 /* AppearanceSettingsItem.swift */,
-				CFE3692D261B8750007DE6C7 /* AboutSettingsItem.swift */,
-				CFE36931261B8783007DE6C7 /* QuitSettingsItem.swift */,
 				CF5E416D25AA3296001DEC28 /* SettingsMainViewController.swift */,
 				CF8DBC04261A789A0031B972 /* SettingsListViewController.swift */,
 			);
@@ -627,6 +652,36 @@
 				CF49A78F25FE71F200339687 /* Navigation */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		CFC5CB9D267671B8004D868C /* About */ = {
+			isa = PBXGroup;
+			children = (
+				CFC5CB9E267671D5004D868C /* SettingsAboutController.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		CFC5CBA026767547004D868C /* Licenses */ = {
+			isa = PBXGroup;
+			children = (
+				CFC5CBA1267675BD004D868C /* SettingsLicensesController.swift */,
+			);
+			path = Licenses;
+			sourceTree = "<group>";
+		};
+		CFC5CBA3267676D1004D868C /* MenuItems */ = {
+			isa = PBXGroup;
+			children = (
+				CFBBB89C261B85210026B7C0 /* SettingsItem.swift */,
+				CFE36923261B85E5007DE6C7 /* GeneralSettingsItem.swift */,
+				CFE36929261B86FF007DE6C7 /* AppearanceSettingsItem.swift */,
+				CFE3692D261B8750007DE6C7 /* AboutSettingsItem.swift */,
+				CFE36931261B8783007DE6C7 /* QuitSettingsItem.swift */,
+				CF2E75FF2676831E00F198A8 /* SettingsPrivacyItem.swift */,
+				CF2E7608267688F900F198A8 /* SettingsTermsItem.swift */,
+			);
+			path = MenuItems;
 			sourceTree = "<group>";
 		};
 		CFD076A225D0593000FF2730 /* LayoutSchemes */ = {
@@ -741,6 +796,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF2E7606267686B200F198A8 /* privacy.html in Resources */,
+				CF2E7607267686B200F198A8 /* terms.html in Resources */,
 				CF69959025D6E6F000A52715 /* Assets.xcassets in Resources */,
 				CF69959325D6E6F000A52715 /* MainMenu.xib in Resources */,
 			);
@@ -752,7 +809,9 @@
 			files = (
 				CFACE47825A1CFD000EE31F5 /* Assets.xcassets in Resources */,
 				CFACE47B25A1CFD000EE31F5 /* MainFlow.storyboard in Resources */,
+				CF2E76042676869000F198A8 /* terms.html in Resources */,
 				CFD076A825D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib in Resources */,
+				CF2E76052676869000F198A8 /* privacy.html in Resources */,
 				CF4826CE25A395D300068927 /* Localizable.strings in Resources */,
 				CF8DBC0C261B13C40031B972 /* SettingsItemView.xib in Resources */,
 			);
@@ -778,6 +837,7 @@
 				CF49A78C25FE71E900339687 /* ViewControllerFactory.swift in Sources */,
 				CF821E7A25A21EAF002B5F1D /* WindowController.m in Sources */,
 				CF9B2E2C25D5BCC70087D32B /* ImageLoader.swift in Sources */,
+				CF2E76002676831E00F198A8 /* SettingsPrivacyItem.swift in Sources */,
 				CF93699326755B91001CE96A /* AppearanceInteractor.swift in Sources */,
 				CF9B2E3225D5CB250087D32B /* ImageViewLoader.swift in Sources */,
 				CFAEAA7125D98B2D00675171 /* SystemAppearanceProvider.swift in Sources */,
@@ -787,6 +847,7 @@
 				CFB4B92425A90F5B00539AB6 /* WindowInteractor.swift in Sources */,
 				CF3C6AC325A50D34007A52F8 /* NSPasteboard+Types.swift in Sources */,
 				CFBD325325C857A1006DDAE5 /* WindowTableRow.swift in Sources */,
+				CF2E7609267688F900F198A8 /* SettingsTermsItem.swift in Sources */,
 				CF00C65525A7AD5C003454E6 /* LayoutSchema.swift in Sources */,
 				CFBD324C25C84539006DDAE5 /* WindowTableCell.swift in Sources */,
 				CF3C6AC625A50DA4007A52F8 /* WindowPasteboard.swift in Sources */,
@@ -802,8 +863,10 @@
 				CF4826E225A39FB000068927 /* KeyScheme.swift in Sources */,
 				CFAEAA7925D98D7800675171 /* AppearanceSetting.swift in Sources */,
 				CF4826E825A3B30D00068927 /* KeySchemeFactory.swift in Sources */,
+				CFC5CBA2267675BD004D868C /* SettingsLicensesController.swift in Sources */,
 				CF3ABACB261B29D3008E3C90 /* NibLoadable.swift in Sources */,
 				CF5F4EA625FE486D0090A3A7 /* MainViewController.swift in Sources */,
+				CFC5CB9F267671D5004D868C /* SettingsAboutController.swift in Sources */,
 				CF9B2E3525D5CFB60087D32B /* NSImageView+ImageViewLoader.swift in Sources */,
 				CFAEAA6425D987DA00675171 /* AppearanceMode.swift in Sources */,
 				CF081A3725C89E770099DA5B /* PopoverWindow.swift in Sources */,
@@ -837,6 +900,7 @@
 				CF00C65825A7AD93003454E6 /* LayoutArea.swift in Sources */,
 				CFC2108425D3373600726D8C /* PermissionsViewController.swift in Sources */,
 				CFBBB89D261B85210026B7C0 /* SettingsItem.swift in Sources */,
+				CF2E75FE2676820700F198A8 /* BundleViewController.swift in Sources */,
 				CF081A3E25C8A0940099DA5B /* PopoverWindowController.swift in Sources */,
 				CFD0769F25D04F9600FF2730 /* Vector2.swift in Sources */,
 				CFFEFF25261A724200F2CE39 /* NavigationDelegate.swift in Sources */,

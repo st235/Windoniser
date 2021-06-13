@@ -14,13 +14,15 @@ class NavigationDelegate: Navigatable {
         self.viewControllerFactory = viewControllerFactory
     }
     
-    func push(controllerId: ViewControllerFactory.ID) {
+    func push(controllerId: ViewControllerFactory.ID, bundle: Any? = nil) {
         if (!callStack.isEmpty) {
             let oldController = callStack.last
             oldController?.view.isHidden = true
         }
         
         let controller = viewControllerFactory.create(id: controllerId)
+        
+        (controller as? BundleViewController)?.bundle = bundle
         
         self.viewController.addChild(controller)
         controller.view.frame = self.containerView.bounds

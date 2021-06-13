@@ -43,6 +43,8 @@ class ContentViewController: NSViewController {
     }
     
     override func viewDidLoad() {
+        layoutSchemesInteractor.addDelegate(weak: self)
+        
         desktopViewUiDelegate.update()
         desktopViewUiDelegate.onPreviewSelected = { [weak self] preview, payload in
             self?.onPreviewSelected(preview: preview, payload: payload)
@@ -68,18 +70,7 @@ class ContentViewController: NSViewController {
     }
     
     @objc private func onSettingsClick(_ sender: Any?) {
-        (parent as? Navigatable)?.push(controllerId: .settings)
-    }
-    
-    private func reloadGridTheme(theme: GridTheme) {
-        switch theme {
-        case .followSystem:
-            desktopLayoutView.changeGridTheme(backgroundColor: .backgroundTransparent, borderColor: .strokePrimary, highlightColor: .backgroundAccent)
-        case .light:
-            desktopLayoutView.changeGridTheme(backgroundColor: .Static.white75, borderColor: .Static.white, highlightColor: .Static.white)
-        case .dark:
-            desktopLayoutView.changeGridTheme(backgroundColor: .Static.black75, borderColor: .Static.black, highlightColor: .Static.black)
-        }
+        (parent as? Navigatable)?.push(controllerId: .settings, bundle: nil)
     }
     
     private func onPreviewSelected(preview: LayoutPreviewView.LayoutPreview, payload: Any?) {
@@ -90,8 +81,20 @@ class ContentViewController: NSViewController {
         assert(windowPids.count == 1, "Pids have more (or less) than 1 object. Count is \(windowPids.count)")
         
         if let windowPid = windowPids.first {
-            windowInteractor.resizeWindow(withPid: windowPid.pid, andId: windowPid.id, into: preview)
+            windowInteractor.resizeWindow(withPid: windowPid.pid, andId: windowPid.id, into: preview.origin)
         }
+    }
+    
+}
+
+extension ContentViewController: LayoutSchemesInteractor.Delegate {
+    
+    func onActiveSchemeChanged(schemes: LayoutSchema) {
+        // empty on purpose
+    }
+    
+    func onSelectedSchemasChanged() {
+        layoutSchemesCollectionView.reloadData()
     }
     
 }

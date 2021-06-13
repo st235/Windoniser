@@ -18,6 +18,9 @@ class SettingsMainViewController: NSViewController, Navigatable {
         backButton.target = self
         backButton.action = #selector(onBackClicked(_:))
                 
+        navigationContainer.wantsLayer = true
+        navigationContainer.layer?.backgroundColor = NSColor(named: .backgroundPrimary)?.cgColor
+        
         push(controllerId: .settingsList)
     }
     
@@ -27,8 +30,8 @@ class SettingsMainViewController: NSViewController, Navigatable {
         }
     }
     
-    func push(controllerId: ViewControllerFactory.ID) {
-        navigationDelegate.push(controllerId: controllerId)
+    func push(controllerId: ViewControllerFactory.ID, bundle: Any? = nil) {
+        navigationDelegate.push(controllerId: controllerId, bundle: bundle)
     }
     
     func pop() -> Bool {

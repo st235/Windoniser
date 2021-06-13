@@ -20,8 +20,13 @@
 "settings_item_general" = "General";
 "settings_item_appearance" = "Appearance";
 "settings_item_about" = "About";
+"settings_item_privacy" = "Privacy";
+"settings_item_terms_and_conditions" = "Terms and Conditions";
 "settings_item_quit" = "Quit";
 
 "settings_appearance_theme_system" = "System";
 "settings_appearance_theme_light" = "Light";
 "settings_appearance_theme_dark" = "Dark";
+
+"settings_about_version_header" = "Version:";
+"settings_about_version_no_version" = "Version: unknown";

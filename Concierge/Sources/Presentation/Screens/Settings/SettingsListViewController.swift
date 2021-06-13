@@ -9,6 +9,8 @@ class SettingsListViewController: NSViewController {
             GeneralSettingsItem(),
             AppearanceSettingsItem(),
             AboutSettingsItem(),
+            SettingsPrivacyItem(),
+            SettingsTermsItem(),
             QuitSettingsItem()
         ];
     

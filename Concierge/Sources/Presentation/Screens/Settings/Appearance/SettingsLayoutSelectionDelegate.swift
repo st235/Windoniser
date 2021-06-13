@@ -69,6 +69,11 @@ extension SettingsLayoutSelectionDelegate: NSCollectionViewDataSource {
 extension SettingsLayoutSelectionDelegate: NSCollectionViewDelegate {
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {        
+        onItemClick(collectionView, didSelectItemsAt: indexPaths)
+        collectionView.deselectItems(at: indexPaths)
+    }
+    
+    private func onItemClick(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
         guard let indexPath = indexPaths.first else {
             fatalError()
         }

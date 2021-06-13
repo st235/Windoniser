@@ -22,6 +22,8 @@ extension ContentViewController: NSCollectionViewDataSource {
         if layoutScheme.type == activeScheme.type {
             lastKnownIndexPath = indexPath
             item.select()
+        } else {
+            item.deselect()
         }
 
         return item

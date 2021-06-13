@@ -9,7 +9,15 @@ protocol _LayoutPreviewViewDelegate: AnyObject {
 
 class LayoutPreviewView: NSView {
 
-    typealias LayoutPreview = NSRect
+    struct LayoutPreview: Equatable {
+        var id: String
+        var origin: NSRect
+        
+        static func ==(lhs: LayoutPreview, rhs: LayoutPreview) -> Bool {
+            return lhs.id == rhs.id && lhs.origin == rhs.origin
+        }
+    }
+    
     typealias LayoutSeparator = Vector2
     typealias Delegate = _LayoutPreviewViewDelegate
     
@@ -181,6 +189,10 @@ class LayoutPreviewView: NSView {
             drawSeparator(separator: separator)
         }
         
+        for preview in projectedPreviews {
+            drawTextCentered(text: preview.id, frame: preview.origin)
+        }
+        
     }
     
     private func drawSeparator(separator: Vector2) {
@@ -197,13 +209,13 @@ class LayoutPreviewView: NSView {
     
     private func drawActiveScreen(projection: LayoutPreview) {
         highlightColor.set()
-        let path = NSBezierPath.init(rect: projection)
+        let path = NSBezierPath.init(rect: projection.origin)
         path.fill()
     }
     
     private func findHighlightedProjection(position: NSPoint) -> LayoutPreview? {
         for prjection in projectedPreviews {
-            if prjection.contains(position) {
+            if prjection.origin.contains(position) {
                 return prjection
             }
         }
@@ -211,20 +223,36 @@ class LayoutPreviewView: NSView {
         return nil
     }
     
+    private func drawTextCentered(text: String, frame: NSRect) {
+        let string: NSString = text as NSString
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.center
+        let dict = [
+            NSAttributedString.Key.paragraphStyle: paragraphStyle,
+            NSAttributedString.Key.foregroundColor: borderColor,
+            NSAttributedString.Key.font: NSFont.boldSystemFont(ofSize: 32)
+        ]
+        let size = string.size(withAttributes: dict)
+        let r = CGRect(x: frame.origin.x, y: frame.origin.y + (frame.size.height - size.height)/2.0, width: frame.size.width, height: size.height)
+        string.draw(in: r, withAttributes: dict)
+    }
+    
     private func getSeparatorProjection(separator: LayoutSeparator) -> LayoutSeparator {
         return LayoutSeparator(x: NSPoint(x: separator.x.x * bounds.width, y: separator.x.y * bounds.height), y: NSPoint(x: separator.y.x * bounds.width, y: separator.y.y * bounds.height))
     }
     
     private func getLayoutProjection(layoutPreview: LayoutPreview, padding: CGFloat) -> LayoutPreview {
-        let projectedXScale = layoutPreview.width / projectionBounds.width
-        let projectedYScale = layoutPreview.height / projectionBounds.height
+        let origin = layoutPreview.origin
+        
+        let projectedXScale = origin.width / projectionBounds.width
+        let projectedYScale = origin.height / projectionBounds.height
         
         let projectedWidth = projectedXScale * bounds.width - 2 * padding
         let projectedHeight = projectedYScale * bounds.height - 2 * padding
         
-        let projectedX = layoutPreview.minX * (bounds.width / projectionBounds.width) + padding
-        let projectedY = layoutPreview.minY * (bounds.height / projectionBounds.height) + padding
+        let projectedX = origin.minX * (bounds.width / projectionBounds.width) + padding
+        let projectedY = origin.minY * (bounds.height / projectionBounds.height) + padding
         
-        return NSRect(x: projectedX, y: projectedY, width: projectedWidth, height: projectedHeight)
+        return LayoutPreview(id: layoutPreview.id, origin: NSRect(x: projectedX, y: projectedY, width: projectedWidth, height: projectedHeight))
     }
 }
