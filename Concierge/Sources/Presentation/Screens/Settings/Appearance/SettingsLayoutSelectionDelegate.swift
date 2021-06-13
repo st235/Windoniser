@@ -79,9 +79,9 @@ extension SettingsLayoutSelectionDelegate: NSCollectionViewDelegate {
         }
         
         let item = selectedSchemas[indexPath.item]
-        
+   
         if let newCell = collectionView.item(at: indexPath) as? LayoutSchemesCollectionViewItem {
-            if !layoutSchemasInteractor.isSelected(schema: item) {
+            if !layoutSchemasInteractor.canBeUnselected(schema: item) || !layoutSchemasInteractor.isSelected(schema: item) {
                 layoutSchemasInteractor.selectSchema(schema: item)
                 newCell.select()
             } else {

@@ -11,6 +11,7 @@ class DesktopLayoutView: NSImageView {
         layoutPreviewView.backgroundColor = NSColor.from(name: .backgroundTransparent)
         layoutPreviewView.borderColor = NSColor.from(name: .strokePrimary)
         layoutPreviewView.highlightColor = NSColor.from(name: .backgroundAccent)
+        layoutPreviewView.symbolsColor = NSColor.from(name: .textAccent)
         
         layoutPreviewView.registerForDraggedTypes([.windowPid])
         
@@ -52,11 +53,13 @@ class DesktopLayoutView: NSImageView {
     func changeGridTheme(
         backgroundColor: NSColor.Name,
         borderColor: NSColor.Name,
-        highlightColor: NSColor.Name
+        highlightColor: NSColor.Name,
+        symbolsColor: NSColor.Name
     ) {
         layoutPreviewView.backgroundColor = NSColor.from(name: backgroundColor)
         layoutPreviewView.borderColor = NSColor.from(name: borderColor)
         layoutPreviewView.highlightColor = NSColor.from(name: highlightColor)
+        layoutPreviewView.symbolsColor = NSColor.from(name: symbolsColor)
     }
     
     private func setup() {

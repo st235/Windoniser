@@ -54,6 +54,12 @@ class LayoutPreviewView: NSView {
         }
     }
     
+    var symbolsColor: NSColor = NSColor.white.withAlphaComponent(0.6) {
+        didSet {
+            needsDisplay = true
+        }
+    }
+    
     var paddingBetweenPreviews: CGFloat = 4 {
         didSet {
             updateLayoutProjections()
@@ -229,7 +235,7 @@ class LayoutPreviewView: NSView {
         paragraphStyle.alignment = NSTextAlignment.center
         let dict = [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.foregroundColor: borderColor,
+            NSAttributedString.Key.foregroundColor: symbolsColor,
             NSAttributedString.Key.font: NSFont.boldSystemFont(ofSize: 32)
         ]
         let size = string.size(withAttributes: dict)

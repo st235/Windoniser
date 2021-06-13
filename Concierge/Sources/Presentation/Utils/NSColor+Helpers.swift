@@ -9,6 +9,7 @@ extension NSColor.Name {
     
     static let textPrimary = "TextPrimary"
     static let textSecondary = "TextSecondary"
+    static let textAccent = "TextAccent"
     
     static let iconPrimary = "IconPrimary"
     

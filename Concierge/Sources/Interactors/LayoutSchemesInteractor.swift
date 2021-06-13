@@ -9,7 +9,7 @@ class LayoutSchemesInteractor {
     
     public typealias Delegate = _LayoutSchemesDelegate
     
-    public var activeScheme: LayoutSchema {
+    public var activeSchema: LayoutSchema {
         get {
             return layoutSchemesRepository.prefferedScheme
         }
@@ -36,7 +36,7 @@ class LayoutSchemesInteractor {
         self.selectedItems = Set(settingsRepository.get(type: .selectedLayouts) as [Int])
         
         if selectedItems.isEmpty {
-            selectedItems.insert(layoutSchemesRepository.defaultSchema.type.rawValue)
+            selectedItems.insert(layoutSchemesRepository.defaultSchema.type)
         }
     }
     
@@ -53,8 +53,7 @@ class LayoutSchemesInteractor {
     }
     
     func selectSchema(schema: LayoutSchema) {
-        selectedItems.insert(schema.type.rawValue)
-        
+        selectedItems.insert(schema.type)
         settingsRepository.set(type: .selectedLayouts, value: Array(selectedItems))
         
         for delegate in delegates {
@@ -63,10 +62,18 @@ class LayoutSchemesInteractor {
     }
     
     func unselectSchema(schema: LayoutSchema) {
-        selectedItems.remove(schema.type.rawValue)
+        if (!canBeUnselected(schema: schema)) {
+            return
+        }
+        
+        if (activeSchema.type == schema.type) {
+            activeSchema = layoutSchemesRepository.defaultSchema
+        }
+        
+        selectedItems.remove(schema.type)
         
         if selectedItems.isEmpty {
-            selectedItems.insert(layoutSchemesRepository.defaultSchema.type.rawValue)
+            selectedItems.insert(layoutSchemesRepository.defaultSchema.type)
         }
         
         settingsRepository.set(type: .selectedLayouts, value: Array(selectedItems))
@@ -76,8 +83,16 @@ class LayoutSchemesInteractor {
         }
     }
     
+    func canBeUnselected(schema: LayoutSchema) -> Bool {
+        return schema.type != .fullscreen
+    }
+    
     func isSelected(schema: LayoutSchema) -> Bool {
-        return selectedItems.contains(schema.type.rawValue)
+        if (!canBeUnselected(schema: schema)) {
+            // unselectable items are always selected
+            return true
+        }
+        return selectedItems.contains(schema.type)
     }
     
     func selectedSchemas() -> [LayoutSchema] {
@@ -87,7 +102,7 @@ class LayoutSchemesInteractor {
             selectedSchemas.append(layoutSchemesRepository.findSchema(byId: schema))
         }
         
-        selectedSchemas.sort(by: { $0.type.rawValue < $1.type.rawValue })
+        selectedSchemas.sort(by: { $0.type < $1.type })
         
         return selectedSchemas
     }

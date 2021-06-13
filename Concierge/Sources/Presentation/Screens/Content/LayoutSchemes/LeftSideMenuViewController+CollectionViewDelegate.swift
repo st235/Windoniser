@@ -7,8 +7,6 @@ extension ContentViewController: NSCollectionViewDelegate {
             fatalError()
         }
         
-        print(indexPath)
-        
         if let oldPath = lastKnownIndexPath, let oldCell = collectionView.item(at: oldPath) as? LayoutSchemesCollectionViewItem {
             oldCell.deselect()
         }

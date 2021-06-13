@@ -47,18 +47,18 @@ class DesktopViewUiDelegate: UiDelegate {
     
     private func reloadActiveScheme() {
         content.clearPreviews()
-        let scheme = layoutSchemesInteractor.activeScheme
+        let scheme = layoutSchemesInteractor.activeSchema
         content.addLayoutPreviews(layoutPreviews: scheme.areas.map({ LayoutPreviewView.LayoutPreview(id: $0.activeKey.description, origin: $0.rect) }), layoutSeparators: scheme.separators)
     }
     
     private func reloadGridTheme(activeTheme: GridTheme) {
         switch activeTheme {
         case .followSystem:
-            content.changeGridTheme(backgroundColor: .backgroundTransparent, borderColor: .strokePrimary, highlightColor: .backgroundAccent)
+            content.changeGridTheme(backgroundColor: .backgroundTransparent, borderColor: .strokePrimary, highlightColor: .backgroundAccent, symbolsColor: .textAccent)
         case .light:
-            content.changeGridTheme(backgroundColor: .Static.white75, borderColor: .Static.white, highlightColor: .Static.white)
+            content.changeGridTheme(backgroundColor: .Static.white75, borderColor: .Static.white, highlightColor: .Static.white, symbolsColor: .Static.black)
         case .dark:
-            content.changeGridTheme(backgroundColor: .Static.black75, borderColor: .Static.black, highlightColor: .Static.black)
+            content.changeGridTheme(backgroundColor: .Static.black75, borderColor: .Static.black, highlightColor: .Static.black, symbolsColor: .Static.white)
         }
     }
     

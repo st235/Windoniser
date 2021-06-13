@@ -14,11 +14,11 @@ extension LayoutArea {
     private static let keyTwo = "title_area_two"
     private static let keyThree = "title_area_three"
     
-    static let main = LayoutArea(titleKey: LayoutArea.keyMain, activeKey: .f, modifiers: [.shift, .control], rect: NSRect(x: 0, y: 0, width: 1, height: 1))
-    static let left = LayoutArea(titleKey: LayoutArea.keyLeft, activeKey: .l, modifiers: [.shift, .control], rect: NSRect(x: 0, y: 0, width: 0.5, height: 1))
-    static let right = LayoutArea(titleKey: LayoutArea.keyRight, activeKey: .r, modifiers: [.shift, .control], rect: NSRect(x: 0.5, y: 0, width: 0.5, height: 1))
-    static let top = LayoutArea(titleKey: LayoutArea.keyTop, activeKey: .t, modifiers: [.shift, .control], rect: NSRect(x: 0, y: 0.5, width: 1, height: 0.5))
-    static let bottom = LayoutArea(titleKey: LayoutArea.keyBottom, activeKey: .b, modifiers: [.shift, .control], rect: NSRect(x: 0, y: 0, width: 1, height: 0.5))
+    static let main = LayoutArea(titleKey: LayoutArea.keyMain, activeKey: .space, modifiers: [.shift, .control], rect: NSRect(x: 0, y: 0, width: 1, height: 1))
+    static let left = LayoutArea(titleKey: LayoutArea.keyLeft, activeKey: .leftArrow, modifiers: [.shift, .control], rect: NSRect(x: 0, y: 0, width: 0.5, height: 1))
+    static let right = LayoutArea(titleKey: LayoutArea.keyRight, activeKey: .rightArrow, modifiers: [.shift, .control], rect: NSRect(x: 0.5, y: 0, width: 0.5, height: 1))
+    static let top = LayoutArea(titleKey: LayoutArea.keyTop, activeKey: .upArrow, modifiers: [.shift, .control], rect: NSRect(x: 0, y: 0.5, width: 1, height: 0.5))
+    static let bottom = LayoutArea(titleKey: LayoutArea.keyBottom, activeKey: .downArrow, modifiers: [.shift, .control], rect: NSRect(x: 0, y: 0, width: 1, height: 0.5))
     static let topLeft = LayoutArea(titleKey: LayoutArea.keyTopLeft, activeKey: .one, modifiers: [.shift, .control], rect: NSRect(x: 0, y: 0.5, width: 0.5, height: 0.5))
     static let topRight = LayoutArea(titleKey: LayoutArea.keyTopRight, activeKey: .two, modifiers: [.shift, .control], rect: NSRect(x: 0.5, y: 0.5, width: 0.5, height: 0.5))
     static let bottomLeft = LayoutArea(titleKey: LayoutArea.keyBottomLeft, activeKey: .three, modifiers: [.shift, .control], rect: NSRect(x: 0, y: 0, width: 0.5, height: 0.5))

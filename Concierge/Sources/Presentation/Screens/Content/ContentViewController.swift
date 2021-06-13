@@ -35,10 +35,10 @@ class ContentViewController: NSViewController {
     
     var activeScheme: LayoutSchema {
         get {
-            return layoutSchemesInteractor.activeScheme
+            return layoutSchemesInteractor.activeSchema
         }
         set(newValue) {
-            layoutSchemesInteractor.activeScheme = newValue
+            layoutSchemesInteractor.activeSchema = newValue
         }
     }
     

@@ -28,7 +28,7 @@ class HotKeysInteractor: LayoutSchemesInteractor.Delegate {
     }
     
     func register() {
-        let scheme = layoutSchemesInteractor.activeScheme
+        let scheme = layoutSchemesInteractor.activeSchema
         
         for area in scheme.areas {
             let keyScheme = KeyScheme(key: area.activeKey, modifiers: area.modifiers)

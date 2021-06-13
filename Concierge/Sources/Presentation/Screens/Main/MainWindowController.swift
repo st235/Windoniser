@@ -29,7 +29,7 @@ class MainWindowController: LayoutSchemesInteractor.Delegate {
     
     func onActiveSchemeChanged(schemes: LayoutSchema) {
         if let button = statusBarItem.button {
-            button.image = layoutSchemeIconsFactory.findIconForScheme(scheme: layoutSchemesInteractor.activeScheme)
+            button.image = layoutSchemeIconsFactory.findIconForScheme(scheme: layoutSchemesInteractor.activeSchema)
         }
     }
     
@@ -39,7 +39,7 @@ class MainWindowController: LayoutSchemesInteractor.Delegate {
     
     func attach() {        
         if let button = statusBarItem.button {
-            button.image = layoutSchemeIconsFactory.findIconForScheme(scheme: layoutSchemesInteractor.activeScheme)
+            button.image = layoutSchemeIconsFactory.findIconForScheme(scheme: layoutSchemesInteractor.activeSchema)
             button.sendAction(on: [.leftMouseUp, .rightMouseUp])
             button.target = self
             button.action = #selector(onStatusBarItemClick(_:))

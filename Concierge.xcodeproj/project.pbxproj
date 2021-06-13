@@ -27,6 +27,7 @@
 		CF2E7606267686B200F198A8 /* privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = CF2E76032676869000F198A8 /* privacy.html */; };
 		CF2E7607267686B200F198A8 /* terms.html in Resources */ = {isa = PBXBuildFile; fileRef = CF2E76022676869000F198A8 /* terms.html */; };
 		CF2E7609267688F900F198A8 /* SettingsTermsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7608267688F900F198A8 /* SettingsTermsItem.swift */; };
+		CF2E760B2676BF5C00F198A8 /* LayoutSchemaPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E760A2676BF5C00F198A8 /* LayoutSchemaPreviewView.swift */; };
 		CF2E7F7925D1CEC300568009 /* LayoutArea+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7F7825D1CEC300568009 /* LayoutArea+Defaults.swift */; };
 		CF2E7F7D25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7F7C25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift */; };
 		CF2E7F8025D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E7F7F25D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift */; };
@@ -146,6 +147,7 @@
 		CF2E76022676869000F198A8 /* terms.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = terms.html; sourceTree = "<group>"; };
 		CF2E76032676869000F198A8 /* privacy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacy.html; sourceTree = "<group>"; };
 		CF2E7608267688F900F198A8 /* SettingsTermsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTermsItem.swift; sourceTree = "<group>"; };
+		CF2E760A2676BF5C00F198A8 /* LayoutSchemaPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemaPreviewView.swift; sourceTree = "<group>"; };
 		CF2E7F7825D1CEC300568009 /* LayoutArea+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LayoutArea+Defaults.swift"; sourceTree = "<group>"; };
 		CF2E7F7C25D1DBEA00568009 /* LayoutSchemeIconsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemeIconsFactory.swift; sourceTree = "<group>"; };
 		CF2E7F7F25D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeftSideMenuViewController+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				CF9B2E2825D5BC010087D32B /* LayoutView */,
 				CF081A3225C89B8F0099DA5B /* Popover */,
 				CF5399EE25D097BB00FA6292 /* NSImage+TintColor.swift */,
+				CF2E760A2676BF5C00F198A8 /* LayoutSchemaPreviewView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -921,6 +924,7 @@
 				CF3C6ABE25A4FFF8007A52F8 /* EventMonitor.swift in Sources */,
 				CFC2107925D330B200726D8C /* AccessibilityPermissionsManager.swift in Sources */,
 				CF6995A725D6EA3A00A52715 /* SettingsRepository.swift in Sources */,
+				CF2E760B2676BF5C00F198A8 /* LayoutSchemaPreviewView.swift in Sources */,
 				CF821E8125A22402002B5F1D /* Window.m in Sources */,
 				CF00C64825A79983003454E6 /* GraphDependenciesContainer.swift in Sources */,
 				CFE36932261B8783007DE6C7 /* QuitSettingsItem.swift in Sources */,
