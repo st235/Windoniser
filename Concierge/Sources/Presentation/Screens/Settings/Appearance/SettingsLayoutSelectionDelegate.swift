@@ -1,6 +1,6 @@
 import Foundation
 
-final class SettingsLayoutSelectionDelegate: NSObject, SettingsDelegate {
+final class SettingsLayoutSelectionDelegate: NSObject, UiDelegate {
     
     private let header: NSTextField
     private let content: NSCollectionView

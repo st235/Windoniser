@@ -1,6 +1,6 @@
 import Foundation
 
-extension LeftSideMenuViewController: NSCollectionViewDelegate {
+extension ContentViewController: NSCollectionViewDelegate {
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
         guard let indexPath = indexPaths.first else {

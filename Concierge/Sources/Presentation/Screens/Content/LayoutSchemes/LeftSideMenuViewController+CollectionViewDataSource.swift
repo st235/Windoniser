@@ -1,6 +1,6 @@
 import Foundation
 
-extension LeftSideMenuViewController: NSCollectionViewDataSource {
+extension ContentViewController: NSCollectionViewDataSource {
     
     func numberOfSections(in collectionView: NSCollectionView) -> Int {
         return 1

@@ -1,9 +1,11 @@
 import Foundation
 import AppKit
 
-class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
+class ContentViewController: NSViewController {
         
+    @IBOutlet weak var desktopLayoutHeader: NSTextField!
     @IBOutlet weak var desktopLayoutView: DesktopLayoutView!
+    
     @IBOutlet weak var windowsTableView: NSTableView!
     @IBOutlet weak var layoutSchemesCollectionView: NSCollectionView!
     @IBOutlet weak var settingsButton: NSButton!
@@ -13,6 +15,10 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
     private let windowInteractor: WindowInteractor = AppDependenciesResolver.shared.resolve(type: WindowInteractor.self)
     private let layoutSchemesInteractor: LayoutSchemesInteractor = AppDependenciesResolver.shared.resolve(type: LayoutSchemesInteractor.self)
     private let gridLayoutInteractor: GridLayoutInteractor = AppDependenciesResolver.shared.resolve(type: GridLayoutInteractor.self)
+    
+    private lazy var desktopViewUiDelegate = {
+        DesktopViewUiDelegate(header: desktopLayoutHeader, content: desktopLayoutView, windowInteractor: windowInteractor, layoutSchemesInteractor: layoutSchemesInteractor, gridLayoutInteractor: gridLayoutInteractor)
+    }()
     
     private let appListTableViewAdapter: AppListTableViewAdapter
     
@@ -37,13 +43,10 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
     }
     
     override func viewDidLoad() {
-        if let wallpaperURL = self.windowInteractor.getFocusedDesktopImageURL() {
-            desktopLayoutView.setImageAsync(fromUrl: wallpaperURL)
+        desktopViewUiDelegate.update()
+        desktopViewUiDelegate.onPreviewSelected = { [weak self] preview, payload in
+            self?.onPreviewSelected(preview: preview, payload: payload)
         }
-        
-        desktopLayoutView.layoutDelegate = self
-        layoutSchemesInteractor.addDelegate(weak: self)
-        gridLayoutInteractor.addDelegate(weak: self)
                 
         windowsTableView.headerView = nil
         windowsTableView.dataSource = appListTableViewAdapter
@@ -62,18 +65,10 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         
         settingsButton.target = self
         settingsButton.action = #selector(onSettingsClick(_:))
-        
-        reloadActiveScheme()
     }
     
     @objc private func onSettingsClick(_ sender: Any?) {
         (parent as? Navigatable)?.push(controllerId: .settings)
-    }
-    
-    func reloadActiveScheme() {
-        desktopLayoutView.clearPreviews()
-        let scheme = activeScheme
-        desktopLayoutView.addLayoutPreviews(layoutPreviews: scheme.areas.map({ $0.rect }), layoutSeparators: scheme.separators)
     }
     
     private func reloadGridTheme(theme: GridTheme) {
@@ -87,7 +82,7 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         }
     }
     
-    func onPreviewSelected(preview: LayoutPreviewView.LayoutPreview, payload: Any?) {
+    private func onPreviewSelected(preview: LayoutPreviewView.LayoutPreview, payload: Any?) {
         guard let windowPids = payload as? [WindowPasteboard] else {
             fatalError("Copied payload is not a pid pasteboard")
         }
@@ -97,26 +92,6 @@ class LeftSideMenuViewController: NSViewController, LayoutPreviewView.Delegate {
         if let windowPid = windowPids.first {
             windowInteractor.resizeWindow(withPid: windowPid.pid, andId: windowPid.id, into: preview)
         }
-    }
-    
-}
-
-extension LeftSideMenuViewController: LayoutSchemesInteractor.Delegate {
-    
-    func onActiveSchemeChanged(schemes: LayoutSchema) {
-        reloadActiveScheme()
-    }
-    
-    func onSelectedSchemasChanged() {
-        layoutSchemesCollectionView.reloadData()
-    }
-    
-}
-
-extension LeftSideMenuViewController: GridLayoutInteractor.Delegate {
-    
-    func onGridColorChanged(theme: GridTheme) {
-        reloadGridTheme(theme: theme)
     }
     
 }

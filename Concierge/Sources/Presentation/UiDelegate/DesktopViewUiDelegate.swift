@@ -1,6 +1,6 @@
 import Foundation
 
-class SettingsDesktopLayoutDelegate: SettingsDelegate {
+class DesktopViewUiDelegate: UiDelegate {
     
     private let header: NSTextField
     private let content: DesktopLayoutView
@@ -8,6 +8,8 @@ class SettingsDesktopLayoutDelegate: SettingsDelegate {
     private let windowInteractor: WindowInteractor
     private let layoutSchemesInteractor: LayoutSchemesInteractor
     private let gridLayoutInteractor: GridLayoutInteractor
+    
+    var  onPreviewSelected: ((LayoutPreviewView.LayoutPreview, Any?) -> Void)? = nil
     
     init(header: NSTextField,
          content: DesktopLayoutView,
@@ -38,6 +40,8 @@ class SettingsDesktopLayoutDelegate: SettingsDelegate {
             content.setImageAsync(fromUrl: wallpaperURL)
         }
         
+        content.layoutDelegate = self
+        
         reloadActiveScheme()
     }
     
@@ -60,7 +64,15 @@ class SettingsDesktopLayoutDelegate: SettingsDelegate {
     
 }
 
-extension SettingsDesktopLayoutDelegate: LayoutSchemesInteractor.Delegate {
+extension DesktopViewUiDelegate: LayoutPreviewView.Delegate {
+    
+    func onPreviewSelected(preview: LayoutPreviewView.LayoutPreview, payload: Any?) {
+        onPreviewSelected?(preview, payload)
+    }
+    
+}
+
+extension DesktopViewUiDelegate: LayoutSchemesInteractor.Delegate {
     
     func onActiveSchemeChanged(schemes: LayoutSchema) {
         reloadActiveScheme()
@@ -72,7 +84,7 @@ extension SettingsDesktopLayoutDelegate: LayoutSchemesInteractor.Delegate {
     
 }
 
-extension SettingsDesktopLayoutDelegate: GridLayoutInteractor.Delegate  {
+extension DesktopViewUiDelegate: GridLayoutInteractor.Delegate  {
     
     func onGridColorChanged(theme: GridTheme) {
         reloadGridTheme(activeTheme: theme)

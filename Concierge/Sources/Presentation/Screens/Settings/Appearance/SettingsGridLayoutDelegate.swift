@@ -1,6 +1,6 @@
 import Foundation
 
-final class SettingsGridLayoutDelegate: SettingsDelegate {
+final class SettingsGridLayoutDelegate: UiDelegate {
     
     private lazy var apperanceList: [GridTheme] = {
         gridLayoutInteractor.availableGridThemes()

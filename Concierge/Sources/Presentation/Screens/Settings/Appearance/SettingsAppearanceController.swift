@@ -19,10 +19,10 @@ class SettingsAppearanceController: NSViewController {
     private let layoutSchemesInteractor: LayoutSchemesInteractor = AppDependenciesResolver.shared.resolve(type: LayoutSchemesInteractor.self)
     private let gridLayoutInteractor: GridLayoutInteractor = AppDependenciesResolver.shared.resolve(type: GridLayoutInteractor.self)
     
-    private lazy var uiDelegates: [SettingsDelegate]  = {
+    private lazy var uiDelegates: [UiDelegate]  = {
         [
             SettingsAppearanceDelegate(header: appearanceHeader, content: appearanceContent, appearanceInteractor: appearanceInteractor),
-            SettingsDesktopLayoutDelegate(header: desktopLayoutHeader, content: desktopLayoutView, windowInteractor: windowInteractor, layoutSchemesInteractor: layoutSchemesInteractor, gridLayoutInteractor: gridLayoutInteractor),
+            DesktopViewUiDelegate(header: desktopLayoutHeader, content: desktopLayoutView, windowInteractor: windowInteractor, layoutSchemesInteractor: layoutSchemesInteractor, gridLayoutInteractor: gridLayoutInteractor),
             SettingsGridLayoutDelegate(header: gridThemeHader, content: gridThemeContent, gridLayoutInteractor: gridLayoutInteractor),
             SettingsLayoutSelectionDelegate(header: layoutSelectionHeader, content: layoutSelectionContent, layoutSchemasInteractor: layoutSchemesInteractor)
         ]

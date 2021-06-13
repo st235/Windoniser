@@ -1,6 +1,6 @@
 import Foundation
 
-final class SettingsAppearanceDelegate: SettingsDelegate {
+final class SettingsAppearanceDelegate: UiDelegate {
     
     private lazy var apperanceList: [AppearanceMode] = {
         appearanceInteractor.availableAppearances()

@@ -1,4 +1,4 @@
-protocol SettingsDelegate {
+protocol UiDelegate {
     
     func update()
     
