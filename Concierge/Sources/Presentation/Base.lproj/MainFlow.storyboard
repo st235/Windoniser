@@ -1078,10 +1078,34 @@
                                     <action selector="onAutoLoginCicked:" target="Gmx-iE-uZ0" id="ZiG-UG-hik"/>
                                 </connections>
                             </button>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="zDL-gJ-N2W" customClass="KeySchemeView" customModule="Concierge" customModuleProvider="target">
+                                <rect key="frame" x="16" y="32" width="325" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="CFV-la-RdR"/>
+                                </constraints>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gka-im-j70">
+                                <rect key="frame" x="14" y="88" width="329" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="lcM-H5-YuT">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="Gka-im-j70" firstAttribute="leading" secondItem="idz-iF-QsE" secondAttribute="leading" constant="16" id="4uv-lF-o0X"/>
+                            <constraint firstAttribute="bottom" secondItem="zDL-gJ-N2W" secondAttribute="bottom" constant="32" id="G6f-Ce-OL3"/>
+                            <constraint firstItem="zDL-gJ-N2W" firstAttribute="top" secondItem="Gka-im-j70" secondAttribute="bottom" constant="8" id="GiQ-FJ-epA"/>
+                            <constraint firstAttribute="trailing" secondItem="zDL-gJ-N2W" secondAttribute="trailing" constant="16" id="RFA-Pp-EHD"/>
+                            <constraint firstAttribute="trailing" secondItem="Gka-im-j70" secondAttribute="trailing" constant="16" id="Xun-ag-Mfv"/>
+                            <constraint firstItem="zDL-gJ-N2W" firstAttribute="leading" secondItem="idz-iF-QsE" secondAttribute="leading" constant="16" id="knm-9z-P2H"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="autoLoginCheckBox" destination="f8N-d3-BVO" id="QRh-go-Axa"/>
+                        <outlet property="keySchemeLabel" destination="Gka-im-j70" id="LDR-EO-dQp"/>
+                        <outlet property="keySchemeView" destination="zDL-gJ-N2W" id="grB-rL-Bdb"/>
                     </connections>
                 </viewController>
                 <customObject id="hIP-iK-F8c" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1093,7 +1117,7 @@
             <objects>
                 <viewController storyboardIdentifier="AppearanceController" id="6sg-Xy-Aep" customClass="SettingsAppearanceController" customModule="Concierge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="zG6-WK-7c1">
-                        <rect key="frame" x="0.0" y="0.0" width="432" height="630"/>
+                        <rect key="frame" x="0.0" y="0.0" width="432" height="430"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nyb-Xr-qao">
@@ -1135,7 +1159,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yg5-ko-UrS">
-                                <rect key="frame" x="22" y="598" width="388" height="16"/>
+                                <rect key="frame" x="22" y="398" width="388" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Screen" id="8ng-0h-jFC">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1143,71 +1167,32 @@
                                 </textFieldCell>
                             </textField>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="aPa-17-STf" customClass="DesktopLayoutView" customModule="Concierge" customModuleProvider="target">
-                                <rect key="frame" x="24" y="350" width="384" height="240"/>
+                                <rect key="frame" x="24" y="150" width="384" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aPa-17-STf" secondAttribute="height" multiplier="16:10" id="7sr-u3-Nhn"/>
                                 </constraints>
                             </customView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gdr-OF-6sC">
-                                <rect key="frame" x="22" y="318" width="388" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Grids" id="Feu-c6-KGh">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSb-8c-d7J">
-                                <rect key="frame" x="24" y="166" width="384" height="144"/>
-                                <clipView key="contentView" id="YgH-23-ctd">
-                                    <rect key="frame" x="0.0" y="0.0" width="384" height="144"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <collectionView id="cbQ-LO-33n">
-                                            <rect key="frame" x="0.0" y="0.0" width="384" height="144"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="xK9-sc-TnC">
-                                                <size key="itemSize" width="50" height="50"/>
-                                            </collectionViewFlowLayout>
-                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </collectionView>
-                                    </subviews>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="OSp-NI-1V8">
-                                    <rect key="frame" x="-100" y="-100" width="233" height="15"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="AMH-rR-ppd">
-                                    <rect key="frame" x="352" y="0.0" width="16" height="144"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="SS6-WF-okc" secondAttribute="trailing" constant="24" id="3Wd-hy-RmH"/>
                             <constraint firstItem="yg5-ko-UrS" firstAttribute="leading" secondItem="zG6-WK-7c1" secondAttribute="leading" constant="24" id="6IU-Ri-16n"/>
-                            <constraint firstAttribute="bottom" secondItem="Nyb-Xr-qao" secondAttribute="bottom" constant="20" symbolic="YES" id="7IU-LG-jAO"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Nyb-Xr-qao" secondAttribute="bottom" constant="20" symbolic="YES" id="7IU-LG-jAO"/>
                             <constraint firstItem="aPa-17-STf" firstAttribute="top" secondItem="yg5-ko-UrS" secondAttribute="bottom" constant="8" id="804-Ve-DQl"/>
+                            <constraint firstItem="8MD-yO-LJV" firstAttribute="top" secondItem="aPa-17-STf" secondAttribute="bottom" constant="16" id="E20-yC-7Nn"/>
                             <constraint firstAttribute="trailing" secondItem="8MD-yO-LJV" secondAttribute="trailing" constant="24" id="PVV-mE-xL1"/>
                             <constraint firstItem="Nyb-Xr-qao" firstAttribute="leading" secondItem="zG6-WK-7c1" secondAttribute="leading" constant="24" id="QM4-6t-nTy"/>
                             <constraint firstAttribute="trailing" secondItem="Nyb-Xr-qao" secondAttribute="trailing" constant="24" id="QRp-R3-bRG"/>
-                            <constraint firstItem="MSb-8c-d7J" firstAttribute="top" secondItem="Gdr-OF-6sC" secondAttribute="bottom" constant="8" id="SQG-0E-Lth"/>
-                            <constraint firstItem="Gdr-OF-6sC" firstAttribute="top" secondItem="aPa-17-STf" secondAttribute="bottom" constant="16" id="SmR-r3-yFM"/>
                             <constraint firstItem="Nyb-Xr-qao" firstAttribute="top" secondItem="oBM-Zg-Liu" secondAttribute="bottom" constant="8" id="T7f-hp-jcB"/>
                             <constraint firstAttribute="trailing" secondItem="yg5-ko-UrS" secondAttribute="trailing" constant="24" id="TbZ-sc-hrk"/>
                             <constraint firstItem="SS6-WF-okc" firstAttribute="leading" secondItem="zG6-WK-7c1" secondAttribute="leading" constant="24" id="TeO-2g-Yif"/>
-                            <constraint firstItem="MSb-8c-d7J" firstAttribute="leading" secondItem="zG6-WK-7c1" secondAttribute="leading" constant="24" id="UCl-61-hIy"/>
                             <constraint firstAttribute="trailing" secondItem="oBM-Zg-Liu" secondAttribute="trailing" constant="24" id="a0x-JE-QnI"/>
                             <constraint firstItem="aPa-17-STf" firstAttribute="leading" secondItem="zG6-WK-7c1" secondAttribute="leading" constant="24" id="cTt-No-02j"/>
-                            <constraint firstItem="8MD-yO-LJV" firstAttribute="top" secondItem="MSb-8c-d7J" secondAttribute="bottom" constant="32" id="huC-4s-MhY"/>
                             <constraint firstItem="SS6-WF-okc" firstAttribute="top" secondItem="8MD-yO-LJV" secondAttribute="bottom" constant="8" id="i29-5x-FQj"/>
-                            <constraint firstAttribute="trailing" secondItem="MSb-8c-d7J" secondAttribute="trailing" constant="24" id="jHO-4W-vAN"/>
                             <constraint firstAttribute="trailing" secondItem="aPa-17-STf" secondAttribute="trailing" constant="24" id="lTa-pf-eAl"/>
                             <constraint firstItem="8MD-yO-LJV" firstAttribute="leading" secondItem="zG6-WK-7c1" secondAttribute="leading" constant="24" id="nUh-V9-qq7"/>
                             <constraint firstItem="oBM-Zg-Liu" firstAttribute="leading" secondItem="zG6-WK-7c1" secondAttribute="leading" constant="24" id="niY-3m-I0h"/>
                             <constraint firstItem="yg5-ko-UrS" firstAttribute="top" secondItem="zG6-WK-7c1" secondAttribute="top" constant="16" id="o9g-P7-Y8G"/>
-                            <constraint firstItem="Gdr-OF-6sC" firstAttribute="leading" secondItem="zG6-WK-7c1" secondAttribute="leading" constant="24" id="on8-KL-pPm"/>
                             <constraint firstItem="oBM-Zg-Liu" firstAttribute="top" secondItem="SS6-WF-okc" secondAttribute="bottom" constant="16" id="yF0-Kp-ks0"/>
-                            <constraint firstAttribute="trailing" secondItem="Gdr-OF-6sC" secondAttribute="trailing" constant="24" id="zyK-vR-Avj"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1217,8 +1202,6 @@
                         <outlet property="desktopLayoutView" destination="aPa-17-STf" id="bDP-82-f3S"/>
                         <outlet property="gridThemeContent" destination="SS6-WF-okc" id="gXb-83-4rc"/>
                         <outlet property="gridThemeHader" destination="8MD-yO-LJV" id="Pjs-c4-Zxy"/>
-                        <outlet property="layoutSelectionContent" destination="cbQ-LO-33n" id="W6R-66-Nr9"/>
-                        <outlet property="layoutSelectionHeader" destination="Gdr-OF-6sC" id="40q-Zh-mac"/>
                     </connections>
                 </viewController>
                 <customObject id="Ryo-Of-xTg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1285,6 +1268,92 @@
                 <customObject id="fmM-OI-eVc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3031" y="669"/>
+        </scene>
+        <!--Settings Layout Controller-->
+        <scene sceneID="7zi-nG-ivk">
+            <objects>
+                <viewController storyboardIdentifier="SettingsLayoutsController" id="PKZ-ru-BAW" customClass="SettingsLayoutController" customModule="Concierge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="VN6-vf-E90">
+                        <rect key="frame" x="0.0" y="0.0" width="432" height="630"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sw5-qO-xvP">
+                                <rect key="frame" x="22" y="598" width="388" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Screen" id="pAk-yR-b9Y">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="2pE-QO-GhZ" customClass="DesktopLayoutView" customModule="Concierge" customModuleProvider="target">
+                                <rect key="frame" x="24" y="350" width="384" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2pE-QO-GhZ" secondAttribute="height" multiplier="16:10" id="PjY-KT-rkW"/>
+                                </constraints>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="N8u-zN-v81">
+                                <rect key="frame" x="22" y="318" width="388" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Grids" id="AT2-8w-fIF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmK-mQ-xnA">
+                                <rect key="frame" x="24" y="16" width="384" height="294"/>
+                                <clipView key="contentView" id="itW-RG-X8O">
+                                    <rect key="frame" x="0.0" y="0.0" width="384" height="294"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="zh5-3Z-gjY">
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="144"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="kev-pU-Vyu">
+                                                <size key="itemSize" width="50" height="50"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </collectionView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="gQf-9d-7Ym">
+                                    <rect key="frame" x="-100" y="-100" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="0nZ-Qx-umA">
+                                    <rect key="frame" x="352" y="0.0" width="16" height="144"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sw5-qO-xvP" secondAttribute="trailing" constant="24" id="0Jw-b6-pb8"/>
+                            <constraint firstItem="sw5-qO-xvP" firstAttribute="top" secondItem="VN6-vf-E90" secondAttribute="top" constant="16" id="Ew9-m1-eIw"/>
+                            <constraint firstItem="N8u-zN-v81" firstAttribute="top" secondItem="2pE-QO-GhZ" secondAttribute="bottom" constant="16" id="N7g-7j-yHB"/>
+                            <constraint firstAttribute="trailing" secondItem="dmK-mQ-xnA" secondAttribute="trailing" constant="24" id="NuZ-6v-0Y3"/>
+                            <constraint firstAttribute="trailing" secondItem="N8u-zN-v81" secondAttribute="trailing" constant="24" id="OFL-hE-UT0"/>
+                            <constraint firstItem="2pE-QO-GhZ" firstAttribute="top" secondItem="sw5-qO-xvP" secondAttribute="bottom" constant="8" id="YBT-2W-S2U"/>
+                            <constraint firstItem="N8u-zN-v81" firstAttribute="leading" secondItem="VN6-vf-E90" secondAttribute="leading" constant="24" id="ZYa-Lb-kMM"/>
+                            <constraint firstItem="dmK-mQ-xnA" firstAttribute="leading" secondItem="VN6-vf-E90" secondAttribute="leading" constant="24" id="aXq-P2-avc"/>
+                            <constraint firstItem="2pE-QO-GhZ" firstAttribute="leading" secondItem="VN6-vf-E90" secondAttribute="leading" constant="24" id="bkc-HS-KLE"/>
+                            <constraint firstItem="sw5-qO-xvP" firstAttribute="leading" secondItem="VN6-vf-E90" secondAttribute="leading" constant="24" id="c4W-5x-lxd"/>
+                            <constraint firstAttribute="trailing" secondItem="2pE-QO-GhZ" secondAttribute="trailing" constant="24" id="gea-we-NI7"/>
+                            <constraint firstAttribute="bottom" secondItem="dmK-mQ-xnA" secondAttribute="bottom" constant="16" id="idF-wo-hTE"/>
+                            <constraint firstItem="dmK-mQ-xnA" firstAttribute="top" secondItem="N8u-zN-v81" secondAttribute="bottom" constant="8" id="xmU-c4-c0R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dekstopLayoutView" destination="2pE-QO-GhZ" id="scO-cE-M6e"/>
+                        <outlet property="desktopLayoutHeader" destination="sw5-qO-xvP" id="6TZ-HB-UQh"/>
+                        <outlet property="desktopLayoutView" destination="2pE-QO-GhZ" id="3Ax-mL-nid"/>
+                        <outlet property="gridsCollectionView" destination="zh5-3Z-gjY" id="rfk-1f-IEy"/>
+                        <outlet property="gridsHeader" destination="N8u-zN-v81" id="Vhy-gO-aov"/>
+                        <outlet property="layoutSelectionContent" destination="zh5-3Z-gjY" id="1an-Cz-3h7"/>
+                        <outlet property="layoutSelectionHeader" destination="N8u-zN-v81" id="BYS-oG-TQ1"/>
+                    </connections>
+                </viewController>
+                <customObject id="qMc-aO-SJG" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3501" y="670"/>
         </scene>
     </scenes>
     <resources>

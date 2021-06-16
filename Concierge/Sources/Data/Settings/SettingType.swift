@@ -5,4 +5,5 @@ enum SettingType {
     case appearance
     case gridColor
     case selectedLayouts
+    case hotkeysSuffix
 }

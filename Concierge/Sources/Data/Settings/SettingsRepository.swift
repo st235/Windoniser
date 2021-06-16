@@ -15,7 +15,8 @@ class SettingsRepository {
             AutoLoginSetting(userDefaults: self.userDefaults),
             AppearanceSetting(userDefaults: self.userDefaults),
             GridColorSetting(userDefaults: self.userDefaults),
-            SelectedLayoutsSetting(userDefaults: self.userDefaults)
+            SelectedLayoutsSetting(userDefaults: self.userDefaults),
+            HotkeysSuffixSettings(userDefaults: self.userDefaults)
         ]
     }
     

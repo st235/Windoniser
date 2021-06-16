@@ -7,6 +7,7 @@ class SettingsListViewController: NSViewController {
     private let settingsItems: [SettingsItem] =
         [
             GeneralSettingsItem(),
+            SettingsLayoutsItem(),
             AppearanceSettingsItem(),
             AboutSettingsItem(),
             SettingsPrivacyItem(),

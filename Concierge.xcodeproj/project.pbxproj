@@ -62,8 +62,14 @@
 		CF821E7A25A21EAF002B5F1D /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF821E7925A21EAF002B5F1D /* WindowController.m */; };
 		CF821E8125A22402002B5F1D /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = CF821E8025A22402002B5F1D /* Window.m */; };
 		CF821E8625A23430002B5F1D /* ScreensController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF821E8525A23430002B5F1D /* ScreensController.swift */; };
+		CF869E69267A84F3005F2733 /* HotkeysSuffixSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF869E68267A84F3005F2733 /* HotkeysSuffixSettings.swift */; };
+		CF869E6B267A8B1C005F2733 /* Key+ModifierFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF869E6A267A8B1C005F2733 /* Key+ModifierFlags.swift */; };
+		CF869E6D267A903A005F2733 /* SettingsKeySchemeUiDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF869E6C267A903A005F2733 /* SettingsKeySchemeUiDelegate.swift */; };
+		CF869E70267A918C005F2733 /* KeySchemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF869E6F267A918C005F2733 /* KeySchemeView.swift */; };
+		CF869E72267A91A3005F2733 /* KeySchemeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF869E71267A91A3005F2733 /* KeySchemeView.xib */; };
 		CF870F6226740C210089512B /* SelectedLayoutsSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF870F6126740C210089512B /* SelectedLayoutsSetting.swift */; };
 		CF870F64267410690089512B /* SettingsAppearanceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF870F63267410690089512B /* SettingsAppearanceDelegate.swift */; };
+		CF8AE974267AAFA800020D2B /* InAppModifiersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8AE973267AAFA800020D2B /* InAppModifiersController.swift */; };
 		CF8DBC05261A789A0031B972 /* SettingsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DBC04261A789A0031B972 /* SettingsListViewController.swift */; };
 		CF8DBC0C261B13C40031B972 /* SettingsItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF8DBC0B261B13C40031B972 /* SettingsItemView.xib */; };
 		CF8DBC10261B13D20031B972 /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DBC0F261B13D20031B972 /* SettingsItemView.swift */; };
@@ -75,6 +81,8 @@
 		CF9B2E2F25D5C62E0087D32B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9B2E2E25D5C62E0087D32B /* ImageCache.swift */; };
 		CF9B2E3225D5CB250087D32B /* ImageViewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9B2E3125D5CB250087D32B /* ImageViewLoader.swift */; };
 		CF9B2E3525D5CFB60087D32B /* NSImageView+ImageViewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9B2E3425D5CFB60087D32B /* NSImageView+ImageViewLoader.swift */; };
+		CFA3B8C52678043D0070F07C /* SettingsLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3B8C42678043D0070F07C /* SettingsLayoutController.swift */; };
+		CFA3B8C7267806DA0070F07C /* SettingsLayoutsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3B8C6267806DA0070F07C /* SettingsLayoutsItem.swift */; };
 		CFACE47425A1CFCF00EE31F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFACE47325A1CFCF00EE31F5 /* AppDelegate.swift */; };
 		CFACE47825A1CFD000EE31F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFACE47725A1CFD000EE31F5 /* Assets.xcassets */; };
 		CFACE47B25A1CFD000EE31F5 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFACE47925A1CFD000EE31F5 /* MainFlow.storyboard */; };
@@ -189,8 +197,14 @@
 		CF821E7F25A22402002B5F1D /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
 		CF821E8025A22402002B5F1D /* Window.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Window.m; sourceTree = "<group>"; };
 		CF821E8525A23430002B5F1D /* ScreensController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreensController.swift; sourceTree = "<group>"; };
+		CF869E68267A84F3005F2733 /* HotkeysSuffixSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeysSuffixSettings.swift; sourceTree = "<group>"; };
+		CF869E6A267A8B1C005F2733 /* Key+ModifierFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Key+ModifierFlags.swift"; sourceTree = "<group>"; };
+		CF869E6C267A903A005F2733 /* SettingsKeySchemeUiDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKeySchemeUiDelegate.swift; sourceTree = "<group>"; };
+		CF869E6F267A918C005F2733 /* KeySchemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySchemeView.swift; sourceTree = "<group>"; };
+		CF869E71267A91A3005F2733 /* KeySchemeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeySchemeView.xib; sourceTree = "<group>"; };
 		CF870F6126740C210089512B /* SelectedLayoutsSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedLayoutsSetting.swift; sourceTree = "<group>"; };
 		CF870F63267410690089512B /* SettingsAppearanceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppearanceDelegate.swift; sourceTree = "<group>"; };
+		CF8AE973267AAFA800020D2B /* InAppModifiersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppModifiersController.swift; sourceTree = "<group>"; };
 		CF8DBC04261A789A0031B972 /* SettingsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListViewController.swift; sourceTree = "<group>"; };
 		CF8DBC0B261B13C40031B972 /* SettingsItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsItemView.xib; sourceTree = "<group>"; };
 		CF8DBC0F261B13D20031B972 /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
@@ -202,6 +216,8 @@
 		CF9B2E2E25D5C62E0087D32B /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		CF9B2E3125D5CB250087D32B /* ImageViewLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewLoader.swift; sourceTree = "<group>"; };
 		CF9B2E3425D5CFB60087D32B /* NSImageView+ImageViewLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImageView+ImageViewLoader.swift"; sourceTree = "<group>"; };
+		CFA3B8C42678043D0070F07C /* SettingsLayoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLayoutController.swift; sourceTree = "<group>"; };
+		CFA3B8C6267806DA0070F07C /* SettingsLayoutsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLayoutsItem.swift; sourceTree = "<group>"; };
 		CFACE47025A1CFCF00EE31F5 /* Concierge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concierge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFACE47325A1CFCF00EE31F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFACE47725A1CFD000EE31F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -396,6 +412,8 @@
 				CF4826DE25A39F8B00068927 /* HotKeyController.swift */,
 				CF4826E125A39FB000068927 /* KeyScheme.swift */,
 				CF4826E725A3B30D00068927 /* KeySchemeFactory.swift */,
+				CF869E6A267A8B1C005F2733 /* Key+ModifierFlags.swift */,
+				CF8AE973267AAFA800020D2B /* InAppModifiersController.swift */,
 			);
 			path = Keyboard;
 			sourceTree = "<group>";
@@ -452,6 +470,7 @@
 				CFAEAA7825D98D7800675171 /* AppearanceSetting.swift */,
 				CFAD790D266ECCA600583A91 /* GridColorSetting.swift */,
 				CF870F6126740C210089512B /* SelectedLayoutsSetting.swift */,
+				CF869E68267A84F3005F2733 /* HotkeysSuffixSettings.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -468,6 +487,7 @@
 		CF821E7325A21881002B5F1D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CF869E6E267A9173005F2733 /* KeySchemeView */,
 				CF8DBC08261B13830031B972 /* SettingsItemView */,
 				CF9B2E2825D5BC010087D32B /* LayoutView */,
 				CF081A3225C89B8F0099DA5B /* Popover */,
@@ -487,6 +507,15 @@
 				CF821E8525A23430002B5F1D /* ScreensController.swift */,
 			);
 			path = Windows;
+			sourceTree = "<group>";
+		};
+		CF869E6E267A9173005F2733 /* KeySchemeView */ = {
+			isa = PBXGroup;
+			children = (
+				CF869E6F267A918C005F2733 /* KeySchemeView.swift */,
+				CF869E71267A91A3005F2733 /* KeySchemeView.xib */,
+			);
+			path = KeySchemeView;
 			sourceTree = "<group>";
 		};
 		CF8DBC08261B13830031B972 /* SettingsItemView */ = {
@@ -525,6 +554,15 @@
 				CF9B2E3425D5CFB60087D32B /* NSImageView+ImageViewLoader.swift */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		CFA3B8C3267804130070F07C /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				CFA3B8C42678043D0070F07C /* SettingsLayoutController.swift */,
+				CFD89EE926756BEB00DF304A /* SettingsLayoutSelectionDelegate.swift */,
+			);
+			path = Layouts;
 			sourceTree = "<group>";
 		};
 		CFACE46725A1CFCF00EE31F5 = {
@@ -626,6 +664,7 @@
 		CFC5CB9A26766015004D868C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				CFA3B8C3267804130070F07C /* Layouts */,
 				CFC5CBA3267676D1004D868C /* MenuItems */,
 				CFC5CBA026767547004D868C /* Licenses */,
 				CFC5CB9D267671B8004D868C /* About */,
@@ -641,6 +680,7 @@
 			isa = PBXGroup;
 			children = (
 				CFF12038261B99580092103D /* SettingsGeneralController.swift */,
+				CF869E6C267A903A005F2733 /* SettingsKeySchemeUiDelegate.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -683,6 +723,7 @@
 				CFE36931261B8783007DE6C7 /* QuitSettingsItem.swift */,
 				CF2E75FF2676831E00F198A8 /* SettingsPrivacyItem.swift */,
 				CF2E7608267688F900F198A8 /* SettingsTermsItem.swift */,
+				CFA3B8C6267806DA0070F07C /* SettingsLayoutsItem.swift */,
 			);
 			path = MenuItems;
 			sourceTree = "<group>";
@@ -713,7 +754,6 @@
 				CFE36938261B8E29007DE6C7 /* SettingsAppearanceController.swift */,
 				CF870F63267410690089512B /* SettingsAppearanceDelegate.swift */,
 				CFD89EE7267568B800DF304A /* SettingsGridLayoutDelegate.swift */,
-				CFD89EE926756BEB00DF304A /* SettingsLayoutSelectionDelegate.swift */,
 			);
 			path = Appearance;
 			sourceTree = "<group>";
@@ -813,6 +853,7 @@
 				CFACE47825A1CFD000EE31F5 /* Assets.xcassets in Resources */,
 				CFACE47B25A1CFD000EE31F5 /* MainFlow.storyboard in Resources */,
 				CF2E76042676869000F198A8 /* terms.html in Resources */,
+				CF869E72267A91A3005F2733 /* KeySchemeView.xib in Resources */,
 				CFD076A825D059EB00FF2730 /* LayoutSchemesCollectionViewItem.xib in Resources */,
 				CF2E76052676869000F198A8 /* privacy.html in Resources */,
 				CF4826CE25A395D300068927 /* Localizable.strings in Resources */,
@@ -838,7 +879,9 @@
 			files = (
 				CF6BD19525D0393A00C4FA40 /* DesktopLayoutView.swift in Sources */,
 				CF49A78C25FE71E900339687 /* ViewControllerFactory.swift in Sources */,
+				CF869E6B267A8B1C005F2733 /* Key+ModifierFlags.swift in Sources */,
 				CF821E7A25A21EAF002B5F1D /* WindowController.m in Sources */,
+				CF869E69267A84F3005F2733 /* HotkeysSuffixSettings.swift in Sources */,
 				CF9B2E2C25D5BCC70087D32B /* ImageLoader.swift in Sources */,
 				CF2E76002676831E00F198A8 /* SettingsPrivacyItem.swift in Sources */,
 				CF93699326755B91001CE96A /* AppearanceInteractor.swift in Sources */,
@@ -866,17 +909,20 @@
 				CF4826E225A39FB000068927 /* KeyScheme.swift in Sources */,
 				CFAEAA7925D98D7800675171 /* AppearanceSetting.swift in Sources */,
 				CF4826E825A3B30D00068927 /* KeySchemeFactory.swift in Sources */,
+				CFA3B8C52678043D0070F07C /* SettingsLayoutController.swift in Sources */,
 				CFC5CBA2267675BD004D868C /* SettingsLicensesController.swift in Sources */,
 				CF3ABACB261B29D3008E3C90 /* NibLoadable.swift in Sources */,
 				CF5F4EA625FE486D0090A3A7 /* MainViewController.swift in Sources */,
 				CFC5CB9F267671D5004D868C /* SettingsAboutController.swift in Sources */,
 				CF9B2E3525D5CFB60087D32B /* NSImageView+ImageViewLoader.swift in Sources */,
 				CFAEAA6425D987DA00675171 /* AppearanceMode.swift in Sources */,
+				CFA3B8C7267806DA0070F07C /* SettingsLayoutsItem.swift in Sources */,
 				CF081A3725C89E770099DA5B /* PopoverWindow.swift in Sources */,
 				CF00C65225A7AC98003454E6 /* LayoutSchemesRepository.swift in Sources */,
 				CFAEAA6925D989D600675171 /* AppearanceProvider.swift in Sources */,
 				CF93699526755BC4001CE96A /* GridLayoutInteractor.swift in Sources */,
 				CF6995AB25D6EB5A00A52715 /* SettingType.swift in Sources */,
+				CF869E6D267A903A005F2733 /* SettingsKeySchemeUiDelegate.swift in Sources */,
 				CFC2108125D3358700726D8C /* PermissionsSideMenuDelegate.swift in Sources */,
 				CF2E7F8025D1DE8B00568009 /* LeftSideMenuViewController+CollectionViewDelegate.swift in Sources */,
 				CF5399EF25D097BB00FA6292 /* NSImage+TintColor.swift in Sources */,
@@ -910,6 +956,7 @@
 				CF5E416E25AA3296001DEC28 /* SettingsMainViewController.swift in Sources */,
 				CFBD325025C8563D006DDAE5 /* NSColor+Helpers.swift in Sources */,
 				CF081A3425C89C630099DA5B /* PopoverBackgroundView.swift in Sources */,
+				CF869E70267A918C005F2733 /* KeySchemeView.swift in Sources */,
 				CF6995AF25D6EC2F00A52715 /* SettingProperty.swift in Sources */,
 				CFE36939261B8E29007DE6C7 /* SettingsAppearanceController.swift in Sources */,
 				CF3C6ABA25A4FDFD007A52F8 /* String+Localization.swift in Sources */,
@@ -919,6 +966,7 @@
 				CFD89EE8267568B800DF304A /* SettingsGridLayoutDelegate.swift in Sources */,
 				CF5E418625AA4476001DEC28 /* LayoutSchemesInteractor.swift in Sources */,
 				CF081A3B25C8A05B0099DA5B /* Popover.swift in Sources */,
+				CF8AE974267AAFA800020D2B /* InAppModifiersController.swift in Sources */,
 				CF49A78825FE6F5000339687 /* Navigatable.swift in Sources */,
 				CFACE47425A1CFCF00EE31F5 /* AppDelegate.swift in Sources */,
 				CF3C6ABE25A4FFF8007A52F8 /* EventMonitor.swift in Sources */,

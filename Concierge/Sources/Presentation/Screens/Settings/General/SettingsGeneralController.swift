@@ -4,9 +4,23 @@ class SettingsGeneralController: NSViewController {
     
     @IBOutlet weak var autoLoginCheckBox: NSButton!
     
+    @IBOutlet weak var keySchemeLabel: NSTextField!
+    @IBOutlet weak var keySchemeView: KeySchemeView!
+    
     private let settingsManager: SettingsRepository = AppDependenciesResolver.shared.resolve(type: SettingsRepository.self)
+    private let hotKeysInteractor: HotKeysInteractor = AppDependenciesResolver.shared.resolve(type: HotKeysInteractor.self)
+    
+    private lazy var uiDelegates: [UiDelegate] = {
+       [
+        SettingsKeySchemeUiDelegate(header: self.keySchemeLabel, content: self.keySchemeView, hotKeysInteractor: self.hotKeysInteractor)
+       ]
+    }()
     
     override func viewDidLoad() {
+        for uiDelegate in uiDelegates {
+            uiDelegate.update()
+        }
+        
         let autologinEnabled: Bool = settingsManager.get(type: .autoLogin)
         
         if autologinEnabled {

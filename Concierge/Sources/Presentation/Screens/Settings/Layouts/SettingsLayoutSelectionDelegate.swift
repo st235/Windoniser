@@ -55,11 +55,7 @@ extension SettingsLayoutSelectionDelegate: NSCollectionViewDataSource {
         
         let layoutScheme = selectedSchemas[indexPath.item]
         
-        item.load(scheme: layoutScheme)
-        
-        if layoutSchemasInteractor.isSelected(schema: layoutScheme) {
-            item.select()
-        }
+        item.load(scheme: layoutScheme, isSelected: layoutSchemasInteractor.isSelected(schema: layoutScheme))
 
         return item
     }

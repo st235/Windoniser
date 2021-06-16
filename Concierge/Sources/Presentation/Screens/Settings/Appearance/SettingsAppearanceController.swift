@@ -11,9 +11,6 @@ class SettingsAppearanceController: NSViewController {
     @IBOutlet weak var gridThemeHader: NSTextField!
     @IBOutlet weak var gridThemeContent: NSSegmentedControl!
     
-    @IBOutlet weak var layoutSelectionHeader: NSTextField!
-    @IBOutlet weak var layoutSelectionContent: NSCollectionView!
-    
     private let appearanceInteractor: AppearanceInteractor = AppDependenciesResolver.shared.resolve(type: AppearanceInteractor.self)
     private let windowInteractor: WindowInteractor = AppDependenciesResolver.shared.resolve(type: WindowInteractor.self)
     private let layoutSchemesInteractor: LayoutSchemesInteractor = AppDependenciesResolver.shared.resolve(type: LayoutSchemesInteractor.self)
@@ -21,10 +18,9 @@ class SettingsAppearanceController: NSViewController {
     
     private lazy var uiDelegates: [UiDelegate]  = {
         [
-            SettingsAppearanceDelegate(header: appearanceHeader, content: appearanceContent, appearanceInteractor: appearanceInteractor),
             DesktopViewUiDelegate(header: desktopLayoutHeader, content: desktopLayoutView, windowInteractor: windowInteractor, layoutSchemesInteractor: layoutSchemesInteractor, gridLayoutInteractor: gridLayoutInteractor),
+            SettingsAppearanceDelegate(header: appearanceHeader, content: appearanceContent, appearanceInteractor: appearanceInteractor),
             SettingsGridLayoutDelegate(header: gridThemeHader, content: gridThemeContent, gridLayoutInteractor: gridLayoutInteractor),
-            SettingsLayoutSelectionDelegate(header: layoutSelectionHeader, content: layoutSelectionContent, layoutSchemasInteractor: layoutSchemesInteractor)
         ]
     }()
     

@@ -18,15 +18,19 @@
 "title_area_bottom_right" = "Bottom-Right";
 
 "settings_item_general" = "General";
+"settings_item_layouts" = "Layouts";
 "settings_item_appearance" = "Appearance";
 "settings_item_about" = "About";
-"settings_item_privacy" = "Privacy";
+"settings_item_privacy" = "Privacy Policy";
 "settings_item_terms_and_conditions" = "Terms and Conditions";
 "settings_item_quit" = "Quit";
 
 "settings_appearance_theme_system" = "System";
 "settings_appearance_theme_light" = "Light";
 "settings_appearance_theme_dark" = "Dark";
+
+"settings_general_active_schema" = "Selected hotkeys:";
+"settings_gemeral_change_active_schema" = "Change";
 
 "settings_about_version_header" = "Version:";
 "settings_about_version_no_version" = "Version: unknown";

@@ -15,6 +15,7 @@ public class ViewControllerFactory {
         case settingsGeneral = "SettingsGeneralController"
         case settingsAbout = "SettingsAboutController"
         case settingsLicenses = "SettingsLicensesController"
+        case settingsLayouts = "SettingsLayoutsController"
     }
     
     public func create<T: NSViewController>(id: ID) -> T {

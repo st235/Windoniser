@@ -67,7 +67,8 @@ class AppDependenciesResolver: DependenciesResolver {
         diContainer.register(forType: HotKeysInteractor.self) { resolver in
             return HotKeysInteractor(layoutSchemesInteractor: resolver.resolve(type: LayoutSchemesInteractor.self),
                                   windowInteractor: resolver.resolve(type: WindowInteractor.self),
-                                  hotKeysController: resolver.resolve(type: HotKeyController.self))
+                                  hotKeysController: resolver.resolve(type: HotKeyController.self),
+                                  settingsRepository: resolver.resolve(type: SettingsRepository.self))
         }
         
         diContainer.register(forType: WindowInteractor.self) { resolver in
