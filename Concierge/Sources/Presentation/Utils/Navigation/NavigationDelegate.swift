@@ -22,12 +22,16 @@ class NavigationDelegate: Navigatable {
         
         let controller = viewControllerFactory.create(id: controllerId)
         
-        (controller as? BundleViewController)?.bundle = bundle
+        (controller as? NavigatableViewController)?.bundle = bundle
         
         self.viewController.addChild(controller)
         controller.view.frame = self.containerView.bounds
         self.containerView.addSubview(controller.view)
         callStack.append(controller)
+    }
+    
+    func stack() -> [NSViewController] {
+        return callStack
     }
     
     func pop() -> Bool {

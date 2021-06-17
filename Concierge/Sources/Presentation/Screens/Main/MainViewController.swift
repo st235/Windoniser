@@ -24,6 +24,10 @@ class MainViewController: NSViewController, Navigatable {
         navigationDelegate.push(controllerId: controllerId, bundle: bundle)
     }
     
+    func stack() -> [NSViewController] {
+        return navigationDelegate.stack()
+    }
+    
     func pop() -> Bool {
         return navigationDelegate.pop()
     }

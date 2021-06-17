@@ -7,7 +7,6 @@ class MainWindowController: LayoutSchemesInteractor.Delegate {
     
     private let layoutSchemesInteractor: LayoutSchemesInteractor
     private let accessibilityPermissionsManager: AccessibilityPermissionsManager
-    private let layoutSchemeIconsFactory = LayoutSchemeIconsFactory()
     private let viewControllerFactory: ViewControllerFactory
     
     init(layoutSchemesInteractor: LayoutSchemesInteractor,
@@ -29,7 +28,7 @@ class MainWindowController: LayoutSchemesInteractor.Delegate {
     
     func onActiveSchemeChanged(schemes: LayoutSchema) {
         if let button = statusBarItem.button {
-            button.image = layoutSchemeIconsFactory.findIconForScheme(scheme: layoutSchemesInteractor.activeSchema)
+            button.image = LayoutSchemaRenderer.render(layoutSchema: layoutSchemesInteractor.activeSchema)
         }
     }
     
@@ -39,7 +38,7 @@ class MainWindowController: LayoutSchemesInteractor.Delegate {
     
     func attach() {        
         if let button = statusBarItem.button {
-            button.image = layoutSchemeIconsFactory.findIconForScheme(scheme: layoutSchemesInteractor.activeSchema)
+            button.image = LayoutSchemaRenderer.render(layoutSchema: layoutSchemesInteractor.activeSchema)
             button.sendAction(on: [.leftMouseUp, .rightMouseUp])
             button.target = self
             button.action = #selector(onStatusBarItemClick(_:))

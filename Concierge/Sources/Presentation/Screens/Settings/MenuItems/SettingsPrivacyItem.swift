@@ -14,7 +14,7 @@ class SettingsPrivacyItem: SettingsItem {
     
     func handleClick(navigatable: Navigatable) {
         let url = Bundle.main.url(forResource: "privacy", withExtension: "html")!
-        navigatable.push(controllerId: .settingsLicenses, bundle: url)
+        navigatable.push(controllerId: .settingsLicenses, bundle: SettingsLicensesController.Data(title: "settings_item_privacy".localized, url: url))
     }
     
 }

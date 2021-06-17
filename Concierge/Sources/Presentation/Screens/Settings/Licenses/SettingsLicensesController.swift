@@ -1,9 +1,20 @@
 import WebKit
 import Foundation
 
-class SettingsLicensesController: BundleViewController {
+class SettingsLicensesController: NavigatableViewController {
+    
+    struct Data {
+        let title: String
+        let url: URL
+    }
     
     @IBOutlet weak var webView: WKWebView!
+    
+    override var navigationTitle: String {
+        get {
+            return loadTitle()
+        }
+    }
     
     override func viewDidLoad() {
         let url = loadUrl()
@@ -12,11 +23,18 @@ class SettingsLicensesController: BundleViewController {
         webView.load(request)
     }
     
-    private func loadUrl() -> URL {
-        guard let url = bundle as? URL else {
+    private func loadTitle() -> String {
+        guard let data = bundle as? Data else {
             fatalError("Url should be passed")
         }
-        return url
+        return data.title
+    }
+    
+    private func loadUrl() -> URL {
+        guard let data = bundle as? Data else {
+            fatalError("Url should be passed")
+        }
+        return data.url
     }
     
 }

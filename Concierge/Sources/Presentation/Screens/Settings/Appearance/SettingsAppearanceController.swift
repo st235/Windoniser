@@ -1,6 +1,6 @@
 import Foundation
 
-class SettingsAppearanceController: NSViewController {
+class SettingsAppearanceController: NavigatableViewController {
     
     @IBOutlet weak var appearanceHeader: NSTextField!
     @IBOutlet weak var appearanceContent: NSSegmentedControl!
@@ -24,6 +24,11 @@ class SettingsAppearanceController: NSViewController {
         ]
     }()
     
+    override var navigationTitle: String {
+        get {
+            return "settings_item_appearance".localized
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

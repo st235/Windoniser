@@ -970,6 +970,7 @@
                     <connections>
                         <outlet property="backButton" destination="D4o-V7-Edi" id="R92-IX-nK2"/>
                         <outlet property="containerView" destination="84u-ik-Zfy" id="k8v-xn-dC3"/>
+                        <outlet property="headerLabel" destination="S5j-IV-wCg" id="XDt-9q-4iH"/>
                         <outlet property="navigationContainer" destination="cx5-fW-g60" id="Lik-tG-tXF"/>
                     </connections>
                 </viewController>
@@ -1067,43 +1068,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="357" height="628"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f8N-d3-BVO">
-                                <rect key="frame" x="18" y="591" width="87" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Auto login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="iPI-nY-zsc">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="onAutoLoginCicked:" target="Gmx-iE-uZ0" id="ZiG-UG-hik"/>
-                                </connections>
-                            </button>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="zDL-gJ-N2W" customClass="KeySchemeView" customModule="Concierge" customModuleProvider="target">
-                                <rect key="frame" x="16" y="32" width="325" height="48"/>
+                                <rect key="frame" x="16" y="532" width="325" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="CFV-la-RdR"/>
                                 </constraints>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gka-im-j70">
-                                <rect key="frame" x="14" y="88" width="329" height="16"/>
+                                <rect key="frame" x="14" y="596" width="329" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="lcM-H5-YuT">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="whY-9n-m6T">
+                                <rect key="frame" x="14" y="484" width="329" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="4Gp-gn-nrx">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="3x2-6H-113" customClass="SwitcherItemView" customModule="Concierge" customModuleProvider="target">
+                                <rect key="frame" x="16" y="428" width="325" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="dum-nJ-zeA"/>
+                                </constraints>
+                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Gka-im-j70" firstAttribute="leading" secondItem="idz-iF-QsE" secondAttribute="leading" constant="16" id="4uv-lF-o0X"/>
-                            <constraint firstAttribute="bottom" secondItem="zDL-gJ-N2W" secondAttribute="bottom" constant="32" id="G6f-Ce-OL3"/>
-                            <constraint firstItem="zDL-gJ-N2W" firstAttribute="top" secondItem="Gka-im-j70" secondAttribute="bottom" constant="8" id="GiQ-FJ-epA"/>
+                            <constraint firstAttribute="trailing" secondItem="whY-9n-m6T" secondAttribute="trailing" constant="16" id="GBX-Qt-Hxp"/>
+                            <constraint firstItem="zDL-gJ-N2W" firstAttribute="top" secondItem="Gka-im-j70" secondAttribute="bottom" constant="16" id="GiQ-FJ-epA"/>
+                            <constraint firstItem="3x2-6H-113" firstAttribute="leading" secondItem="idz-iF-QsE" secondAttribute="leading" constant="16" id="Itp-Fu-7Nj"/>
+                            <constraint firstItem="3x2-6H-113" firstAttribute="top" secondItem="whY-9n-m6T" secondAttribute="bottom" id="Jiu-An-7DL"/>
                             <constraint firstAttribute="trailing" secondItem="zDL-gJ-N2W" secondAttribute="trailing" constant="16" id="RFA-Pp-EHD"/>
+                            <constraint firstItem="whY-9n-m6T" firstAttribute="top" secondItem="zDL-gJ-N2W" secondAttribute="bottom" constant="32" id="Wxc-tq-FbY"/>
                             <constraint firstAttribute="trailing" secondItem="Gka-im-j70" secondAttribute="trailing" constant="16" id="Xun-ag-Mfv"/>
+                            <constraint firstItem="whY-9n-m6T" firstAttribute="leading" secondItem="idz-iF-QsE" secondAttribute="leading" constant="16" id="ZIk-aT-fs7"/>
+                            <constraint firstItem="Gka-im-j70" firstAttribute="top" secondItem="idz-iF-QsE" secondAttribute="top" constant="16" id="hy6-Nh-2pF"/>
                             <constraint firstItem="zDL-gJ-N2W" firstAttribute="leading" secondItem="idz-iF-QsE" secondAttribute="leading" constant="16" id="knm-9z-P2H"/>
+                            <constraint firstAttribute="trailing" secondItem="3x2-6H-113" secondAttribute="trailing" constant="16" id="qRu-M7-1oc"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="autoLoginCheckBox" destination="f8N-d3-BVO" id="QRh-go-Axa"/>
+                        <outlet property="autologinContent" destination="3x2-6H-113" id="isl-5z-S7g"/>
+                        <outlet property="autologinHeader" destination="whY-9n-m6T" id="QAk-pG-TmE"/>
                         <outlet property="keySchemeLabel" destination="Gka-im-j70" id="LDR-EO-dQp"/>
                         <outlet property="keySchemeView" destination="zDL-gJ-N2W" id="grB-rL-Bdb"/>
                     </connections>

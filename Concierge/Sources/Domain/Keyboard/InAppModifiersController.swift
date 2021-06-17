@@ -2,17 +2,13 @@ import Foundation
 
 class InAppModifiersController {
     
-    var onModifiersChangeListener: (([Key]) -> Void)? = nil
+    var onHotKeyChanged: (([Key]) -> Void)? = nil
     
     private var lock = NSRecursiveLock()
-    private var wasCalled: Bool = false
     private var monitor: Any?
+    private var recordedKeys: [Key] = []
  
-    func listenUntilNewModifiersAppear(expectedCombination: Int) {
-        lock.lock()
-        wasCalled = false
-        lock.unlock()
-        
+    func recordKeys() {
         self.monitor = NSEvent.addLocalMonitorForEvents(matching: [.flagsChanged, .keyDown]) { [weak self] event in
             guard let self = self else {
                 return event
@@ -20,26 +16,29 @@ class InAppModifiersController {
             
             self.lock.lock()
             
+            var shouldFireListener = false
             let keys = Key.extractKeys(flags: event.modifierFlags)
             
-            if keys.count != expectedCombination {
-                self.lock.unlock()
-                return event
+            if keys.count > self.recordedKeys.count {
+                self.recordedKeys = keys
+                shouldFireListener = true
             }
-            
-            self.cancel()
-            
-            let listener = self.onModifiersChangeListener
-            let shouldCallListener = !self.wasCalled
-            self.wasCalled = true
             
             self.lock.unlock()
             
-            if shouldCallListener {
-                listener?(keys)
+            if shouldFireListener {
+                self.onHotKeyChanged?(keys)
             }
+            
             return event
         }
+    }
+    
+    func getRecordedKeys() -> [Key] {
+        lock.lock()
+        let keys = recordedKeys
+        lock.unlock()
+        return keys
     }
     
     func cancel() {
@@ -52,6 +51,7 @@ class InAppModifiersController {
         
         NSEvent.removeMonitor(monitor)
         self.monitor = nil
+        self.recordedKeys = []
         lock.unlock()
     }
     

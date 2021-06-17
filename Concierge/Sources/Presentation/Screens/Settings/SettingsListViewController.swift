@@ -1,6 +1,6 @@
 import Foundation
 
-class SettingsListViewController: NSViewController {
+class SettingsListViewController: NavigatableViewController {
     
     @IBOutlet weak var menuStackView: NSStackView!
     
@@ -14,6 +14,12 @@ class SettingsListViewController: NSViewController {
             SettingsTermsItem(),
             QuitSettingsItem()
         ];
+    
+    override var navigationTitle: String {
+        get {
+            return "settings_list_view_header".localized
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

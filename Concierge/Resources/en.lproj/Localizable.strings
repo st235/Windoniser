@@ -17,6 +17,11 @@
 "title_area_bottom_left" = "Bottom-Left";
 "title_area_bottom_right" = "Bottom-Right";
 
+"settings_general_back_title" = "Back";
+"settings_general_header_title" = "Settings";
+
+"settings_list_view_header" = "Settings";
+
 "settings_item_general" = "General";
 "settings_item_layouts" = "Layouts";
 "settings_item_appearance" = "Appearance";
@@ -31,6 +36,7 @@
 
 "settings_general_active_schema" = "Selected hotkeys:";
 "settings_gemeral_change_active_schema" = "Change";
+"settings_general_auto_login_title" = "Auto login enabled:";
 
 "settings_about_version_header" = "Version:";
 "settings_about_version_no_version" = "Version: unknown";

@@ -95,6 +95,10 @@ class AppDependenciesResolver: DependenciesResolver {
         diContainer.register(forType: GridLayoutInteractor.self, andQualifier: .singleton) { resolver in
             return GridLayoutInteractor(settingsRepository: resolver.resolve(type: SettingsRepository.self))
         }
+        
+        diContainer.register(forType: AutoLoginInteractor.self, andQualifier: .singleton) { resolver in
+            return AutoLoginInteractor(settingsRepository: resolver.resolve(type: SettingsRepository.self))
+        }
     }
     
 }

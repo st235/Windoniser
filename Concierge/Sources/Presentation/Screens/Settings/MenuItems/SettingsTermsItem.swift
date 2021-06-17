@@ -14,7 +14,7 @@ class SettingsTermsItem: SettingsItem {
     
     func handleClick(navigatable: Navigatable) {
         let url = Bundle.main.url(forResource: "terms", withExtension: "html")!
-        navigatable.push(controllerId: .settingsLicenses, bundle: url)
+        navigatable.push(controllerId: .settingsLicenses, bundle: SettingsLicensesController.Data(title: "settings_item_terms_and_conditions".localized, url: url))
     }
     
 }

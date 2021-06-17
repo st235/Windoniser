@@ -1,8 +1,14 @@
 import Foundation
 
-class SettingsAboutController: NSViewController {
+class SettingsAboutController: NavigatableViewController {
     
     @IBOutlet weak var versionHeader: NSTextField!
+    
+    override var navigationTitle: String {
+        get {
+            return "settings_item_about".localized
+        }
+    }
     
     override func viewDidLoad() {
         updateVersionTitle()

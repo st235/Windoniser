@@ -1,6 +1,6 @@
 import Foundation
 
-class SettingsLayoutController: NSViewController {
+class SettingsLayoutController: NavigatableViewController {
     
     @IBOutlet weak var desktopLayoutHeader: NSTextField!
     @IBOutlet weak var dekstopLayoutView: DesktopLayoutView!
@@ -19,6 +19,12 @@ class SettingsLayoutController: NSViewController {
             SettingsLayoutSelectionDelegate(header: gridsHeader, content: gridsCollectionView, layoutSchemasInteractor: layoutSchemesInteractor)
         ]
     }()
+    
+    override var navigationTitle: String {
+        get {
+            return "settings_item_layouts".localized
+        }
+    }
     
     override func viewDidLoad() {
         for uiDelegate in uiDelegates {
