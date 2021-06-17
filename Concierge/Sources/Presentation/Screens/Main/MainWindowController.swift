@@ -8,6 +8,7 @@ class MainWindowController: LayoutSchemesInteractor.Delegate {
     private let layoutSchemesInteractor: LayoutSchemesInteractor
     private let accessibilityPermissionsManager: AccessibilityPermissionsManager
     private let viewControllerFactory: ViewControllerFactory
+    private let appearanceController: SystemAppearanceController
     
     init(layoutSchemesInteractor: LayoutSchemesInteractor,
          accessibilityPermissionsManager: AccessibilityPermissionsManager,
@@ -16,19 +17,27 @@ class MainWindowController: LayoutSchemesInteractor.Delegate {
         self.layoutSchemesInteractor = layoutSchemesInteractor
         self.accessibilityPermissionsManager = accessibilityPermissionsManager
         self.viewControllerFactory = viewControllerFactory
+        self.appearanceController = appearanceController
         
         self.layoutSchemesInteractor.addDelegate(weak: self)
         
         popover.appearance = NSAppearance(named: appearanceController.systemAppearance)!
         
-        appearanceController.addObserver(observer: { _ in
+        appearanceController.addObserver(observer: { [weak self] _ in
+            guard let self = self else {
+                return
+            }
+            
             self.popover.appearance = NSAppearance(named: appearanceController.systemAppearance)!
+            if let button = self.statusBarItem.button {
+                button.image = LayoutSchemaRenderer.render(layoutSchema: layoutSchemesInteractor.activeSchema, appearance: NSAppearance(named: appearanceController.systemAppearance)!)
+            }
         })
     }
     
     func onActiveSchemeChanged(schemes: LayoutSchema) {
         if let button = statusBarItem.button {
-            button.image = LayoutSchemaRenderer.render(layoutSchema: layoutSchemesInteractor.activeSchema)
+            button.image = LayoutSchemaRenderer.render(layoutSchema: layoutSchemesInteractor.activeSchema, appearance: NSAppearance(named: appearanceController.systemAppearance)!)
         }
     }
     
@@ -38,7 +47,7 @@ class MainWindowController: LayoutSchemesInteractor.Delegate {
     
     func attach() {        
         if let button = statusBarItem.button {
-            button.image = LayoutSchemaRenderer.render(layoutSchema: layoutSchemesInteractor.activeSchema)
+            button.image = LayoutSchemaRenderer.render(layoutSchema: layoutSchemesInteractor.activeSchema, appearance: NSAppearance(named: appearanceController.systemAppearance)!)
             button.sendAction(on: [.leftMouseUp, .rightMouseUp])
             button.target = self
             button.action = #selector(onStatusBarItemClick(_:))

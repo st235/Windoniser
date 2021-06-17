@@ -2,7 +2,7 @@ import Foundation
 
 class PermissionsViewController: NSViewController {
     
-    private var accessibilityPermissionsManager: AccessibilityPermissionsManager? = nil
+    private var accessibilityPermissionsManager: AccessibilityPermissionsManager = AppDependenciesResolver.shared.resolve(type: AccessibilityPermissionsManager.self)
     @IBOutlet weak var grantPermissionButton: NSButton!
     
     override func viewDidLoad() {
@@ -12,7 +12,7 @@ class PermissionsViewController: NSViewController {
     }
     
     @objc private func onButtonClicked(_ sender: Any?) {
-        accessibilityPermissionsManager?.requestPermission()
+        accessibilityPermissionsManager.requestPermission()
     }
     
 }
