@@ -109,6 +109,7 @@
 		CFBD324C25C84539006DDAE5 /* WindowTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD324B25C84539006DDAE5 /* WindowTableCell.swift */; };
 		CFBD325025C8563D006DDAE5 /* NSColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD324F25C8563D006DDAE5 /* NSColor+Helpers.swift */; };
 		CFBD325325C857A1006DDAE5 /* WindowTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD325225C857A1006DDAE5 /* WindowTableRow.swift */; };
+		CFC11454267E598200C61FBF /* CustomBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC11453267E598200C61FBF /* CustomBackgroundView.swift */; };
 		CFC2107925D330B200726D8C /* AccessibilityPermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2107825D330B200726D8C /* AccessibilityPermissionsManager.swift */; };
 		CFC2108125D3358700726D8C /* PermissionsSideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2108025D3358700726D8C /* PermissionsSideMenuDelegate.swift */; };
 		CFC2108425D3373600726D8C /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2108325D3373600726D8C /* PermissionsViewController.swift */; };
@@ -254,6 +255,7 @@
 		CFBD324B25C84539006DDAE5 /* WindowTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowTableCell.swift; sourceTree = "<group>"; };
 		CFBD324F25C8563D006DDAE5 /* NSColor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+Helpers.swift"; sourceTree = "<group>"; };
 		CFBD325225C857A1006DDAE5 /* WindowTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowTableRow.swift; sourceTree = "<group>"; };
+		CFC11453267E598200C61FBF /* CustomBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackgroundView.swift; sourceTree = "<group>"; };
 		CFC2107825D330B200726D8C /* AccessibilityPermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityPermissionsManager.swift; sourceTree = "<group>"; };
 		CFC2108025D3358700726D8C /* PermissionsSideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsSideMenuDelegate.swift; sourceTree = "<group>"; };
 		CFC2108325D3373600726D8C /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 				CF5399EE25D097BB00FA6292 /* NSImage+TintColor.swift */,
 				CF2E760A2676BF5C00F198A8 /* LayoutSchemaPreviewView.swift */,
 				CF8AE977267BEC2600020D2B /* NSView+NSImage.swift */,
+				CFC11453267E598200C61FBF /* CustomBackgroundView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -934,6 +937,7 @@
 				CFA95AB7267BFF8600478576 /* SettingsAutoLoginDelegate.swift in Sources */,
 				CF93699126755888001CE96A /* DesktopViewUiDelegate.swift in Sources */,
 				CF6995B425D6ECED00A52715 /* AutoLoginSetting.swift in Sources */,
+				CFC11454267E598200C61FBF /* CustomBackgroundView.swift in Sources */,
 				CFAD790E266ECCA600583A91 /* GridColorSetting.swift in Sources */,
 				CF8DBC05261A789A0031B972 /* SettingsListViewController.swift in Sources */,
 				CF6A348325D85E6B00D1619A /* SystemAppearanceController.swift in Sources */,

@@ -29,6 +29,7 @@ class MainWindowController: LayoutSchemesInteractor.Delegate {
             }
             
             self.popover.appearance = NSAppearance(named: appearanceController.systemAppearance)!
+            
             if let button = self.statusBarItem.button {
                 button.image = LayoutSchemaRenderer.render(layoutSchema: layoutSchemesInteractor.activeSchema, appearance: NSAppearance(named: appearanceController.systemAppearance)!)
             }

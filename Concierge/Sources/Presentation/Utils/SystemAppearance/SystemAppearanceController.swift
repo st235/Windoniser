@@ -10,6 +10,7 @@ class SystemAppearanceController {
     private let providers: [AppearanceProvider]
     
     private var mode: AppearanceMode
+    private var appearnceObserver: NSKeyValueObservation? = nil
     
     private var observers: [AppearanceObserver] = []
     
@@ -40,24 +41,21 @@ class SystemAppearanceController {
         
         self.mode = appearanceInteractor.activeAppearance
         
-        DistributedNotificationCenter.default().addObserver(
-            self,
-            selector: #selector(self.onSystemAppearanceChanged(notification:)),
-            name: NSNotification.Name(rawValue: kAppleInterfaceThemeChangedNotification),
-            object: nil
-        )
+        appearnceObserver = NSApp.observe(\.effectiveAppearance, options: [.new, .old, .initial, .prior]) { app, change in
+            self.onSystemAppearanceChanged()
+        }
         
         self.appearanceInteractor.addDelegate(weak: self)
+        self.changeGlobalAppearance()
     }
     
-    @objc private func onSystemAppearanceChanged(notification: Notification) {
-        // it is workaround to wait until changes will be applied within system
-        // before trigger actual value
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+    @objc private func onSystemAppearanceChanged() {
+        DispatchQueue.main.async {
             if self.mode == .followSystem {
+                self.changeGlobalAppearance()
                 self.notifyObservers()
             }
-        })
+        }
     }
     
     func addObserver(observer: @escaping AppearanceObserver) {
@@ -70,12 +68,12 @@ class SystemAppearanceController {
         }
     }
     
+    private func changeGlobalAppearance() {
+        NSAppearance.current = NSAppearance(named: systemAppearance)!
+    }
+    
     deinit {
-        DistributedNotificationCenter.default().removeObserver(
-            self,
-            name: NSNotification.Name(rawValue: kAppleInterfaceThemeChangedNotification),
-            object: nil
-        )
+        NSApp.removeObserver(appearnceObserver!, forKeyPath: "effectiveAppearance")
     }
     
 }
@@ -84,6 +82,7 @@ extension SystemAppearanceController: AppearanceInteractor.Delegate {
     
     func onAppearanceChanged(activeAppearance: AppearanceMode) {
         self.mode = activeAppearance
+        self.changeGlobalAppearance()
         self.notifyObservers()
     }
     

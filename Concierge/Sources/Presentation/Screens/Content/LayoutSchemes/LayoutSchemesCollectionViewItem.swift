@@ -4,20 +4,26 @@ class LayoutSchemesCollectionViewItem: NSCollectionViewItem {
     
     @IBOutlet weak var layoutSchemaPreviewView: LayoutSchemaPreviewView!
     
-    private static let inActiveColor: NSColor = NSColor.from(name: .backgroundPrimary)
-    private static let activeColor: NSColor = NSColor.from(name: .backgroundAccent)
+    var rootView: CustomBackgroundView {
+        get {
+            return view as! CustomBackgroundView
+        }
+    }
+    
+    private let inActiveColor: NSColor = NSColor.from(name: .backgroundPrimary)
+    private let activeColor: NSColor = NSColor.from(name: .backgroundAccent)
     
     private let layoutSchemesIconFactory = LayoutSchemeIconsFactory()
     
     override func viewDidLoad() {
         layoutSchemaPreviewView.highlightColor = NSColor.from(name: .iconPrimary)
-        view.wantsLayer = true
-        view.layer?.backgroundColor = LayoutSchemesCollectionViewItem.inActiveColor.cgColor
-        view.layer?.cornerRadius = 12
+        
+        rootView.cornerRadius = 12
     }
     
     func load(scheme: LayoutSchema, isSelected: Bool) {
         layoutSchemaPreviewView.addLayoutPreviews(layoutSeparators: scheme.separators)
+        
         if isSelected {
             select()
         } else {
@@ -26,11 +32,11 @@ class LayoutSchemesCollectionViewItem: NSCollectionViewItem {
     }
     
     func select() {
-        view.layer?.backgroundColor = LayoutSchemesCollectionViewItem.activeColor.cgColor
+        rootView.backgroundColor = activeColor
     }
     
     func deselect() {
-        view.layer?.backgroundColor = LayoutSchemesCollectionViewItem.inActiveColor.cgColor
+        rootView.backgroundColor = inActiveColor
     }
     
 }

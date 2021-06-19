@@ -5,13 +5,15 @@ final class WindowRepository {
     public struct WindowInfo: Equatable, Hashable {
         let id: Int
         let pid: pid_t
+        let isFocused: Bool
         let title: String
         let owner: String?
         let icon: NSImage?
         
-        init(id: Int, pid: pid_t, title: String, owner: String?, icon: NSImage?) {
+        init(id: Int, pid: pid_t, isFocused: Bool, title: String, owner: String?, icon: NSImage?) {
             self.id = id
             self.pid = pid
+            self.isFocused = isFocused
             self.title = title
             self.owner = owner
             self.icon = icon
@@ -20,13 +22,14 @@ final class WindowRepository {
         func hash(into hasher: inout Hasher) {
             hasher.combine(id)
             hasher.combine(pid)
+            hasher.combine(isFocused)
             hasher.combine(title)
             hasher.combine(owner)
             hasher.combine(icon)
         }
         
         public static func ==(lhs: WindowInfo, rhs: WindowInfo) -> Bool {
-            return lhs.id == rhs.id && lhs.pid == rhs.pid && lhs.title == rhs.title && lhs.owner == rhs.owner && lhs.icon == rhs.icon
+            return lhs.id == rhs.id && lhs.pid == rhs.pid && lhs.isFocused == rhs.isFocused && lhs.title == rhs.title && lhs.owner == rhs.owner && lhs.icon == rhs.icon
         }
     }
     
@@ -66,6 +69,7 @@ final class WindowRepository {
     
     public func activeWindows() -> [WindowInfo] {
         let appsDict = queryRunningApps()
+        let lastKnownFocusedWindow = focusedWindow()
         
         let windows = windowController.findAllAvailableWindows()
         var windowInfos = Set<WindowInfo>()
@@ -80,8 +84,10 @@ final class WindowRepository {
                 continue
             }
             
+            let isFocused = lastKnownFocusedWindow?.pid == window.pid
+            
             windowInfos.insert(
-                WindowInfo(id: window.number, pid: window.pid, title: window.title(), owner: runningApp.localizedName, icon: runningApp.icon)
+                WindowInfo(id: window.number, pid: window.pid, isFocused: isFocused, title: window.title(), owner: runningApp.localizedName, icon: runningApp.icon)
             )
         }
         

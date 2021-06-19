@@ -48,6 +48,8 @@ class AppListTableViewAdapter: NSObject, NSTableViewDelegate, NSTableViewDataSou
             return nil
         }
         
+        print(row)
+        
         cell.iconView.image = item.icon
         cell.titleView.stringValue = item.title
         

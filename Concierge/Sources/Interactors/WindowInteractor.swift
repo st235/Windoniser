@@ -24,7 +24,17 @@ class WindowInteractor {
     }
     
     func activeWindows() -> [WindowRepository.WindowInfo] {
-        return windowRepository.activeWindows()
+        return windowRepository.activeWindows().sorted(by: { lhs, rhs in
+            if lhs.isFocused == rhs.isFocused {
+                return true
+            }
+            
+            if lhs.isFocused {
+                return true
+            }
+            
+            return false
+        })
     }
     
     func resizeFocusedWindow(intoRect rect: NSRect) {

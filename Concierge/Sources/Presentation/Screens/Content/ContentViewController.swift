@@ -61,7 +61,9 @@ class ContentViewController: NSViewController {
         
         layoutSchemesCollectionView.dataSource = self
         layoutSchemesCollectionView.delegate = self
-        layoutSchemesCollectionView.enclosingScrollView?.horizontalScroller?.alphaValue = 0.0
+        
+        // We need this line to hide horizontal scroll bar
+        layoutSchemesCollectionView.enclosingScrollView?.scrollerInsets = NSEdgeInsets.init(top: 0, left: 0, bottom: 100, right: 0)
         layoutSchemesCollectionView.backgroundColors = [.clear]
         layoutSchemesCollectionView.isSelectable = true
         
