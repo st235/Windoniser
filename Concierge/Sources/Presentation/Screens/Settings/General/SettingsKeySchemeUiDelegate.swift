@@ -43,7 +43,7 @@ class SettingsKeySchemeUiDelegate: UiDelegate {
                 return
             }
             
-            self.content.rightButtonText = "Left: \(Int(leftSeconds)) sec."
+            self.content.rightButtonText = self.generateLeftTimeMessage(timeLeft: leftSeconds)
         }
         
         countDownTimer.onFinishListener = { [weak self] in
@@ -60,11 +60,12 @@ class SettingsKeySchemeUiDelegate: UiDelegate {
     }
     
     private func updateHeader() {
+        header.stringValue = "settings_general_active_schema_title".localized
     }
     
     private func updateContent() {
-        content.text = "settings_general_active_schema".localized
-        content.rightButtonText = "settings_gemeral_change_active_schema".localized
+        content.text = "settings_general_active_schema_content".localized
+        content.rightButtonText = "settings_general_active_schema_change_button".localized
         
         content.hotkeyBackgroundColor = NSColor.from(name: .backgroundPrimary)
         content.hotkeyTextColor = NSColor.from(name: .textPrimary)
@@ -85,10 +86,19 @@ class SettingsKeySchemeUiDelegate: UiDelegate {
     }
     
     private func startRecording() {
+        let defaultCountDownTime = 3.0
+        
         self.state = .applying
         self.modifiersController.recordKeys()
-        self.content.rightButtonText = "Left: 3 sec."
-        self.countDownTimer.start(interval: 3.0, tickInterval: 1.0)
+        self.content.rightButtonText = self.generateLeftTimeMessage(timeLeft: defaultCountDownTime)
+        self.countDownTimer.start(interval: defaultCountDownTime, tickInterval: 1.0)
+    }
+    
+    private func generateLeftTimeMessage(timeLeft: Double) -> String {
+        let prefix = "settings_general_active_schema_left_botton_prefix".localized
+        let suffix = "settings_general_active_schema_left_botton_suffix".localized
+        
+        return "\(prefix) \(Int(timeLeft)) \(suffix)"
     }
     
     private func stopRecording() {

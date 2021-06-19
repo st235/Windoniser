@@ -25,7 +25,7 @@ final class SettingsLayoutSelectionDelegate: NSObject, UiDelegate {
     }
     
     private func updateHeader() {
-        
+        header.stringValue = "settings_layout_selected_grids_title".localized
     }
     
     private func updateContent() {

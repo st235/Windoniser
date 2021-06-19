@@ -6,6 +6,7 @@ class ContentViewController: NSViewController {
     @IBOutlet weak var desktopLayoutHeader: NSTextField!
     @IBOutlet weak var desktopLayoutView: DesktopLayoutView!
     
+    @IBOutlet weak var appListHeader: NSTextField!
     @IBOutlet weak var windowsTableView: NSTableView!
     @IBOutlet weak var layoutSchemesCollectionView: NSCollectionView!
     @IBOutlet weak var settingsButton: NSButton!
@@ -49,6 +50,8 @@ class ContentViewController: NSViewController {
         desktopViewUiDelegate.onPreviewSelected = { [weak self] preview, payload in
             self?.onPreviewSelected(preview: preview, payload: payload)
         }
+        
+        appListHeader.stringValue = "content_app_list_title".localized
                 
         windowsTableView.headerView = nil
         windowsTableView.dataSource = appListTableViewAdapter

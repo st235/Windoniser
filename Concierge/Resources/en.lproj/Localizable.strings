@@ -1,23 +1,6 @@
-"left_side_menu_process_icon" = "Icon";
-"left_side_menu_process_process" = "Process";
-"left_side_menu_process_window" = "Title";
-"menu_actions_settings" = "Settings";
-"menu_actions_quit" = "Quit";
-
-"title_area_main" = "Main";
-"title_area_left" = "Left";
-"title_area_right" = "Right";
-"title_area_top" = "Top";
-"title_area_bottom" = "Bottom";
-"title_area_one" = "One";
-"title_area_two" = "Two";
-"title_area_three" = "Three";
-"title_area_top_left" = "Top-Left";
-"title_area_top_right" = "Top-Right";
-"title_area_bottom_left" = "Bottom-Left";
-"title_area_bottom_right" = "Bottom-Right";
-
-"content_app_list_tooltip_active" = "Last focused window";
+"content_descktop_view_title" = "Current workspace:";
+"content_app_list_title" = "Opened windows:";
+"content_app_list_tooltip_active" = "This window is focused";
 
 "settings_general_back_title" = "Back";
 "settings_general_header_title" = "Settings";
@@ -32,13 +15,21 @@
 "settings_item_terms_and_conditions" = "Terms and Conditions";
 "settings_item_quit" = "Quit";
 
+"settings_layout_selected_grids_title" = "Favorite layouts:";
+
+"settings_appearance_grid_layout_title" = "Grid theme:";
+"settings_appearance_theme_layout_title" = "Application theme:";
 "settings_appearance_theme_system" = "System";
 "settings_appearance_theme_light" = "Light";
 "settings_appearance_theme_dark" = "Dark";
 
-"settings_general_active_schema" = "Selected hotkeys:";
-"settings_gemeral_change_active_schema" = "Change";
-"settings_general_auto_login_title" = "Auto login enabled:";
+"settings_general_active_schema_title" = "Hotkeys";
+"settings_general_active_schema_content" = "Selected hotkeys:";
+"settings_general_active_schema_change_button" = "Change";
+"settings_general_active_schema_left_botton_prefix" = "Time left:";
+"settings_general_active_schema_left_botton_suffix" = "sec.";
+"settings_general_auto_login_title" = "Auto-start";
+"settings_general_auto_login_content" = "Run application on system startup";
 
 "settings_about_version_header" = "Version:";
 "settings_about_version_no_version" = "Version: unknown";

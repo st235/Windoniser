@@ -32,7 +32,7 @@ class DesktopViewUiDelegate: UiDelegate {
     }
     
     private func updateHeader() {
-        
+        header.stringValue = "content_descktop_view_title".localized
     }
     
     private func updateContent() {

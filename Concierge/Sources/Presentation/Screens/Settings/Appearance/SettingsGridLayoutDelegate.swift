@@ -31,7 +31,7 @@ final class SettingsGridLayoutDelegate: UiDelegate {
     }
     
     private func updateHeader() {
-        
+        header.stringValue = "settings_appearance_grid_layout_title".localized
     }
     
     private func updateContent() {

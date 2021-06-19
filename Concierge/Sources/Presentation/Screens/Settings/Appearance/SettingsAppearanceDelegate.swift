@@ -31,7 +31,7 @@ final class SettingsAppearanceDelegate: UiDelegate {
     }
     
     private func updateHeader() {
-        
+        header.stringValue = "settings_appearance_theme_layout_title".localized
     }
     
     private func updateContent() {

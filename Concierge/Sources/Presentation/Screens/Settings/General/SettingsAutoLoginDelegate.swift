@@ -21,11 +21,11 @@ final class SettingsAutoLoginDelegate: UiDelegate {
     }
     
     private func updateHeader() {
-        
+        header.stringValue = "settings_general_auto_login_title".localized
     }
     
     private func updateContent() {
-        content.title = "settings_general_auto_login_title".localized
+        content.title = "settings_general_auto_login_content".localized
         content.state = autoLoginInteractor.autoLoginEnabled
         
         content.clickHandler = { [weak self] enabled in
