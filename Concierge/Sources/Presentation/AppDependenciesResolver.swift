@@ -27,7 +27,8 @@ class AppDependenciesResolver: DependenciesResolver {
             return MainWindowController(layoutSchemesInteractor: resolver.resolve(type: LayoutSchemesInteractor.self),
                                            accessibilityPermissionsManager: resolver.resolve(type: AccessibilityPermissionsManager.self),
                                            viewControllerFactory: resolver.resolve(type: ViewControllerFactory.self),
-                                           appearanceController: resolver.resolve(type: SystemAppearanceController.self))
+                                           appearanceController: resolver.resolve(type: SystemAppearanceController.self),
+                                           windowInteractor: resolver.resolve(type: WindowInteractor.self))
         }
     }
     

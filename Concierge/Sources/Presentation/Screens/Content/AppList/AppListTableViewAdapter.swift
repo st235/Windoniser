@@ -48,10 +48,10 @@ class AppListTableViewAdapter: NSObject, NSTableViewDelegate, NSTableViewDataSou
             return nil
         }
         
-        print(row)
-        
         cell.iconView.image = item.icon
         cell.titleView.stringValue = item.title
+        cell.activityDotView.contentTintColor = NSColor(named: .iconPrimary)
+        cell.isActive = item.isFocused
         
         if let owner = item.owner {
             cell.subtitleView.stringValue = owner

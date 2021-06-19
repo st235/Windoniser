@@ -41,7 +41,6 @@ class CountDownTimer {
         lock.lock()
         
         self.timer -= tick
-        print(timer)
         
         var shouldFinish = false
         let leftSeconds = max(0, timer)

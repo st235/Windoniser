@@ -69,7 +69,6 @@ class SettingsKeySchemeUiDelegate: UiDelegate {
         content.hotkeyBackgroundColor = NSColor.from(name: .backgroundPrimary)
         content.hotkeyTextColor = NSColor.from(name: .textPrimary)
         
-        print(hotKeysInteractor.keyModifiers)
         content.setKeys(keys: hotKeysInteractor.keyModifiers)
         
         content.clickHandler = { [weak self] in

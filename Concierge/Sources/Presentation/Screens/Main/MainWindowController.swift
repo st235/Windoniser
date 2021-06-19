@@ -5,19 +5,33 @@ class MainWindowController: LayoutSchemesInteractor.Delegate {
     private let statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     private let popover = Popover(isAutoCancellable: true)
     
+    private let imageContrastor = ImageConstarstor()
+    
     private let layoutSchemesInteractor: LayoutSchemesInteractor
     private let accessibilityPermissionsManager: AccessibilityPermissionsManager
     private let viewControllerFactory: ViewControllerFactory
     private let appearanceController: SystemAppearanceController
+    private let windowInteractor: WindowInteractor
+    
+    private var iconColor: NSColor {
+        didSet {
+            if let button = self.statusBarItem.button {
+                button.image = LayoutSchemaRenderer.render(layoutSchema: layoutSchemesInteractor.activeSchema, highlightColor: self.iconColor)
+            }
+        }
+    }
     
     init(layoutSchemesInteractor: LayoutSchemesInteractor,
          accessibilityPermissionsManager: AccessibilityPermissionsManager,
          viewControllerFactory: ViewControllerFactory,
-         appearanceController: SystemAppearanceController) {
+         appearanceController: SystemAppearanceController,
+         windowInteractor: WindowInteractor) {
         self.layoutSchemesInteractor = layoutSchemesInteractor
         self.accessibilityPermissionsManager = accessibilityPermissionsManager
         self.viewControllerFactory = viewControllerFactory
         self.appearanceController = appearanceController
+        self.windowInteractor = windowInteractor
+        self.iconColor = NSColor(named: .iconPrimary)!
         
         self.layoutSchemesInteractor.addDelegate(weak: self)
         
@@ -29,16 +43,15 @@ class MainWindowController: LayoutSchemesInteractor.Delegate {
             }
             
             self.popover.appearance = NSAppearance(named: appearanceController.systemAppearance)!
-            
-            if let button = self.statusBarItem.button {
-                button.image = LayoutSchemaRenderer.render(layoutSchema: layoutSchemesInteractor.activeSchema, appearance: NSAppearance(named: appearanceController.systemAppearance)!)
-            }
+            self.reloadDesktopBackground()
         })
+        
+        reloadDesktopBackground()
     }
     
     func onActiveSchemeChanged(schemes: LayoutSchema) {
         if let button = statusBarItem.button {
-            button.image = LayoutSchemaRenderer.render(layoutSchema: layoutSchemesInteractor.activeSchema, appearance: NSAppearance(named: appearanceController.systemAppearance)!)
+            button.image = LayoutSchemaRenderer.render(layoutSchema: layoutSchemesInteractor.activeSchema, highlightColor: self.iconColor)
         }
     }
     
@@ -48,7 +61,7 @@ class MainWindowController: LayoutSchemesInteractor.Delegate {
     
     func attach() {        
         if let button = statusBarItem.button {
-            button.image = LayoutSchemaRenderer.render(layoutSchema: layoutSchemesInteractor.activeSchema, appearance: NSAppearance(named: appearanceController.systemAppearance)!)
+            button.image = LayoutSchemaRenderer.render(layoutSchema: layoutSchemesInteractor.activeSchema, highlightColor: self.iconColor)
             button.sendAction(on: [.leftMouseUp, .rightMouseUp])
             button.target = self
             button.action = #selector(onStatusBarItemClick(_:))
@@ -76,6 +89,17 @@ class MainWindowController: LayoutSchemesInteractor.Delegate {
 
     private func close(statusBarMenuItem: NSStatusItem) {
         self.popover.dismiss()
+    }
+    
+    private func reloadDesktopBackground() {
+        let url = windowInteractor.getFocusedDesktopImageURL()
+        imageContrastor.findFarestColor(forColors: [.white, .black], forURL: url!) { [weak self] color in
+            guard let self = self, let color = color else {
+                return
+            }
+            
+            self.iconColor = color
+        }
     }
     
 }
