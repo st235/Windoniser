@@ -1,15 +1,21 @@
 import Foundation
 
-struct LayoutArea {
+struct LayoutArea: Encodable, Decodable {
     
-    let titleKey: String
-    let activeKey: Key
-    let rect: NSRect
+    let rawKey: String
+    let origin: Origin
+    let contentDescription: String
     
-    init(titleKey: String, activeKey: Key, rect: NSRect) {
-        self.titleKey = titleKey
-        self.activeKey = activeKey
-        self.rect = rect
+    var activeKey: Key {
+        get {
+            return Key(string: rawKey)!
+        }
+    }
+    
+    var rect: NSRect {
+        get {
+            NSRect(x: CGFloat(origin.x), y: CGFloat(origin.y), width: CGFloat(origin.width), height: CGFloat(origin.height))
+        }
     }
     
 }

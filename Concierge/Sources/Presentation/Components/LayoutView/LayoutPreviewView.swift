@@ -244,7 +244,8 @@ class LayoutPreviewView: NSView {
     }
     
     private func getSeparatorProjection(separator: LayoutSeparator) -> LayoutSeparator {
-        return LayoutSeparator(x: NSPoint(x: separator.x.x * bounds.width, y: separator.x.y * bounds.height), y: NSPoint(x: separator.y.x * bounds.width, y: separator.y.y * bounds.height))
+        return LayoutSeparator(start: Point(x: Float(separator.x.x * bounds.width), y: Float(separator.x.y * bounds.height)),
+                               finish: Point(x: Float(separator.y.x * bounds.width), y: Float(separator.y.y * bounds.height)))
     }
     
     private func getLayoutProjection(layoutPreview: LayoutPreview, padding: CGFloat) -> LayoutPreview {

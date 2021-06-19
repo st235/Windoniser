@@ -54,7 +54,6 @@ extension SettingsLayoutSelectionDelegate: NSCollectionViewDataSource {
         }
         
         let layoutScheme = selectedSchemas[indexPath.item]
-        
         item.load(scheme: layoutScheme, isSelected: layoutSchemasInteractor.isSelected(schema: layoutScheme))
 
         return item
@@ -74,14 +73,18 @@ extension SettingsLayoutSelectionDelegate: NSCollectionViewDelegate {
             fatalError()
         }
         
-        let item = selectedSchemas[indexPath.item]
+        let schema = selectedSchemas[indexPath.item]
+        
+        if schema.isUnselectable {
+            return
+        }
    
         if let newCell = collectionView.item(at: indexPath) as? LayoutSchemesCollectionViewItem {
-            if !layoutSchemasInteractor.canBeUnselected(schema: item) || !layoutSchemasInteractor.isSelected(schema: item) {
-                layoutSchemasInteractor.selectSchema(schema: item)
+            if !layoutSchemasInteractor.isSelected(schema: schema) {
+                layoutSchemasInteractor.selectSchema(schema: schema)
                 newCell.select()
             } else {
-                layoutSchemasInteractor.unselectSchema(schema: item)
+                layoutSchemasInteractor.unselectSchema(schema: schema)
                 newCell.deselect()
             }
         }

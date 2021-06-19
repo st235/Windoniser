@@ -120,10 +120,10 @@ class LayoutSchemaPreviewView: NSView {
     }
     
     private func getSeparatorProjection(separator: LayoutSeparator) -> LayoutSeparator {
-        return LayoutSeparator(x: NSPoint(x: separator.x.x * bounds.width * projectionBounds.width + bounds.width * projectionBounds.minX,
-                                          y: separator.x.y * bounds.height * projectionBounds.height + bounds.height * projectionBounds.minY),
-                               y: NSPoint(x: separator.y.x * bounds.width * projectionBounds.width + bounds.width * projectionBounds.minX,
-                                          y: separator.y.y * bounds.height * projectionBounds.height + bounds.height * projectionBounds.minY))
+        return LayoutSeparator(start: Point(x: Float(separator.x.x * bounds.width * projectionBounds.width + bounds.width * projectionBounds.minX),
+                                            y: Float(separator.x.y * bounds.height * projectionBounds.height + bounds.height * projectionBounds.minY)),
+                               finish: Point(x: Float(separator.y.x * bounds.width * projectionBounds.width + bounds.width * projectionBounds.minX),
+                                             y: Float(separator.y.y * bounds.height * projectionBounds.height + bounds.height * projectionBounds.minY)))
     }
 
 }

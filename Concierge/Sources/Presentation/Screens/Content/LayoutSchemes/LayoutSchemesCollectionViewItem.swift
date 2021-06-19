@@ -13,8 +13,6 @@ class LayoutSchemesCollectionViewItem: NSCollectionViewItem {
     private let inActiveColor: NSColor = NSColor.from(name: .backgroundPrimary)
     private let activeColor: NSColor = NSColor.from(name: .backgroundAccent)
     
-    private let layoutSchemesIconFactory = LayoutSchemeIconsFactory()
-    
     override func viewDidLoad() {
         layoutSchemaPreviewView.highlightColor = NSColor.from(name: .iconPrimary)
         

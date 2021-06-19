@@ -17,10 +17,10 @@ extension ContentViewController: NSCollectionViewDataSource {
         
         let layoutScheme = layoutSchemes[indexPath.item]
         
-        let isSelected = layoutScheme.type == activeScheme.type
+        let isSelected = layoutScheme.id == activeScheme.id
         item.load(scheme: layoutScheme, isSelected: isSelected)
         
-        if layoutScheme.type == activeScheme.type {
+        if layoutScheme.id == activeScheme.id {
             lastKnownIndexPath = indexPath
         }
 

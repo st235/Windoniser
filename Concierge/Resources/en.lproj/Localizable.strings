@@ -17,6 +17,8 @@
 "title_area_bottom_left" = "Bottom-Left";
 "title_area_bottom_right" = "Bottom-Right";
 
+"content_app_list_tooltip_active" = "Last focused window";
+
 "settings_general_back_title" = "Back";
 "settings_general_header_title" = "Settings";
 

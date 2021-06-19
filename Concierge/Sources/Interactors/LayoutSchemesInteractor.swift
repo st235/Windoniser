@@ -35,8 +35,12 @@ class LayoutSchemesInteractor {
         
         self.selectedItems = Set(settingsRepository.get(type: .selectedLayouts) as [Int])
         
-        if selectedItems.isEmpty {
-            selectedItems.insert(layoutSchemesRepository.defaultSchema.type)
+        let schemas = layoutSchemesRepository.defaultSchemes
+        
+        for schema in schemas {
+            if schema.isDefault {
+                selectedItems.insert(schema.id)
+            }
         }
     }
     
@@ -53,7 +57,7 @@ class LayoutSchemesInteractor {
     }
     
     func selectSchema(schema: LayoutSchema) {
-        selectedItems.insert(schema.type)
+        selectedItems.insert(schema.id)
         settingsRepository.set(type: .selectedLayouts, value: Array(selectedItems))
         
         for delegate in delegates {
@@ -62,18 +66,18 @@ class LayoutSchemesInteractor {
     }
     
     func unselectSchema(schema: LayoutSchema) {
-        if (!canBeUnselected(schema: schema)) {
+        if schema.isUnselectable {
             return
         }
         
-        if (activeSchema.type == schema.type) {
+        if (activeSchema.id == schema.id) {
             activeSchema = layoutSchemesRepository.defaultSchema
         }
         
-        selectedItems.remove(schema.type)
+        selectedItems.remove(schema.id)
         
         if selectedItems.isEmpty {
-            selectedItems.insert(layoutSchemesRepository.defaultSchema.type)
+            selectedItems.insert(layoutSchemesRepository.defaultSchema.id)
         }
         
         settingsRepository.set(type: .selectedLayouts, value: Array(selectedItems))
@@ -83,26 +87,25 @@ class LayoutSchemesInteractor {
         }
     }
     
-    func canBeUnselected(schema: LayoutSchema) -> Bool {
-        return schema.type != .fullscreen
-    }
-    
     func isSelected(schema: LayoutSchema) -> Bool {
-        if (!canBeUnselected(schema: schema)) {
+        if schema.isUnselectable {
             // unselectable items are always selected
             return true
         }
-        return selectedItems.contains(schema.type)
+        return selectedItems.contains(schema.id)
     }
     
     func selectedSchemas() -> [LayoutSchema] {
         var selectedSchemas: [LayoutSchema] = []
         
         for schema in selectedItems {
-            selectedSchemas.append(layoutSchemesRepository.findSchema(byId: schema))
+            guard let schema = layoutSchemesRepository.findSchema(byId: schema) else {
+                continue
+            }
+            selectedSchemas.append(schema)
         }
         
-        selectedSchemas.sort(by: { $0.type < $1.type })
+        selectedSchemas.sort(by: { $0.id < $1.id })
         
         return selectedSchemas
     }

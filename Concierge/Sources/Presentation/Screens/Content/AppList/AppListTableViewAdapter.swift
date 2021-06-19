@@ -51,6 +51,7 @@ class AppListTableViewAdapter: NSObject, NSTableViewDelegate, NSTableViewDataSou
         cell.iconView.image = item.icon
         cell.titleView.stringValue = item.title
         cell.activityDotView.contentTintColor = NSColor(named: .iconPrimary)
+        cell.activityDotView.toolTip = "content_app_list_tooltip_active".localized
         cell.isActive = item.isFocused
         
         if let owner = item.owner {

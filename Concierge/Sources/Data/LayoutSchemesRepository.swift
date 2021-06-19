@@ -4,92 +4,47 @@ class LayoutSchemesRepository {
     
     private static let keySelectedScheme = "key.selected_scheme"
     
-    private static let schemes = [
-        // base is bottom-left corner
-        
-        // ubreakable
-        LayoutSchema(type: .fullscreen, areas: [.main], separators: []),
-        
-        // default
-        LayoutSchema(type: .twoVertical, areas: [.left, .right], separators: [Vector2(x: NSPoint(x: 0.5, y: 0), y: NSPoint(x: 0.5, y: 1))]),
-        LayoutSchema(type: .twoHoriontal, areas: [.top, .bottom], separators: [Vector2(x: NSPoint(x: 0, y: 0.5), y: NSPoint(x: 1, y: 0.5))]),
-        LayoutSchema(type: .threeVertical, areas: [.verticalOneThird, .verticalTwoThird, .verticalThreeThird], separators: [Vector2(x: NSPoint(x: 1.0/3.0, y: 0), y: NSPoint(x: 1.0/3.0, y: 1)), Vector2(x: NSPoint(x: 2.0/3.0, y: 0), y: NSPoint(x: 2.0/3.0, y: 1))]),
-        LayoutSchema(type: .quadro, areas: [.topLeft, .topRight, .bottomLeft, .bottomRight], separators: [Vector2(x: NSPoint(x: 0.5, y: 0), y: NSPoint(x: 0.5, y: 1)), Vector2(x: NSPoint(x: 0, y: 0.5), y: NSPoint(x: 1, y: 0.5))]),
-        
-        // custom
-        LayoutSchema(type: 6, areas: [
-            LayoutArea(titleKey: "left", activeKey: .one, rect: NSRect(x: 0, y: 0, width: 0.5, height: 1)),
-            LayoutArea(titleKey: "top_right", activeKey: .two, rect: NSRect(x: 0.5, y: 0.5, width: 0.5, height: 0.5)),
-            LayoutArea(titleKey: "bottom_right", activeKey: .three, rect: NSRect(x: 0.5, y: 0, width: 0.5, height: 0.5))
-        ], separators: [Vector2(x: NSPoint(x: 0.5, y: 0), y: NSPoint(x: 0.5, y: 1)),Vector2(x: NSPoint(x: 0.5, y: 0.5), y: NSPoint(x: 1, y: 0.5))]),
-        
-        LayoutSchema(type: 10, areas: [
-            LayoutArea(titleKey: "top_left", activeKey: .one, rect: NSRect(x: 0, y: 0.5, width: 0.5, height: 0.5)),
-            LayoutArea(titleKey: "bottom_left", activeKey: .two, rect: NSRect(x: 0, y: 0, width: 0.5, height: 0.5)),
-            LayoutArea(titleKey: "right", activeKey: .three, rect: NSRect(x: 0.5, y: 0, width: 0.5, height: 1))
-        ], separators: [Vector2(x: NSPoint(x: 0.5, y: 0), y: NSPoint(x: 0.5, y: 1)),Vector2(x: NSPoint(x: 0, y: 0.5), y: NSPoint(x: 0.5, y: 0.5))]),
-        
-        LayoutSchema(type: 11, areas: [
-            LayoutArea(titleKey: "left", activeKey: .leftArrow, rect: NSRect(x: 0, y: 0, width: 0.33, height: 1.0)),
-            LayoutArea(titleKey: "top", activeKey: .upArrow, rect: NSRect(x: 0.33, y: 0.5, width: 0.33, height: 0.5)),
-            LayoutArea(titleKey: "bottom", activeKey: .downArrow, rect: NSRect(x: 0.33, y: 0, width: 0.33, height: 0.5)),
-            LayoutArea(titleKey: "right", activeKey: .rightArrow, rect: NSRect(x: 0.66, y: 0, width: 0.34, height: 1))
-        ], separators: [Vector2(x: NSPoint(x: 0.33, y: 0), y: NSPoint(x: 0.33, y: 1)), Vector2(x: NSPoint(x: 0.66, y: 0), y: NSPoint(x: 0.66, y: 1.0)), Vector2(x: NSPoint(x: 0.33, y: 0.5), y: NSPoint(x: 0.66, y: 0.5))]),
-        
-        LayoutSchema(type: 12, areas: [
-            LayoutArea(titleKey: "left", activeKey: .leftArrow, rect: NSRect(x: 0, y: 0, width: 2.0/3.0, height: 1.0)),
-            LayoutArea(titleKey: "right", activeKey: .rightArrow, rect: NSRect(x: 2.0/3.0, y: 0, width: 1.0/3.0, height: 1.0)),
-        ], separators: [Vector2(x: NSPoint(x: 2.0/3.0, y: 0), y: NSPoint(x: 2.0/3.0, y: 1))]),
-        
-        LayoutSchema(type: 13, areas: [
-            LayoutArea(titleKey: "left", activeKey: .leftArrow, rect: NSRect(x: 0, y: 0, width: 1.0/3.0, height: 1.0)),
-            LayoutArea(titleKey: "right", activeKey: .rightArrow, rect: NSRect(x: 1.0/3.0, y: 0, width: 2.0/3.0, height: 1.0)),
-        ], separators: [Vector2(x: NSPoint(x: 1.0/3.0, y: 0), y: NSPoint(x: 1.0/3.0, y: 1))]),
-        
-        LayoutSchema(type: 14, areas: [
-            LayoutArea(titleKey: "left", activeKey: .one, rect: NSRect(x: 0, y: 0, width: 2.0/3.0, height: 1.0)),
-            LayoutArea(titleKey: "top_right", activeKey: .two, rect: NSRect(x: 2.0/3.0, y: 0.5, width: 1.0/3.0, height: 0.5)),
-            LayoutArea(titleKey: "bottom_right", activeKey: .three, rect: NSRect(x: 2.0/3.0, y: 0, width: 1.0/3.0, height: 0.5)),
-        ], separators: [Vector2(x: NSPoint(x: 2.0/3.0, y: 0), y: NSPoint(x: 2.0/3.0, y: 1)), Vector2(x: NSPoint(x: 2.0/3.0, y: 0.5), y: NSPoint(x: 1.0, y: 0.5))]),
-        
-        LayoutSchema(type: 15, areas: [
-            LayoutArea(titleKey: "top_left", activeKey: .one, rect: NSRect(x: 0, y: 0.5, width: 1.0/3.0, height: 0.5)),
-            LayoutArea(titleKey: "bottom_left", activeKey: .two, rect: NSRect(x: 0, y: 0, width: 1.0/3.0, height: 0.5)),
-            LayoutArea(titleKey: "right", activeKey: .three, rect: NSRect(x: 1.0/3.0, y: 0, width: 2.0/3.0, height: 1.0)),
-        ], separators: [Vector2(x: NSPoint(x: 1.0/3.0, y: 0), y: NSPoint(x: 1.0/3.0, y: 1)), Vector2(x: NSPoint(x: 0, y: 0.5), y: NSPoint(x: 1.0/3.0, y: 0.5))]),
-    ]
+    private let schemas: [LayoutSchema]
     
     private let userDefaults = UserDefaults.standard
     
+    private let jsonDecoder = JSONDecoder()
+    
+    init() {
+        let filePath = Bundle.main.path(forResource: "Schemas", ofType: "json")!
+        let rawJson = try! String(contentsOfFile: filePath)
+        self.schemas = try! jsonDecoder.decode([LayoutSchema].self, from: rawJson.data(using: .utf8)!)
+    }
+    
     var defaultSchema: LayoutSchema {
         get {
-            LayoutSchema(type: .fullscreen, areas: [.main], separators: [])
+            return self.schemas.first(where: { $0.isDefault })!
         }
     }
     
     var prefferedScheme: LayoutSchema {
         get {
             let rawSelectedValue: Int = userDefaults.integer(forKey: LayoutSchemesRepository.keySelectedScheme)
-            guard let scheme: LayoutSchema = LayoutSchemesRepository.schemes.first(where: { $0.type == rawSelectedValue }) else {
-                fatalError()
+            guard let scheme: LayoutSchema = schemas.first(where: { $0.id == rawSelectedValue }) else {
+                return defaultSchema
             }
             
             return scheme
         }
         set {
-            userDefaults.set(newValue.type, forKey: LayoutSchemesRepository.keySelectedScheme)
+            userDefaults.set(newValue.id, forKey: LayoutSchemesRepository.keySelectedScheme)
         }
     }
     
     var defaultSchemes: [LayoutSchema] {
         get {
-            return LayoutSchemesRepository.schemes
+            return schemas
         }
     }
     
-    func findSchema(byId rawId: Int) -> LayoutSchema {
-        guard let schema = LayoutSchemesRepository.schemes.first(where: { $0.type == rawId }) else {
-            fatalError()
+    func findSchema(byId rawId: Int) -> LayoutSchema? {
+        guard let schema = schemas.first(where: { $0.id == rawId }) else {
+            return nil
         }
         return schema
     }
