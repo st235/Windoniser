@@ -38,7 +38,7 @@ class GridLayoutInteractor {
     }
     
     func availableGridThemes() -> [GridTheme] {
-        return [.followSystem, .light, .dark]
+        return [.followSystem, .dark, .light]
     }
     
 }
