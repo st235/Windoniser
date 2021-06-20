@@ -33,3 +33,7 @@
 
 "settings_about_version_header" = "Version:";
 "settings_about_version_no_version" = "Version: unknown";
+
+"permissions_screen_description" = "Concierge cannot work without an Accessibility permission.\nWe need Accessibility to be able to move and resize windows across your workspace.\nClick button bellow to give us the permission:";
+"permissions_grant_button_text" = "Grant permissions";
+"permissions_close_app_button_text" = "Close application";
