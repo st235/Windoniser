@@ -46,10 +46,8 @@
 		CF5E416E25AA3296001DEC28 /* SettingsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E416D25AA3296001DEC28 /* SettingsMainViewController.swift */; };
 		CF5E418625AA4476001DEC28 /* LayoutSchemesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E418525AA4476001DEC28 /* LayoutSchemesInteractor.swift */; };
 		CF5F4EA625FE486D0090A3A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F4EA525FE486D0090A3A7 /* MainViewController.swift */; };
-		CF69958E25D6E6EF00A52715 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF69958D25D6E6EF00A52715 /* AppDelegate.m */; };
 		CF69959025D6E6F000A52715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF69958F25D6E6F000A52715 /* Assets.xcassets */; };
 		CF69959325D6E6F000A52715 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF69959125D6E6F000A52715 /* MainMenu.xib */; };
-		CF69959625D6E6F000A52715 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF69959525D6E6F000A52715 /* main.m */; };
 		CF6995A025D6E80900A52715 /* ConciergeLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF69958A25D6E6EF00A52715 /* ConciergeLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CF6995A725D6EA3A00A52715 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6995A625D6EA3A00A52715 /* SettingsRepository.swift */; };
 		CF6995AB25D6EB5A00A52715 /* SettingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6995AA25D6EB5A00A52715 /* SettingType.swift */; };
@@ -113,6 +111,8 @@
 		CFC1145A267E8C3900C61FBF /* Origin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC11459267E8C3900C61FBF /* Origin.swift */; };
 		CFC1145C267E911F00C61FBF /* Schemas.json in Resources */ = {isa = PBXBuildFile; fileRef = CFC1145B267E911F00C61FBF /* Schemas.json */; };
 		CFC1145E267E966200C61FBF /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC1145D267E966200C61FBF /* Point.swift */; };
+		CFC11462267F5F7700C61FBF /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC11460267F5F7400C61FBF /* ServiceManagement.framework */; };
+		CFC11467267F611100C61FBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC11466267F611100C61FBF /* AppDelegate.swift */; };
 		CFC2107925D330B200726D8C /* AccessibilityPermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2107825D330B200726D8C /* AccessibilityPermissionsManager.swift */; };
 		CFC2108125D3358700726D8C /* PermissionsSideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2108025D3358700726D8C /* PermissionsSideMenuDelegate.swift */; };
 		CFC2108425D3373600726D8C /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2108325D3373600726D8C /* PermissionsViewController.swift */; };
@@ -187,12 +187,9 @@
 		CF5E418525AA4476001DEC28 /* LayoutSchemesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemesInteractor.swift; sourceTree = "<group>"; };
 		CF5F4EA525FE486D0090A3A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CF69958A25D6E6EF00A52715 /* ConciergeLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConciergeLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF69958C25D6E6EF00A52715 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		CF69958D25D6E6EF00A52715 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CF69958F25D6E6F000A52715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF69959225D6E6F000A52715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		CF69959425D6E6F000A52715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF69959525D6E6F000A52715 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CF69959725D6E6F000A52715 /* ConciergeLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConciergeLauncher.entitlements; sourceTree = "<group>"; };
 		CF6995A625D6EA3A00A52715 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
 		CF6995AA25D6EB5A00A52715 /* SettingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingType.swift; sourceTree = "<group>"; };
@@ -262,6 +259,9 @@
 		CFC11459267E8C3900C61FBF /* Origin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Origin.swift; sourceTree = "<group>"; };
 		CFC1145B267E911F00C61FBF /* Schemas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Schemas.json; sourceTree = "<group>"; };
 		CFC1145D267E966200C61FBF /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		CFC11460267F5F7400C61FBF /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		CFC11465267F611100C61FBF /* ConciergeLauncher-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ConciergeLauncher-Bridging-Header.h"; sourceTree = "<group>"; };
+		CFC11466267F611100C61FBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFC2107825D330B200726D8C /* AccessibilityPermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityPermissionsManager.swift; sourceTree = "<group>"; };
 		CFC2108025D3358700726D8C /* PermissionsSideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsSideMenuDelegate.swift; sourceTree = "<group>"; };
 		CFC2108325D3373600726D8C /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
@@ -295,6 +295,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC11462267F5F7700C61FBF /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,13 +466,12 @@
 		CF69958B25D6E6EF00A52715 /* ConciergeLauncher */ = {
 			isa = PBXGroup;
 			children = (
-				CF69958C25D6E6EF00A52715 /* AppDelegate.h */,
-				CF69958D25D6E6EF00A52715 /* AppDelegate.m */,
 				CF69958F25D6E6F000A52715 /* Assets.xcassets */,
 				CF69959125D6E6F000A52715 /* MainMenu.xib */,
 				CF69959425D6E6F000A52715 /* Info.plist */,
-				CF69959525D6E6F000A52715 /* main.m */,
 				CF69959725D6E6F000A52715 /* ConciergeLauncher.entitlements */,
+				CFC11466267F611100C61FBF /* AppDelegate.swift */,
+				CFC11465267F611100C61FBF /* ConciergeLauncher-Bridging-Header.h */,
 			);
 			path = ConciergeLauncher;
 			sourceTree = "<group>";
@@ -607,6 +607,7 @@
 				CFACE47225A1CFCF00EE31F5 /* Concierge */,
 				CF69958B25D6E6EF00A52715 /* ConciergeLauncher */,
 				CFACE47125A1CFCF00EE31F5 /* Products */,
+				CFC1145F267F5F7400C61FBF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -659,6 +660,14 @@
 				CFFEFF18261A6D4F00F2CE39 /* AppListTableViewAdapter.swift */,
 			);
 			path = AppList;
+			sourceTree = "<group>";
+		};
+		CFC1145F267F5F7400C61FBF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFC11460267F5F7400C61FBF /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CFC2107725D3131300726D8C /* Permissions */ = {
@@ -848,6 +857,7 @@
 				TargetAttributes = {
 					CF69958925D6E6EF00A52715 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1250;
 					};
 					CFACE46F25A1CFCF00EE31F5 = {
 						CreatedOnToolsVersion = 12.3;
@@ -911,8 +921,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF69959625D6E6F000A52715 /* main.m in Sources */,
-				CF69958E25D6E6EF00A52715 /* AppDelegate.m in Sources */,
+				CFC11467267F611100C61FBF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1067,8 +1076,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ConciergeLauncher/ConciergeLauncher.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 275D4J3Y5L;
@@ -1081,6 +1091,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = st235.com.github.ConciergeLauncher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ConciergeLauncher/ConciergeLauncher-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1089,8 +1102,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ConciergeLauncher/ConciergeLauncher.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 275D4J3Y5L;
@@ -1103,6 +1117,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = st235.com.github.ConciergeLauncher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ConciergeLauncher/ConciergeLauncher-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1226,11 +1242,12 @@
 		CFACE48125A1CFD000EE31F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Concierge/Resources/Concierge.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 275D4J3Y5L;
@@ -1251,11 +1268,12 @@
 		CFACE48225A1CFD000EE31F5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Concierge/Resources/Concierge.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 275D4J3Y5L;

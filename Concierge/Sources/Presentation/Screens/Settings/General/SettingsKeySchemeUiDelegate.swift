@@ -66,6 +66,7 @@ class SettingsKeySchemeUiDelegate: UiDelegate {
     private func updateContent() {
         content.text = "settings_general_active_schema_content".localized
         content.rightButtonText = "settings_general_active_schema_change_button".localized
+        content.rightButtonTextColor = NSColor(named: .textPrimary)
         
         content.hotkeyBackgroundColor = NSColor.from(name: .backgroundPrimary)
         content.hotkeyTextColor = NSColor.from(name: .textPrimary)

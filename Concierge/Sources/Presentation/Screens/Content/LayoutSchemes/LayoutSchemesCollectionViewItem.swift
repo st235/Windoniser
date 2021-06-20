@@ -10,12 +10,7 @@ class LayoutSchemesCollectionViewItem: NSCollectionViewItem {
         }
     }
     
-    private let inActiveColor: NSColor = NSColor.from(name: .backgroundPrimary)
-    private let activeColor: NSColor = NSColor.from(name: .backgroundAccent)
-    
     override func viewDidLoad() {
-        layoutSchemaPreviewView.highlightColor = NSColor.from(name: .iconPrimary)
-        
         rootView.cornerRadius = 12
     }
     
@@ -30,11 +25,13 @@ class LayoutSchemesCollectionViewItem: NSCollectionViewItem {
     }
     
     func select() {
-        rootView.backgroundColor = activeColor
+        layoutSchemaPreviewView.highlightColor = NSColor.from(name: .Dynamic.iconAccent)
+        rootView.backgroundColor = NSColor.from(name: .backgroundAccent)
     }
     
     func deselect() {
-        rootView.backgroundColor = inActiveColor
+        layoutSchemaPreviewView.highlightColor = NSColor.from(name: .iconPrimary)
+        rootView.backgroundColor = NSColor.from(name: .backgroundPrimary)
     }
     
 }

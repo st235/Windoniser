@@ -13,6 +13,10 @@ extension NSColor.Name {
     
     static let iconPrimary = "IconPrimary"
     
+    class Dynamic {
+        static let iconAccent = "IconAccent"
+    }
+    
     class Static {
         static let white = "White"
         static let white75 = "White75"

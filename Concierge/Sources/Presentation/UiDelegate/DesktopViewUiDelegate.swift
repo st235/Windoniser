@@ -43,6 +43,7 @@ class DesktopViewUiDelegate: UiDelegate {
         content.layoutDelegate = self
         
         reloadActiveScheme()
+        reloadGridTheme(activeTheme: gridLayoutInteractor.activeTheme)
     }
     
     private func reloadActiveScheme() {
@@ -54,7 +55,7 @@ class DesktopViewUiDelegate: UiDelegate {
     private func reloadGridTheme(activeTheme: GridTheme) {
         switch activeTheme {
         case .followSystem:
-            content.changeGridTheme(backgroundColor: .backgroundTransparent, borderColor: .strokePrimary, highlightColor: .backgroundAccent, symbolsColor: .textAccent)
+            content.changeGridTheme(backgroundColor: .backgroundTransparent, borderColor: .strokePrimary, highlightColor: .backgroundAccent, symbolsColor: .textPrimary)
         case .light:
             content.changeGridTheme(backgroundColor: .Static.white75, borderColor: .Static.white, highlightColor: .Static.white, symbolsColor: .Static.black)
         case .dark:

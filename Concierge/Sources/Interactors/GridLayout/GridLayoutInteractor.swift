@@ -8,7 +8,7 @@ class GridLayoutInteractor {
     
     public typealias Delegate = _GridLayoutDelegate
     
-    public var activeColor: GridTheme {
+    public var activeTheme: GridTheme {
         get {
             return settingsRepository.get(type: .gridColor)
         }

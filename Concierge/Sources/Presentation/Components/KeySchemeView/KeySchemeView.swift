@@ -28,6 +28,15 @@ class KeySchemeView: NSView, NibLoadable {
         }
     }
     
+    var rightButtonTextColor: NSColor? {
+        set {
+            changeButton.contentTintColor = newValue
+        }
+        get {
+            return changeButton.contentTintColor
+        }
+    }
+    
     var hotkeyBackgroundColor: NSColor = .gray
     
     var hotkeyTextColor: NSColor = .white

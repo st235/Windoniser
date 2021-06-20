@@ -46,11 +46,11 @@ final class SettingsGridLayoutDelegate: UiDelegate {
     
     @objc private func onAppearanceValueChanged() {
         let index = content.indexOfSelectedItem
-        gridLayoutInteractor.activeColor = self.apperanceList[index]
+        gridLayoutInteractor.activeTheme = self.apperanceList[index]
     }
     
     private func currentAppearance() -> Int {
-        let gridTheme: GridTheme = gridLayoutInteractor.activeColor
+        let gridTheme: GridTheme = gridLayoutInteractor.activeTheme
         return apperanceList.firstIndex(of: gridTheme)!
     }
     
