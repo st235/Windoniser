@@ -1207,7 +1207,7 @@
                             <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SS6-WF-okc">
                                 <rect key="frame" x="22" y="86" width="388" height="24"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectOne" id="5vF-n2-3rg">
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="system" size="14"/>
                                     <segments>
                                         <segment label="System" selected="YES"/>
                                         <segment label="Black" tag="1"/>

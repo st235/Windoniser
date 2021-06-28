@@ -57,9 +57,9 @@ class DesktopViewUiDelegate: UiDelegate {
         case .followSystem:
             content.changeGridTheme(backgroundColor: .backgroundTransparent, borderColor: .strokePrimary, highlightColor: .backgroundAccent, symbolsColor: .textPrimary)
         case .light:
-            content.changeGridTheme(backgroundColor: .Static.white75, borderColor: .Static.white, highlightColor: .Static.white, symbolsColor: .Static.black)
+            content.changeGridTheme(backgroundColor: .Static.white30, borderColor: .Static.white, highlightColor: .Static.grey, symbolsColor: .Static.black)
         case .dark:
-            content.changeGridTheme(backgroundColor: .Static.black75, borderColor: .Static.black, highlightColor: .Static.black, symbolsColor: .Static.white)
+            content.changeGridTheme(backgroundColor: .Static.grey40, borderColor: .Static.grey, highlightColor: .Static.white, symbolsColor: .Static.white)
         }
     }
     

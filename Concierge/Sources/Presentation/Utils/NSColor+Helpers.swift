@@ -19,9 +19,16 @@ extension NSColor.Name {
     
     class Static {
         static let white = "White"
+        static let white30 = "White30"
         static let white75 = "White75"
+        
         static let black = "Black"
         static let black75 = "Black75"
+        
+        static let darkGrey = "DarkGrey"
+        
+        static let grey = "Grey"
+        static let grey40 = "Grey40"
     }
 }
 
