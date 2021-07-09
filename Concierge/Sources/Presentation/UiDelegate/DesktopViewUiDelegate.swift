@@ -31,6 +31,11 @@ class DesktopViewUiDelegate: UiDelegate {
         gridLayoutInteractor.addDelegate(weak: self)
     }
     
+    func change(selectedSchema schema: LayoutSchema) {
+        content.clearPreviews()
+        content.addLayoutPreviews(layoutPreviews: schema.getLayoutPreviews(), layoutSeparators: schema.separators)
+    }
+    
     private func updateHeader() {
         header.stringValue = "content_descktop_view_title".localized
     }
@@ -48,8 +53,8 @@ class DesktopViewUiDelegate: UiDelegate {
     
     private func reloadActiveScheme() {
         content.clearPreviews()
-        let scheme = layoutSchemesInteractor.activeSchema
-        content.addLayoutPreviews(layoutPreviews: scheme.areas.map({ LayoutPreviewView.LayoutPreview(id: $0.activeKey.description, origin: $0.rect) }), layoutSeparators: scheme.separators)
+        let schema = layoutSchemesInteractor.activeSchema
+        content.addLayoutPreviews(layoutPreviews: schema.getLayoutPreviews(), layoutSeparators: schema.separators)
     }
     
     private func reloadGridTheme(activeTheme: GridTheme) {
@@ -61,6 +66,14 @@ class DesktopViewUiDelegate: UiDelegate {
         case .dark:
             content.changeGridTheme(backgroundColor: .Static.grey40, borderColor: .Static.grey, highlightColor: .Static.white, symbolsColor: .Static.white)
         }
+    }
+    
+}
+
+private extension LayoutSchema {
+    
+    func getLayoutPreviews() -> [LayoutPreviewView.LayoutPreview] {
+        return self.areas.map({ LayoutPreviewView.LayoutPreview(id: $0.activeKey.description, origin: $0.rect) })
     }
     
 }
