@@ -10,6 +10,8 @@ class TouchBarBuilder: NSObject, LayoutSchemesInteractor.Delegate, NSTouchBarDel
     private var activeSchema: LayoutSchema
     private var lastKnownUsedAreas: [NSTouchBarItem.Identifier:LayoutArea] = [:]
     
+    private var rootTouchButton: NSButton? = nil
+    
     init(layoutSchemesInteractor: LayoutSchemesInteractor,
          windowInteractor: WindowInteractor) {
         self.layoutSchemesInteractor = layoutSchemesInteractor
@@ -27,7 +29,9 @@ class TouchBarBuilder: NSObject, LayoutSchemesInteractor.Delegate, NSTouchBarDel
     
     func onActiveSchemeChanged(schemes: LayoutSchema) {
         self.activeSchema = self.layoutSchemesInteractor.activeSchema
-        rebuildAciveMenu()
+        
+        self.rootTouchButton?.image = LayoutSchemaRenderer.render(layoutSchema: self.activeSchema, highlightColor: .white)
+        self.rootTouchButton?.needsDisplay = true
     }
     
     func onSelectedSchemasChanged() {
@@ -63,7 +67,10 @@ class TouchBarBuilder: NSObject, LayoutSchemesInteractor.Delegate, NSTouchBarDel
         DFRSystemModalShowsCloseBoxWhenFrontMost(true)
 
         let rootItem = NSCustomTouchBarItem(identifier: TouchBarBuilder.rootIdentifier)
-        rootItem.view = NSButton(image: LayoutSchemaRenderer.render(layoutSchema: self.activeSchema, highlightColor: .white), target: self, action: #selector(onRootClicked(_:)))
+        let button = NSButton(image: LayoutSchemaRenderer.render(layoutSchema: self.activeSchema, highlightColor: .white), target: self, action: #selector(onRootClicked(_:)))
+        
+        rootItem.view = button
+        self.rootTouchButton = button
 
         NSTouchBarItem.addSystemTrayItem(rootItem)
         
