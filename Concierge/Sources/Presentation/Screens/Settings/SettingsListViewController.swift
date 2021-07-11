@@ -10,8 +10,7 @@ class SettingsListViewController: NavigatableViewController {
             SettingsLayoutsItem(),
             AppearanceSettingsItem(),
             AboutSettingsItem(),
-            SettingsPrivacyItem(),
-            SettingsTermsItem(),
+            BuyUsACoffeeItem(),
             QuitSettingsItem()
         ];
     
@@ -24,7 +23,7 @@ class SettingsListViewController: NavigatableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let defaultItemFrame = CGRect(x: 0, y: 0, width: self.menuStackView.frame.width, height: 62.0)
+        let defaultItemFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 62.0)
         
         for item in settingsItems {
             let view = item.createView(frame: defaultItemFrame)
@@ -34,6 +33,7 @@ class SettingsListViewController: NavigatableViewController {
                 }
                 item.handleClick(navigatable: navigatable)
             }
+            
             menuStackView.addArrangedSubview(view)
         }
     }

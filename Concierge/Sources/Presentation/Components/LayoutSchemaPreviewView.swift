@@ -13,9 +13,17 @@ class LayoutSchemaPreviewView: NSView {
     
     private var projectedSeparators: [LayoutSeparator] = []
     
+    private var highlightedArea: NSRect? = nil
+    
     private var roundRadius = CGFloat(3)
     
-    var highlightColor: NSColor = NSColor.white.withAlphaComponent(1.0) {
+    var strokeColor: NSColor = NSColor.white.withAlphaComponent(1.0) {
+        didSet {
+            needsDisplay = true
+        }
+    }
+    
+    var highlightColor: NSColor = NSColor.white.withAlphaComponent(0.5) {
         didSet {
             needsDisplay = true
         }
@@ -89,6 +97,18 @@ class LayoutSchemaPreviewView: NSView {
         needsDisplay = true
     }
     
+    func highlightArea(area: NSRect?) {
+        guard let area = area else {
+            self.highlightedArea = nil
+            needsDisplay = true
+            return
+        }
+        
+        self.highlightedArea = getRectProjection(rect: area)
+        
+        needsDisplay = true
+    }
+    
     func clear() {
         separators.removeAll()
         projectedSeparators.removeAll()
@@ -101,8 +121,14 @@ class LayoutSchemaPreviewView: NSView {
         let path = NSBezierPath.init(roundedRect: NSRect(x: projectionBounds.minX * bounds.width + bounds.minX, y: projectionBounds.minY * bounds.height + bounds.minX, width: projectionBounds.width * bounds.width, height: bounds.height * projectionBounds.height), xRadius: roundRadius, yRadius: roundRadius)
         
         path.lineWidth = borderWidth
-        highlightColor.setStroke()
+        strokeColor.setStroke()
         path.stroke()
+        
+        if let highlightedArea = self.highlightedArea {
+            highlightColor.set()
+            let area = NSBezierPath.init(roundedRect: highlightedArea, xRadius: roundRadius, yRadius: roundRadius)
+            area.fill()
+        }
         
         for separator in projectedSeparators {
             drawSeparator(separator: separator)
@@ -115,7 +141,7 @@ class LayoutSchemaPreviewView: NSView {
         path.line(to: separator.y)
         path.lineWidth = gridWidth
         
-        highlightColor.setStroke()
+        strokeColor.setStroke()
         path.stroke()
     }
     
@@ -124,6 +150,16 @@ class LayoutSchemaPreviewView: NSView {
                                             y: Float(separator.x.y * bounds.height * projectionBounds.height + bounds.height * projectionBounds.minY)),
                                finish: Point(x: Float(separator.y.x * bounds.width * projectionBounds.width + bounds.width * projectionBounds.minX),
                                              y: Float(separator.y.y * bounds.height * projectionBounds.height + bounds.height * projectionBounds.minY)))
+    }
+    
+    private func getRectProjection(rect: NSRect) -> NSRect {
+        let projectedWidth = rect.width * bounds.width * projectionBounds.width
+        let projectedHeight = rect.height * bounds.height * projectionBounds.height
+        
+        let projectedX = rect.minX * bounds.width * projectionBounds.width + bounds.width * projectionBounds.minX
+        let projectedY = rect.minY * bounds.height * projectionBounds.height + bounds.height * projectionBounds.minY
+        
+        return NSRect(x: projectedX, y: projectedY, width: projectedWidth, height: projectedHeight)
     }
 
 }

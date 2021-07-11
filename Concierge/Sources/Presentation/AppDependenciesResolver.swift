@@ -33,6 +33,11 @@ class AppDependenciesResolver: DependenciesResolver {
     }
     
     private func registerControllers() {
+        diContainer.register(forType: TouchBarBuilder.self, andQualifier: .singleton) { resolver in
+            return TouchBarBuilder(layoutSchemesInteractor: resolver.resolve(type: LayoutSchemesInteractor.self),
+                                   windowInteractor: resolver.resolve(type: WindowInteractor.self))
+        }
+        
         diContainer.register(forType: ViewControllerFactory.self, andQualifier: .factory) { _ in
             return ViewControllerFactory()
         }

@@ -12,7 +12,7 @@
             <objects>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Concierge" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Windoniser" customModuleProvider="target"/>
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
@@ -685,11 +685,11 @@
         <!--Content View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="LeftSideMenuViewController" id="XfG-lQ-9wD" customClass="ContentViewController" customModule="Concierge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LeftSideMenuViewController" id="XfG-lQ-9wD" customClass="ContentViewController" customModule="Windoniser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="400" height="424"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="2Ci-gG-4nd" customClass="DesktopLayoutView" customModule="Concierge" customModuleProvider="target">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="2Ci-gG-4nd" customClass="DesktopLayoutView" customModule="Windoniser" customModuleProvider="target">
                                 <rect key="frame" x="16" y="148" width="368" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2Ci-gG-4nd" secondAttribute="height" multiplier="16:10" id="4Eo-Rd-sjG"/>
@@ -759,7 +759,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="WindowTableCell" id="jgr-Eg-rTt" customClass="WindowTableCell" customModule="Concierge" customModuleProvider="target">
+                                                        <tableCellView identifier="WindowTableCell" id="jgr-Eg-rTt" customClass="WindowTableCell" customModule="Windoniser" customModuleProvider="target">
                                                             <rect key="frame" x="18" y="0.0" width="331" height="52"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -899,7 +899,7 @@
         <!--Main View Controller-->
         <scene sceneID="jgu-2Z-s6v">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="MuB-2c-o0J" customClass="MainViewController" customModule="Concierge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="MuB-2c-o0J" customClass="MainViewController" customModule="Windoniser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="XNB-FA-Tvs">
                         <rect key="frame" x="0.0" y="0.0" width="372" height="622"/>
                         <subviews>
@@ -925,7 +925,7 @@
         <!--Settings Main View Controller-->
         <scene sceneID="idy-VV-gxa">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="n0M-8c-GIJ" customClass="SettingsMainViewController" customModule="Concierge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="n0M-8c-GIJ" customClass="SettingsMainViewController" customModule="Windoniser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="tnq-gI-phI">
                         <rect key="frame" x="0.0" y="0.0" width="400" height="622"/>
                         <subviews>
@@ -993,7 +993,7 @@
         <!--Permissions View Controller-->
         <scene sceneID="S6x-zZ-V4z">
             <objects>
-                <viewController storyboardIdentifier="PermissionsViewController" id="7ln-2F-eGO" customClass="PermissionsViewController" customModule="Concierge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PermissionsViewController" id="7ln-2F-eGO" customClass="PermissionsViewController" customModule="Windoniser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="i6q-0X-QvT">
                         <rect key="frame" x="0.0" y="0.0" width="400" height="572"/>
                         <subviews>
@@ -1063,7 +1063,7 @@
         <!--Settings List View Controller-->
         <scene sceneID="LmE-Uz-4iI">
             <objects>
-                <viewController storyboardIdentifier="SettingsListViewController" id="Dem-vK-OK4" customClass="SettingsListViewController" customModule="Concierge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsListViewController" id="Dem-vK-OK4" customClass="SettingsListViewController" customModule="Windoniser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="yxl-Wo-doA">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="630"/>
                         <subviews>
@@ -1090,11 +1090,11 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="uVN-JL-2ea">
-                                    <rect key="frame" x="-100" y="-100" width="448" height="16"/>
+                                    <rect key="frame" x="-100" y="-100" width="450" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="OC9-eW-YK4">
-                                    <rect key="frame" x="-100" y="-100" width="16" height="628"/>
+                                    <rect key="frame" x="-100" y="-100" width="16" height="630"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -1117,12 +1117,12 @@
         <!--Settings General Controller-->
         <scene sceneID="WGR-pz-j4c">
             <objects>
-                <viewController storyboardIdentifier="SettingsGeneralController" id="Gmx-iE-uZ0" customClass="SettingsGeneralController" customModule="Concierge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsGeneralController" id="Gmx-iE-uZ0" customClass="SettingsGeneralController" customModule="Windoniser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="idz-iF-QsE">
                         <rect key="frame" x="0.0" y="0.0" width="357" height="628"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="zDL-gJ-N2W" customClass="KeySchemeView" customModule="Concierge" customModuleProvider="target">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="zDL-gJ-N2W" customClass="KeySchemeView" customModule="Windoniser" customModuleProvider="target">
                                 <rect key="frame" x="16" y="547" width="325" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="CFV-la-RdR"/>
@@ -1144,7 +1144,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="3x2-6H-113" customClass="SwitcherItemView" customModule="Concierge" customModuleProvider="target">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="3x2-6H-113" customClass="SwitcherItemView" customModule="Windoniser" customModuleProvider="target">
                                 <rect key="frame" x="16" y="442" width="325" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="dum-nJ-zeA"/>
@@ -1180,7 +1180,7 @@
         <!--Settings Appearance Controller-->
         <scene sceneID="6vB-lQ-QSn">
             <objects>
-                <viewController storyboardIdentifier="AppearanceController" id="6sg-Xy-Aep" customClass="SettingsAppearanceController" customModule="Concierge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AppearanceController" id="6sg-Xy-Aep" customClass="SettingsAppearanceController" customModule="Windoniser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="zG6-WK-7c1">
                         <rect key="frame" x="0.0" y="0.0" width="432" height="431"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1231,7 +1231,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="aPa-17-STf" customClass="DesktopLayoutView" customModule="Concierge" customModuleProvider="target">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="aPa-17-STf" customClass="DesktopLayoutView" customModule="Windoniser" customModuleProvider="target">
                                 <rect key="frame" x="24" y="150" width="384" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aPa-17-STf" secondAttribute="height" multiplier="16:10" id="7sr-u3-Nhn"/>
@@ -1276,7 +1276,7 @@
         <!--Settings About Controller-->
         <scene sceneID="peW-5a-UD1">
             <objects>
-                <viewController storyboardIdentifier="SettingsAboutController" id="ivI-3X-4Fg" customClass="SettingsAboutController" customModule="Concierge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsAboutController" id="ivI-3X-4Fg" customClass="SettingsAboutController" customModule="Windoniser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="on8-X7-QPC">
                         <rect key="frame" x="0.0" y="0.0" width="432" height="630"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1289,13 +1289,82 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bN0-G2-TiV">
+                                <rect key="frame" x="152" y="486" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="IZ5-yn-Ab0"/>
+                                    <constraint firstAttribute="height" constant="128" id="Ufm-h9-yhe"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="CZu-Mu-peF"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vnN-bS-2jf">
+                                <rect key="frame" x="190" y="446" width="53" height="24"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="5vn-Z8-1N5">
+                                    <font key="font" metaFont="systemMedium" size="20"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yyd-zN-B1e">
+                                <rect key="frame" x="195" y="419" width="42" height="19"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="d7e-aa-dxX">
+                                    <font key="font" metaFont="system" size="15"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="6bM-0Y-YpB">
+                                <rect key="frame" x="0.0" y="72" width="432" height="331"/>
+                                <clipView key="contentView" drawsBackground="NO" id="LCb-r2-cQ1">
+                                    <rect key="frame" x="0.0" y="0.0" width="432" height="331"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view id="NfB-lA-vt4">
+                                            <rect key="frame" x="0.0" y="0.0" width="417" height="316"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NYC-Ai-Tnz">
+                                                    <rect key="frame" x="0.0" y="316" width="417" height="0.0"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="NYC-Ai-Tnz" secondAttribute="trailing" id="eFx-dp-iUo"/>
+                                                <constraint firstItem="NYC-Ai-Tnz" firstAttribute="top" secondItem="NfB-lA-vt4" secondAttribute="top" id="hwS-Aq-1CP"/>
+                                                <constraint firstItem="NYC-Ai-Tnz" firstAttribute="leading" secondItem="NfB-lA-vt4" secondAttribute="leading" id="mfm-Q4-i81"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="hfa-0l-KXI">
+                                    <rect key="frame" x="-100" y="-100" width="432" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="RcG-kg-Fc1">
+                                    <rect key="frame" x="416" y="0.0" width="16" height="331"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="vnN-bS-2jf" firstAttribute="top" secondItem="bN0-G2-TiV" secondAttribute="bottom" constant="16" id="5yk-yG-4SW"/>
+                            <constraint firstItem="6bM-0Y-YpB" firstAttribute="top" secondItem="yyd-zN-B1e" secondAttribute="bottom" constant="16" id="DSE-B5-np7"/>
                             <constraint firstItem="gnZ-z0-QQA" firstAttribute="centerX" secondItem="on8-X7-QPC" secondAttribute="centerX" id="J8g-Fm-U1N"/>
+                            <constraint firstItem="6bM-0Y-YpB" firstAttribute="leading" secondItem="on8-X7-QPC" secondAttribute="leading" id="N0C-0m-fmB"/>
+                            <constraint firstItem="yyd-zN-B1e" firstAttribute="top" secondItem="vnN-bS-2jf" secondAttribute="bottom" constant="8" id="PAC-8u-oqI"/>
+                            <constraint firstItem="yyd-zN-B1e" firstAttribute="centerX" secondItem="on8-X7-QPC" secondAttribute="centerX" id="PCv-cD-8uN"/>
+                            <constraint firstItem="vnN-bS-2jf" firstAttribute="centerX" secondItem="on8-X7-QPC" secondAttribute="centerX" id="SsO-oc-eee"/>
+                            <constraint firstItem="gnZ-z0-QQA" firstAttribute="top" secondItem="6bM-0Y-YpB" secondAttribute="bottom" constant="32" id="jTy-Mg-EmE"/>
+                            <constraint firstItem="bN0-G2-TiV" firstAttribute="top" secondItem="on8-X7-QPC" secondAttribute="top" constant="16" id="swF-es-NGe"/>
+                            <constraint firstAttribute="trailing" secondItem="6bM-0Y-YpB" secondAttribute="trailing" id="v0L-af-uhe"/>
+                            <constraint firstItem="bN0-G2-TiV" firstAttribute="centerX" secondItem="on8-X7-QPC" secondAttribute="centerX" id="wRy-gC-mcg"/>
                             <constraint firstAttribute="bottom" secondItem="gnZ-z0-QQA" secondAttribute="bottom" constant="24" id="ziu-9Q-GJj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="aboutItemsListStackView" destination="NYC-Ai-Tnz" id="Vqq-aG-QU1"/>
+                        <outlet property="applicationDescription" destination="yyd-zN-B1e" id="DfP-wz-mSj"/>
+                        <outlet property="applicationTitle" destination="vnN-bS-2jf" id="Cfx-LL-9hq"/>
+                        <outlet property="iconView" destination="bN0-G2-TiV" id="CLD-LW-ll3"/>
                         <outlet property="versionHeader" destination="gnZ-z0-QQA" id="8ii-Di-Tv6"/>
                     </connections>
                 </viewController>
@@ -1306,7 +1375,7 @@
         <!--Settings Licenses Controller-->
         <scene sceneID="s3r-3t-qdA">
             <objects>
-                <viewController storyboardIdentifier="SettingsLicensesController" id="A7B-fj-WXO" customClass="SettingsLicensesController" customModule="Concierge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsLicensesController" id="A7B-fj-WXO" customClass="SettingsLicensesController" customModule="Windoniser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="QXN-D1-rRe">
                         <rect key="frame" x="0.0" y="0.0" width="432" height="630"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1337,7 +1406,7 @@
         <!--Settings Layout Controller-->
         <scene sceneID="7zi-nG-ivk">
             <objects>
-                <viewController storyboardIdentifier="SettingsLayoutsController" id="PKZ-ru-BAW" customClass="SettingsLayoutController" customModule="Concierge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsLayoutsController" id="PKZ-ru-BAW" customClass="SettingsLayoutController" customModule="Windoniser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="VN6-vf-E90">
                         <rect key="frame" x="0.0" y="0.0" width="432" height="630"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1350,7 +1419,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="2pE-QO-GhZ" customClass="DesktopLayoutView" customModule="Concierge" customModuleProvider="target">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="2pE-QO-GhZ" customClass="DesktopLayoutView" customModule="Windoniser" customModuleProvider="target">
                                 <rect key="frame" x="24" y="349" width="384" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2pE-QO-GhZ" secondAttribute="height" multiplier="16:10" id="PjY-KT-rkW"/>

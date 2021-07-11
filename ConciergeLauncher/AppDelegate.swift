@@ -17,7 +17,7 @@ extension AppDelegate: NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
-        let mainAppIdentifier = "st235.com.github.Concierge"
+        let mainAppIdentifier = "st235.com.github.windoniser"
         let runningApps = NSWorkspace.shared.runningApplications
         let isRunning = !runningApps.filter { $0.bundleIdentifier == mainAppIdentifier }.isEmpty
 

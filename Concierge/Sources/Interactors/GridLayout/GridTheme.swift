@@ -1,7 +1,7 @@
 import Foundation
 
 enum GridTheme: Int {
-    case dark = 0
-    case light = 1
-    case followSystem = 2
+    case followSystem = 0
+    case dark = 1
+    case light = 2
 }

@@ -11,8 +11,10 @@
 "settings_item_layouts" = "Layouts";
 "settings_item_appearance" = "Appearance";
 "settings_item_about" = "About";
+"settings_item_buy_us_a_coffee" = "Buy us a coffee";
 "settings_item_privacy" = "Privacy Policy";
 "settings_item_terms_and_conditions" = "Terms and Conditions";
+"settings_item_drop_us_a_line" = "Drop us a line";
 "settings_item_quit" = "Quit";
 
 "settings_layout_selected_grids_title" = "Favorite layouts:";
@@ -31,6 +33,7 @@
 "settings_general_auto_login_title" = "Auto-start";
 "settings_general_auto_login_content" = "Run application on system startup";
 
+"settings_about_motto" = "A wise way to organise your windows on Mac";
 "settings_about_version_header" = "Version:";
 "settings_about_version_no_version" = "Version: unknown";
 

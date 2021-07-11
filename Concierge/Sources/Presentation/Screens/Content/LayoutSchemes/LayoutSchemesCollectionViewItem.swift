@@ -25,12 +25,12 @@ class LayoutSchemesCollectionViewItem: NSCollectionViewItem {
     }
     
     func select() {
-        layoutSchemaPreviewView.highlightColor = NSColor.from(name: .Dynamic.iconAccent)
+        layoutSchemaPreviewView.strokeColor = NSColor.from(name: .Dynamic.iconAccent)
         rootView.backgroundColor = NSColor.from(name: .backgroundAccent)
     }
     
     func deselect() {
-        layoutSchemaPreviewView.highlightColor = NSColor.from(name: .iconPrimary)
+        layoutSchemaPreviewView.strokeColor = NSColor.from(name: .iconPrimary)
         rootView.backgroundColor = NSColor.from(name: .backgroundPrimary)
     }
     

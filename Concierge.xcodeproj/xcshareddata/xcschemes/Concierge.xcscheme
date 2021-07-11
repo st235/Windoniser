@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CFACE46F25A1CFCF00EE31F5"
-               BuildableName = "Concierge.app"
-               BlueprintName = "Concierge"
+               BuildableName = "Windoniser.app"
+               BlueprintName = "Windoniser"
                ReferencedContainer = "container:Concierge.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CFACE46F25A1CFCF00EE31F5"
-            BuildableName = "Concierge.app"
-            BlueprintName = "Concierge"
+            BuildableName = "Windoniser.app"
+            BlueprintName = "Windoniser"
             ReferencedContainer = "container:Concierge.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CFACE46F25A1CFCF00EE31F5"
-            BuildableName = "Concierge.app"
-            BlueprintName = "Concierge"
+            BuildableName = "Windoniser.app"
+            BlueprintName = "Windoniser"
             ReferencedContainer = "container:Concierge.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

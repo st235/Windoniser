@@ -46,9 +46,14 @@
 		CF5E416E25AA3296001DEC28 /* SettingsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E416D25AA3296001DEC28 /* SettingsMainViewController.swift */; };
 		CF5E418625AA4476001DEC28 /* LayoutSchemesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E418525AA4476001DEC28 /* LayoutSchemesInteractor.swift */; };
 		CF5F4EA625FE486D0090A3A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F4EA525FE486D0090A3A7 /* MainViewController.swift */; };
+		CF642FB7269B483F00997FC7 /* BuyUsACoffeeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF642FB6269B483F00997FC7 /* BuyUsACoffeeItem.swift */; };
+		CF642FB9269B58AB00997FC7 /* ContactUsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF642FB8269B58AB00997FC7 /* ContactUsItem.swift */; };
+		CF642FC1269B665200997FC7 /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF642FC0269B665200997FC7 /* DFRFoundation.framework */; };
+		CF642FC7269B687100997FC7 /* TouchBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF642FC6269B687100997FC7 /* TouchBarBuilder.swift */; };
+		CF642FC9269B79DC00997FC7 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF642FC8269B79DC00997FC7 /* ActionButton.swift */; };
 		CF69959025D6E6F000A52715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF69958F25D6E6F000A52715 /* Assets.xcassets */; };
 		CF69959325D6E6F000A52715 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF69959125D6E6F000A52715 /* MainMenu.xib */; };
-		CF6995A025D6E80900A52715 /* ConciergeLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF69958A25D6E6EF00A52715 /* ConciergeLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CF6995A025D6E80900A52715 /* WindoniserLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF69958A25D6E6EF00A52715 /* WindoniserLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CF6995A725D6EA3A00A52715 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6995A625D6EA3A00A52715 /* SettingsRepository.swift */; };
 		CF6995AB25D6EB5A00A52715 /* SettingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6995AA25D6EB5A00A52715 /* SettingType.swift */; };
 		CF6995AF25D6EC2F00A52715 /* SettingProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6995AE25D6EC2F00A52715 /* SettingProperty.swift */; };
@@ -141,7 +146,7 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				CF6995A025D6E80900A52715 /* ConciergeLauncher.app in CopyFiles */,
+				CF6995A025D6E80900A52715 /* WindoniserLauncher.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,7 +191,13 @@
 		CF5E416D25AA3296001DEC28 /* SettingsMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMainViewController.swift; sourceTree = "<group>"; };
 		CF5E418525AA4476001DEC28 /* LayoutSchemesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSchemesInteractor.swift; sourceTree = "<group>"; };
 		CF5F4EA525FE486D0090A3A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		CF69958A25D6E6EF00A52715 /* ConciergeLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConciergeLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF642FB6269B483F00997FC7 /* BuyUsACoffeeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyUsACoffeeItem.swift; sourceTree = "<group>"; };
+		CF642FB8269B58AB00997FC7 /* ContactUsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsItem.swift; sourceTree = "<group>"; };
+		CF642FC0269B665200997FC7 /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
+		CF642FC5269B678B00997FC7 /* TouchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchBar.h; sourceTree = "<group>"; };
+		CF642FC6269B687100997FC7 /* TouchBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarBuilder.swift; sourceTree = "<group>"; };
+		CF642FC8269B79DC00997FC7 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		CF69958A25D6E6EF00A52715 /* WindoniserLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WindoniserLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF69958F25D6E6F000A52715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF69959225D6E6F000A52715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		CF69959425D6E6F000A52715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -231,7 +242,7 @@
 		CFA95AB4267BFD2600478576 /* SwitcherItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitcherItemView.xib; sourceTree = "<group>"; };
 		CFA95AB6267BFF8600478576 /* SettingsAutoLoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAutoLoginDelegate.swift; sourceTree = "<group>"; };
 		CFA95AB8267BFFF800478576 /* AutoLoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginInteractor.swift; sourceTree = "<group>"; };
-		CFACE47025A1CFCF00EE31F5 /* Concierge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concierge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFACE47025A1CFCF00EE31F5 /* Windoniser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Windoniser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFACE47325A1CFCF00EE31F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFACE47725A1CFD000EE31F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFACE47A25A1CFD000EE31F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainFlow.storyboard; sourceTree = "<group>"; };
@@ -295,6 +306,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF642FC1269B665200997FC7 /* DFRFoundation.framework in Frameworks */,
 				CFC11462267F5F7700C61FBF /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +475,15 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		CF642FC4269B671900997FC7 /* TouchBar */ = {
+			isa = PBXGroup;
+			children = (
+				CF642FC5269B678B00997FC7 /* TouchBar.h */,
+				CF642FC6269B687100997FC7 /* TouchBarBuilder.swift */,
+			);
+			path = TouchBar;
+			sourceTree = "<group>";
+		};
 		CF69958B25D6E6EF00A52715 /* ConciergeLauncher */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,6 +532,7 @@
 		CF821E7325A21881002B5F1D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CF642FC4269B671900997FC7 /* TouchBar */,
 				CFA95AB1267BFD0300478576 /* SwitcherItemView */,
 				CF869E6E267A9173005F2733 /* KeySchemeView */,
 				CF8DBC08261B13830031B972 /* SettingsItemView */,
@@ -520,6 +542,7 @@
 				CF2E760A2676BF5C00F198A8 /* LayoutSchemaPreviewView.swift */,
 				CF8AE977267BEC2600020D2B /* NSView+NSImage.swift */,
 				CFC11453267E598200C61FBF /* CustomBackgroundView.swift */,
+				CF642FC8269B79DC00997FC7 /* ActionButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -614,8 +637,8 @@
 		CFACE47125A1CFCF00EE31F5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CFACE47025A1CFCF00EE31F5 /* Concierge.app */,
-				CF69958A25D6E6EF00A52715 /* ConciergeLauncher.app */,
+				CFACE47025A1CFCF00EE31F5 /* Windoniser.app */,
+				CF69958A25D6E6EF00A52715 /* WindoniserLauncher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -665,6 +688,7 @@
 		CFC1145F267F5F7400C61FBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF642FC0269B665200997FC7 /* DFRFoundation.framework */,
 				CFC11460267F5F7400C61FBF /* ServiceManagement.framework */,
 			);
 			name = Frameworks;
@@ -774,6 +798,8 @@
 				CF2E75FF2676831E00F198A8 /* SettingsPrivacyItem.swift */,
 				CF2E7608267688F900F198A8 /* SettingsTermsItem.swift */,
 				CFA3B8C6267806DA0070F07C /* SettingsLayoutsItem.swift */,
+				CF642FB6269B483F00997FC7 /* BuyUsACoffeeItem.swift */,
+				CF642FB8269B58AB00997FC7 /* ContactUsItem.swift */,
 			);
 			path = MenuItems;
 			sourceTree = "<group>";
@@ -811,9 +837,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CF69958925D6E6EF00A52715 /* ConciergeLauncher */ = {
+		CF69958925D6E6EF00A52715 /* WindoniserLauncher */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF69959825D6E6F000A52715 /* Build configuration list for PBXNativeTarget "ConciergeLauncher" */;
+			buildConfigurationList = CF69959825D6E6F000A52715 /* Build configuration list for PBXNativeTarget "WindoniserLauncher" */;
 			buildPhases = (
 				CF69958625D6E6EF00A52715 /* Sources */,
 				CF69958725D6E6EF00A52715 /* Frameworks */,
@@ -823,14 +849,14 @@
 			);
 			dependencies = (
 			);
-			name = ConciergeLauncher;
+			name = WindoniserLauncher;
 			productName = ConciergeLauncher;
-			productReference = CF69958A25D6E6EF00A52715 /* ConciergeLauncher.app */;
+			productReference = CF69958A25D6E6EF00A52715 /* WindoniserLauncher.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CFACE46F25A1CFCF00EE31F5 /* Concierge */ = {
+		CFACE46F25A1CFCF00EE31F5 /* Windoniser */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CFACE48025A1CFD000EE31F5 /* Build configuration list for PBXNativeTarget "Concierge" */;
+			buildConfigurationList = CFACE48025A1CFD000EE31F5 /* Build configuration list for PBXNativeTarget "Windoniser" */;
 			buildPhases = (
 				CFACE46C25A1CFCF00EE31F5 /* Sources */,
 				CFACE46D25A1CFCF00EE31F5 /* Frameworks */,
@@ -841,9 +867,9 @@
 			);
 			dependencies = (
 			);
-			name = Concierge;
+			name = Windoniser;
 			productName = Concierge;
-			productReference = CFACE47025A1CFCF00EE31F5 /* Concierge.app */;
+			productReference = CFACE47025A1CFCF00EE31F5 /* Windoniser.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -879,8 +905,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CFACE46F25A1CFCF00EE31F5 /* Concierge */,
-				CF69958925D6E6EF00A52715 /* ConciergeLauncher */,
+				CFACE46F25A1CFCF00EE31F5 /* Windoniser */,
+				CF69958925D6E6EF00A52715 /* WindoniserLauncher */,
 			);
 		};
 /* End PBXProject section */
@@ -984,12 +1010,15 @@
 				CFACE48825A1D4C400EE31F5 /* LayoutPreviewView.swift in Sources */,
 				CF870F64267410690089512B /* SettingsAppearanceDelegate.swift in Sources */,
 				CFF12039261B99580092103D /* SettingsGeneralController.swift in Sources */,
+				CF642FC9269B79DC00997FC7 /* ActionButton.swift in Sources */,
 				CF4826DF25A39F8B00068927 /* HotKeyController.swift in Sources */,
+				CF642FB7269B483F00997FC7 /* BuyUsACoffeeItem.swift in Sources */,
 				CF00C64C25A799F0003454E6 /* DependenciesResolver.swift in Sources */,
 				CF9B2E2F25D5C62E0087D32B /* ImageCache.swift in Sources */,
 				CFA95AB3267BFD1500478576 /* SwitcherItemView.swift in Sources */,
 				CFD89EE62675626000DF304A /* GridTheme.swift in Sources */,
 				CF4826DC25A39DD400068927 /* Key.swift in Sources */,
+				CF642FC7269B687100997FC7 /* TouchBarBuilder.swift in Sources */,
 				CF8DBC10261B13D20031B972 /* SettingsItemView.swift in Sources */,
 				CF3C6AB625A4F4C9007A52F8 /* WindowRepository.swift in Sources */,
 				CFD89EEA26756BEB00DF304A /* SettingsLayoutSelectionDelegate.swift in Sources */,
@@ -1003,6 +1032,7 @@
 				CF00C63D25A791EF003454E6 /* AppDependenciesResolver.swift in Sources */,
 				CFC11458267E5EE300C61FBF /* ImageContrastor.swift in Sources */,
 				CF93698F267556DF001CE96A /* UiDelegate.swift in Sources */,
+				CF642FB9269B58AB00997FC7 /* ContactUsItem.swift in Sources */,
 				CF00C65825A7AD93003454E6 /* LayoutArea.swift in Sources */,
 				CFC2108425D3373600726D8C /* PermissionsViewController.swift in Sources */,
 				CFBBB89D261B85210026B7C0 /* SettingsItem.swift in Sources */,
@@ -1250,6 +1280,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = 275D4J3Y5L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Concierge/Resources/Info.plist;
@@ -1257,11 +1288,16 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = st235.com.github.Concierge;
+				MARKETING_VERSION = 0.9.2;
+				PRODUCT_BUNDLE_IDENTIFIER = st235.com.github.windoniser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Concierge/Sources/Concierge-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 			};
 			name = Debug;
 		};
@@ -1276,6 +1312,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = 275D4J3Y5L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Concierge/Resources/Info.plist;
@@ -1283,17 +1320,22 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = st235.com.github.Concierge;
+				MARKETING_VERSION = 0.9.2;
+				PRODUCT_BUNDLE_IDENTIFIER = st235.com.github.windoniser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Concierge/Sources/Concierge-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CF69959825D6E6F000A52715 /* Build configuration list for PBXNativeTarget "ConciergeLauncher" */ = {
+		CF69959825D6E6F000A52715 /* Build configuration list for PBXNativeTarget "WindoniserLauncher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF69959925D6E6F000A52715 /* Debug */,
@@ -1311,7 +1353,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CFACE48025A1CFD000EE31F5 /* Build configuration list for PBXNativeTarget "Concierge" */ = {
+		CFACE48025A1CFD000EE31F5 /* Build configuration list for PBXNativeTarget "Windoniser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CFACE48125A1CFD000EE31F5 /* Debug */,
