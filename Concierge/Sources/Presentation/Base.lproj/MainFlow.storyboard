@@ -696,13 +696,13 @@
                                 </constraints>
                             </customView>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" findBarPosition="belowContent" translatesAutoresizingMaskIntoConstraints="NO" id="oQL-Ro-vaR">
-                                <rect key="frame" x="16" y="100" width="368" height="36"/>
+                                <rect key="frame" x="0.0" y="100" width="400" height="36"/>
                                 <clipView key="contentView" id="Pdw-1a-0nF">
-                                    <rect key="frame" x="0.0" y="0.0" width="368" height="36"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="36"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView selectable="YES" id="23a-08-9wW">
-                                            <rect key="frame" x="0.0" y="0.0" width="368" height="36"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="36"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" scrollDirection="horizontal" id="Vd9-OK-qzC">
                                                 <size key="itemSize" width="36" height="36"/>
@@ -715,7 +715,7 @@
                                     <constraint firstAttribute="height" constant="36" id="nO4-g0-dYp"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="V6N-ag-Hq4">
-                                    <rect key="frame" x="-100" y="-100" width="233" height="15"/>
+                                    <rect key="frame" x="16" y="20" width="368" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="w1O-wl-cjo">
@@ -862,7 +862,7 @@
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="oQL-Ro-vaR" secondAttribute="trailing" constant="16" id="31D-PW-u4y"/>
+                            <constraint firstAttribute="trailing" secondItem="oQL-Ro-vaR" secondAttribute="trailing" id="31D-PW-u4y"/>
                             <constraint firstAttribute="trailing" secondItem="TlZ-wM-Tkb" secondAttribute="trailing" constant="16" id="4GX-Le-52N"/>
                             <constraint firstItem="2Ci-gG-4nd" firstAttribute="top" secondItem="Ftw-7I-1Vo" secondAttribute="bottom" constant="8" id="5G9-Ps-Tfi"/>
                             <constraint firstItem="oQL-Ro-vaR" firstAttribute="top" secondItem="2Ci-gG-4nd" secondAttribute="bottom" constant="12" id="7qQ-3U-ZLX"/>
@@ -874,7 +874,7 @@
                             <constraint firstItem="TlZ-wM-Tkb" firstAttribute="top" secondItem="23a-08-9wW" secondAttribute="bottom" constant="24" id="LJX-47-4sf"/>
                             <constraint firstItem="Fdi-xB-5eZ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="16" id="Lu8-pC-gcQ"/>
                             <constraint firstItem="2Ci-gG-4nd" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="16" id="WWO-Hj-8S4"/>
-                            <constraint firstItem="oQL-Ro-vaR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="16" id="ZAL-Ob-Zee"/>
+                            <constraint firstItem="oQL-Ro-vaR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="ZAL-Ob-Zee"/>
                             <constraint firstItem="TlZ-wM-Tkb" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="18" id="i5A-52-jH6"/>
                             <constraint firstAttribute="bottom" secondItem="Fdi-xB-5eZ" secondAttribute="bottom" id="kbK-vo-xgE"/>
                             <constraint firstAttribute="trailing" secondItem="Fdi-xB-5eZ" secondAttribute="trailing" constant="16" id="nZF-hw-7Kv"/>
@@ -1286,9 +1286,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="432" height="630"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gnZ-z0-QQA" userLabel="Verion title">
-                                <rect key="frame" x="198" y="24" width="37" height="16"/>
+                                <rect key="frame" x="198" y="16" width="37" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="sX0-Nq-YLB">
-                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -1318,13 +1318,13 @@
                                 </textFieldCell>
                             </textField>
                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="6bM-0Y-YpB">
-                                <rect key="frame" x="0.0" y="72" width="432" height="331"/>
+                                <rect key="frame" x="0.0" y="48" width="432" height="355"/>
                                 <clipView key="contentView" drawsBackground="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCb-r2-cQ1" customClass="FlippedClipView" customModule="Windoniser" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="432" height="331"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="432" height="355"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view translatesAutoresizingMaskIntoConstraints="NO" id="NfB-lA-vt4">
-                                            <rect key="frame" x="0.0" y="331" width="432" height="0.0"/>
+                                            <rect key="frame" x="0.0" y="355" width="432" height="0.0"/>
                                             <subviews>
                                                 <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NYC-Ai-Tnz">
                                                     <rect key="frame" x="0.0" y="0.0" width="432" height="0.0"/>
@@ -1349,7 +1349,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="RcG-kg-Fc1">
-                                    <rect key="frame" x="416" y="0.0" width="16" height="331"/>
+                                    <rect key="frame" x="416" y="0.0" width="16" height="355"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -1362,11 +1362,11 @@
                             <constraint firstItem="yyd-zN-B1e" firstAttribute="top" secondItem="vnN-bS-2jf" secondAttribute="bottom" constant="8" id="PAC-8u-oqI"/>
                             <constraint firstItem="yyd-zN-B1e" firstAttribute="centerX" secondItem="on8-X7-QPC" secondAttribute="centerX" id="PCv-cD-8uN"/>
                             <constraint firstItem="vnN-bS-2jf" firstAttribute="centerX" secondItem="on8-X7-QPC" secondAttribute="centerX" id="SsO-oc-eee"/>
-                            <constraint firstItem="gnZ-z0-QQA" firstAttribute="top" secondItem="6bM-0Y-YpB" secondAttribute="bottom" constant="32" id="jTy-Mg-EmE"/>
+                            <constraint firstItem="gnZ-z0-QQA" firstAttribute="top" secondItem="6bM-0Y-YpB" secondAttribute="bottom" constant="16" id="jTy-Mg-EmE"/>
                             <constraint firstItem="bN0-G2-TiV" firstAttribute="top" secondItem="on8-X7-QPC" secondAttribute="top" constant="16" id="swF-es-NGe"/>
                             <constraint firstAttribute="trailing" secondItem="6bM-0Y-YpB" secondAttribute="trailing" id="v0L-af-uhe"/>
                             <constraint firstItem="bN0-G2-TiV" firstAttribute="centerX" secondItem="on8-X7-QPC" secondAttribute="centerX" id="wRy-gC-mcg"/>
-                            <constraint firstAttribute="bottom" secondItem="gnZ-z0-QQA" secondAttribute="bottom" constant="24" id="ziu-9Q-GJj"/>
+                            <constraint firstAttribute="bottom" secondItem="gnZ-z0-QQA" secondAttribute="bottom" constant="16" id="ziu-9Q-GJj"/>
                         </constraints>
                     </view>
                     <connections>
