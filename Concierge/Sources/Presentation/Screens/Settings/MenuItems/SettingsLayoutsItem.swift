@@ -2,8 +2,8 @@ import Foundation
 
 class SettingsLayoutsItem: SettingsItem {
     
-    func createView(frame: CGRect) -> SettingsItemView {
-        let item = SettingsItemView(frame: frame)
+    func createView() -> SettingsItemView {
+        let item = SettingsItemView()
         
         item.isArrowShown = true
         item.icon = NSImage(systemSymbolName: "rectangle.3.offgrid", accessibilityDescription: nil)

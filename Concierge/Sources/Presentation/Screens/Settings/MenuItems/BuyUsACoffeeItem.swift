@@ -2,8 +2,8 @@ import Foundation
 
 class BuyUsACoffeeItem: SettingsItem {
     
-    func createView(frame: CGRect) -> SettingsItemView {
-        let item = SettingsItemView(frame: frame)
+    func createView() -> SettingsItemView {
+        let item = SettingsItemView()
         
         item.isArrowShown = false
         item.icon = NSImage(systemSymbolName: "app.gift", accessibilityDescription: nil)

@@ -15,6 +15,8 @@ class SettingsMainViewController: NSViewController, Navigatable {
     private var navigationDelegate: NavigationDelegate!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+
         navigationDelegate = NavigationDelegate(containerView: containerView, viewController: self, viewControllerFactory: viewControllerFactory)
         
         backButton.target = self

@@ -2,8 +2,8 @@ import Foundation
 
 class AboutSettingsItem: SettingsItem {
     
-    func createView(frame: CGRect) -> SettingsItemView {
-        let item = SettingsItemView(frame: frame)
+    func createView() -> SettingsItemView {
+        let item = SettingsItemView()
         
         item.isArrowShown = true
         item.icon = NSImage(systemSymbolName: "info.circle", accessibilityDescription: nil)

@@ -12,6 +12,7 @@ class SettingsAboutController: NavigatableViewController {
         [
             SettingsPrivacyItem(),
             SettingsTermsItem(),
+            CheckForUpdateItem(),
             ContactUsItem(),
         ];
     
@@ -24,18 +25,22 @@ class SettingsAboutController: NavigatableViewController {
     override func viewDidLoad() {
         updateStaticViews()
         
-        let defaultItemFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 62.0)
-        
         for item in settingsItems {
-            let view = item.createView(frame: defaultItemFrame)
-            view.clickHandler = { [weak self] in
+            let itemView = item.createView()
+            itemView.translatesAutoresizingMaskIntoConstraints = false
+            
+            itemView.clickHandler = { [weak self] in
                 guard let navigatable = self?.parent as? Navigatable else {
                     return
                 }
                 item.handleClick(navigatable: navigatable)
             }
             
-            aboutItemsListStackView.addArrangedSubview(view)
+            aboutItemsListStackView.addArrangedSubview(itemView)
+
+            itemView.heightAnchor.constraint(equalToConstant: 62.0).isActive = true
+            itemView.leadingAnchor.constraint(equalTo: aboutItemsListStackView.leadingAnchor, constant: 0).isActive = true
+            itemView.trailingAnchor.constraint(equalTo: aboutItemsListStackView.trailingAnchor, constant: 0).isActive = true
         }
     }
     

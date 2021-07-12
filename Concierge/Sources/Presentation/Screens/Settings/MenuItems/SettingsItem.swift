@@ -2,7 +2,7 @@ import Foundation
 
 protocol SettingsItem {
     
-    func createView(frame: CGRect) -> SettingsItemView
+    func createView() -> SettingsItemView
     
     func handleClick(navigatable: Navigatable)
     

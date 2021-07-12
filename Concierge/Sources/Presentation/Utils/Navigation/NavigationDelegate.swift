@@ -25,8 +25,15 @@ class NavigationDelegate: Navigatable {
         (controller as? NavigatableViewController)?.bundle = bundle
         
         self.viewController.addChild(controller)
-        controller.view.frame = self.containerView.bounds
         self.containerView.addSubview(controller.view)
+        
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
+        
+        controller.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 0).isActive = true
+        controller.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 0).isActive = true
+        controller.view.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0).isActive = true
+        controller.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 0).isActive = true
+        
         callStack.append(controller)
     }
     

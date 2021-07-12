@@ -1,19 +1,19 @@
 import Foundation
 
-class ContactUsItem: SettingsItem {
+class CheckForUpdateItem: SettingsItem {
     
     func createView() -> SettingsItemView {
         let item = SettingsItemView()
         
         item.isArrowShown = false
-        item.icon = NSImage(systemSymbolName: "envelope", accessibilityDescription: nil)
-        item.text = "settings_item_drop_us_a_line".localized
+        item.icon = NSImage(systemSymbolName: "arrow.triangle.2.circlepath.circle", accessibilityDescription: nil)
+        item.text = "settings_item_check_for_updates".localized
         
         return item
     }
     
     func handleClick(navigatable: Navigatable) {
-        guard let url = URL(string: "mailto:windoniser@wonderlab.tech") else {
+        guard let url = URL(string: "https://www.buymeacoffee.com/windoniser") else {
             return
         }
         

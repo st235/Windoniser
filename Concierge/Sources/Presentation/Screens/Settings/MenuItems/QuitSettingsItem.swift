@@ -2,8 +2,8 @@ import Foundation
 
 class QuitSettingsItem: SettingsItem {
     
-    func createView(frame: CGRect) -> SettingsItemView {
-        let item = SettingsItemView(frame: frame)
+    func createView() -> SettingsItemView {
+        let item = SettingsItemView()
         
         item.isArrowShown = false
         item.icon = nil

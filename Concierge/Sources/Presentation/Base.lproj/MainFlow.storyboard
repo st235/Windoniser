@@ -1064,36 +1064,41 @@
         <scene sceneID="LmE-Uz-4iI">
             <objects>
                 <viewController storyboardIdentifier="SettingsListViewController" id="Dem-vK-OK4" customClass="SettingsListViewController" customModule="Windoniser" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="yxl-Wo-doA">
+                    <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="yxl-Wo-doA" userLabel="RootView">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="630"/>
                         <subviews>
                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOg-4m-e3m">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="630"/>
-                                <clipView key="contentView" drawsBackground="NO" id="yPY-H1-fCy">
+                                <clipView key="contentView" drawsBackground="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPY-H1-fCy" customClass="FlippedClipView" customModule="Windoniser" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="450" height="630"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view id="tUT-Ke-Kz4">
-                                            <rect key="frame" x="0.0" y="0.0" width="435" height="615"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <view translatesAutoresizingMaskIntoConstraints="NO" id="tUT-Ke-Kz4">
+                                            <rect key="frame" x="0.0" y="630" width="450" height="0.0"/>
                                             <subviews>
                                                 <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qPQ-LZ-ubq">
-                                                    <rect key="frame" x="0.0" y="615" width="435" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="450" height="0.0"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="qPQ-LZ-ubq" secondAttribute="trailing" id="0LQ-ev-DbO"/>
-                                                <constraint firstItem="qPQ-LZ-ubq" firstAttribute="leading" secondItem="tUT-Ke-Kz4" secondAttribute="leading" id="bGO-QC-bwx"/>
-                                                <constraint firstItem="qPQ-LZ-ubq" firstAttribute="top" secondItem="tUT-Ke-Kz4" secondAttribute="top" id="kf2-HD-8zY"/>
+                                                <constraint firstAttribute="trailing" secondItem="qPQ-LZ-ubq" secondAttribute="trailing" id="HOF-XV-iev"/>
+                                                <constraint firstAttribute="bottom" secondItem="qPQ-LZ-ubq" secondAttribute="bottom" id="N1Q-kq-CMD"/>
+                                                <constraint firstItem="qPQ-LZ-ubq" firstAttribute="leading" secondItem="tUT-Ke-Kz4" secondAttribute="leading" id="erd-by-w1M"/>
+                                                <constraint firstItem="qPQ-LZ-ubq" firstAttribute="top" secondItem="tUT-Ke-Kz4" secondAttribute="top" id="mqe-Tk-hLz"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="uVN-JL-2ea">
+                                <constraints>
+                                    <constraint firstItem="tUT-Ke-Kz4" firstAttribute="top" secondItem="iOg-4m-e3m" secondAttribute="top" id="lWY-ZO-h3D"/>
+                                    <constraint firstAttribute="trailing" secondItem="tUT-Ke-Kz4" secondAttribute="trailing" id="o8Q-YE-NRi"/>
+                                    <constraint firstItem="tUT-Ke-Kz4" firstAttribute="leading" secondItem="iOg-4m-e3m" secondAttribute="leading" id="tsx-MQ-fN9"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uVN-JL-2ea">
                                     <rect key="frame" x="-100" y="-100" width="450" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="OC9-eW-YK4">
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OC9-eW-YK4">
                                     <rect key="frame" x="-100" y="-100" width="16" height="630"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1277,9 +1282,8 @@
         <scene sceneID="peW-5a-UD1">
             <objects>
                 <viewController storyboardIdentifier="SettingsAboutController" id="ivI-3X-4Fg" customClass="SettingsAboutController" customModule="Windoniser" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="on8-X7-QPC">
+                    <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="on8-X7-QPC">
                         <rect key="frame" x="0.0" y="0.0" width="432" height="630"/>
-                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gnZ-z0-QQA" userLabel="Verion title">
                                 <rect key="frame" x="198" y="24" width="37" height="16"/>
@@ -1315,19 +1319,19 @@
                             </textField>
                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="6bM-0Y-YpB">
                                 <rect key="frame" x="0.0" y="72" width="432" height="331"/>
-                                <clipView key="contentView" drawsBackground="NO" id="LCb-r2-cQ1">
+                                <clipView key="contentView" drawsBackground="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCb-r2-cQ1" customClass="FlippedClipView" customModule="Windoniser" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="432" height="331"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view id="NfB-lA-vt4">
-                                            <rect key="frame" x="0.0" y="0.0" width="417" height="316"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <view translatesAutoresizingMaskIntoConstraints="NO" id="NfB-lA-vt4">
+                                            <rect key="frame" x="0.0" y="331" width="432" height="0.0"/>
                                             <subviews>
                                                 <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NYC-Ai-Tnz">
-                                                    <rect key="frame" x="0.0" y="316" width="417" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="432" height="0.0"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="NYC-Ai-Tnz" secondAttribute="bottom" id="IVc-X5-1jR"/>
                                                 <constraint firstAttribute="trailing" secondItem="NYC-Ai-Tnz" secondAttribute="trailing" id="eFx-dp-iUo"/>
                                                 <constraint firstItem="NYC-Ai-Tnz" firstAttribute="top" secondItem="NfB-lA-vt4" secondAttribute="top" id="hwS-Aq-1CP"/>
                                                 <constraint firstItem="NYC-Ai-Tnz" firstAttribute="leading" secondItem="NfB-lA-vt4" secondAttribute="leading" id="mfm-Q4-i81"/>
@@ -1335,6 +1339,11 @@
                                         </view>
                                     </subviews>
                                 </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="NfB-lA-vt4" secondAttribute="trailing" id="2fl-3c-Cuh"/>
+                                    <constraint firstItem="NfB-lA-vt4" firstAttribute="leading" secondItem="6bM-0Y-YpB" secondAttribute="leading" id="2qD-mB-9yW"/>
+                                    <constraint firstItem="NfB-lA-vt4" firstAttribute="top" secondItem="6bM-0Y-YpB" secondAttribute="top" id="LXq-N9-nfm"/>
+                                </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="hfa-0l-KXI">
                                     <rect key="frame" x="-100" y="-100" width="432" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>

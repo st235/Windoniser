@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="SettingsItemView" customModule="Concierge" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="SettingsItemView" customModule="Windoniser" customModuleProvider="target">
             <connections>
                 <outlet property="arrowView" destination="Quj-s6-pEL" id="x1X-6v-WLZ"/>
                 <outlet property="contentView" destination="c22-O7-iKe" id="ogf-dW-Tz1"/>
@@ -53,7 +53,6 @@
             </subviews>
             <constraints>
                 <constraint firstItem="rH6-nv-Xfx" firstAttribute="leading" secondItem="NvE-mx-Lv9" secondAttribute="trailing" constant="12" id="4tg-PX-AGb"/>
-                <constraint firstAttribute="height" constant="62" id="9hN-nZ-9U5"/>
                 <constraint firstItem="NvE-mx-Lv9" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="32" id="EWc-UT-QNK"/>
                 <constraint firstItem="rH6-nv-Xfx" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="Ile-dM-rWI"/>
                 <constraint firstItem="Quj-s6-pEL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rH6-nv-Xfx" secondAttribute="trailing" constant="8" id="JOa-4f-FmP"/>

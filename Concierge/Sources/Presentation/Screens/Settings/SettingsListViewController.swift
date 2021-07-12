@@ -23,18 +23,22 @@ class SettingsListViewController: NavigatableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let defaultItemFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 62.0)
-        
         for item in settingsItems {
-            let view = item.createView(frame: defaultItemFrame)
-            view.clickHandler = { [weak self] in
+            let itemView = item.createView()
+            itemView.translatesAutoresizingMaskIntoConstraints = false
+            
+            itemView.clickHandler = { [weak self] in
                 guard let navigatable = self?.parent as? Navigatable else {
                     return
                 }
                 item.handleClick(navigatable: navigatable)
             }
             
-            menuStackView.addArrangedSubview(view)
+            menuStackView.addArrangedSubview(itemView)
+
+            itemView.heightAnchor.constraint(equalToConstant: 62.0).isActive = true
+            itemView.leadingAnchor.constraint(equalTo: menuStackView.leadingAnchor, constant: 0).isActive = true
+            itemView.trailingAnchor.constraint(equalTo: menuStackView.trailingAnchor, constant: 0).isActive = true
         }
     }
     
