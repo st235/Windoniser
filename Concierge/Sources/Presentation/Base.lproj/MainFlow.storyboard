@@ -1317,7 +1317,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="6bM-0Y-YpB">
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="6bM-0Y-YpB">
                                 <rect key="frame" x="0.0" y="48" width="432" height="355"/>
                                 <clipView key="contentView" drawsBackground="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCb-r2-cQ1" customClass="FlippedClipView" customModule="Windoniser" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="432" height="355"/>
@@ -1348,8 +1348,8 @@
                                     <rect key="frame" x="-100" y="-100" width="432" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="RcG-kg-Fc1">
-                                    <rect key="frame" x="416" y="0.0" width="16" height="355"/>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="RcG-kg-Fc1">
+                                    <rect key="frame" x="-100" y="-100" width="16" height="355"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
