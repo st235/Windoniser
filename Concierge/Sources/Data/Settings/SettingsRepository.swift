@@ -16,7 +16,8 @@ class SettingsRepository {
             AppearanceSetting(userDefaults: self.userDefaults),
             GridColorSetting(userDefaults: self.userDefaults),
             SelectedLayoutsSetting(userDefaults: self.userDefaults),
-            HotkeysSuffixSettings(userDefaults: self.userDefaults)
+            HotkeysSuffixSettings(userDefaults: self.userDefaults),
+            TouchBarSetting(userDefaults: self.userDefaults)
         ]
     }
     

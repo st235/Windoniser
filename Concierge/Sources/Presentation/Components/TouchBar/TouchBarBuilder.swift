@@ -6,6 +6,7 @@ class TouchBarBuilder: NSObject, LayoutSchemesInteractor.Delegate, NSTouchBarDel
     
     private let layoutSchemesInteractor: LayoutSchemesInteractor
     private let windowInteractor: WindowInteractor
+    private let touchBarInteractor: TouchBarInteractor
     
     private var activeSchema: LayoutSchema
     private var lastKnownUsedAreas: [NSTouchBarItem.Identifier:LayoutArea] = [:]
@@ -13,10 +14,12 @@ class TouchBarBuilder: NSObject, LayoutSchemesInteractor.Delegate, NSTouchBarDel
     private var rootTouchButton: NSButton? = nil
     
     init(layoutSchemesInteractor: LayoutSchemesInteractor,
-         windowInteractor: WindowInteractor) {
+         windowInteractor: WindowInteractor,
+         touchBarInteractor: TouchBarInteractor) {
         self.layoutSchemesInteractor = layoutSchemesInteractor
         self.activeSchema = self.layoutSchemesInteractor.activeSchema
         self.windowInteractor = windowInteractor
+        self.touchBarInteractor = touchBarInteractor
         
         super.init()
         
@@ -64,6 +67,10 @@ class TouchBarBuilder: NSObject, LayoutSchemesInteractor.Delegate, NSTouchBarDel
     }
     
     private func rebuildAciveMenu() {
+        if !touchBarInteractor.touchBarEnabled {
+            return
+        }
+        
         DFRSystemModalShowsCloseBoxWhenFrontMost(true)
 
         let rootItem = NSCustomTouchBarItem(identifier: TouchBarBuilder.rootIdentifier)

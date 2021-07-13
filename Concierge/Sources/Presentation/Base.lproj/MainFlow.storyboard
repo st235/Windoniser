@@ -741,7 +741,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="52" rowSizeStyle="automatic" headerView="FID-Jk-TN2" viewBased="YES" id="6fS-dh-SIC">
-                                            <rect key="frame" x="0.0" y="0.0" width="368" height="52"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="368" height="24"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="17" height="0.0"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1009,10 +1009,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZZN-pG-YVZ">
-                                        <rect key="frame" x="109" y="0.0" width="150" height="18"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="N6i-ei-ewT"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="368" height="18"/>
                                         <buttonCell key="cell" type="inline" title="Grant permissions" bezelStyle="inline" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ep9-KG-VCi">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="systemBold" size="14"/>
@@ -1142,7 +1139,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="whY-9n-m6T">
-                                <rect key="frame" x="14" y="498" width="329" height="17"/>
+                                <rect key="frame" x="14" y="506" width="329" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="4Gp-gn-nrx">
                                     <font key="font" metaFont="systemMedium" size="14"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1150,25 +1147,52 @@
                                 </textFieldCell>
                             </textField>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="3x2-6H-113" customClass="SwitcherItemView" customModule="Windoniser" customModuleProvider="target">
-                                <rect key="frame" x="16" y="442" width="325" height="56"/>
+                                <rect key="frame" x="16" y="450" width="325" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="dum-nJ-zeA"/>
                                 </constraints>
                             </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dpU-VI-dvC" userLabel="Touchbar Header">
+                                <rect key="frame" x="14" y="409" width="40" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="rEq-5L-EVo">
+                                    <font key="font" metaFont="systemMedium" size="14"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="FIe-Xg-whl" userLabel="Touchbar Content" customClass="SwitcherItemView" customModule="Windoniser" customModuleProvider="target">
+                                <rect key="frame" x="16" y="353" width="325" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="GLr-5u-4NC"/>
+                                </constraints>
+                            </customView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eg2-pg-ufU">
+                                <rect key="frame" x="60" y="406" width="15" height="23"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="questionmark.circle.fill" catalog="system" id="OQi-tt-l31"/>
+                            </imageView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="FIe-Xg-whl" firstAttribute="leading" secondItem="idz-iF-QsE" secondAttribute="leading" constant="16" id="0k3-hC-7FC"/>
+                            <constraint firstItem="eg2-pg-ufU" firstAttribute="top" secondItem="dpU-VI-dvC" secondAttribute="top" id="2aN-gD-EuO"/>
                             <constraint firstItem="Gka-im-j70" firstAttribute="leading" secondItem="idz-iF-QsE" secondAttribute="leading" constant="16" id="4uv-lF-o0X"/>
+                            <constraint firstItem="FIe-Xg-whl" firstAttribute="top" secondItem="dpU-VI-dvC" secondAttribute="bottom" id="AJ6-Vi-q8L"/>
                             <constraint firstAttribute="trailing" secondItem="whY-9n-m6T" secondAttribute="trailing" constant="16" id="GBX-Qt-Hxp"/>
                             <constraint firstItem="zDL-gJ-N2W" firstAttribute="top" secondItem="Gka-im-j70" secondAttribute="bottom" id="GiQ-FJ-epA"/>
+                            <constraint firstItem="dpU-VI-dvC" firstAttribute="top" secondItem="3x2-6H-113" secondAttribute="bottom" constant="24" id="HAz-4S-GUM"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eg2-pg-ufU" secondAttribute="trailing" constant="16" id="IhD-Wz-SRo"/>
                             <constraint firstItem="3x2-6H-113" firstAttribute="leading" secondItem="idz-iF-QsE" secondAttribute="leading" constant="16" id="Itp-Fu-7Nj"/>
                             <constraint firstItem="3x2-6H-113" firstAttribute="top" secondItem="whY-9n-m6T" secondAttribute="bottom" id="Jiu-An-7DL"/>
+                            <constraint firstItem="eg2-pg-ufU" firstAttribute="bottom" secondItem="dpU-VI-dvC" secondAttribute="bottom" id="M1K-dQ-WyL"/>
                             <constraint firstAttribute="trailing" secondItem="zDL-gJ-N2W" secondAttribute="trailing" constant="16" id="RFA-Pp-EHD"/>
-                            <constraint firstItem="whY-9n-m6T" firstAttribute="top" secondItem="zDL-gJ-N2W" secondAttribute="bottom" constant="32" id="Wxc-tq-FbY"/>
+                            <constraint firstItem="whY-9n-m6T" firstAttribute="top" secondItem="zDL-gJ-N2W" secondAttribute="bottom" constant="24" id="Wxc-tq-FbY"/>
                             <constraint firstAttribute="trailing" secondItem="Gka-im-j70" secondAttribute="trailing" constant="16" id="Xun-ag-Mfv"/>
                             <constraint firstItem="whY-9n-m6T" firstAttribute="leading" secondItem="idz-iF-QsE" secondAttribute="leading" constant="16" id="ZIk-aT-fs7"/>
+                            <constraint firstItem="dpU-VI-dvC" firstAttribute="leading" secondItem="idz-iF-QsE" secondAttribute="leading" constant="16" id="b9i-qb-IZs"/>
                             <constraint firstItem="Gka-im-j70" firstAttribute="top" secondItem="idz-iF-QsE" secondAttribute="top" constant="16" id="hy6-Nh-2pF"/>
                             <constraint firstItem="zDL-gJ-N2W" firstAttribute="leading" secondItem="idz-iF-QsE" secondAttribute="leading" constant="16" id="knm-9z-P2H"/>
                             <constraint firstAttribute="trailing" secondItem="3x2-6H-113" secondAttribute="trailing" constant="16" id="qRu-M7-1oc"/>
+                            <constraint firstItem="eg2-pg-ufU" firstAttribute="leading" secondItem="dpU-VI-dvC" secondAttribute="trailing" constant="8" id="uj5-Pw-CnP"/>
+                            <constraint firstAttribute="trailing" secondItem="FIe-Xg-whl" secondAttribute="trailing" constant="16" id="vCk-6F-UTj"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1176,6 +1200,9 @@
                         <outlet property="autologinHeader" destination="whY-9n-m6T" id="QAk-pG-TmE"/>
                         <outlet property="keySchemeLabel" destination="Gka-im-j70" id="LDR-EO-dQp"/>
                         <outlet property="keySchemeView" destination="zDL-gJ-N2W" id="grB-rL-Bdb"/>
+                        <outlet property="touchBarContent" destination="FIe-Xg-whl" id="jS8-fQ-8jM"/>
+                        <outlet property="touchBarHeader" destination="dpU-VI-dvC" id="Ksb-3T-vvG"/>
+                        <outlet property="touchBarHeaderTooltip" destination="eg2-pg-ufU" id="hzW-B4-vhW"/>
                     </connections>
                 </viewController>
                 <customObject id="hIP-iK-F8c" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1765,6 +1792,7 @@ O/U8AjwFPBI8FzwfPCI8JzwvAAAAAAAAAgEAAAAAAAAAaAAAAAAAAAAAAAAAAAAAPDI
         <image name="chevron.backward" catalog="system" width="10" height="14"/>
         <image name="circle.fill" catalog="system" width="15" height="15"/>
         <image name="gearshape" catalog="system" width="16" height="16"/>
+        <image name="questionmark.circle.fill" catalog="system" width="15" height="15"/>
         <namedColor name="IconPrimary">
             <color red="0.1289999932050705" green="0.1289999932050705" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

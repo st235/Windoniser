@@ -35,7 +35,8 @@ class AppDependenciesResolver: DependenciesResolver {
     private func registerControllers() {
         diContainer.register(forType: TouchBarBuilder.self, andQualifier: .singleton) { resolver in
             return TouchBarBuilder(layoutSchemesInteractor: resolver.resolve(type: LayoutSchemesInteractor.self),
-                                   windowInteractor: resolver.resolve(type: WindowInteractor.self))
+                                   windowInteractor: resolver.resolve(type: WindowInteractor.self),
+                                   touchBarInteractor: resolver.resolve(type: TouchBarInteractor.self))
         }
         
         diContainer.register(forType: ViewControllerFactory.self, andQualifier: .factory) { _ in
@@ -104,6 +105,10 @@ class AppDependenciesResolver: DependenciesResolver {
         
         diContainer.register(forType: AutoLoginInteractor.self, andQualifier: .singleton) { resolver in
             return AutoLoginInteractor(settingsRepository: resolver.resolve(type: SettingsRepository.self))
+        }
+        
+        diContainer.register(forType: TouchBarInteractor.self, andQualifier: .singleton) { resolver in
+            return TouchBarInteractor(settingsRepository: resolver.resolve(type: SettingsRepository.self))
         }
     }
     

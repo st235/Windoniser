@@ -137,6 +137,9 @@
 		CFE36932261B8783007DE6C7 /* QuitSettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE36931261B8783007DE6C7 /* QuitSettingsItem.swift */; };
 		CFE36939261B8E29007DE6C7 /* SettingsAppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE36938261B8E29007DE6C7 /* SettingsAppearanceController.swift */; };
 		CFF12039261B99580092103D /* SettingsGeneralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF12038261B99580092103D /* SettingsGeneralController.swift */; };
+		CFFBC367269D790200189A26 /* TouchBarSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBC366269D790200189A26 /* TouchBarSetting.swift */; };
+		CFFBC369269D799F00189A26 /* TouchBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBC368269D799F00189A26 /* TouchBarInteractor.swift */; };
+		CFFBC36B269D7AC900189A26 /* SettingsTouchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBC36A269D7AC900189A26 /* SettingsTouchBarDelegate.swift */; };
 		CFFEFF19261A6D4F00F2CE39 /* AppListTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFF18261A6D4F00F2CE39 /* AppListTableViewAdapter.swift */; };
 		CFFEFF25261A724200F2CE39 /* NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEFF24261A724200F2CE39 /* NavigationDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -294,6 +297,9 @@
 		CFE36931261B8783007DE6C7 /* QuitSettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitSettingsItem.swift; sourceTree = "<group>"; };
 		CFE36938261B8E29007DE6C7 /* SettingsAppearanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppearanceController.swift; sourceTree = "<group>"; };
 		CFF12038261B99580092103D /* SettingsGeneralController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGeneralController.swift; sourceTree = "<group>"; };
+		CFFBC366269D790200189A26 /* TouchBarSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarSetting.swift; sourceTree = "<group>"; };
+		CFFBC368269D799F00189A26 /* TouchBarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarInteractor.swift; sourceTree = "<group>"; };
+		CFFBC36A269D7AC900189A26 /* SettingsTouchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTouchBarDelegate.swift; sourceTree = "<group>"; };
 		CFFEFF18261A6D4F00F2CE39 /* AppListTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListTableViewAdapter.swift; sourceTree = "<group>"; };
 		CFFEFF24261A724200F2CE39 /* NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -520,6 +526,7 @@
 				CFAD790D266ECCA600583A91 /* GridColorSetting.swift */,
 				CF870F6126740C210089512B /* SelectedLayoutsSetting.swift */,
 				CF869E68267A84F3005F2733 /* HotkeysSuffixSettings.swift */,
+				CFFBC366269D790200189A26 /* TouchBarSetting.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -676,6 +683,7 @@
 				CFB4B92325A90F5B00539AB6 /* WindowInteractor.swift */,
 				CF5E418525AA4476001DEC28 /* LayoutSchemesInteractor.swift */,
 				CFA95AB8267BFFF800478576 /* AutoLoginInteractor.swift */,
+				CFFBC368269D799F00189A26 /* TouchBarInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -757,6 +765,7 @@
 				CFF12038261B99580092103D /* SettingsGeneralController.swift */,
 				CF869E6C267A903A005F2733 /* SettingsKeySchemeUiDelegate.swift */,
 				CFA95AB6267BFF8600478576 /* SettingsAutoLoginDelegate.swift */,
+				CFFBC36A269D7AC900189A26 /* SettingsTouchBarDelegate.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -975,6 +984,7 @@
 				CF1B395D25A2747900F7F9C7 /* ContentViewController.swift in Sources */,
 				CF870F6226740C210089512B /* SelectedLayoutsSetting.swift in Sources */,
 				CFB4B92425A90F5B00539AB6 /* WindowInteractor.swift in Sources */,
+				CFFBC367269D790200189A26 /* TouchBarSetting.swift in Sources */,
 				CF3C6AC325A50D34007A52F8 /* NSPasteboard+Types.swift in Sources */,
 				CFBD325325C857A1006DDAE5 /* WindowTableRow.swift in Sources */,
 				CF2E7609267688F900F198A8 /* SettingsTermsItem.swift in Sources */,
@@ -1018,6 +1028,7 @@
 				CF870F64267410690089512B /* SettingsAppearanceDelegate.swift in Sources */,
 				CFF12039261B99580092103D /* SettingsGeneralController.swift in Sources */,
 				CF642FC9269B79DC00997FC7 /* ActionButton.swift in Sources */,
+				CFFBC369269D799F00189A26 /* TouchBarInteractor.swift in Sources */,
 				CF4826DF25A39F8B00068927 /* HotKeyController.swift in Sources */,
 				CF642FB7269B483F00997FC7 /* BuyUsACoffeeItem.swift in Sources */,
 				CF00C64C25A799F0003454E6 /* DependenciesResolver.swift in Sources */,
@@ -1035,6 +1046,7 @@
 				CFB3689225A7B8B000CB8A89 /* HotKeysInteractor.swift in Sources */,
 				CFAEAA7525D98D1A00675171 /* SettingsAppearanceProvider.swift in Sources */,
 				CFD076A425D0595F00FF2730 /* LayoutSchemesCollectionViewItem.swift in Sources */,
+				CFFBC36B269D7AC900189A26 /* SettingsTouchBarDelegate.swift in Sources */,
 				CFFEFF19261A6D4F00F2CE39 /* AppListTableViewAdapter.swift in Sources */,
 				CF00C63D25A791EF003454E6 /* AppDependenciesResolver.swift in Sources */,
 				CFC11458267E5EE300C61FBF /* ImageContrastor.swift in Sources */,
@@ -1126,7 +1138,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = st235.com.github.ConciergeLauncher;
+				PRODUCT_BUNDLE_IDENTIFIER = st235.com.github.windoniserlauncher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ConciergeLauncher/ConciergeLauncher-Bridging-Header.h";
@@ -1152,7 +1164,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = st235.com.github.ConciergeLauncher;
+				PRODUCT_BUNDLE_IDENTIFIER = st235.com.github.windoniserlauncher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ConciergeLauncher/ConciergeLauncher-Bridging-Header.h";

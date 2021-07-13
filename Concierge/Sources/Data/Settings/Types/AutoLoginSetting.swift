@@ -3,7 +3,7 @@ import ServiceManagement
 
 class AutoLoginSetting: SettingProperty {
     
-    private static let launcherBundleIdentifier = "st235.com.github.ConciergeLauncher"
+    private static let launcherBundleIdentifier = "st235.com.github.windoniserlauncher"
     private static let userDefaultsTitle = "ud.param.auto_login"
     
     private let userDefaults: UserDefaults
