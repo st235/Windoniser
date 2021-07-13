@@ -6,7 +6,7 @@ class SettingsLayoutsItem: SettingsItem {
         let item = SettingsItemView()
         
         item.isArrowShown = true
-        item.icon = NSImage(systemSymbolName: "rectangle.3.offgrid", accessibilityDescription: nil)
+        item.icon = NSImage(systemSymbolName: "rectangle.split.3x3", accessibilityDescription: nil)
         item.text = "settings_item_layouts".localized
         
         return item
