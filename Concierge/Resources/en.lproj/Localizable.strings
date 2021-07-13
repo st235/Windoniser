@@ -30,7 +30,7 @@
 "settings_general_active_schema_content" = "Selected hotkeys:";
 "settings_general_touch_bar_header" = "(Experimental) Touchbar support";
 "settings_general_touch_bar_header_tooltip" = "This feature is experimental and can cause crashes. If the application will crash on the startup, then you need to delete application and all the data and reinstall it.";
-"settings_general_touch_bar_content" = "Enable toolbar support. Requires restart";
+"settings_general_touch_bar_content" = "Adds touchbar buttons. Requires restart";
 "settings_general_active_schema_change_button" = "Change";
 "settings_general_active_schema_left_botton_prefix" = "Time left:";
 "settings_general_active_schema_left_botton_suffix" = "sec.";
